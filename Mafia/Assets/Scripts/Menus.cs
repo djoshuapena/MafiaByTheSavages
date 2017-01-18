@@ -64,4 +64,9 @@ public class Menus : MonoBehaviour {
         MainMenu.enabled = false;
         StartScreen.enabled = true;
     }
+
+    public void StartLobby()
+    {
+        Application.LoadLevel(1);
+    }
 }

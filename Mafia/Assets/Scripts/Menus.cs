@@ -10,58 +10,56 @@ public class Menus : MonoBehaviour {
     public Canvas MainMenu;
     public Canvas OptionCanvas;
 
+    private void Awake()
+    {
+        if (StartScreen == null)
+            Debug.Log("Could not initialize StartScreen.");
+        if (LoginMenu == null)
+            Debug.Log("Could not initialize LoginMenu.");
+        if (CreateAccount == null)
+            Debug.Log("Could not initialize CreateAccount.");
+        if (MainMenu == null)
+            Debug.Log("Could not initialize MainMenu.");
+        if (OptionCanvas == null)
+            Debug.Log("Could not initialize OptionCanvas.");
+    }
+
+    private void SetMenu(Canvas menu)
+    {
+        StartScreen.gameObject.SetActive(menu == StartScreen);
+        LoginMenu.gameObject.SetActive(menu == LoginMenu);
+        CreateAccount.gameObject.SetActive(menu == CreateAccount);
+        MainMenu.gameObject.SetActive(menu == MainMenu);
+        OptionCanvas.gameObject.SetActive(menu == OptionCanvas);
+    }
+
     void Start()
     {
-        OptionCanvas.enabled = false;
-        LoginMenu.enabled = false;
-        CreateAccount.enabled = false;
-        MainMenu.enabled = false;
+        SetMenu(StartScreen);
     }
     
+    public void StartScreenOn()
+    {
+        SetMenu(StartScreen);
+    }
+
     public void LoginOn()
     {
-        LoginMenu.enabled = true;
-        StartScreen.enabled = false;
+        SetMenu(LoginMenu);
     }
 
     public void CreateOn()
     {
-        CreateAccount.enabled = true;
-        StartScreen.enabled = false;
+        SetMenu(CreateAccount);
     }
 
     public void MainOn()
     {
-        MainMenu.enabled = true;
-        if (LoginMenu.enabled)
-            LoginMenu.enabled = false;
-        else if (CreateAccount.enabled)
-            CreateAccount.enabled = false;
-    }
-
-    public void Cancel()
-    {
-        StartScreen.enabled = true;
-        if (LoginMenu.enabled)
-            LoginMenu.enabled = false;
-        else if (CreateAccount.enabled)
-            CreateAccount.enabled = false;
+        SetMenu(MainMenu);
     }
 
     public void OptionsOn()
     {
-        OptionCanvas.enabled = true;
-        MainMenu.enabled = false;
-    }
-
-    public void ExitOptions()
-    {
-        MainMenu.enabled = true;
-        OptionCanvas.enabled = false;
-    }
-    public void Logout()
-    {
-        MainMenu.enabled = false;
-        StartScreen.enabled = true;
+        SetMenu(OptionCanvas);
     }
 }

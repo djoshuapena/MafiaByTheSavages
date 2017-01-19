@@ -58,7 +58,7 @@ public class ChatGui : MonoBehaviour, IChatClientListener
 	public Text StateText; // set in inspector
 	public Text UserIdText; // set in inspector
 	
-	// private static string WelcomeText = "Welcome to chat. Type \\help to list commands.";
+	//private static string WelcomeText = "Welcome to chat. Type \\help to list commands.";
 	private static string HelpText = "\n    -- HELP --\n" +
 		"To subscribe to channel(s):\n" +
 			"\t<color=#E07B00>\\subscribe</color> <color=green><list of channelnames></color>\n" +
@@ -211,7 +211,7 @@ public class ChatGui : MonoBehaviour, IChatClientListener
 			string[] splitNames = this.selectedChannelName.Split(new char[] { ':' });
 			privateChatTarget = splitNames[1];
 		}
-		//UnityEngine.Debug.Log("selectedChannelName: " + selectedChannelName + " doingPrivateChat: " + doingPrivateChat + " privateChatTarget: " + privateChatTarget);
+		UnityEngine.Debug.Log("selectedChannelName: " + selectedChannelName + " doingPrivateChat: " + doingPrivateChat + " privateChatTarget: " + privateChatTarget);
 		
 		
 		if (inputLine[0].Equals('\\'))
@@ -393,8 +393,8 @@ public class ChatGui : MonoBehaviour, IChatClientListener
 		}
 		
 		Debug.Log("OnSubscribed: " + string.Join(", ", channels));
-		
-		/*
+
+        /*
         // select first subscribed channel in alphabetical order
         if (this.chatClient.PublicChannels.Count > 0)
         {
@@ -413,9 +413,9 @@ public class ChatGui : MonoBehaviour, IChatClientListener
             }
         }
         */
-		
-		// Switch to the first newly created channel
-		ShowChannel(channels[0]);
+
+        // Switch to the first newly created channel
+        ShowChannel(channels[0]);
 	}
 	
 	private void InstantiateChannelButton(string channelName)

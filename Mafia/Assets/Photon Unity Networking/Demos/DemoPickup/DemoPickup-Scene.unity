@@ -559,8 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 0}
   synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -569,6 +569,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 4
   instantiationId: 4
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &377566713
 MonoBehaviour:
@@ -1943,8 +1944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 0}
   synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -1953,6 +1954,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 1
   instantiationId: 1
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1001 &1198419782
 Prefab:
@@ -2246,8 +2248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 0}
   synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -2256,6 +2258,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 2
   instantiationId: 2
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &1215874588
 MonoBehaviour:
@@ -2422,8 +2425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 0}
   synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -2432,6 +2435,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 3
   instantiationId: 3
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1478209370
 GameObject:
@@ -3297,8 +3301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerId: 0
   group: 0
+  OwnerShipWasTransfered: 0
   prefixBackup: -1
-  observed: {fileID: 2045593609}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -3307,6 +3311,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 5
   instantiationId: 5
+  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &2045593611
 MonoBehaviour:

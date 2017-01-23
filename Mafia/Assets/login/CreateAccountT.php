@@ -4,28 +4,27 @@ $Username = $_REQUEST["Username"];
 $Password = $_REQUEST["Password"];
 
 $Hostname = "localhost";
-$DBName = "savage";
-$User = "root";
-$PasswordP = "";
+$DBName = "id619425_savage";
+$User = "id619425_mafia";
+$PasswordP = "ghjaadd";
 
-mysql_connect($Hostname, $User, $PasswordP) or die("Can't connect to DB");
-mysql_select_db($DBName) or die("Can't Connect to DB");
+$con = mysqli_connect($Hostname, $User, $PasswordP, $DBName) or die("Can't connect to DB");
 
-if(!$Username || !$Password){
+if(!$con){
 	echo"Empty";
 }
 else{
 	$SQL = "SELECT * FROM Accounts WHERE Username = ' " . $Username . " '";
-	$Result = @mysql_query($SQL) or die ("DB Error");
-	$Total = mysql_num_rows($Result);
+	$Result = @mysqli_query($con ,$SQL) or die ("DB Error");
+	$Total = mysqli_num_rows($Result);
 	if($Total == 0){
 		$insert = "INSERT INTO `Accounts` (`Username`, `Password`) VALUES ('" . $Username . "', MD5 ('". $Password ."'))";
-		$SQL1 = mysql_query($insert);
+		$SQL1 = mysqli_query($con ,$insert);
 		echo"Success";
 	} else {
 		echo"AlreadyUsed";
 	}
 }
 
-mysql_close();
+mysqli_close($con);
 ?>

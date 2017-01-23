@@ -1,12 +1,11 @@
 <?php
 //connections
 $Hostname = "localhost";
-$DBName = "savage";
-$User = "root";
-$PasswordP = "";
+$DBName = "id619425_savage";
+$User = "id619425_mafia";
+$PasswordP = "ghjaadd";
 
-mysql_connect($Hostname, $User, $PasswordP) or die("Cant connect into database");
-mysql_select_db($DBName) or die("Cant connect into database");
+$con = mysqli_connect($Hostname, $User, $PasswordP, $DBName) or die("Cant connect into database");
 
 $Username = $_REQUEST["Username"];
 $Password = $_REQUEST["Password"];
@@ -16,14 +15,14 @@ if(!$Username || !$Password) {
 }
 else{
 	$SQL = "SELECT * FROM Accounts WHERE Username = '" . $Username . "'";
-	$result_id = @mysql_query($SQL) or die("DATABASE ERROR 1");
-	$total = mysql_num_rows($result_id);
+	$result_id = @mysqli_query($con, $SQL) or die("DATABASE ERROR 1");
+	$total = mysqli_num_rows($result_id);
 	if($total){
-		$datas = @mysql_fetch_array($result_id);
+		$datas = @mysqli_fetch_array($result_id);
 		if(!strcmp(MD5($Password), $datas["Password"])){
 			$sql2 = "SELECT Characters FROM Accounts where Username = '" . $Username . "'";
-			$result_id2 = @mysql_query($sql2) or die("DATABASE ERROR 2");
-			while($row = mysql_fetch_array($result_id2))
+			$result_id2 = @mysqli_query($con,$sql2) or die("DATABASE ERROR 2");
+			while($row = mysqli_fetch_array($result_id2))
 			{
 				echo $row['Characters'];
 				echo":";
@@ -40,5 +39,5 @@ else{
 }
 
 //Close mySQL Connections
-mysql_close();
+mysqli_close($con);
 ?>

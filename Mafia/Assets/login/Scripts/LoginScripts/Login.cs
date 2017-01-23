@@ -13,8 +13,8 @@ public class Login : MonoBehaviour {
 	public string CurrentMenu = "Login";
 
 	//private variables
-	private string CreateAccountUrl = "http://127.0.0.1/CreateAccountT.php";
-	private string LoginUrl = "http://127.0.0.1/LoginAccountT.php";
+	private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
+	private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
 	private string ConfirmPass = "";
 	private string CPassword = "";
 	private string CUsername = "";

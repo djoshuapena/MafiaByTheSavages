@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Photon Unity Networking/Demos/DemoChat/DemoChat-Scene.unity
+- path: Assets/login/CreateAccountT.unity
   isLoaded: 1
   isActive: 1

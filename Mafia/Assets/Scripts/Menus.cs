@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public static class Extension
+{
+    public static void clear(this InputField inputfield)
+    {
+        inputfield.Select();
+        inputfield.text = "";
+    }
+}
 public class Menus : MonoBehaviour {
     public Canvas StartScreen;
     public Canvas LoginMenu;
@@ -61,6 +69,8 @@ public class Menus : MonoBehaviour {
 
     public void LoginOn()
     {
+        EnterUsername.clear();
+        EnterPassword.clear();
         SetMenu(LoginMenu);
     }
 
@@ -106,6 +116,7 @@ public class Menus : MonoBehaviour {
         WWWForm Form = new WWWForm();
         Form.AddField("Username", CUsername);
         Form.AddField("Password", CPassword);
+        //Form.AddField("RePassword", ConfirmPass);
         WWW CreateAccountWWW = new WWW(CreateAccountUrl, Form);
         yield return CreateAccountWWW; //wait for php
 
@@ -117,10 +128,11 @@ public class Menus : MonoBehaviour {
         {
             Debug.Log(CreateAccountWWW.text);
             string CreateAccountReturn = CreateAccountWWW.text;
+            Debug.Log(CreateAccountReturn);
             if (CreateAccountReturn == "Success")
             {
                 Debug.Log("Success: Account created");
-                SetMenu(LoginMenu);
+                LoginOn();
             }
         }
     }
@@ -145,7 +157,7 @@ public class Menus : MonoBehaviour {
             {
                 if (LogTextSplit[1] == "Success")
                 {
-                    SetMenu(MainMenu);
+                    MainOn();
                 }
             }
         }

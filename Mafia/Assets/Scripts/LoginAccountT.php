@@ -39,5 +39,39 @@ else{
 }
 
 //Close mySQL Connections
+/*
+echo"it came here";
+$username = $_REQUEST["username"];
+$password = $_REQUEST["password"];
+
+$queryx = "SELECT * FROM Accounts WHERE Username = '" . $username . "'";
+$Resultx = mysqli_query($con, $queryx);
+
+while($row = mysqli_fetch_array($Resultx))
+{
+	$passnya = $row['Characters'];
+}
+
+if(strcmp(MD5($password), $passnya))
+{
+	$login_info_success = array(
+		"ResultCode" => 1, 
+		"Message" => "Success!",
+		);
+
+	$json_success = json_encode($login_info_success);
+	echo $json_success;
+}
+
+else{
+	$login_info_error = array(
+		"ResultCode" => 2, 
+		"Message" => "Wrong Username or Password",
+	);
+
+	$json_error = json_encode($login_info_error);
+	echo $json_error;
+}
+*/
 mysqli_close($con);
 ?>

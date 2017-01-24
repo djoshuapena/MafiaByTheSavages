@@ -10,7 +10,7 @@ $PasswordP = "ghjaadd";
 
 $con = mysqli_connect($Hostname, $User, $PasswordP, $DBName) or die("Can't connect to DB");
 
-if(!$con){
+if(!$Username){
 	echo"Empty";
 }
 else{

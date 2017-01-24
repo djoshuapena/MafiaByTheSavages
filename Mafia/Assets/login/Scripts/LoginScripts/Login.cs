@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour {
 #region Variables
@@ -130,16 +131,19 @@ public class Login : MonoBehaviour {
 			string LogText = LoginAccountWWW.text;
 			Debug.Log(LogText);
 			string[] LogTextSplit = LogText.Split (':');
-			if (LogTextSplit[0] == "0") {
-				if (LogTextSplit[1] == "Success") {
-					Application.LoadLevel("CharacterCreation");
+            if (LogTextSplit[0] == "0")
+            {
+                if (LogTextSplit[1] == "Success")
+                {
+                    SceneManager.LoadScene(1);
 
-				}
-			} else {
-				if (LogTextSplit[0] == "Wrong Password/Username") {
-					Application.LoadLevel("CharacterSelection");
-				}
-			}
+                }
+            }
+			//} else {
+			//	if (LogTextSplit[0] == "Wrong Password/Username") {
+			//		Application.LoadLevel("CharacterSelection");
+			//	}
+			//}
 		}
 	}
 

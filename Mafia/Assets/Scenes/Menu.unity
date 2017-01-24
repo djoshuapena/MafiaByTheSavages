@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: StartScreenOn
         m_Mode: 1
         m_Arguments:
@@ -1298,7 +1298,6 @@ GameObject:
   - component: {fileID: 464020584}
   - component: {fileID: 464020583}
   - component: {fileID: 464020582}
-  - component: {fileID: 464020587}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1377,24 +1376,8 @@ Transform:
   - {fileID: 330820582}
   - {fileID: 562899968}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &464020587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 464020581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3edacbcb52b3aa74ca1fd12fa0553211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartScreen: {fileID: 2059997268}
-  LoginMenu: {fileID: 911954680}
-  CreateAccount: {fileID: 1747690405}
-  MainMenu: {fileID: 330820585}
-  OptionCanvas: {fileID: 562899967}
 --- !u!1 &464272615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1446,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464272615}
+--- !u!1 &512348039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 512348041}
+  - component: {fileID: 512348040}
+  m_Layer: 0
+  m_Name: _Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &512348040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512348039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edacbcb52b3aa74ca1fd12fa0553211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartScreen: {fileID: 2059997268}
+  LoginMenu: {fileID: 911954680}
+  CreateAccount: {fileID: 1747690405}
+  MainMenu: {fileID: 330820585}
+  OptionCanvas: {fileID: 562899967}
+  EnterUsername: {fileID: 1632095056}
+  EnterPassword: {fileID: 950790060}
+  CreateUsername: {fileID: 972966376}
+  CreatePassword: {fileID: 102393692}
+  ConfirmPassword: {fileID: 1593936731}
+--- !u!4 &512348041
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512348039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 551, y: 227.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541409311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2074,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: StartScreenOn
         m_Mode: 1
         m_Arguments:
@@ -2603,8 +2636,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
-        m_MethodName: MainOn
+      - m_Target: {fileID: 512348040}
+        m_MethodName: LoginToAccount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2793,7 +2826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: OptionsOn
         m_Mode: 1
         m_Arguments:
@@ -2900,7 +2933,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
@@ -2989,7 +3022,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: MainOn
         m_Mode: 1
         m_Arguments:
@@ -3096,7 +3129,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1313687393
 GameObject:
@@ -3285,7 +3318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: StartScreenOn
         m_Mode: 1
         m_Arguments:
@@ -3956,7 +3989,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: CreateOn
         m_Mode: 1
         m_Arguments:
@@ -4420,7 +4453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
+      - m_Target: {fileID: 512348040}
         m_MethodName: LoginOn
         m_Mode: 1
         m_Arguments:
@@ -4863,8 +4896,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464020587}
-        m_MethodName: MainOn
+      - m_Target: {fileID: 512348040}
+        m_MethodName: CreateNewAcount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5043,7 +5076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1907777919
 GameObject:

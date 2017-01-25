@@ -22,16 +22,14 @@ else if(!$RePassword){
 }
 
 else{
-	$SQL = "SELECT * FROM Accounts WHERE Username = ' " . $Username . " '";
-	$Result = @mysqli_query($con ,$SQL) or die ("DB Error");
-	Echo"$SQL";
-	$Total = mysqli_num_rows($Result);
-	if($Total == 0){
+	$SQL = "SELECT * FROM Accounts WHERE Username ='$Username'";
+	$result = mysqli_query($con, $SQL);
+	if(mysqli_num_rows($result) == 0){
 		$insert = "INSERT INTO `Accounts` (`Username`, `Password`) VALUES ('" . $Username . "', MD5 ('". $Password ."'))";
 		$SQL1 = mysqli_query($con ,$insert);
 		echo"Success";
 	} else {
-		echo"AlreadyUsed";
+		echo"Username is taken";
 	}
 }
 

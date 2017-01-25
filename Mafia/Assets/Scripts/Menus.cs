@@ -26,13 +26,13 @@ public class Menus : MonoBehaviour {
     public InputField ConfirmPassword;
 
     //private variables
-    private string Username = "";
-    private string Password = "";
+    private string username;
+    private string password;
+    private string confirmPass;
+    private string cPassword;
+    private string cUsername;
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
     private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
-    private string ConfirmPass = "";
-    private string CPassword = "";
-    private string CUsername = "";
 
     private void Awake()
     {
@@ -59,9 +59,16 @@ public class Menus : MonoBehaviour {
 
     void Start()
     {
+        Application.runInBackground = true;
+        Connect();
         SetMenu(StartScreen);
     }
-    
+
+    private void Connect()
+    {
+        PhotonNetwork.ConnectUsingSettings("Version 0.01");
+    }
+
     public void StartScreenOn()
     {
         SetMenu(StartScreen);
@@ -76,6 +83,9 @@ public class Menus : MonoBehaviour {
 
     public void CreateOn()
     {
+        CreateUsername.clear();
+        CreatePassword.clear();
+        ConfirmPassword.clear();
         SetMenu(CreateAccount);
     }
 
@@ -84,39 +94,64 @@ public class Menus : MonoBehaviour {
         SetMenu(MainMenu);
     }
 
+    public void MainOnandConnect()
+    {
+        Debug.Log(PhotonNetwork.connected);
+        SetMenu(MainMenu);
+    }
+
+    void OnJoinedLobby()
+    {
+        Debug.Log("We did it!");
+    }
+
     public void OptionsOn()
     {
         SetMenu(OptionCanvas);
     }
 
+    public void UserName()
+    {
+        username = EnterUsername.text.ToString();
+    }
+
+    public void Password()
+    {
+        password = EnterPassword.text.ToString();
+    }
+
+    public void NewUserName()
+    {
+        cUsername = CreateUsername.text.ToString();
+    }
+
+    public void NewPassword()
+    {
+        cPassword = CreatePassword.text.ToString();
+    }
+
+    public void ConfirmNewPassword()
+    {
+        confirmPass = ConfirmPassword.text.ToString();
+    }
+
     public void CreateNewAcount()
     {
-        if (CreateUsername != null && CreatePassword != null && ConfirmPassword != null)
-        {
-            CUsername = CreateUsername.text;
-            CPassword = CreatePassword.text;
-            ConfirmPass = ConfirmPassword.text;
-            StartCoroutine(CreateNewAccount());
-        }
+        StartCoroutine(CreateNewAccount());
     }
 
     public void LoginToAccount()
     {
-        if (EnterUsername != null && EnterPassword != null)
-        {
-            Username = EnterUsername.text;
-            Password = EnterPassword.text;
-            StartCoroutine(LoginAccount());
-        }
+        StartCoroutine(LoginAccount());
     }
 
     IEnumerator CreateNewAccount()
     {
         Debug.Log("button pressed");
         WWWForm Form = new WWWForm();
-        Form.AddField("Username", CUsername);
-        Form.AddField("Password", CPassword);
-        //Form.AddField("RePassword", ConfirmPass);
+        Form.AddField("Username", cUsername);
+        Form.AddField("Password", cPassword);
+        Form.AddField("RePassword", confirmPass);
         WWW CreateAccountWWW = new WWW(CreateAccountUrl, Form);
         yield return CreateAccountWWW; //wait for php
 
@@ -140,8 +175,8 @@ public class Menus : MonoBehaviour {
     IEnumerator LoginAccount()
     {
         WWWForm Form = new WWWForm();
-        Form.AddField("Username", Username);
-        Form.AddField("Password", Password);
+        Form.AddField("Username", username);
+        Form.AddField("Password", password);
         WWW LoginAccountWWW = new WWW(LoginUrl, Form);
         yield return LoginAccountWWW;
         if (LoginAccountWWW.error != null)
@@ -157,7 +192,7 @@ public class Menus : MonoBehaviour {
             {
                 if (LogTextSplit[1] == "Success")
                 {
-                    MainOn();
+                    MainOnandConnect();
                 }
             }
         }

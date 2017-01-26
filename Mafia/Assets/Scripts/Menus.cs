@@ -32,7 +32,7 @@ public class Menus : MonoBehaviour {
     private string cPassword;
     private string cUsername;
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
-    private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
+    //private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
 
     private void Awake()
     {
@@ -59,15 +59,15 @@ public class Menus : MonoBehaviour {
 
     void Start()
     {
-        Application.runInBackground = true;
-        Connect();
+        //Application.runInBackground = true;
+        //Connect();
         SetMenu(StartScreen);
     }
 
-    private void Connect()
-    {
-        PhotonNetwork.ConnectUsingSettings("Version 0.01");
-    }
+    //private void Connect()
+    //{
+    //    PhotonNetwork.ConnectUsingSettings("Version 0.01");
+    //}
 
     public void StartScreenOn()
     {
@@ -140,10 +140,49 @@ public class Menus : MonoBehaviour {
         StartCoroutine(CreateNewAccount());
     }
 
-    public void LoginToAccount()
+    public void AttemptConnection()
     {
-        StartCoroutine(LoginAccount());
+        PhotonNetwork.AuthValues = new AuthenticationValues();
+        PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
+        PhotonNetwork.AuthValues.AddAuthParameter("Password", password);
+        PhotonNetwork.AuthValues.AddAuthParameter("Username", username);
+        PhotonNetwork.ConnectUsingSettings("Version 0.1");
+        StartCoroutine(Connection());
     }
+
+    IEnumerator Connection()
+    {
+        while (!PhotonNetwork.connected)
+        {
+            yield return null;
+        }
+        MainOn();
+    }
+
+    private void OnConnectedToMaster()
+    {
+        Debug.Log("Connected to Master");
+    } 
+
+    public void LogoutButton()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
+    private void OnCustomAuthenticationFailed(string DebugMessage)
+    {
+        Debug.Log(DebugMessage);
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+    }
+
+    //public void LoginToAccount()
+    //{
+    //    StartCoroutine(LoginAccount());
+    //}
 
     IEnumerator CreateNewAccount()
     {
@@ -172,29 +211,29 @@ public class Menus : MonoBehaviour {
         }
     }
 
-    IEnumerator LoginAccount()
-    {
-        WWWForm Form = new WWWForm();
-        Form.AddField("Username", username);
-        Form.AddField("Password", password);
-        WWW LoginAccountWWW = new WWW(LoginUrl, Form);
-        yield return LoginAccountWWW;
-        if (LoginAccountWWW.error != null)
-        {
-            Debug.LogError("Cannot connect to Login");
-        }
-        else
-        {
-            string LogText = LoginAccountWWW.text;
-            Debug.Log(LogText);
-            string[] LogTextSplit = LogText.Split(':');
-            if (LogTextSplit[0] == "0")
-            {
-                if (LogTextSplit[1] == "Success")
-                {
-                    MainOnandConnect();
-                }
-            }
-        }
-    }
+    //IEnumerator LoginAccount()
+    //{
+    //    WWWForm Form = new WWWForm();
+    //    Form.AddField("Username", username);
+    //    Form.AddField("Password", password);
+    //    WWW LoginAccountWWW = new WWW(LoginUrl, Form);
+    //    yield return LoginAccountWWW;
+    //    if (LoginAccountWWW.error != null)
+    //    {
+    //        Debug.LogError("Cannot connect to Login");
+    //    }
+    //    else
+    //    {
+    //        string LogText = LoginAccountWWW.text;
+    //        Debug.Log(LogText);
+    //        string[] LogTextSplit = LogText.Split(':');
+    //        if (LogTextSplit[0] == "0")
+    //        {
+    //            if (LogTextSplit[1] == "Success")
+    //            {
+    //                MainOnandConnect();
+    //            }
+    //        }
+    //    }
+    //}
 }

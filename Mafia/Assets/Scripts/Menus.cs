@@ -167,6 +167,7 @@ public class Menus : MonoBehaviour {
     public void LogoutButton()
     {
         PhotonNetwork.Disconnect();
+        StartScreenOn();
     }
 
     private void OnCustomAuthenticationFailed(string DebugMessage)

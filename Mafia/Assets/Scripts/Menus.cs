@@ -17,6 +17,7 @@ public class Menus : MonoBehaviour {
     public Canvas CreateAccount;
     public Canvas MainMenu;
     public Canvas OptionCanvas;
+	public Canvas Stats;
 
     //private variables
     public InputField EnterUsername;
@@ -24,6 +25,10 @@ public class Menus : MonoBehaviour {
     public InputField CreateUsername;
     public InputField CreatePassword;
     public InputField ConfirmPassword;
+	//stat stuff
+	public string[] items;
+	public getdata data; //link to getdata.cs
+
 
     //private variables
     private string username;
@@ -33,6 +38,7 @@ public class Menus : MonoBehaviour {
     private string cUsername;
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
     //private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
+	public static string usernamestats;
 
     private void Awake()
     {
@@ -46,6 +52,8 @@ public class Menus : MonoBehaviour {
             Debug.Log("Could not initialize MainMenu.");
         if (OptionCanvas == null)
             Debug.Log("Could not initialize OptionCanvas.");
+		if (Stats == null)
+			Debug.Log("Could not initialize OptionCanvas.");
     }
 
     private void SetMenu(Canvas menu)
@@ -55,6 +63,7 @@ public class Menus : MonoBehaviour {
         CreateAccount.gameObject.SetActive(menu == CreateAccount);
         MainMenu.gameObject.SetActive(menu == MainMenu);
         OptionCanvas.gameObject.SetActive(menu == OptionCanvas);
+		Stats.gameObject.SetActive(menu == Stats);
     }
 
     void Start()
@@ -110,9 +119,15 @@ public class Menus : MonoBehaviour {
         SetMenu(OptionCanvas);
     }
 
+	public void StatsOn()
+	{
+		StartCoroutine(UserStat());
+	}
+
     public void UserName()
     {
         username = EnterUsername.text.ToString();
+		usernamestats = username;
     }
 
     public void Password()
@@ -139,7 +154,7 @@ public class Menus : MonoBehaviour {
     {
         StartCoroutine(CreateNewAccount());
     }
-
+		
     public void AttemptConnection()
     {
         PhotonNetwork.AuthValues = new AuthenticationValues();
@@ -211,6 +226,19 @@ public class Menus : MonoBehaviour {
             }
         }
     }
+
+	IEnumerator UserStat() {
+		WWWForm Form = new WWWForm();
+		Form.AddField("Username", username);
+		WWW itemsData = new WWW ("https://giramdev.000webhostapp.com/getstats.php", Form);
+		yield return itemsData;
+		string itemsDataString = itemsData.text;
+		print (itemsDataString);
+		items = itemsDataString.Split ('|');
+		//print (GetDataValue (items [0], "TotalGameWin"));
+		data.InsertData();
+		SetMenu(Stats);
+	}
 
     //IEnumerator LoginAccount()
     //{

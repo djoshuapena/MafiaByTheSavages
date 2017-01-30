@@ -26,7 +26,9 @@ else{
 	$result = mysqli_query($con, $SQL);
 	if(mysqli_num_rows($result) == 0){
 		$insert = "INSERT INTO `Accounts` (`Username`, `Password`) VALUES ('" . $Username . "', MD5 ('". $Password ."'))";
+		$insertstat = "INSERT INTO `Stats` (`Username`) VALUES ('" . $Username . "')";
 		$SQL1 = mysqli_query($con ,$insert);
+		$SQL2 = mysqli_query($con ,$insertstat);
 		echo"Success";
 	} else {
 		echo"Username is taken";

@@ -32,7 +32,7 @@ public class getdata : MonoBehaviour {
 		GameObject element = GameObject.Find("_Scripts"); //place holder
 		Menus menuScript = element.GetComponent<Menus>();
 		tt = menuScript.items;
-		print (tt.Length);
+//		print (tt.Length);
 
 		//Total game 
 		Text totalGameWin = totalGW.GetComponent<Text>(); //get the text component in the gameobject

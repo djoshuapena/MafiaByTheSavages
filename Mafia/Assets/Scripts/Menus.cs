@@ -233,7 +233,7 @@ public class Menus : MonoBehaviour {
 		WWW itemsData = new WWW ("https://giramdev.000webhostapp.com/getstats.php", Form);
 		yield return itemsData;
 		string itemsDataString = itemsData.text;
-		print (itemsDataString);
+//		print (itemsDataString);
 		items = itemsDataString.Split ('|');
 		//print (GetDataValue (items [0], "TotalGameWin"));
 		data.InsertData();

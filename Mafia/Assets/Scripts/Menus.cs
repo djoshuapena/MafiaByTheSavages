@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +30,9 @@ public class Menus : MonoBehaviour {
 	//stat stuff
 	public string[] items;
 	public getdata data; //link to getdata.cs
-
+	//update stuff
+	public int[] stats = new int[13];
+	public string statsString = "";
 
     //private variables
     private string username;
@@ -37,6 +41,7 @@ public class Menus : MonoBehaviour {
     private string cPassword;
     private string cUsername;
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
+	private string UpdateStatsUrl = "http://giramdev.000webhostapp.com/updateStats.php";
     //private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
 	public static string usernamestats;
 
@@ -154,6 +159,16 @@ public class Menus : MonoBehaviour {
     {
         StartCoroutine(CreateNewAccount());
     }
+
+	//UpdateStats fills stats with temporary values for testing,
+	//converts the stats array into a string to send to php and
+	//calls the IEnumerator UpdateStats to post the string to the database.
+	public void UpdateStats()
+	{
+		fillStatsArray (ref stats);
+		statsString = convertToString (stats);
+		StartCoroutine(UpdateStat());
+	}
 		
     public void AttemptConnection()
     {
@@ -200,6 +215,26 @@ public class Menus : MonoBehaviour {
     //    StartCoroutine(LoginAccount());
     //}
 
+	//temporary function to fill stats array
+	public void fillStatsArray(ref int[] stats)
+	{
+		for(int i=0; i<13; i++)
+		{
+			stats[i] = i;
+		}
+	}
+
+	//convertToString(stats) takes in an array, converts stats 
+	//to a string and then returns it.
+	//This creates a string that seperates each number by a comma.
+	//Ex: 1,12,5,45,...
+	private string convertToString(int[] stats)
+	{
+		//string[] result = stats.Select(x=>x.ToString()).ToArray();
+		string result = String.Join(",", stats.Select(p=>p.ToString()).ToArray());
+		return result;
+	}
+
     IEnumerator CreateNewAccount()
     {
         Debug.Log("button pressed");
@@ -238,6 +273,31 @@ public class Menus : MonoBehaviour {
 		//print (GetDataValue (items [0], "TotalGameWin"));
 		data.InsertData();
 		SetMenu(Stats);
+	}
+
+	IEnumerator UpdateStat()
+	{
+		//Debug.Log("button pressed");
+		WWWForm Form = new WWWForm();
+		Form.AddField("stats", statsString);
+		WWW UpdateStatsWWW = new WWW(UpdateStatsUrl, Form);
+		yield return UpdateStatsWWW; //wait for php
+
+		if (UpdateStatsWWW.error != null)
+		{
+			Debug.LogError("Cannot connect to account Creation");
+		}
+		else
+		{
+			Debug.Log(UpdateStatsWWW.text);
+			string UpdateStatsReturn = UpdateStatsWWW.text;
+			Debug.Log(UpdateStatsReturn);
+			if (UpdateStatsReturn == "Success")
+			{
+				Debug.Log("Success: Stats Updated");
+				MainOn();
+			}
+		}
 	}
 
     //IEnumerator LoginAccount()

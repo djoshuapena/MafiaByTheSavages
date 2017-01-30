@@ -1205,7 +1205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &330820582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1559,6 +1559,7 @@ GameObject:
   - component: {fileID: 464020584}
   - component: {fileID: 464020583}
   - component: {fileID: 464020582}
+  - component: {fileID: 464020587}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1640,6 +1641,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464020587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464020581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edacbcb52b3aa74ca1fd12fa0553211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartScreen: {fileID: 2059997268}
+  LoginMenu: {fileID: 911954680}
+  CreateAccount: {fileID: 1747690405}
+  MainMenu: {fileID: 330820585}
+  OptionCanvas: {fileID: 562899967}
+  Stats: {fileID: 1733495747}
+  EnterUsername: {fileID: 1632095056}
+  EnterPassword: {fileID: 950790060}
+  CreateUsername: {fileID: 972966376}
+  CreatePassword: {fileID: 102393692}
+  ConfirmPassword: {fileID: 1593936731}
+  items: []
+  data: {fileID: 0}
+  stats: 
+  statsString: 
 --- !u!1 &464272615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1849,8 @@ MonoBehaviour:
   ConfirmPassword: {fileID: 1593936731}
   items: []
   data: {fileID: 1733495748}
+  stats: 
+  statsString: 
 --- !u!4 &512348041
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,7 +2100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &562899965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3307,7 +3336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &911954677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7350,7 +7379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1747690402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8125,7 +8154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2059997265
 RectTransform:
   m_ObjectHideFlags: 0

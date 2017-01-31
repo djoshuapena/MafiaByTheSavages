@@ -20,6 +20,7 @@ public class Menus : MonoBehaviour {
     public Canvas MainMenu;
     public Canvas OptionCanvas;
 	public Canvas Stats;
+    public Canvas JoinGameCanvas;
 
     //private variables
     public InputField EnterUsername;
@@ -58,7 +59,9 @@ public class Menus : MonoBehaviour {
         if (OptionCanvas == null)
             Debug.Log("Could not initialize OptionCanvas.");
 		if (Stats == null)
-			Debug.Log("Could not initialize OptionCanvas.");
+			Debug.Log("Could not initialize Stats.");
+        if (JoinGameCanvas == null)
+            Debug.Log("Could not initialize JoinGameCanvas.");
     }
 
     private void SetMenu(Canvas menu)
@@ -69,6 +72,7 @@ public class Menus : MonoBehaviour {
         MainMenu.gameObject.SetActive(menu == MainMenu);
         OptionCanvas.gameObject.SetActive(menu == OptionCanvas);
 		Stats.gameObject.SetActive(menu == Stats);
+        JoinGameCanvas.gameObject.SetActive(menu == JoinGameCanvas);
     }
 
     void Start()
@@ -128,6 +132,11 @@ public class Menus : MonoBehaviour {
 	{
 		StartCoroutine(UserStat());
 	}
+
+    public void JoinMenuOn()
+    {
+        SetMenu(JoinGameCanvas);
+    }
 
     public void UserName()
     {

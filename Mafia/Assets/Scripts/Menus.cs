@@ -31,9 +31,7 @@ public class Menus : MonoBehaviour {
 	//stat stuff
 	public string[] items;
 	public getdata data; //link to getdata.cs
-	//update stuff
-	public int[] stats = new int[13];
-	public string statsString = "";
+	public static string usernamestats;
 
     //private variables
     private string username;
@@ -44,7 +42,7 @@ public class Menus : MonoBehaviour {
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
 	private string UpdateStatsUrl = "http://giramdev.000webhostapp.com/updateStats.php";
     //private string LoginUrl = "http://giramdev.000webhostapp.com/LoginAccountT.php";
-	public static string usernamestats;
+	private int[] stats = new int[13];
 
     private void Awake()
     {
@@ -174,8 +172,6 @@ public class Menus : MonoBehaviour {
 	//calls the IEnumerator UpdateStats to post the string to the database.
 	public void UpdateStats()
 	{
-		fillStatsArray (ref stats);
-		statsString = convertToString (stats);
 		StartCoroutine(UpdateStat());
 	}
 		
@@ -227,11 +223,12 @@ public class Menus : MonoBehaviour {
 	//temporary function to fill stats array
 	public void fillStatsArray(ref int[] stats)
 	{
-		for(int i=0; i<13; i++)
+		for(int i=0; i<stats.Length; i++)
 		{
 			stats[i] = i;
 		}
 	}
+		
 
 	//convertToString(stats) takes in an array, converts stats 
 	//to a string and then returns it.
@@ -286,25 +283,25 @@ public class Menus : MonoBehaviour {
 
 	IEnumerator UpdateStat()
 	{
-		//Debug.Log("button pressed");
-		WWWForm Form = new WWWForm();
-		Form.AddField("stats", statsString);
-		WWW UpdateStatsWWW = new WWW(UpdateStatsUrl, Form);
+		//fillStatsArray (ref stats);
+		//statsString = convertToString (stats);
+		WWWForm Form = new WWWForm ();
+		string statsString = "1 12 5 6 4 0 25 6 200 54 1 6 18";
+		Form.AddField ("Username", usernamestats);
+		Form.AddField ("stats", statsString);
+		WWW UpdateStatsWWW = new WWW (UpdateStatsUrl, Form);
 		yield return UpdateStatsWWW; //wait for php
 
-		if (UpdateStatsWWW.error != null)
-		{
-			Debug.LogError("Cannot connect to account Creation");
-		}
-		else
-		{
-			Debug.Log(UpdateStatsWWW.text);
+		if (UpdateStatsWWW.error != null) {
+			Debug.LogError ("Cannot connect to account Creation");
+		} 
+		else {
+			Debug.Log (UpdateStatsWWW.text);
 			string UpdateStatsReturn = UpdateStatsWWW.text;
-			Debug.Log(UpdateStatsReturn);
-			if (UpdateStatsReturn == "Success")
-			{
-				Debug.Log("Success: Stats Updated");
-				MainOn();
+			Debug.Log (UpdateStatsReturn);
+			if (UpdateStatsReturn == "Success") {
+				Debug.Log ("Success: Stats Updated");
+				MainOn ();
 			}
 		}
 	}

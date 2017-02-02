@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public static class Extension
 {
@@ -133,7 +134,8 @@ public class Menus : MonoBehaviour {
 
     public void JoinMenuOn()
     {
-        SetMenu(JoinGameCanvas);
+        //SetMenu(JoinGameCanvas);
+        SceneManager.LoadScene("Lobby");
     }
 
     public void UserName()

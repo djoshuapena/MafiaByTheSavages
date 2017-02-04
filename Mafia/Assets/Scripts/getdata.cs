@@ -9,6 +9,7 @@ public class getdata : MonoBehaviour {
 	//public GameObject textgameobject;
 	private string [] tt;
 
+	//create a game object that will allow you to drag infromation into the field in unity
 	public GameObject totalGW;
 	public GameObject totalGL;
 
@@ -29,10 +30,10 @@ public class getdata : MonoBehaviour {
 
 	public void InsertData()
 	{
-		GameObject element = GameObject.Find("_Scripts"); //place holder
+		GameObject element = GameObject.Find("_Scripts");
 		Menus menuScript = element.GetComponent<Menus>();
 		tt = menuScript.items;
-//		print (tt.Length);
+		//print (tt.Length);
 
 		//Total game 
 		Text totalGameWin = totalGW.GetComponent<Text>(); //get the text component in the gameobject
@@ -59,7 +60,6 @@ public class getdata : MonoBehaviour {
 		mafiaKill.text = Seperate(tt[6], "MafiaKill");
 
 		//doctor
-
 		Text doctorWin = doctorW.GetComponent<Text> ();
 		doctorWin.text = Seperate(tt[7], "DoctorWin");
 
@@ -70,7 +70,6 @@ public class getdata : MonoBehaviour {
 		doctorSave.text = Seperate(tt[9], "DoctorSave");
 
 		//sherrif
-
 		Text sherrifWin = sherrifW.GetComponent<Text> ();
 		sherrifWin.text = Seperate(tt[10], "SherrifWin");
 
@@ -82,6 +81,8 @@ public class getdata : MonoBehaviour {
 
 	}
 
+	//this function will seperate a string, the first paramater is data which is the full string
+	//and the index string is the string that will be romoved from the original string
 	string Seperate(string data, string index){
 		string value = data.Substring (data.IndexOf(index) + index.Length);
 		return value;

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: NewPassword
         m_Mode: 1
         m_Arguments:
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: NewPassword
         m_Mode: 1
         m_Arguments:
@@ -1913,13 +1913,8 @@ MonoBehaviour:
   OptionCanvas: {fileID: 562899967}
   Stats: {fileID: 1733495747}
   JoinGameCanvas: {fileID: 691245074}
-  EnterUsername: {fileID: 1632095056}
-  EnterPassword: {fileID: 950790060}
-  CreateUsername: {fileID: 972966376}
-  CreatePassword: {fileID: 102393692}
-  ConfirmPassword: {fileID: 1593936731}
-  items: []
-  data: {fileID: 0}
+  accounts: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!1 &464272615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2066,8 @@ GameObject:
   m_Component:
   - component: {fileID: 512348041}
   - component: {fileID: 512348040}
+  - component: {fileID: 512348042}
+  - component: {fileID: 512348043}
   m_Layer: 0
   m_Name: _Scripts
   m_TagString: Untagged
@@ -2096,13 +2093,8 @@ MonoBehaviour:
   OptionCanvas: {fileID: 562899967}
   Stats: {fileID: 1733495747}
   JoinGameCanvas: {fileID: 691245074}
-  EnterUsername: {fileID: 1632095056}
-  EnterPassword: {fileID: 950790060}
-  CreateUsername: {fileID: 972966376}
-  CreatePassword: {fileID: 102393692}
-  ConfirmPassword: {fileID: 1593936731}
-  items: []
-  data: {fileID: 1733495748}
+  accounts: {fileID: 512348042}
+  stats: {fileID: 512348043}
 --- !u!4 &512348041
 Transform:
   m_ObjectHideFlags: 0
@@ -2116,6 +2108,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512348042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512348039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a320af65923c2498f20f23bc0976a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnterUsername: {fileID: 1632095056}
+  EnterPassword: {fileID: 950790060}
+  CreateUsername: {fileID: 972966376}
+  CreatePassword: {fileID: 102393692}
+  ConfirmPassword: {fileID: 1593936731}
+--- !u!114 &512348043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512348039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f886805d5337ca48b3115960ba4b365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalGW: {fileID: 895938521}
+  totalGL: {fileID: 1334334254}
+  civilianW: {fileID: 1702869895}
+  civilianL: {fileID: 2132622175}
+  mafiaW: {fileID: 1725226520}
+  mafiaL: {fileID: 1621813742}
+  mafiaK: {fileID: 1809659590}
+  doctorW: {fileID: 1439422189}
+  doctorL: {fileID: 1130348384}
+  doctorS: {fileID: 686470819}
+  sherrifW: {fileID: 508473868}
+  sherrifL: {fileID: 621319843}
+  sherrifC: {fileID: 53561996}
 --- !u!1 &526840127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,7 +2546,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: StatsOn()
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4074,7 +4106,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: Password
         m_Mode: 1
         m_Arguments:
@@ -4090,7 +4122,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: Password
         m_Mode: 1
         m_Arguments:
@@ -4352,7 +4384,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: NewUserName
         m_Mode: 1
         m_Arguments:
@@ -4368,7 +4400,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: NewUserName
         m_Mode: 1
         m_Arguments:
@@ -4497,7 +4529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: AttemptConnection
         m_Mode: 1
         m_Arguments:
@@ -6933,7 +6965,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: ConfirmNewPassword
         m_Mode: 1
         m_Arguments:
@@ -6949,7 +6981,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: ConfirmNewPassword
         m_Mode: 1
         m_Arguments:
@@ -7237,7 +7269,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: UserName
         m_Mode: 1
         m_Arguments:
@@ -7253,7 +7285,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512348040}
+      - m_Target: {fileID: 512348042}
         m_MethodName: UserName
         m_Mode: 1
         m_Arguments:
@@ -7828,7 +7860,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733495743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1475827a52aea4aed92b12e1a4a6f85c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f886805d5337ca48b3115960ba4b365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   totalGW: {fileID: 895938521}
@@ -8003,6 +8035,7 @@ GameObject:
   - component: {fileID: 1747690405}
   - component: {fileID: 1747690404}
   - component: {fileID: 1747690403}
+  - component: {fileID: 1747690406}
   m_Layer: 0
   m_Name: CreateAccount
   m_TagString: Untagged
@@ -8091,6 +8124,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1747690406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747690401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a320af65923c2498f20f23bc0976a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnterUsername: {fileID: 0}
+  EnterPassword: {fileID: 0}
+  CreateUsername: {fileID: 0}
+  CreatePassword: {fileID: 0}
+  ConfirmPassword: {fileID: 0}
 --- !u!1 &1779713155
 GameObject:
   m_ObjectHideFlags: 0

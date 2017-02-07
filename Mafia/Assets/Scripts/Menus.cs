@@ -91,7 +91,15 @@ public class Menus : MonoBehaviour {
     {
         //Application.runInBackground = true;
         //Connect();
-        SetMenu(StartScreen);
+        if (PhotonNetwork.connectionStateDetailed.ToString().Equals("ConnectedToMaster")) //aaron; this is here to bypass the log in screen when returning to menu
+        {
+            SetMenu(MainMenu);
+        }
+        else
+        {
+            SetMenu(StartScreen); //standard start
+        }
+       
     }
 
 	//take you to the start screen
@@ -153,6 +161,22 @@ public class Menus : MonoBehaviour {
         SceneManager.LoadScene("Lobby");
     }
 
+    //aaron, using this to get back to main menu from other scenes
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    //also aaron
+    //return to lobby and disconnect from room
+    public void BackToRooms()
+    {
+        SceneManager.LoadScene("Lobby");
+        PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.JoinLobby();
+    } 
+
+ 
 	//start the coroutine for create account
     public void CreateNewAcount()
     {
@@ -175,7 +199,7 @@ public class Menus : MonoBehaviour {
 	//debug
     private void OnConnectedToMaster()
     {
-        Debug.Log("Connected to Master");
+        Debug.Log("Connected To Master");
         SetMenu(MainMenu);
     } 
 

@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1221396328}
+      - m_Target: {fileID: 0}
         m_MethodName: BackToRooms
         m_Mode: 1
         m_Arguments:
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -354,97 +354,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1221396325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1221396329}
-  - component: {fileID: 1221396328}
-  - component: {fileID: 1221396327}
-  - component: {fileID: 1221396326}
-  m_Layer: 0
-  m_Name: _Scripts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1221396326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1221396325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f886805d5337ca48b3115960ba4b365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalGW: {fileID: 0}
-  totalGL: {fileID: 0}
-  civilianW: {fileID: 0}
-  civilianL: {fileID: 0}
-  mafiaW: {fileID: 0}
-  mafiaL: {fileID: 0}
-  mafiaK: {fileID: 0}
-  doctorW: {fileID: 0}
-  doctorL: {fileID: 0}
-  doctorS: {fileID: 0}
-  sherrifW: {fileID: 0}
-  sherrifL: {fileID: 0}
-  sherrifC: {fileID: 0}
---- !u!114 &1221396327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1221396325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a320af65923c2498f20f23bc0976a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnterUsername: {fileID: 0}
-  EnterPassword: {fileID: 0}
-  CreateUsername: {fileID: 0}
-  CreatePassword: {fileID: 0}
-  ConfirmPassword: {fileID: 0}
---- !u!114 &1221396328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1221396325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3edacbcb52b3aa74ca1fd12fa0553211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartScreen: {fileID: 0}
-  LoginMenu: {fileID: 0}
-  CreateAccount: {fileID: 0}
-  MainMenu: {fileID: 0}
-  OptionCanvas: {fileID: 0}
-  Stats: {fileID: 0}
-  JoinGameCanvas: {fileID: 0}
-  accounts: {fileID: 1221396327}
-  stats: {fileID: 1221396326}
---- !u!4 &1221396329
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1221396325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 551, y: 227.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1291868976
 GameObject:
   m_ObjectHideFlags: 0

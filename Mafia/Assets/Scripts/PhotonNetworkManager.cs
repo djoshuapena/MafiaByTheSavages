@@ -5,13 +5,10 @@ using System.Collections.Generic;
 
 public class PhotonNetworkManager : MonoBehaviour
 {
-
-    public static PhotonNetworkManager instance = null;
-
     private List<GameObject> roomPrefabs = new List<GameObject>();
 
+    public static PhotonNetworkManager instance = null;
     public GameObject roomPrefab;
-
     public InputField roomName;
     public InputField maxCount;
 
@@ -125,10 +122,10 @@ public class PhotonNetworkManager : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    }
+    //void OnGUI()
+    //{
+    //    GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+    //}
 
     void OnJoinedLobby()
     {

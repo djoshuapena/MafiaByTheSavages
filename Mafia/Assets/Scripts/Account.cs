@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+#region clear_extension
 public static class Extension
 {
     public static void clear(this InputField inputfield)
@@ -12,12 +12,14 @@ public static class Extension
         inputfield.text = "";
     }
 }
+#endregion
+
 public class Account : MonoBehaviour {
 
-    //creates an instance of the class menus.cs
-    //private Menus menu;
+    // public script set in inspector.
+    public Menus changeMenu;
 
-    //private variables
+    //public variables
     public InputField EnterUsername;
     public InputField EnterPassword;
     public InputField CreateUsername;
@@ -31,43 +33,70 @@ public class Account : MonoBehaviour {
     private string cPassword;
     private string cUsername;
 
+    // URL from web domian to connect to database.
     private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
 
-
-    //get the username from the input field from the login 
+    /// <summary>
+    /// Set username from Username Input Field.
+    /// </summary>
     public void UserName()
     {
         username = EnterUsername.text.ToString();
-        //var someVariable : int;
-        //objectWithOtherScript.GetComponent.< script1 >().someVariable = someNumber;
-        Menus.usernamestats = username;
     }
 
-    //get the password from the input field from the login
+    /// <summary>
+    /// Set password from Password Input Field.
+    /// </summary>
     public void Password()
     {
         password = EnterPassword.text.ToString();
     }
 
-    //get the username from the input field from the create account
+    /// <summary>
+    /// Getter for the username.
+    /// </summary>
+    /// <returns>Username</returns>
+    public string GetUsername()
+    {
+        return username;
+    }
+
+    /// <summary>
+    /// Getter for the password.
+    /// </summary>
+    /// <returns>Password</returns>
+    public string GetPassword()
+    {
+        return password;
+    }
+
+    /// <summary>
+    /// Set cUsername from create username input field.
+    /// </summary>
     public void NewUserName()
     {
         cUsername = CreateUsername.text.ToString();
     }
 
-    //get the password from the input field from the create account
+    /// <summary>
+    /// Set cPassword from create password input field.
+    /// </summary>
     public void NewPassword()
     {
         cPassword = CreatePassword.text.ToString();
     }
 
-    //get the confirm password from the input field from the create account
+    /// <summary>
+    /// set confirmPass from confirm password input field.
+    /// </summary>
     public void ConfirmNewPassword()
     {
         confirmPass = ConfirmPassword.text.ToString();
     }
 
-    //clears all the text fields associated with create account and login
+    /// <summary>
+    /// Clear all input fields.
+    /// </summary>
     public void clearAll()
     {
         EnterUsername.clear();
@@ -77,26 +106,20 @@ public class Account : MonoBehaviour {
         ConfirmPassword.clear();
     }
 
-    //connect to the photon network when you attempt to login
-    public void AttemptConnection()
-    {
-        PhotonNetwork.AuthValues = new AuthenticationValues();
-        PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
-        PhotonNetwork.AuthValues.AddAuthParameter("Password", password);
-        PhotonNetwork.AuthValues.AddAuthParameter("Username", username);
-        PhotonNetwork.ConnectUsingSettings("Version 0.1");
-        //StartCoroutine(Connection());
-    }
-
-    //starts the IEnumerator CreateNewAccount()
+    /// <summary>
+    /// Create a user account.
+    /// </summary>
     public void createAccount()
     {
         StartCoroutine(CreateNewAccount());
     }
-
    
-    //create the account this enumerator will take all the information fromt the input fields
-    //and connect to the php
+    /// <summary>
+    /// Create a new account using user input username,
+    /// password, and confirmed password, and store it
+    /// in the database.
+    /// </summary>
+    /// <returns>Connection to php script.</returns>
     public IEnumerator CreateNewAccount()
     {
         Debug.Log("button pressed");
@@ -119,21 +142,12 @@ public class Account : MonoBehaviour {
             if (CreateAccountReturn == "Success")
             {
                 Debug.Log("Success: Account created");
-                //LoginOn();
+                changeMenu.LoginOn();
             }
         }
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    #region code_graveyard
     /*
     ==========================================================================================
                             Code Graveyard
@@ -171,4 +185,5 @@ public class Account : MonoBehaviour {
     }
 
     */
+    #endregion
 }

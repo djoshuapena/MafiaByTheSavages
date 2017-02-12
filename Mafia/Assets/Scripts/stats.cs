@@ -5,36 +5,43 @@ using UnityEngine.UI;
 
 //using Menus;
 
-public class stats : MonoBehaviour {
+public class Stats : MonoBehaviour {
 
-    //creates an instance of the class menus.cs
-    private Menus menu;
+    // scripts set in the inspector.
+    public Menus setMenu;
+    public Account accountInfo;
 
-    //string that will hold your stats
+    // string that will hold user stats
     private string[] items;
-    private string UpdateStatsUrl = "http://giramdev.000webhostapp.com/updateStats.php";
+    
+    // php script in web domain.
+    private string updateStatsUrl = "http://giramdev.000webhostapp.com/updateStats.php";
 
-    //create a game object that will allow you to drag infromation into the field in unity
+    // public objects set in inspector
+    // Game stats
     public GameObject totalGW;
 	public GameObject totalGL;
-
+    // Civilian stats
 	public GameObject civilianW;
 	public GameObject civilianL;
-
+    // Mafia stats
 	public GameObject mafiaW;
 	public GameObject mafiaL;
 	public GameObject mafiaK;
-
+    // Doctor stats
 	public GameObject doctorW;
 	public GameObject doctorL;
 	public GameObject doctorS;
-
+    // Sherrif stats
 	public GameObject sherrifW;
 	public GameObject sherrifL;
 	public GameObject sherrifC;
 
-    //temporary function to fill stats array (debug)
-    public void fillStatsArray(ref int[] stats)
+    /// <summary>
+    /// Temporary function to fill stats array.
+    /// </summary>
+    /// <param name="stats">Array to fill.</param>
+    private void FillStatsArray(ref int[] stats)
     {
         for (int i = 0; i < stats.Length; i++)
         {
@@ -42,6 +49,9 @@ public class stats : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Insert data in to items array.
+    /// </summary>
     public void InsertData()
 	{
 		//Total game 
@@ -89,47 +99,43 @@ public class stats : MonoBehaviour {
 		sherrifCaught.text = Seperate(items[12], "SherrifCaught");
 	}
 
-	//this function will seperate a string, the first paramater is data which is the full string
-	//and the index string is the string that will be romoved from the original string
-	string Seperate(string data, string index){
+    /// <summary>
+    /// this function will seperate string into individual stats.
+    /// </summary>
+    /// <param name="data">is data which is the full string</param>
+    /// <param name="index">the string that will be removed from the original string</param>
+    /// <returns></returns>
+    string Seperate(string data, string index){
 		string value = data.Substring (data.IndexOf(index) + index.Length);
 		return value;
 	}
 
-	// Use this for initialization
-	void Start () {
-        menu = FindObjectOfType(typeof(Menus)) as Menus;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    //start the corutine for the the userstasts
-    //it will get all the infromtaion from the php code and put everything in the 
-    //correct fields in the UI then it will take you to the stats page 
-    public void statOn()
+    /// <summary>
+    /// Outputs the users stats.
+    /// </summary>
+    public void StatsOn()
     {
         StartCoroutine(UserStat());
     }
 
-    //UpdateStats fills stats with temporary values for testing,
-    //converts the stats array into a string to send to php and
-    //calls the IEnumerator UpdateStats to post the string to the database.
-    public void updateStat()
+    /// <summary>
+    /// Updates the users stats.
+    /// </summary>
+    public void UpdateStat()
     {
-        StartCoroutine(UpdateStat());
+        StartCoroutine(UpdateStats());
     }
 
 
-    //this enumerator will take the username and connect to the php which will get all the stats about the
-    //user and put it in the items string array
+    /// <summary>
+    /// Gets the users stats from the stats database.
+    /// </summary>
+    /// <returns>Data from the php script, when connected.</returns>
     IEnumerator UserStat()
     {
         WWWForm Form = new WWWForm();
         //pulls the username from menus script
-        Form.AddField("Username", Menus.usernamestats);
+        Form.AddField("Username", accountInfo.GetUsername());
         WWW itemsData = new WWW("https://giramdev.000webhostapp.com/getstats.php", Form);
         yield return itemsData;
         string itemsDataString = itemsData.text;
@@ -137,21 +143,23 @@ public class stats : MonoBehaviour {
         items = itemsDataString.Split('|');
         //print (GetDataValue (items [0], "TotalGameWin"));
         InsertData();
-        menu.callSetMenu("Stats");
+        setMenu.StatsOn();
     }
 
 
-    //this enumerator will update the stats it will take your wins or loss and store it in a string
-    //the string is then passed into the php and it will be posted in the database
-    IEnumerator UpdateStat()
+    /// <summary>
+    /// Updates the users stats in the stats database.
+    /// </summary>
+    /// <returns>Data from the php script, when connected.</returns>
+    IEnumerator UpdateStats()
     {
         //fillStatsArray (ref stats);
         //statsString = convertToString (stats);
         WWWForm Form = new WWWForm();
         string statsString = "1 12 5 6 4 0 25 6 200 54 1 6 18";
-        Form.AddField("Username", Menus.usernamestats);
+        Form.AddField("Username", accountInfo.GetUsername());
         Form.AddField("stats", statsString);
-        WWW UpdateStatsWWW = new WWW(UpdateStatsUrl, Form);
+        WWW UpdateStatsWWW = new WWW(updateStatsUrl, Form);
         yield return UpdateStatsWWW; //wait for php
 
         if (UpdateStatsWWW.error != null)
@@ -166,7 +174,7 @@ public class stats : MonoBehaviour {
             {
                 Debug.Log("Success: Stats Updated");
                 //MainOn();
-                menu.callSetMenu("MainMenu");
+                setMenu.MainOn();
             }
         }
     }

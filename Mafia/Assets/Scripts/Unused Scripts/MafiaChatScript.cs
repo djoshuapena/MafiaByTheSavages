@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MafiaChatScript : MonoBehaviour, IChatClientListener
 {
 
-    public string[] ChannelsToJoinOnConnect; // set in inspector.
+    private string[] ChannelsToJoinOnConnect;// set in inspector.
     private string selectedChannelName; // mainly used for GUI/input
     //public string[] FriendsList;
 
@@ -17,6 +17,7 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
 
     public ChatClient chatClient;
 
+ 
     public GameObject missingAppIdErrorPanel;
 
     public GameObject ConnectingLabel;
@@ -46,8 +47,9 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
         UserIdText.text = "";
         StateText.text = "";
         setGameObjectActive(StateText.gameObject, UserIdText.gameObject);
-
-        if(string.IsNullOrEmpty(UserName))
+        UserName = PlayerPrefs.GetString("Username");
+        Debug.Log(PlayerPrefs.GetString("Username"));
+        if (string.IsNullOrEmpty(UserName))
         {
             UserName = "FakeName" + Environment.TickCount % 99; //Make up username
         }
@@ -68,10 +70,13 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
 
     public void Connect()
     {
-        Debug.Log("it came here");
+        //Debug.Log("it came here");
         //this.UserIdFormPanel.gameObject.SetActive(false); //dont need this because there is not useridformpanel
-
+        
         this.chatClient = new ChatClient(this);
+
+        ChannelsToJoinOnConnect = new string[] { PlayerPrefs.GetString("RoomToJoin") };
+        this.selectedChannelName = ChannelsToJoinOnConnect[0];
         this.chatClient.Connect(PhotonNetwork.PhotonServerSettings.ChatAppID, "0.1", new ExitGames.Client.Photon.Chat.AuthenticationValues(UserName));
 
         //this.ChannelToggleToInstantiate.gameObject.SetActive(false); //dont need this because there are no channels
@@ -104,7 +109,6 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
         ConnectingLabel.SetActive(Object == ConnectingLabel);
     }
 	
-
     /// <summary>
     /// This will set two GameObjects Active
     /// </summary>
@@ -167,6 +171,8 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
     /// This will send a message form the InputField to the Output field
     /// </summary>
     /// <param name="inputLine">String from Input Field that user wants to send</param>
+    /// 
+    // THIS DOES ALL THE WORKKKKKK Aaron, Dean, Andrew
     private void SendChatMessage(string inputLine)
     {
         if (string.IsNullOrEmpty(inputLine))
@@ -174,7 +180,7 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
             return;
         }
 
-        if ("test".Equals(inputLine))
+        /*if ("test".Equals(inputLine))
         {
             if (this.TestLength != this.testBytes.Length)
             {
@@ -182,9 +188,9 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
             }
 
             this.chatClient.SendPrivateMessage(this.chatClient.AuthValues.UserId, testBytes, true);
-        }
+        }*/
 
-        bool doingPrivateChat = this.chatClient.PrivateChannels.ContainsKey(this.selectedChannelName); // no channels, chat should be to this only.
+        /*bool doingPrivateChat = this.chatClient.PrivateChannels.ContainsKey(this.selectedChannelName); // no channels, chat should be to this only.
 
         string privateChatTarget = string.Empty;
         if (doingPrivateChat)
@@ -195,9 +201,9 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
             string[] splitNames = this.selectedChannelName.Split(new char[] { ':' });
             privateChatTarget = splitNames[1];
         }
-        UnityEngine.Debug.Log("selectedChannelName: " + selectedChannelName + " doingPrivateChat: " + doingPrivateChat + " privateChatTarget: " + privateChatTarget);
+        UnityEngine.Debug.Log("selectedChannelName: " + selectedChannelName + " doingPrivateChat: " + doingPrivateChat + " privateChatTarget: " + privateChatTarget);*/
 
-        if (inputLine[0].Equals('\\'))
+       /* if (inputLine[0].Equals('\\'))
         {
             string[] tokens = inputLine.Split(new char[] { ' ' }, 2);
             //if (tokens[0].Equals("\\help"))
@@ -278,15 +284,16 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
         }
         else
         {
-            if (doingPrivateChat)
-            {
-                this.chatClient.SendPrivateMessage(privateChatTarget, inputLine);
-            }
-            else
-            {
-                this.chatClient.PublishMessage(this.selectedChannelName, inputLine);
-            }
+        if (doingPrivateChat)
+        {
+            this.chatClient.SendPrivateMessage(privateChatTarget, inputLine);
         }
+        else
+        {*/
+        this.chatClient.PublishMessage(this.selectedChannelName, inputLine);
+        Debug.Log("Sent: " + inputLine);
+        //}
+        //}
     }
 
     public void DebugReturn(ExitGames.Client.Photon.DebugLevel level, string message)
@@ -310,6 +317,7 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
         if (this.ChannelsToJoinOnConnect != null && this.ChannelsToJoinOnConnect.Length > 0)
         {
             this.chatClient.Subscribe(this.ChannelsToJoinOnConnect, this.HistoryLengthToFetch);
+            Debug.Log("Subbed to Whatever");
         }
 
         ConnectingLabel.SetActive(false);
@@ -370,7 +378,7 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
         //    }
         //}
 
-        Debug.Log("OnSubscribed: " + string.Join(", ", channels));
+        Debug.Log("Subscribed To: " + string.Join(", ", channels));
 
         /*
         // select first subscribed channel in alphabetical order
@@ -439,7 +447,8 @@ public class MafiaChatScript : MonoBehaviour, IChatClientListener
 
     public void OnGetMessages(string channelName, string[] senders, object[] messages)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        ShowChannel(this.selectedChannelName);
     }
 
     public void OnPrivateMessage(string sender, object message, string channelName)

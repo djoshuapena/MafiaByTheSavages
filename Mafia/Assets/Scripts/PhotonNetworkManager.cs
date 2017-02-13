@@ -40,6 +40,7 @@ public class PhotonNetworkManager : MonoBehaviour
                 {
                     RoomOptions RO = new RoomOptions();
                     RO.MaxPlayers = byte.Parse(maxCount.text);
+                    PlayerPrefs.SetString("RoomToJoin", roomName.text);
                     PhotonNetwork.CreateRoom(roomName.text, RO, TypedLobby.Default);
                 }
                 break;
@@ -125,7 +126,7 @@ public class PhotonNetworkManager : MonoBehaviour
     //void OnGUI()
     //{
     //    GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    //}
+   // }
 
     void OnJoinedLobby()
     {
@@ -148,7 +149,7 @@ public class PhotonNetworkManager : MonoBehaviour
     {
         Debug.Log("Room Created.");
         //temporary fix, but isn't correct
-        SceneManager.LoadScene("GameRoom");
+        SceneManager.LoadScene("ChatSystem");
     }
 
 }

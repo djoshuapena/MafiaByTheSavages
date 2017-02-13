@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChannelsToJoinOnConnect:
-  - 1234
+  - Stuff
   HistoryLengthToFetch: 0
   missingAppIdErrorPanel: {fileID: 239508000}
   ConnectingLabel: {fileID: 270915832}

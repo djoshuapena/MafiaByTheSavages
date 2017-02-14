@@ -14,6 +14,7 @@ public class PhotonNetworkManager : MonoBehaviour
 
     void Awake()
     {
+        /*
         if (instance == null)
         {
             instance = this;
@@ -21,14 +22,16 @@ public class PhotonNetworkManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+        */
     }
 
     void Start()
     {
         //PhotonNetwork.ConnectUsingSettings("Version 0.1");
-        Invoke("RefreshRoomList", 0.1f);
+        PhotonNetwork.JoinLobby();
+        //Invoke("RefreshRoomList", 0.1f);
     }
 
     public void ButtonEvents(string EVENT)
@@ -49,16 +52,21 @@ public class PhotonNetworkManager : MonoBehaviour
                 break;
             case "JoinRandomRoom":
                 if (PhotonNetwork.JoinLobby()) Debug.Log("random join");
-                    JoinRandomRoom();
+                JoinRandomRoom();
+                break;
+            case "BackButton":
+                PhotonNetwork.LeaveLobby();
+                PhotonNetwork.Disconnect();
+                SceneManager.LoadScene("Menu");
                 break;
         }
     }
 
     void RefreshRoomList()
     {
-        if(roomPrefabs.Count > 0)
+        if (roomPrefabs.Count > 0)
         {
-            for(int i = 0; i < roomPrefabs.Count; i++)
+            for (int i = 0; i < roomPrefabs.Count; i++)
             {
                 Destroy(roomPrefabs[i]);
             }
@@ -66,7 +74,7 @@ public class PhotonNetworkManager : MonoBehaviour
             roomPrefabs.Clear();
         }
 
-        for(int i = 0; i < PhotonNetwork.GetRoomList().Length; i++)
+        for (int i = 0; i < PhotonNetwork.GetRoomList().Length; i++)
         {
             Debug.Log(PhotonNetwork.GetRoomList()[i].Name);
 
@@ -74,10 +82,10 @@ public class PhotonNetworkManager : MonoBehaviour
             g.transform.SetParent(roomPrefab.transform.parent);
 
             g.GetComponent<RectTransform>().localScale = roomPrefab.GetComponent<RectTransform>().localScale;
-            g.GetComponent<RectTransform>().localPosition = new Vector3(roomPrefab.GetComponent<RectTransform>().localPosition.x, roomPrefab.GetComponent<RectTransform>().localPosition.y - (i*80), roomPrefab.GetComponent<RectTransform>().localPosition.z);
+            g.GetComponent<RectTransform>().localPosition = new Vector3(roomPrefab.GetComponent<RectTransform>().localPosition.x, roomPrefab.GetComponent<RectTransform>().localPosition.y - (i * 80), roomPrefab.GetComponent<RectTransform>().localPosition.z);
             g.transform.FindChild("game_name").GetComponent<Text>().text = PhotonNetwork.GetRoomList()[i].Name;
             g.transform.FindChild("numPlayers").GetComponent<Text>().text = PhotonNetwork.GetRoomList()[i].PlayerCount + "/" + PhotonNetwork.GetRoomList()[i].MaxPlayers;
-            g.transform.FindChild("ButtonJoinGame").GetComponent<Button>().onClick.AddListener(() => { JoinRoom(PhotonNetwork.GetRoomList()[i].Name); });
+            g.transform.FindChild("ButtonJoinGame").GetComponent<Button>().onClick.AddListener(() => { JoinRoom(g.transform.FindChild("game_name").GetComponent<Text>().text); });
             g.SetActive(true);
             roomPrefabs.Add(g);
         }
@@ -85,7 +93,7 @@ public class PhotonNetworkManager : MonoBehaviour
 
     void JoinRandomRoom()
     {
-        if(PhotonNetwork.GetRoomList().Length>0)
+        if (PhotonNetwork.GetRoomList().Length > 0)
         {
             PhotonNetwork.JoinRandomRoom();
         }
@@ -98,10 +106,9 @@ public class PhotonNetworkManager : MonoBehaviour
     void JoinRoom(string roomName)
     {
         bool availableRoom = false;
-        
         foreach (RoomInfo RI in PhotonNetwork.GetRoomList())
         {
-            if(roomName == RI.Name)
+            if (roomName == RI.Name)
             {
                 availableRoom = true;
                 break;
@@ -112,7 +119,7 @@ public class PhotonNetworkManager : MonoBehaviour
             }
         }
 
-        if(availableRoom)
+        if (availableRoom)
         {
             PhotonNetwork.JoinRoom(roomName);
         }
@@ -122,23 +129,23 @@ public class PhotonNetworkManager : MonoBehaviour
         }
     }
 
-    //void OnGUI()
-    //{
-    //    GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    //}
+    void OnGUI()
+    {
+        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+    }
 
     void OnJoinedLobby()
     {
         Debug.Log("Lobby Joined.");
-        //Invoke("RefreshRoomList", 0.1f);
+        Invoke("RefreshRoomList", 0.1f);
     }
 
-    void OnPhotonJoinRoomFailed()
+    void OnJoinedRoomFailed()
     {
         Debug.Log("Failed to join room.");
     }
 
-    void OnPhotonJoinRoom()
+    void OnJoinedRoom()
     {
         Debug.Log("Room Joined.");
         SceneManager.LoadScene("GameRoom");

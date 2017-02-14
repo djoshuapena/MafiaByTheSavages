@@ -34,7 +34,7 @@ public class Account : MonoBehaviour {
     private string cUsername;
 
     // URL from web domian to connect to database.
-    private string CreateAccountUrl = "http://giramdev.000webhostapp.com/CreateAccountT.php";
+	private string CreateAccountUrl = "mafiasav.com/CreateAccountT.php";
 
     /// <summary>
     /// Set username from Username Input Field.

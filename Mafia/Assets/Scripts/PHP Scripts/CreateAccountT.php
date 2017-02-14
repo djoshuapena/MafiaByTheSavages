@@ -2,8 +2,8 @@
 //connect to the database
 $Hostname = "localhost";
 $DBName = "id619425_savage";
-$User = "id619425_mafia";
-$PasswordP = "ghjaadd";
+$User = "savagemafia007";
+$PasswordP = "Realmafia@Ecu";
 
 $con = mysqli_connect($Hostname, $User, $PasswordP, $DBName) or die("Can't connect to DB");
 

@@ -31,8 +31,14 @@ public class PhotonNetworkManager : MonoBehaviour
     {
         //PhotonNetwork.ConnectUsingSettings("Version 0.1");
         PhotonNetwork.JoinLobby();
-        //Invoke("RefreshRoomList", 0.1f);
+        InvokeRepeating("RefreshRoomList", 0.1f, 3.0f);
     }
+
+	void Update()
+	{
+		//instant updates dont give enough time to join game before prefab is destroyed
+		//RefreshRoomList();
+	}
 
     public void ButtonEvents(string EVENT)
     {

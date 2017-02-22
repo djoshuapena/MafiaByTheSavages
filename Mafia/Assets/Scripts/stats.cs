@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 //using Menus;
 
-public class stats : MonoBehaviour {
+public class Stats : MonoBehaviour {
 
     // scripts set in the inspector.
     public Menus setMenu;
@@ -16,6 +16,7 @@ public class stats : MonoBehaviour {
     
     // php script in web domain.
     private string updateStatsUrl = "mafiasav.com/updateStats.php";
+	private string getStatsUrl = "mafiasav.com/getstats.php";
 
     // public objects set in inspector
     // Game stats
@@ -136,7 +137,7 @@ public class stats : MonoBehaviour {
         WWWForm Form = new WWWForm();
         //pulls the username from menus script
         Form.AddField("Username", accountInfo.GetUsername());
-        WWW itemsData = new WWW("mafiasav.com/getstats.php", Form);
+		WWW itemsData = new WWW(getStatsUrl, Form);
         yield return itemsData;
         string itemsDataString = itemsData.text;
         //print (itemsDataString);

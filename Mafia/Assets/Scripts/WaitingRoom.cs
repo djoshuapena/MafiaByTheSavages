@@ -7,7 +7,7 @@ public class WaitingRoom : MonoBehaviour {
 
 	//stores the information about the player
 	public Text PlayerNameText;
-	public Text PlayerIdText;
+	//public Text PlayerIdText;
 
 	//the amount of players in the game
 	private int playerCount = 0;
@@ -60,11 +60,12 @@ public class WaitingRoom : MonoBehaviour {
 	//getPlayer will get the users name and users ID
 	public void getPlayer(PhotonPlayer player)
 	{
-		//PhotonNetwork.playerName = PlayerPrefs.GetString ("CurrUser"); //delete later
-		//get the players name
-		PlayerNameText.text = player.name;
-		//get the players ID
-		PlayerIdText.text = player.ID.ToString();
+        //PhotonNetwork.playerName = PlayerPrefs.GetString ("CurrUser"); //delete later
+        //get the players name
+        //PlayerNameText.text = player.name;
+        PlayerNameText.text = player.NickName;
+        //get the players ID
+       // PlayerIdText.text = player.ID.ToString();
 
 		//Find out which player in the list is you and which player is the Master
 		//YouText.enabled = player.isLocal;
@@ -77,9 +78,10 @@ public class WaitingRoom : MonoBehaviour {
 	{
 		foreach (PhotonPlayer _player in PhotonNetwork.playerList) {
 			getPlayer (_player);
-			return PhotonNetwork.playerList.Length;
 		}
-	}
+
+        return PhotonNetwork.playerList.Length;
+    }
 
 	//the back button wil 
 	public void backButton()

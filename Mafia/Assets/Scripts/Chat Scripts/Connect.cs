@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +12,13 @@ public class Connect : MonoBehaviour {
 	void Start ()
     {
         chatHandler.StateText.text = "";
-        UserName = "Aaron";
+        UserName = "FakeName" + Environment.TickCount % 99;
         ConnectToChat(UserName);
 	}
 	
     void ConnectToChat (string userName)
     {
-        chatHandler.Connect("Aaron");
+        chatHandler.Connect(UserName);
     } 
 	
     

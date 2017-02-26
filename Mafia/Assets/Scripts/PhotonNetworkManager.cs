@@ -11,6 +11,7 @@ public class PhotonNetworkManager : MonoBehaviour
     public GameObject roomPrefab;
     public InputField roomName;
     public InputField maxCount;
+    public LobbyMenuController lmc;
 
     void Awake()
     {
@@ -154,14 +155,17 @@ public class PhotonNetworkManager : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("Room Joined.");
-        SceneManager.LoadScene("GameRoom");
+        //SceneManager.LoadScene("GameRoom");
+        lmc.RoomCanvasOn();
+
     }
 
     void OnCreatedRoom()
     {
         Debug.Log("Room Created.");
         //temporary fix, but isn't correct
-        SceneManager.LoadScene("GameRoom");
+        //SceneManager.LoadScene("GameRoom");
+        lmc.RoomCanvasOn();
     }
 
 }

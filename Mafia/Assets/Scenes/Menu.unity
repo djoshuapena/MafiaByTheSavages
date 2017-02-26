@@ -1992,8 +1992,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setMenu: {fileID: 512348040}
   accountInfo: {fileID: 512348042}
-  items: []
-  updateStatsUrl: 6d616669617361762e636f6d2f75706461746553746174732e706870
   totalGW: {fileID: 895938521}
   totalGL: {fileID: 1334334254}
   civilianW: {fileID: 1702869895}

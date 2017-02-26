@@ -18,6 +18,7 @@ public class PhotonStartConnection : MonoBehaviour {
         PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.GetPassword());
         PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.GetUsername());
         PhotonNetwork.ConnectUsingSettings("Version 0.1");
+        PhotonNetwork.playerName = accountInfo.GetUsername();
     }
 
     /// <summary>

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class WaitingRoom : MonoBehaviour {
 
 	//stores the information about the player
-	public Text PlayerNameText;
+	public Text PlayerNameText; 
+
 	//public Text PlayerIdText;
 
 	//the amount of players in the game
@@ -46,14 +47,13 @@ public class WaitingRoom : MonoBehaviour {
 	void Update()
 	{
 		//timing for the waiting room
-		timeLeft -= Time.deltaTime;
-		timer.text = "Time Left:" + Mathf.Round(timeLeft);
-		if(timeLeft < 0 && playerCount >= minPlayers)
-		{
-			//join the JoinGame Room
-			lmc.JoinGameCanvasOn();
+			timeLeft -= Time.deltaTime;
+			timer.text = "Time Left:" + Mathf.Round (timeLeft);
+			if (timeLeft < 0 && playerCount >= minPlayers) {
+				//join the JoinGame Room
+				lmc.JoinGameCanvasOn ();
 
-		}
+			}
 	}
 
 
@@ -76,10 +76,13 @@ public class WaitingRoom : MonoBehaviour {
 	//it will also return the length of the Player List (the number of people in the game)
 	public int playerList()
 	{
+		//string s = "";
 		foreach (PhotonPlayer _player in PhotonNetwork.playerList) {
 			getPlayer (_player);
+		//	s += _player.ToString ();
 		}
-
+		//PlayerListText.text = s;
+		//print (s);
         return PhotonNetwork.playerList.Length;
     }
 

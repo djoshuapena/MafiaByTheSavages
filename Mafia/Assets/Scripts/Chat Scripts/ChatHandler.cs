@@ -13,7 +13,7 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
     public ChatClient   chatClient;
     public Text         StateText;
     public Text         CurrentChannelText;
-    private string      CurrentChannel;
+    //public Text         InputFieldChat;
 
     public void DebugReturn(DebugLevel level, string message)
     {
@@ -84,7 +84,8 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
 
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        chatClient.PublishMessage(channels[0], "Hello Everyone!");
+        //chatClient.PublishMessage(channels[0], "Hello Everyone!");
+        SendChatMessage("Hello Everyone!");
         Debug.Log("Subscribed to: " + GameChannel[0]);
     }
 
@@ -108,13 +109,44 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
             return;
         }
 
-        this.CurrentChannelText.text = channel.ToStringMessages();
+        CurrentChannelText.text = channel.ToStringMessages();
     }
+
+    public void SendChatMessage(string msg)
+    {
+        if (string.IsNullOrEmpty(msg))
+        {
+            return;
+        }
+        chatClient.PublishMessage(GameChannel[0], msg);
+    }
+
+   /* public void OnEnterSend()
+    {
+        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
+        {
+            SendChatMessage(InputFieldChat.text);
+            InputFieldChat.text = "";
+        }
+    }
+
+    /// <summary>
+    /// Send a message if the Send button is pressed.
+    /// </summary>
+    public void OnClickSend()
+    {
+        if (InputFieldChat != null)
+        {
+            SendChatMessage(InputFieldChat.text);
+            InputFieldChat.text = "";
+        }
+    }*/
 
     // Use this for initialization
     void Start ()
     {
-        
+        DontDestroyOnLoad(gameObject);
+        Application.runInBackground = true;
         //return;
         //UserName = "Aaron Jackson";
         //Connect("Aaron");

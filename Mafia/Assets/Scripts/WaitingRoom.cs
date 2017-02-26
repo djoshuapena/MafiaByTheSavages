@@ -77,9 +77,10 @@ public class WaitingRoom : MonoBehaviour {
 	{
 		foreach (PhotonPlayer _player in PhotonNetwork.playerList) {
 			getPlayer (_player);
-			return PhotonNetwork.playerList.Length;
+			
 		}
-	}
+        return PhotonNetwork.playerList.Length;
+    }
 
 	//the back button wil 
 	public void backButton()

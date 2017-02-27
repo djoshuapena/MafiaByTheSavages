@@ -11,7 +11,7 @@ public class MenuController : MonoBehaviour {
     public Canvas MainMenu;
     public Canvas OptionCanvas;
     public Canvas Stats;
-    public Canvas JoinGameCanvas;
+    //public Canvas JoinGameCanvas;
 
     /// <summary>
     /// Check that each canvas is initialized.
@@ -30,8 +30,8 @@ public class MenuController : MonoBehaviour {
             Debug.Log("Could not initialize OptionCanvas.");
         if (Stats == null)
             Debug.Log("Could not initialize Stats.");
-        if (JoinGameCanvas == null)
-            Debug.Log("Could not initialize JoinGameCanvas.");
+        //if (JoinGameCanvas == null)
+            //Debug.Log("Could not initialize JoinGameCanvas.");
     }
 
     /// <summary>
@@ -46,6 +46,6 @@ public class MenuController : MonoBehaviour {
         MainMenu.gameObject.SetActive(menu == "MainMenu");
         OptionCanvas.gameObject.SetActive(menu == "OptionCanvas");
         Stats.gameObject.SetActive(menu == "Stats");
-        JoinGameCanvas.gameObject.SetActive(menu == "JoinGameCanvas");
+        //JoinGameCanvas.gameObject.SetActive(menu == "JoinGameCanvas");
     }
 }

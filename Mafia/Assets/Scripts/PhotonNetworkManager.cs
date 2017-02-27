@@ -83,7 +83,7 @@ public class PhotonNetworkManager : MonoBehaviour
 
         for (int i = 0; i < PhotonNetwork.GetRoomList().Length; i++)
         {
-            Debug.Log(PhotonNetwork.GetRoomList()[i].Name);
+            //Debug.Log(PhotonNetwork.GetRoomList()[i].Name);
 
             GameObject g = Instantiate(roomPrefab);
             g.transform.SetParent(roomPrefab.transform.parent);

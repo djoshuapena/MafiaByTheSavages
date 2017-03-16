@@ -3033,8 +3033,8 @@ MonoBehaviour:
   mafiaW: {fileID: 342646653}
   mafiaL: {fileID: 940164919}
   mafiaK: {fileID: 397636753}
-  doctorW: {fileID: 342646653}
-  doctorL: {fileID: 940164919}
+  doctorW: {fileID: 523637860}
+  doctorL: {fileID: 330129201}
   doctorS: {fileID: 1989125242}
   sherrifW: {fileID: 1985114792}
   sherrifL: {fileID: 1201318529}

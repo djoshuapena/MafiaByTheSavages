@@ -13,7 +13,7 @@ public class WaitingRoom : MonoBehaviour
     public GameObject playerNamePrefab;
 
     //the minimum amount of players that can be in the game
-    private int minPlayers = 1;
+    private int minPlayers = 3;
 
     //future expansion
     //YouText will say YOU next your name in the list of names

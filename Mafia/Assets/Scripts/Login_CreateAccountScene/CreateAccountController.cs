@@ -9,12 +9,22 @@ public class CreateAccountController : MonoBehaviour {
     private string CreateAccountUrl = "mafiasav.com/CreateAccountT.php";
 
     /// <summary>
-    /// Create a user account.
+    /// Create a user account and check to make sure the username and password fields are not empty
+	/// and the password and confirm password match.
     /// </summary>
     public void createAccount()
     {
-        StartCoroutine(CreateNewAccount());
+		if (!string.IsNullOrEmpty(info.NewPassword) && !string.IsNullOrEmpty(info.NewUsername)){
+			if (info.NewPassword == info.ConfirmNewPassword) {
+				StartCoroutine(CreateNewAccount());
+			} else {
+				print ("Passwords do not match");
+			}
+		} else {
+				print ("Username/Password can't be empty");
+		}
     }
+
 
     /// <summary>
     /// Create a new account using user input username,

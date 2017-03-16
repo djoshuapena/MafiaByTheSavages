@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackButton : MonoBehaviour {
+public class OptionsSceneController : MonoBehaviour {
 
 
     public void OnBackButton()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
 
     }
+
+    void OnGUI()
+    {
+        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+    }
+
     // Use this for initialization
-	void Start () {
+    void Start () {
 		
 	}
 	

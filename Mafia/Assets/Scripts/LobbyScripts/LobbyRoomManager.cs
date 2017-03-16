@@ -2,16 +2,17 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
-public class PhotonNetworkManager : MonoBehaviour
+public class LobbyRoomManager : MonoBehaviour
 {
     private List<GameObject> roomPrefabs = new List<GameObject>();
 
-    public static PhotonNetworkManager instance = null;
+    public static LobbyRoomManager instance = null;
     public GameObject roomPrefab;
     public InputField roomName;
     public InputField maxCount;
-    public LobbyMenuController lmc;
+    //public LobbyMenuController lmc;
 
     void Awake()
     {
@@ -35,7 +36,7 @@ public class PhotonNetworkManager : MonoBehaviour
         InvokeRepeating("RefreshRoomList", 0.1f, 3.0f);
     }
 
-	void Update()
+    void Update()
 	{
 		//instant updates dont give enough time to join game before prefab is destroyed
 		//RefreshRoomList();
@@ -63,8 +64,7 @@ public class PhotonNetworkManager : MonoBehaviour
                 break;
             case "BackButton":
                 PhotonNetwork.LeaveLobby();
-                PhotonNetwork.Disconnect();
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("MainMenu");
                 break;
         }
     }
@@ -155,8 +155,8 @@ public class PhotonNetworkManager : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("Room Joined.");
-        //SceneManager.LoadScene("GameRoom");
-        lmc.RoomCanvasOn();
+        SceneManager.LoadScene("Room");
+        //lmc.RoomCanvasOn();
 
     }
 
@@ -164,8 +164,8 @@ public class PhotonNetworkManager : MonoBehaviour
     {
         Debug.Log("Room Created.");
         //temporary fix, but isn't correct
-        //SceneManager.LoadScene("GameRoom");
-        lmc.RoomCanvasOn();
+        SceneManager.LoadScene("Room");
+        //lmc.RoomCanvasOn();
     }
 
 }

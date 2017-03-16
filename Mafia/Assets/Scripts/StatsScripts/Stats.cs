@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //using Menus;
 
 public class Stats : MonoBehaviour {
 
     // scripts set in the inspector.
-    public Menus setMenu;
-    public Account accountInfo;
+    //public LoginAccount accountInfo;
 
     // string that will hold user stats
     private string[] items;
@@ -114,7 +114,7 @@ public class Stats : MonoBehaviour {
     /// <summary>
     /// Outputs the users stats.
     /// </summary>
-    public void StatsOn()
+    private void Start()
     {
         StartCoroutine(UserStat());
     }
@@ -127,6 +127,10 @@ public class Stats : MonoBehaviour {
         StartCoroutine(UpdateStats());
     }
 
+    public void OnBackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     /// <summary>
     /// Gets the users stats from the stats database.
@@ -136,7 +140,7 @@ public class Stats : MonoBehaviour {
     {
         WWWForm Form = new WWWForm();
         //pulls the username from menus script
-        Form.AddField("Username", accountInfo.GetUsername());
+        Form.AddField("Username", PhotonNetwork.playerName);
 		WWW itemsData = new WWW(getStatsUrl, Form);
         yield return itemsData;
         string itemsDataString = itemsData.text;
@@ -144,7 +148,6 @@ public class Stats : MonoBehaviour {
         items = itemsDataString.Split('|');
         //print (GetDataValue (items [0], "TotalGameWin"));
         InsertData();
-        setMenu.StatsOn();
     }
 
 
@@ -158,7 +161,7 @@ public class Stats : MonoBehaviour {
         //statsString = convertToString (stats);
         WWWForm Form = new WWWForm();
         string statsString = "1 12 5 6 4 0 25 6 200 54 1 6 18";
-        Form.AddField("Username", accountInfo.GetUsername());
+        Form.AddField("Username", PhotonNetwork.playerName);
         Form.AddField("stats", statsString);
         WWW UpdateStatsWWW = new WWW(updateStatsUrl, Form);
         yield return UpdateStatsWWW; //wait for php
@@ -175,7 +178,7 @@ public class Stats : MonoBehaviour {
             {
                 Debug.Log("Success: Stats Updated");
                 //MainOn();
-                setMenu.MainOn();
+                //setMenu.MainOn();
             }
         }
     }

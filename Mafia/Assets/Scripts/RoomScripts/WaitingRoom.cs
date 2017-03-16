@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaitingRoom : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class WaitingRoom : MonoBehaviour
 
     //public GameObject PlayerItemPrefab;
 
-    public LobbyMenuController lmc; //lobby menu controller
+    //public LobbyMenuController lmc; //lobby menu controller
 
 
     //Total time the waiting room wil stay open
@@ -126,7 +127,9 @@ public class WaitingRoom : MonoBehaviour
 	{
 		//leave the photn waiting room
 		PhotonNetwork.LeaveRoom();
-        lmc.JoinGameCanvasOn();
+        PhotonNetwork.JoinLobby();
+        SceneManager.LoadScene("Lobby");
+        //lmc.JoinGameCanvasOn();
         //go to the lobby room
         //this will close the entire room if the master leaves the room (future extension)
         //PhotonNetwork.room.open = false;

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PhotonStartConnection : MonoBehaviour {
+public class PhotonCustomAuthentication : MonoBehaviour {
 
     //public scripts set in inspector.
-    public Account accountInfo;
-    public Menus changeMenu;
+    public LoginAccount accountInfo;
+    //public Menus changeMenu;
 
     /// <summary>
     /// Attempt to connect to Photon Network, using custom authentication.
@@ -15,20 +16,10 @@ public class PhotonStartConnection : MonoBehaviour {
     {
         PhotonNetwork.AuthValues = new AuthenticationValues();
         PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
-        PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.GetPassword());
-        PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.GetUsername());
+        PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.Password);
+        PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.Username);
         PhotonNetwork.ConnectUsingSettings("Version 0.1");
-        PhotonNetwork.playerName = accountInfo.GetUsername();
-    }
-
-    /// <summary>
-    /// Disconnect from the Photon Network and go to the Start Screen
-    /// when the Logout button is pressed.
-    /// </summary>
-    public void LogoutButton()
-    {
-        PhotonNetwork.Disconnect();
-        changeMenu.StartScreenOn();
+        PhotonNetwork.playerName = accountInfo.Username;
     }
 
     /// <summary>
@@ -38,7 +29,8 @@ public class PhotonStartConnection : MonoBehaviour {
     private void OnConnectedToMaster()
     {
         Debug.Log("Connected To Master");
-        changeMenu.MainOn();
+        SceneManager.LoadScene("MainMenu");
+        //changeMenu.MainOn();
     }
 
     /// <summary>

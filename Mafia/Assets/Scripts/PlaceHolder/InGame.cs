@@ -17,7 +17,7 @@ public class InGame : MonoBehaviour {
 		
 	}
 
-    private void OutputMessage()
+    public void OutputMessage()
     {
         if (PhotonNetwork.isMasterClient)
         {

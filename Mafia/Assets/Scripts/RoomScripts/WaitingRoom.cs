@@ -13,7 +13,7 @@ public class WaitingRoom : MonoBehaviour
     public GameObject playerNamePrefab;
 
     //the minimum amount of players that can be in the game
-    private int minPlayers = 2;
+    private int minPlayers = 1;
 
     //future expansion
     //YouText will say YOU next your name in the list of names
@@ -47,10 +47,11 @@ public class WaitingRoom : MonoBehaviour
     void Update()
     {
         //timing for the waiting room
-        if (PhotonNetwork.playerList.Length > minPlayers)
+        if (PhotonNetwork.playerList.Length >= minPlayers)
         {
-            timeLeft -= Time.deltaTime;
-            timer.text = "Time Left:" + Mathf.Round(timeLeft);
+            SceneManager.LoadScene("GameScene");
+            //timeLeft -= Time.deltaTime;
+            //timer.text = "Time Left:" + Mathf.Round(timeLeft);
         }
         else
         {

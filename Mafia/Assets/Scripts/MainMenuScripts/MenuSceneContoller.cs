@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuSceneContoller : MonoBehaviour {
 
-  
+    public LogoutAccount logout;
+
     public void OnPlayButton()
     {
         SceneManager.LoadScene("Lobby");
@@ -23,8 +24,8 @@ public class MenuSceneContoller : MonoBehaviour {
 
     public void OnLogoutButton()
     {
-        PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("Login_CreateAccount");
+        logout.onLogout();
+        
     }
 
     private void OnGUI()

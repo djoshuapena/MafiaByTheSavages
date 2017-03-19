@@ -123,16 +123,18 @@ public class WaitingRoom : MonoBehaviour
         }
     }
 
-    //the back button wil 
+    //return to Lobby with connection status: JoinedLobby
     public void BackButton()
 	{
-		//leave the photn waiting room
+		//leave the photon waiting room, connection status: ConnectedToMaster
 		PhotonNetwork.LeaveRoom();
+    }
+
+    //join lobby scene, connection status: JoinedLobby
+    void OnConnectedToMaster()
+    {
         PhotonNetwork.JoinLobby();
         SceneManager.LoadScene("Lobby");
-        //lmc.JoinGameCanvasOn();
-        //go to the lobby room
-        //this will close the entire room if the master leaves the room (future extension)
-        //PhotonNetwork.room.open = false;
     }
+
 }

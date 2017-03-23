@@ -7,6 +7,7 @@ public class LoginAccount : MonoBehaviour {
 
     public InputField enterUsername;
     public InputField enterPassword;
+    public appPaused pause;
 
     public string Username
     {
@@ -26,9 +27,8 @@ public class LoginAccount : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        enterUsername.clear();
-        enterPassword.clear();
-	}
+        //pause.callAppFocus(true);
+    }
 	
 	// Update is called once per frame
 	void Update () {

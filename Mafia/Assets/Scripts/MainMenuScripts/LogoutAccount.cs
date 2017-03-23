@@ -9,12 +9,12 @@ public class LogoutAccount : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     //run the php logout code and logout of photon

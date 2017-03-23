@@ -38,6 +38,7 @@ public class Stats : MonoBehaviour {
 	public GameObject sherrifL;
 	public GameObject sherrifC;
 
+
     /// <summary>
     /// Temporary function to fill stats array.
     /// </summary>

@@ -3008,6 +3008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045252461}
   - component: {fileID: 2045252460}
+  - component: {fileID: 2045252462}
   m_Layer: 0
   m_Name: _StatsScripts
   m_TagString: Untagged
@@ -3026,6 +3027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f886805d5337ca48b3115960ba4b365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logout: {fileID: 2045252462}
   totalGW: {fileID: 1575515631}
   totalGL: {fileID: 1857779661}
   civilianW: {fileID: 2049385868}
@@ -3052,6 +3054,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045252462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045252459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612449d3c59d57b439acc04eb0beaf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2049385868
 GameObject:
   m_ObjectHideFlags: 0

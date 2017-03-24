@@ -13,7 +13,7 @@ public class WaitingRoom : MonoBehaviour
     public GameObject playerNamePrefab;
 
     //the minimum amount of players that can be in the game
-    private int minPlayers = 3;
+    private int minPlayers;
 
     //future expansion
     //YouText will say YOU next your name in the list of names
@@ -36,6 +36,7 @@ public class WaitingRoom : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        minPlayers = PhotonNetwork.room.MaxPlayers / 2;
         //wait 3 seconds and refresh the playerlist
         InvokeRepeating("RefreshPlayerList", 0.1f, 3.0f);
 

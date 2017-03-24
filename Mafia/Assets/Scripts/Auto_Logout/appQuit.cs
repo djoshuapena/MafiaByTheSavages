@@ -14,7 +14,7 @@ public class appQuit : MonoBehaviour {
     //Awake is always called before any Start functions
     void Awake()
     {
-       // Application.runInBackground = true;
+       //Application.runInBackground = true;
         //Check if instance already exists
         if (instance == null)
         {
@@ -57,7 +57,7 @@ public class appQuit : MonoBehaviour {
         Application.runInBackground = false;*/
         /*isPaused = pauseStatus;
         Debug.Log("Pause status: " + isPaused);*/
-        //logout.onLogout();
+       logout.onLogout();
     }
 
     //unity function that checks to see if the application is paused(for windows and when the keyboard is pulled up)
@@ -71,7 +71,7 @@ public class appQuit : MonoBehaviour {
         //logout.onLogout();
         // }
         /*isPaused = !hasFocus;*/
-        //logout.onLogout();
+        logout.onLogout();
     }
 
     //unity function that checks to see if the application quit

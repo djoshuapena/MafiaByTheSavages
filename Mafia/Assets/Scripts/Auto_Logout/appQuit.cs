@@ -57,15 +57,8 @@ public class appQuit : MonoBehaviour {
         Application.runInBackground = false;*/
         /*isPaused = pauseStatus;
         Debug.Log("Pause status: " + isPaused);*/
-<<<<<<< Updated upstream
        logout.onLogout();
-=======
-<<<<<<< HEAD
-        logout.onLogout();
-=======
-       logout.onLogout();
->>>>>>> origin/master
->>>>>>> Stashed changes
+
     }
 
     //unity function that checks to see if the application is paused(for windows and when the keyboard is pulled up)

@@ -36,14 +36,12 @@ public class LocalVoting : MonoBehaviour {
 
 	//The vote function will take a players name and check to see if they already voted if they did, it will decrease the
 	//vote of the player they voted for and increase the player they are going to vote for
-	public void Vote()
+	public void Vote(string name)
 	{
-		string name = "Dean";
 		string myname = PhotonNetwork.playerName;
 
 		if(globalVoting.voteMap[myname] == "null")
 		{
-			print("in null if");
 			globalVoting.voteMap [myname] = name;
 			IncVote (name);
 			print (globalVoting.voteMap [myname]);
@@ -51,7 +49,6 @@ public class LocalVoting : MonoBehaviour {
 		}
 		else
 		{	
-			print ("in else if");
 			string decString = globalVoting.voteMap [myname];
 			DecVote (decString);
 			print (globalVoting.players [name]);

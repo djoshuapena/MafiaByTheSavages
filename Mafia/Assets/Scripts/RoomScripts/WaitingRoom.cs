@@ -36,36 +36,35 @@ public class WaitingRoom : Photon.MonoBehaviour
     // Use this for initialization
 	bool gameStart = false;
 
-	public Button startGame;
+	//public Button startGame;
 	private PhotonView myPhotonView;
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{	
-		while (gameStart);
-		//print ("hello");
-//		if(stream.isWriting == true)
-//		{
-//			stream.SendNext (gameStart);
-//			if (gameStart == true) {
-//				SceneManager.LoadScene ("GameScene");
-//			}
-//		}
-//		else
-//		{
-//			gameStart = (bool)stream.ReceiveNext ();
-//			if (gameStart == true) {
-//				SceneManager.LoadScene ("GameScene");
-//			}
-//		}
+		//while (gameStart);
+		if(stream.isWriting == true)
+		{
+			stream.SendNext (gameStart);
+		    /*if (gameStart == true) {
+				SceneManager.LoadScene ("GameScene");
+			}*/
+	    }
+		else
+		{
+			gameStart = (bool)stream.ReceiveNext();
+			/*if (gameStart == true) {
+				SceneManager.LoadScene ("GameScene");
+		    }*/
+		}
 	}
 
-	void Awake ()
+	/*void Awake ()
 	{
 		if (startGame == null)
 			Debug.Log ("Failed to initialize the DuskPhaseCanvas.");
 		else
 			startGame.gameObject.SetActive (false);
-	}
+	}*/
 		
     void Start()
     {
@@ -75,36 +74,37 @@ public class WaitingRoom : Photon.MonoBehaviour
         //wait 3 seconds and refresh the playerlist
         InvokeRepeating("RefreshPlayerList", 0.1f, 3.0f);
 
-		if(PhotonNetwork.isMasterClient == true)
+		/*if(PhotonNetwork.isMasterClient == true)
 		{
 			startGame.gameObject.SetActive (true);
 			//myPhotonView.RPC ("Started", PhotonTargets.AllBuffered);
-		}
+		}*/
 			
 
         //update the player count
         //playerCount = playerList();
     }
-		
-	[PunRPC]
-	void Started()
-	{
-			SceneManager.LoadScene ("GameScene");
-	
-	}
-	public void OnGameStartButton()
-	{
-		if(PhotonNetwork.isMasterClient)
-		{
-			myPhotonView.RPC ("Started", PhotonTargets.All);
-		}
 
-			//gameStart = true;
-	}
+    public void OnGameStartButton()
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            myPhotonView.RPC("Started", PhotonTargets.All);
+        }
+
+        //gameStart = true;
+    }
+
+   
+	
 
     // Update is called once per frame
-   // void Update()
-   // {
+    void Update()
+    {
+        if (gameStart==true)
+        {
+            PhotonNetwork.LoadLevel("GameScene");
+        }
         //timing for the waiting room
         //if (PhotonNetwork.playerList.Length >= minPlayers)
         //{
@@ -123,7 +123,7 @@ public class WaitingRoom : Photon.MonoBehaviour
             //lmc.JoinGameCanvasOn();
           //  timer.text = "Time is up";
         //}
-    //}
+    }
 
 
     //getPlayer will get the users name and users ID
@@ -196,4 +196,10 @@ public class WaitingRoom : Photon.MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
 
+    [PunRPC]
+    void Started()
+    {
+        SceneManager.LoadScene("GameScene");
+
+    }
 }

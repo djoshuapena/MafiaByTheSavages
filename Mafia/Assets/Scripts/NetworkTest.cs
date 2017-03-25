@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkTest : MonoBehaviour {
+public class NetworkTest : Photon.MonoBehaviour{
     public GameObject msg;
-    private PhotonView photonView;
+    private PhotonView myPhotonView;
 
     // Use this for initialization
     void Start () {
-        photonView = gameObject.GetComponent<PhotonView>();
+        myPhotonView = gameObject.GetComponent<PhotonView>();
         msg.SetActive(false);
 	}
 
@@ -20,7 +20,19 @@ public class NetworkTest : MonoBehaviour {
         }
         
     }
-	
+
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting == true)
+        {
+          
+        }
+        else
+        {
+
+        }
+    }
+
     [PunRPC]
     public void showMessage()
     {

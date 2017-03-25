@@ -63,8 +63,10 @@ public class LobbyRoomManager : MonoBehaviour
                 JoinRandomRoom();
                 break;
             case "BackButton":
-                PhotonNetwork.LeaveLobby();
-                SceneManager.LoadScene("MainMenu");
+                //PhotonNetwork.LeaveLobby();
+                PhotonNetwork.Disconnect();
+                //SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("LoginTemp");
                 break;
         }
     }

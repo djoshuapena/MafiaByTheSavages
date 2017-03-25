@@ -29,7 +29,7 @@ public class PhotonCustomAuthentication : MonoBehaviour {
     private void OnConnectedToMaster()
     {
         Debug.Log("Connected To Master");
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Lobby"); //Changed from MainMenu to Lobby for Temp
         //changeMenu.MainOn();
     }
 

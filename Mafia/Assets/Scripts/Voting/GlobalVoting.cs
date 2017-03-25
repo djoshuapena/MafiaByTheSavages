@@ -38,13 +38,6 @@ public class GlobalVoting : MonoBehaviour {
 			players.Add (photonName, 0);
 			voteMap.Add (photonName, "null");
 		}
-		//debug delete before commit
-		voteMap.Add ("Dean", "null");
-		players.Add ("Dean", 2);
-		voteMap.Add ("Hayden", "null");
-		players.Add ("Hayden", 2);
-		voteMap.Add ("David", "null");
-		players.Add ("David", 3);
 	}
 		
 	//The HigestVote function will go through the disctonary and find who has the highest vote and store
@@ -58,7 +51,6 @@ public class GlobalVoting : MonoBehaviour {
 			if (kvp.Value > max.Value) {
 				for(int count = 0; count < 16; count++)
 				{
-					//print (maxVote [count]);
 					maxVote [count] = null;
 				}
 				arrayCount = 0;
@@ -70,8 +62,6 @@ public class GlobalVoting : MonoBehaviour {
 				arrayCount++;
 				maxVote [arrayCount] = kvp.Key;
 			}
-			//debug
-			//PrHighestVotes ();
 		}
 		PrHighestVotes ();
 	}

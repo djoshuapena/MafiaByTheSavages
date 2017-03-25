@@ -58,6 +58,7 @@ public class appQuit : MonoBehaviour {
         /*isPaused = pauseStatus;
         Debug.Log("Pause status: " + isPaused);*/
        logout.onLogout();
+
     }
 
     //unity function that checks to see if the application is paused(for windows and when the keyboard is pulled up)

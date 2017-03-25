@@ -14,10 +14,10 @@ public class PhotonCustomAuthentication : MonoBehaviour {
     /// </summary>
     public void AttemptConnection()
     {
-        PhotonNetwork.AuthValues = new AuthenticationValues();
-        PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
-        PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.Password);
-        PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.Username);
+        //PhotonNetwork.AuthValues = new AuthenticationValues();
+        //PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
+        //PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.Password);
+        //PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.Username);
         PhotonNetwork.ConnectUsingSettings("Version 0.1");
         PhotonNetwork.playerName = accountInfo.Username;
     }

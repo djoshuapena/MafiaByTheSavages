@@ -13,7 +13,7 @@ public class WaitingRoom : MonoBehaviour
     public GameObject playerNamePrefab;
 
     //the minimum amount of players that can be in the game
-    private int minPlayers = 3;
+    //private int minPlayers;
 
     //future expansion
     //YouText will say YOU next your name in the list of names
@@ -30,12 +30,13 @@ public class WaitingRoom : MonoBehaviour
 
 
     //Total time the waiting room wil stay open
-    float timeLeft = 30.0f;
-    public Text timer;
+   // float timeLeft = 30.0f;
+   // public Text timer;
 
     // Use this for initialization
     void Start()
     {
+        //minPlayers = PhotonNetwork.room.MaxPlayers / 2;
         //wait 3 seconds and refresh the playerlist
         InvokeRepeating("RefreshPlayerList", 0.1f, 3.0f);
 
@@ -44,27 +45,27 @@ public class WaitingRoom : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+   // void Update()
+   // {
         //timing for the waiting room
-        if (PhotonNetwork.playerList.Length >= minPlayers)
-        {
-            SceneManager.LoadScene("GameScene");
+        //if (PhotonNetwork.playerList.Length >= minPlayers)
+        //{
+          //  SceneManager.LoadScene("GameScene");
             //timeLeft -= Time.deltaTime;
             //timer.text = "Time Left:" + Mathf.Round(timeLeft);
-        }
-        else
-        {
-            timeLeft = 30.0f;
-            timer.text = "Time Left:" + Mathf.Round(timeLeft);
-        }
-        if (timeLeft < 0 && PhotonNetwork.playerList.Length >= minPlayers)
-        {
+       // }
+        //else
+        //{
+          //  timeLeft = 30.0f;
+            //timer.text = "Time Left:" + Mathf.Round(timeLeft);
+        //}
+        //if (timeLeft < 0 && PhotonNetwork.playerList.Length >= minPlayers)
+        //{
             //join the JoinGame Room
             //lmc.JoinGameCanvasOn();
-            timer.text = "Time is up";
-        }
-    }
+          //  timer.text = "Time is up";
+        //}
+    //}
 
 
     //getPlayer will get the users name and users ID

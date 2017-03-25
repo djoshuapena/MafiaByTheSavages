@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class WaitingRoom : MonoBehaviour
+public class WaitingRoom : Photon.MonoBehaviour
 {
     private List<GameObject> playerNamePrefabs = new List<GameObject>();
     //stores the information about the player
@@ -34,15 +34,73 @@ public class WaitingRoom : MonoBehaviour
    // public Text timer;
 
     // Use this for initialization
+	bool gameStart = false;
+
+	public Button startGame;
+	private PhotonView myPhotonView;
+
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+	{	
+		while (gameStart);
+		//print ("hello");
+//		if(stream.isWriting == true)
+//		{
+//			stream.SendNext (gameStart);
+//			if (gameStart == true) {
+//				SceneManager.LoadScene ("GameScene");
+//			}
+//		}
+//		else
+//		{
+//			gameStart = (bool)stream.ReceiveNext ();
+//			if (gameStart == true) {
+//				SceneManager.LoadScene ("GameScene");
+//			}
+//		}
+	}
+
+	void Awake ()
+	{
+		if (startGame == null)
+			Debug.Log ("Failed to initialize the DuskPhaseCanvas.");
+		else
+			startGame.gameObject.SetActive (false);
+	}
+		
     void Start()
     {
+		myPhotonView = gameObject.GetComponent<PhotonView>();
+
         //minPlayers = PhotonNetwork.room.MaxPlayers / 2;
         //wait 3 seconds and refresh the playerlist
         InvokeRepeating("RefreshPlayerList", 0.1f, 3.0f);
 
+		if(PhotonNetwork.isMasterClient == true)
+		{
+			startGame.gameObject.SetActive (true);
+			//myPhotonView.RPC ("Started", PhotonTargets.AllBuffered);
+		}
+			
+
         //update the player count
         //playerCount = playerList();
     }
+		
+	[PunRPC]
+	void Started()
+	{
+			SceneManager.LoadScene ("GameScene");
+	
+	}
+	public void OnGameStartButton()
+	{
+		if(PhotonNetwork.isMasterClient)
+		{
+			myPhotonView.RPC ("Started", PhotonTargets.All);
+		}
+
+			//gameStart = true;
+	}
 
     // Update is called once per frame
    // void Update()

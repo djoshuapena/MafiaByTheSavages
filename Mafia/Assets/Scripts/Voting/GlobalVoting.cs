@@ -1,10 +1,10 @@
-﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GlobalVoting : MonoBehaviour {
+public class GlobalVoting : Photon.MonoBehaviour {
 
 	//The players dictonary holds the players name and the number of vote the player has
 	public Dictionary<string, int> players = new Dictionary<string, int>();
@@ -15,9 +15,24 @@ public class GlobalVoting : MonoBehaviour {
 	//This is the max amount of players that is in the game
 	private static int MAXPLAYERS = 16;
 	//The arrayCount is a counter variable that holds the postion of the array
-	private int arrayCount = 0;
+	int arrayCount = 0;
 	//This array holds the players with the most votes
-	private string [] maxVote = new string[MAXPLAYERS];
+	public string [] maxVote = new string[MAXPLAYERS];
+
+	//void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+	//{	
+	//	if (stream.isWriting)
+	//	{
+	//		print ("in stream");
+	//		print (arrayCount);
+	//		stream.SendNext (arrayCount);
+	//	}
+	//	else
+	//	{
+	//		print (arrayCount);
+	//		arrayCount = (int)stream.ReceiveNext ();
+	//	}
+	//}
 
 	// Use this for initialization
 	void Start () {
@@ -76,6 +91,23 @@ public class GlobalVoting : MonoBehaviour {
 				print (maxVote [count]);
 			}
 		}
+	}
+
+	public void test256()
+	{
+		//if(PhotonNetwork.isMasterClient == false)
+		//{
+			PhotonView photonView = this.photonView;
+			photonView.RPC("test123", PhotonTargets.AllBufferedViaServer); // Call to RPC function
+			//arrayCount++;
+		//}
+	}
+
+	[PunRPC]
+	public void test123()
+	{
+		arrayCount++;
+		print (arrayCount);
 	}
 		
 }

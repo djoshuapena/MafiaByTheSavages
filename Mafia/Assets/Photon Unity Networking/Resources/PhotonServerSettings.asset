@@ -45,4 +45,6 @@ MonoBehaviour:
   - TaggedPlayer
   - showMessage
   - Started
+  - Countdown
+  - test123
   DisableAutoOpenWizard: 1

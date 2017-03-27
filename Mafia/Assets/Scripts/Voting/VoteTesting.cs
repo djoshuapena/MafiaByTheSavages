@@ -20,16 +20,16 @@ public class VoteTesting : MonoBehaviour {
 	public void test1()
 	{
 		globalVoting.voteMap.Add ("Dean", "null");
-		globalVoting.players.Add ("Dean", 2);
+		globalVoting.players.Add ("Dean", 0);
 		globalVoting.voteMap.Add ("Hayden", "null");
-		globalVoting.players.Add ("Hayden", 2);
+		globalVoting.players.Add ("Hayden", 0);
 		globalVoting.voteMap.Add ("David", "null");
-		globalVoting.players.Add ("David", 3);
+		globalVoting.players.Add ("David", 0);
 
-		globalVoting.AddPlayers ();
-		localVoting.Vote ("Dean");
-		globalVoting.HighestVote ();
-		localVoting.Vote ("David");
-		globalVoting.HighestVote ();
+		//globalVoting.AddPlayers ();
+		//localVoting.Vote ("Dean");
+		//globalVoting.HighestVote ();
+		//localVoting.Vote ("David");
+		//globalVoting.HighestVote ();
 	}
 }

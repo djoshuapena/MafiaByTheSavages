@@ -18,31 +18,45 @@ public class GlobalVoting : Photon.MonoBehaviour {
 	int arrayCount = 0;
 	//This array holds the players with the most votes
 	public string [] maxVote = new string[MAXPLAYERS];
+	int[] hello = new int[3];
 
-	//void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-	//{	
-	//	if (stream.isWriting)
-	//	{
-	//		print ("in stream");
-	//		print (arrayCount);
-	//		stream.SendNext (arrayCount);
-	//	}
-	//	else
-	//	{
-	//		print (arrayCount);
-	//		arrayCount = (int)stream.ReceiveNext ();
-	//	}
-	//}
+
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+	{	
+		//print ("Hello");
+		if (stream.isWriting)
+		{
+			stream.SendNext (players);
+			stream.SendNext (voteMap);
+		}
+		else
+		{
+			players = (Dictionary <string, int>)stream.ReceiveNext();
+			voteMap = (Dictionary <string, string>)stream.ReceiveNext();
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
-		
+		if (PhotonNetwork.isMasterClient == true) {
+			voteMap.Add ("Dean", "null");
+			players.Add ("Dean", 0);
+			voteMap.Add ("Hayden", "null");
+			players.Add ("Hayden", 0);
+			voteMap.Add ("David", "null");
+			players.Add ("David", 0);
+			voteMap.Add ("Giram", "null");
+			players.Add ("Giram", 0);
+			print ("Added player");
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+
 
 	//The AddPlayers function adds the players in the game to the two dictonary
 	public void AddPlayers()
@@ -53,6 +67,14 @@ public class GlobalVoting : Photon.MonoBehaviour {
 			players.Add (photonName, 0);
 			voteMap.Add (photonName, "null");
 		}
+		voteMap.Add ("Dean", "null");
+		players.Add ("Dean", 0);
+		voteMap.Add ("Hayden", "null");
+		players.Add ("Hayden", 0);
+		voteMap.Add ("David", "null");
+		players.Add ("David", 0);
+		voteMap.Add ("Giram", "null");
+		players.Add ("Giram", 0);
 	}
 		
 	//The HigestVote function will go through the disctonary and find who has the highest vote and store
@@ -93,23 +115,64 @@ public class GlobalVoting : Photon.MonoBehaviour {
 		}
 	}
 
-	public void test256()
+	public void CallServer()//string name, int decision)
 	{
-		//if(PhotonNetwork.isMasterClient == false)
+		//if(decision == 1)
 		//{
+		//	print ("in decision 1");
+		//	PhotonView photonView = this.photonView;
+		//	photonView.RPC("IncVote", PhotonTargets.AllBufferedViaServer, name); // Call to RPC function
+		//}
+		//else
+		//{
+		print("in call server");
+		print(players ["Dean"]);
+		print (voteMap ["Hayden"]);
 			PhotonView photonView = this.photonView;
-			photonView.RPC("test123", PhotonTargets.AllBufferedViaServer); // Call to RPC function
-			//arrayCount++;
+			photonView.RPC("DecVote", PhotonTargets.AllBufferedViaServer); // Call to RPC function
 		//}
 	}
 
-	[PunRPC]
-	public void test123()
-	{
-		arrayCount++;
-		print (arrayCount);
-	}
+	//[PunRPC]
+	//public void test123(int [] hello)
+	//{
 		
+	//}
+	//[PunRPC]
+	//private void IncVote(string name)
+	//{
+		//print ("in incvote");
+		//string myname;
+		//if (PhotonNetwork.isMasterClient == true) {
+		//	print ("in master hayden");
+		//	myname = "Hayden";//PhotonNetwork.playerName;
+		//} else {
+		//	myname = "Giram";
+		//	int value = players [name];
+		//	players [name] = value + 1;
+		//	voteMap [myname] = name;
+		//}
+	//}
+
+	//The DecVote function will take the dictonary and find the value associated with the the name given and decrease
+	//its value by one
+	[PunRPC]
+	private void DecVote()
+	{
+		//string myname;
+		string name = "Dean";
+		string myname = "Hayden";
+		//if (PhotonNetwork.isMasterClient == true) {
+		//	myname = "Hayden";//PhotonNetwork.playerName;
+		//} else {
+		//	myname = "Giram";
+			int value = players [name];
+			players [name] = value + 1;
+			voteMap [myname] = name;
+	//	}
+		
+	}
+
 }
 
 

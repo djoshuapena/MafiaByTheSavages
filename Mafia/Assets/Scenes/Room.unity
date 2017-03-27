@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNamePrefab: {fileID: 2101126179}
+  startGame: {fileID: 1117569874}
 --- !u!4 &1066597280
 Transform:
   m_ObjectHideFlags: 0

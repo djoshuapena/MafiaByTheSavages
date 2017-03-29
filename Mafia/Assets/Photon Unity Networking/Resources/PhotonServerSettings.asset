@@ -49,4 +49,5 @@ MonoBehaviour:
   - test123
   - DecVote
   - IncVote
+  - Countdown1
   DisableAutoOpenWizard: 1

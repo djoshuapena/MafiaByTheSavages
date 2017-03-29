@@ -37,6 +37,7 @@ public class WaitingRoom : Photon.MonoBehaviour
 	bool gameStart = false;
 
 	public Button startGame;
+    public Button testUpdate;
 	private PhotonView myPhotonView;
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

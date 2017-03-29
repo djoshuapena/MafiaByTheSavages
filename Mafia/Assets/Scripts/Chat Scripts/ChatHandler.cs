@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using ExitGames.Client.Photon.Chat;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class ChatHandler : MonoBehaviour, IChatClientListener {
 
-    public string[]     GameChannel;
+    public string[]     GameChannels;
     public string       UserName { get; set; }
-    public ChatClient   chatClient;
+    public ChatClient   chatClient { get; set; }
     public Text         StateText;
-    public Text         CurrentChannelText;
-    //public Text         InputFieldChat;
+    public ChatDisplay  chatDisplay;
+
+
+    public string       PlayerStatus;
+    public int          CurrentChannel;
 
     public void DebugReturn(DebugLevel level, string message)
     {
@@ -47,10 +50,8 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
 
     public void OnConnected()
     {
-
         Debug.Log("Connected as: " + chatClient.UserId);
-        chatClient.Subscribe(GameChannel);
-       
+        chatClient.Subscribe(GameChannels);
     }
 
     public void OnDisconnected()
@@ -69,7 +70,7 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
 
     public void OnGetMessages(string channelName, string[] senders, object[] messages)
     {
-        ShowChannel(channelName);
+        chatDisplay.ShowMessages(GameChannels[CurrentChannel]);
     }
 
     public void OnPrivateMessage(string sender, object message, string channelName)
@@ -84,74 +85,36 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
 
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        //chatClient.PublishMessage(channels[0], "Hello Everyone!");
-        SendChatMessage("Hello Everyone!");
-        Debug.Log("Subscribed to: " + GameChannel[0]);
+        for(int i = 0;i<channels.Length;i++)
+        {
+            if (results[i] == true)
+            {
+                SendChatMessage(channels[i], "You may chat");
+            }
+        }
+        Debug.Log("Subscribed to: " + channels[0]);
     }
 
     public void OnUnsubscribed(string[] channels)
     {
-        Debug.Log("Unsubscribed to: " + GameChannel[0]);
+        Debug.Log("Unsubscribed to: " + GameChannels[0]);
     }
 
-    public void ShowChannel(string channelName)
-    {
-        if (string.IsNullOrEmpty(channelName))
-        {
-            return;
-        }
-
-        ChatChannel channel = null;
-        bool found = this.chatClient.TryGetChannel(channelName, out channel);
-        if (!found)
-        {
-            Debug.Log("ShowChannel failed to find channel: " + channelName);
-            return;
-        }
-
-        CurrentChannelText.text = channel.ToStringMessages();
-    }
-
-    public void SendChatMessage(string msg)
+    public void SendChatMessage(string channel, string msg)
     {
         if (string.IsNullOrEmpty(msg))
         {
             return;
         }
-        chatClient.PublishMessage(GameChannel[0], msg);
+        chatClient.PublishMessage(channel, msg);
     }
-
-   /* public void OnEnterSend()
-    {
-        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
-        {
-            SendChatMessage(InputFieldChat.text);
-            InputFieldChat.text = "";
-        }
-    }
-
-    /// <summary>
-    /// Send a message if the Send button is pressed.
-    /// </summary>
-    public void OnClickSend()
-    {
-        if (InputFieldChat != null)
-        {
-            SendChatMessage(InputFieldChat.text);
-            InputFieldChat.text = "";
-        }
-    }*/
 
     // Use this for initialization
     void Start ()
     {
         DontDestroyOnLoad(gameObject);
         Application.runInBackground = true;
-        //return;
-        //UserName = "Aaron Jackson";
-        //Connect("Aaron");
 	}
-
 
     // Update is called once per frame
 	void Update () {

@@ -98,9 +98,10 @@ namespace ExitGames.Client.Photon.Chat
             StringBuilder txt = new StringBuilder();
             for (int i = 0; i < this.Messages.Count; i++)
             {
-                txt.AppendLine(string.Format("{0}: {1}", this.Senders[i], this.Messages[i]));
+                txt.AppendLine(string.Format("{0}"/*{1}", this.Senders[i], */,this.Messages[i]));
             }
-            return txt.ToString();
+            return txt.ToString().TrimEnd('\n');
         }
+
     }
 }

@@ -1,10 +1,117 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Linq;
 
-public class GlobalVoting : Photon.MonoBehaviour {
+public class GlobalVoting : MonoBehaviour {
+
+	public Dictionary<string, int> players = new Dictionary<string, int>();
+	List<string> ret = new List<string> ();
+	List<string> emptyList = new List<string> ();
+
+	public AssignRoles gameController;
+
+
+	public void InitializeVotes(){
+		
+		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
+			string photonName = PhotonNetwork.playerList [i].NickName;
+			gameController.votedfor.Remove (photonName);
+			gameController.votedfor.Add (photonName, "");
+		}
+		PhotonNetwork.player.SetCustomProperties (gameController.votedfor);
+	}
+
+	public void ChangeVote(string name){
+		gameController.votedfor.Remove (PhotonNetwork.player);
+		gameController.votedfor.Add (PhotonNetwork.player, name);
+		PhotonNetwork.player.SetCustomProperties (gameController.votedfor);
+	}
+		
+	public List<string> GetVote(int majority)
+	{
+		for (int i = 0; i < PhotonNetwork.playerList.Length; i++){
+			string photonName = PhotonNetwork.playerList [i].NickName;
+			object name;
+			gameController.votedfor.TryGetValue (photonName,out name);
+			if (name.ToString () != "") {
+				int value = players [name.ToString ()];
+				players [name.ToString ()] = value + 1;
+			} else {
+				players.Add (photonName, 1);
+			}
+		}
+		var sortedDict = from entry in players orderby entry.Value descending select entry;
+		var first = sortedDict.First();
+		int values = first.Value;
+
+		foreach (KeyValuePair<string, int> pair in players)
+		{
+			if (pair.Value == values)
+			{
+				ret.Add (pair.Key);
+			}
+		}
+		if (ret.Count == 0 || ret.Count > majority) {
+			return emptyList;
+		} else {
+			return ret;
+		}
+	}
+
+}
+
+
+//-------------------------------------------------Code Graveyard----------------------------------------------------------
+/*
+
+
+//UI stuff
+
+//private List<GameObject> roomPrefabs = new List<GameObject>();
+//public GameObject roomPrefab;
+
+//public void DispalyOnUI()
+//{
+//int count = 0;
+//foreach (KeyValuePair<string, int> kvp in players) {
+
+//GameObject g = Instantiate(roomPrefab);
+//g.transform.SetParent(roomPrefab.transform.parent);
+
+//g.GetComponent<RectTransform>().localScale = roomPrefab.GetComponent<RectTransform>().localScale;
+//g.GetComponent<RectTransform>().localPosition = new Vector3(roomPrefab.GetComponent<RectTransform>().localPosition.x, roomPrefab.GetComponent<RectTransform>().localPosition.y - (count * 80), roomPrefab.GetComponent<RectTransform>().localPosition.z);
+//g.transform.FindChild ("insert name on UI here").GetComponent<Text> ().text = kvp.Key;
+//g.transform.FindChild ("insert name on UI here").GetComponent<Text> ().text = kvp.Value.ToString();
+//g.transform.FindChild("Insert Button name here").GetComponent<Button>().onClick.AddListener(() => { Vote(kvp.Key, kvp.Value); });
+//g.SetActive(true);
+//roomPrefabs.Add(g);
+//count++;
+//}
+//}
+
+//End UI stuff
+
+
+//foreach (KeyValuePair<string, string> kvp in voteMap) {
+//	print (kvp.Key);
+//	print (kvp.Value);
+//}
+
+private void PrHighestVotes()
+{
+	for(int count = 0; count < maxVote.Length; count++)
+	{
+		if (maxVote [count] != null)
+		{
+			print (maxVote [count]);
+		}
+	}
+}
+
+public class GlobalVoting : MonoBehaviour {
 
 	//The players dictonary holds the players name and the number of vote the player has
 	public Dictionary<string, int> players = new Dictionary<string, int>();
@@ -15,48 +122,19 @@ public class GlobalVoting : Photon.MonoBehaviour {
 	//This is the max amount of players that is in the game
 	private static int MAXPLAYERS = 16;
 	//The arrayCount is a counter variable that holds the postion of the array
-	int arrayCount = 0;
+	private int arrayCount = 0;
 	//This array holds the players with the most votes
-	public string [] maxVote = new string[MAXPLAYERS];
-	int[] hello = new int[3];
-
-
-	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-	{	
-		//print ("Hello");
-		if (stream.isWriting)
-		{
-			stream.SendNext (players);
-			stream.SendNext (voteMap);
-		}
-		else
-		{
-			players = (Dictionary <string, int>)stream.ReceiveNext();
-			voteMap = (Dictionary <string, string>)stream.ReceiveNext();
-		}
-	}
+	private string [] maxVote = new string[MAXPLAYERS];
 
 	// Use this for initialization
 	void Start () {
-		if (PhotonNetwork.isMasterClient == true) {
-			voteMap.Add ("Dean", "null");
-			players.Add ("Dean", 0);
-			voteMap.Add ("Hayden", "null");
-			players.Add ("Hayden", 0);
-			voteMap.Add ("David", "null");
-			players.Add ("David", 0);
-			voteMap.Add ("Giram", "null");
-			players.Add ("Giram", 0);
-			print ("Added player");
-		}
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
-
-
 
 	//The AddPlayers function adds the players in the game to the two dictonary
 	public void AddPlayers()
@@ -67,16 +145,8 @@ public class GlobalVoting : Photon.MonoBehaviour {
 			players.Add (photonName, 0);
 			voteMap.Add (photonName, "null");
 		}
-		voteMap.Add ("Dean", "null");
-		players.Add ("Dean", 0);
-		voteMap.Add ("Hayden", "null");
-		players.Add ("Hayden", 0);
-		voteMap.Add ("David", "null");
-		players.Add ("David", 0);
-		voteMap.Add ("Giram", "null");
-		players.Add ("Giram", 0);
 	}
-		
+
 	//The HigestVote function will go through the disctonary and find who has the highest vote and store
 	//the people with the highest vote in the maxVote array
 	public void HighestVote()
@@ -115,102 +185,16 @@ public class GlobalVoting : Photon.MonoBehaviour {
 		}
 	}
 
-	public void CallServer()//string name, int decision)
-	{
-		//if(decision == 1)
-		//{
-		//	print ("in decision 1");
-		//	PhotonView photonView = this.photonView;
-		//	photonView.RPC("IncVote", PhotonTargets.AllBufferedViaServer, name); // Call to RPC function
-		//}
-		//else
-		//{
-		print("in call server");
-		print(players ["Dean"]);
-		print (voteMap ["Hayden"]);
-			PhotonView photonView = this.photonView;
-			photonView.RPC("DecVote", PhotonTargets.AllBufferedViaServer); // Call to RPC function
-		//}
-	}
-
-	//[PunRPC]
-	//public void test123(int [] hello)
-	//{
-		
-	//}
-	//[PunRPC]
-	//private void IncVote(string name)
-	//{
-		//print ("in incvote");
-		//string myname;
-		//if (PhotonNetwork.isMasterClient == true) {
-		//	print ("in master hayden");
-		//	myname = "Hayden";//PhotonNetwork.playerName;
-		//} else {
-		//	myname = "Giram";
-		//	int value = players [name];
-		//	players [name] = value + 1;
-		//	voteMap [myname] = name;
-		//}
-	//}
-
-	//The DecVote function will take the dictonary and find the value associated with the the name given and decrease
-	//its value by one
-	[PunRPC]
-	private void DecVote()
-	{
-		//string myname;
-		string name = "Dean";
-		string myname = "Hayden";
-		//if (PhotonNetwork.isMasterClient == true) {
-		//	myname = "Hayden";//PhotonNetwork.playerName;
-		//} else {
-		//	myname = "Giram";
-			int value = players [name];
-			players [name] = value + 1;
-			voteMap [myname] = name;
-	//	}
-		
-	}
-
 }
 
 
-//-------------------------------------------------Code Graveyard----------------------------------------------------------
-/*
-
-
-//UI stuff
-
-	//private List<GameObject> roomPrefabs = new List<GameObject>();
-	//public GameObject roomPrefab;
-
-	//public void DispalyOnUI()
-	//{
-		//int count = 0;
-		//foreach (KeyValuePair<string, int> kvp in players) {
-
-		//GameObject g = Instantiate(roomPrefab);
-		//g.transform.SetParent(roomPrefab.transform.parent);
-
-		//g.GetComponent<RectTransform>().localScale = roomPrefab.GetComponent<RectTransform>().localScale;
-		//g.GetComponent<RectTransform>().localPosition = new Vector3(roomPrefab.GetComponent<RectTransform>().localPosition.x, roomPrefab.GetComponent<RectTransform>().localPosition.y - (count * 80), roomPrefab.GetComponent<RectTransform>().localPosition.z);
-		//g.transform.FindChild ("insert name on UI here").GetComponent<Text> ().text = kvp.Key;
-		//g.transform.FindChild ("insert name on UI here").GetComponent<Text> ().text = kvp.Value.ToString();
-		//g.transform.FindChild("Insert Button name here").GetComponent<Button>().onClick.AddListener(() => { Vote(kvp.Key, kvp.Value); });
-		//g.SetActive(true);
-		//roomPrefabs.Add(g);
-		//count++;
-		//}
-	//}
-
-//End UI stuff
-
-
-//foreach (KeyValuePair<string, string> kvp in voteMap) {
-//	print (kvp.Key);
-//	print (kvp.Value);
-//}
+//var r = from entry in players
+//		where entry.Value == values
+//      select entry.Key;
+//foreach (var key in r) {
+//	ret.Add (key);
+//	print (key);
+//	}
 
 
 

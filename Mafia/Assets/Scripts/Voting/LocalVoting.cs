@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * 
+ * SCRIPT IS NOT USED ANYMORE ITS IN THE CODE GRAVEYARD
+ * 
+ * 
+ * 
+ * 
+ * using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -74,4 +81,4 @@ public class LocalVoting : MonoBehaviour {
 	//}
 
 
-}
+}*/

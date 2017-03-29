@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : Photon.PunBehaviour//MonoBehaviour
+public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 {
     private List<GameObject> playerNamePrefabs = new List<GameObject>();
 

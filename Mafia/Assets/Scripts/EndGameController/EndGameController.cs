@@ -33,7 +33,8 @@ public class EndGameController : MonoBehaviour {
         PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
         for(int x = 0; x < playerList.Length; x++)
         {
-            if(playerList[x].CustomProperties.ContainsValue("mafia") && playerList[x].CustomProperties["dead"].Equals(false))
+            Debug.Log("Is there a mafia?" + playerList[x].CustomProperties.ContainsValue("mafia"));
+            if (playerList[x].CustomProperties.ContainsValue("mafia") && playerList[x].CustomProperties["dead"].Equals(false))
             {
                 return false;
             }

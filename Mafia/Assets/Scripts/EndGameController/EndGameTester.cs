@@ -16,7 +16,10 @@ public class EndGameTester : MonoBehaviour
     {
         //PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        ExitGames.Client.Photon.Hashtable cash = new ExitGames.Client.Photon.Hashtable();
         hash.Add("dead", true);
+        cash.Add("roles", "Mafia");
+        PhotonNetwork.playerList[0].SetCustomProperties(cash);
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
@@ -30,10 +33,12 @@ public class EndGameTester : MonoBehaviour
         }
         if (Control.MafiaAlive())
         {
+            Debug.Log(Control.MafiaAlive());
             outputText.text = "A mafia is left";
         }
         else
         {
+            Debug.Log(Control.MafiaAlive());
             outputText.text = "All mafia are dead";
         }
     }

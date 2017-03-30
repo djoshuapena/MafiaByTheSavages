@@ -12,7 +12,7 @@ public class Timer : Photon.PunBehaviour//MonoBehaviour
 
     private int minPlayers = 2;
 
-    private float timeLeft = 30.0f;
+    private float timeLeft = -1.0f;
 
     public Text timer;
 
@@ -25,7 +25,7 @@ public class Timer : Photon.PunBehaviour//MonoBehaviour
             stream.SendNext(timeLeft);
             if (timeLeft < 1)
             {
-                SceneManager.LoadScene("GameScene");
+                //Debug.Log("Time is up");
             }
         }
         //This is for everyone else to just read the time.
@@ -35,7 +35,7 @@ public class Timer : Photon.PunBehaviour//MonoBehaviour
             ShowTime();
             if (timeLeft < 1)
             {
-                SceneManager.LoadScene("GameScene");
+                //Debug.Log("Time is up");
             }
         }
     }
@@ -87,5 +87,17 @@ public class Timer : Photon.PunBehaviour//MonoBehaviour
     void ShowTime()
     {
         timer.text = "Time Left:" + Mathf.Round(timeLeft);
+    }
+
+    //public function to show the time
+    public void Activate()
+    {
+        timer.gameObject.SetActive(true);
+    }
+
+    //public function to hide the time
+    public void Deactivate()
+    {
+        timer.gameObject.SetActive(false);
     }
 }

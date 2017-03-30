@@ -21,15 +21,15 @@ Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavage
 Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.141 seconds
+- Completed reload, in  0.134 seconds
 Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.825652 ms
-Giram
+UnloadTime: 1.696456 ms
+asdf
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -38,10 +38,10 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.293664 ms
+UnloadTime: 4.486251 ms
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 569.
-Total: 0.668319 ms (FindLiveObjects: 0.073050 ms CreateObjectMapping: 0.049505 ms MarkObjects: 0.524633 ms  DeleteObjects: 0.019922 ms)
+Total: 0.697901 ms (FindLiveObjects: 0.071239 ms CreateObjectMapping: 0.034412 ms MarkObjects: 0.568705 ms  DeleteObjects: 0.022941 ms)
 
 Lobby Joined.
  
@@ -51,41 +51,21 @@ Room Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+Received RPC "Countdown" for viewID 1 but this PhotonView does not exist! Was remote PV. Remote called. By: 1 Maybe GO was destroyed but RPC not cleaned up.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.508699 ms
+UnloadTime: 1.767695 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 519.
-Total: 0.653829 ms (FindLiveObjects: 0.057353 ms CreateObjectMapping: 0.042864 ms MarkObjects: 0.537915 ms  DeleteObjects: 0.015093 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.349920 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 535.
-Total: 0.605532 ms (FindLiveObjects: 0.066409 ms CreateObjectMapping: 0.058560 ms MarkObjects: 0.465468 ms  DeleteObjects: 0.013281 ms)
-
-Updated stats successfully
-
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Updated stats successfully
-
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 520.
+Total: 0.760688 ms (FindLiveObjects: 0.060975 ms CreateObjectMapping: 0.052523 ms MarkObjects: 0.629077 ms  DeleteObjects: 0.016904 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.584402 ms
+UnloadTime: 1.438667 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 569.
-Total: 0.723861 ms (FindLiveObjects: 0.091765 ms CreateObjectMapping: 0.038034 ms MarkObjects: 0.586213 ms  DeleteObjects: 0.006640 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 544.
+Total: 0.982254 ms (FindLiveObjects: 0.088143 ms CreateObjectMapping: 0.067616 ms MarkObjects: 0.793893 ms  DeleteObjects: 0.030789 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 54a8 -> priority: 1 
+  Thread -> id: 59dc -> priority: 1 

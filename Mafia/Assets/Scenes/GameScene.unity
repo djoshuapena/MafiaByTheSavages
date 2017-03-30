@@ -246,7 +246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: If Dean Press
+  m_Text: Kill Mafia
 --- !u!222 &521448394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -347,11 +347,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 767983159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7437b752b9e6419b8fa514234262621, type: 3}
+  m_Script: {fileID: 11500000, guid: b8d48932a4ae38d428d943800a74f444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalVoting: {fileID: 767983163}
-  gameController: {fileID: 0}
+  Control: {fileID: 767983163}
+  ILoveKittens: {fileID: 767983162}
+  outputText: {fileID: 1646238949}
 --- !u!4 &767983161
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 767983159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9158ebbdcc746558325d30692ed7f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 67dc5a3afeb31af4aaec4d80c502c2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &767983163
@@ -384,10 +385,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 767983159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4108daa383645929c928d6579fb948, type: 3}
+  m_Script: {fileID: 11500000, guid: 37ca9d1d234a9e84fbb7b75ac25a5521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
 --- !u!1 &1098573238
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: If David Press
+  m_Text: Kill Sheriff
 --- !u!222 &1098573241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: 157}
+  m_AnchoredPosition: {x: -610, y: -330}
   m_SizeDelta: {x: 320, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153196011
@@ -538,8 +538,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 767983162}
-        m_MethodName: test23
+      - m_Target: {fileID: 767983160}
+        m_MethodName: onSheriffButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -713,7 +713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This IS LIFE
+  m_Text: 
 --- !u!222 &1646238950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -796,8 +796,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 767983160}
+        m_MethodName: onCivlianButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Send Message
+  m_Text: kill Nurse
 --- !u!222 &1998575872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1047,7 +1047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 489, y: 386}
+  m_AnchoredPosition: {x: 536, y: -330}
   m_SizeDelta: {x: 320, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141093062
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 767983160}
-        m_MethodName: test
+        m_MethodName: onMafiaButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

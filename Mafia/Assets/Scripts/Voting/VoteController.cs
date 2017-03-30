@@ -12,9 +12,9 @@ public class VoteController : MonoBehaviour {
 	List<string> emptyList = new List<string> ();
 
 	public void InitializeVotes(){
+		ExitGames.Client.Photon.Hashtable clearVotes = new ExitGames.Client.Photon.Hashtable();
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			string photonName = PhotonNetwork.playerList [i].NickName;
-			ExitGames.Client.Photon.Hashtable clearVotes = new ExitGames.Client.Photon.Hashtable();
 			clearVotes.Add ("VotedFor", "");
 			PhotonNetwork.playerList [i].SetCustomProperties (clearVotes);
 		}
@@ -24,12 +24,12 @@ public class VoteController : MonoBehaviour {
 		ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
 		replaceVote.Add ("VotedFor", name);
 		PhotonNetwork.player.SetCustomProperties (replaceVote);
-		if ((string)PhotonNetwork.player.CustomProperties ["VotedFor"] == name) {
-			Debug.Log ("We did it");
-		} 
-		else {
-			Debug.Log ("Gadddammit");
-		}
+	//	if ((string)PhotonNetwork.player.CustomProperties ["VotedFor"] == name) {
+	//		Debug.Log ("We did it");
+	//	} 
+	//	else {
+	//		Debug.Log ("Fail");
+	//	}
 
 	}
 		

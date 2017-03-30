@@ -8,8 +8,6 @@ using System.Linq;
 
 public class AssignRoles : MonoBehaviour {
 
-	private static int MAXPLAYER = 16;
-
 	//list of playernames that holds the preset name
 	List <string> playerNames = new List<string> ();
 
@@ -30,7 +28,7 @@ public class AssignRoles : MonoBehaviour {
 	{
 		//Adds the preset names
 		InitializePlayer();
-
+		ListRandomizer.Shuffle (playerNames);
 		//change the nickname for each of the player
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			PhotonNetwork.playerList [i].NickName = playerNames[i];
@@ -45,13 +43,19 @@ public class AssignRoles : MonoBehaviour {
 		//list of player names
 		List<string> id = new List<string>();
 
+		ExitGames.Client.Photon.Hashtable setVotes = new ExitGames.Client.Photon.Hashtable();
+		//ExitGames.Client.Photon.Hashtable status = new ExitGames.Client.Photon.Hashtable();
+		setVotes.Add ("VotedFor", "");
+		setVotes.Add ("Dead", false);
+
 		//initialize the VotedFor array and add nickname to the id list
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			id.Add (PhotonNetwork.playerList[i].NickName);
-			ExitGames.Client.Photon.Hashtable setVotes = new ExitGames.Client.Photon.Hashtable();
-			setVotes.Add ("VotedFor", "");
 			PhotonNetwork.playerList [i].SetCustomProperties (setVotes);
 		}
+
+		if(!(bool)PhotonNetwork.player.CustomProperties["Dead"])
+			print("You are dead");
 
 		//shuffle the list of id
 		ListRandomizer.Shuffle(id);

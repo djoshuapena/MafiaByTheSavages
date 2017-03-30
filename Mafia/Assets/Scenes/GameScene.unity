@@ -531,6 +531,8 @@ GameObject:
   - component: {fileID: 767983164}
   - component: {fileID: 767983165}
   - component: {fileID: 767983166}
+  - component: {fileID: 767983168}
+  - component: {fileID: 767983167}
   m_Layer: 0
   m_Name: _GameScene
   m_TagString: Untagged
@@ -586,7 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4108daa383645929c928d6579fb948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
 --- !u!114 &767983164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +635,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98a0cd0ce7cea6f429f70a45d84f4bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &767983167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767983159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfdfeeef6c4f43d8bf263ac2d88f40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignRoles: {fileID: 767983168}
+--- !u!114 &767983168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767983159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9158ebbdcc746558325d30692ed7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &814231564
@@ -2004,7 +2028,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 767983160}
+      - m_Target: {fileID: 767983167}
         m_MethodName: test
         m_Mode: 1
         m_Arguments:

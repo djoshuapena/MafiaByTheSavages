@@ -200,6 +200,5 @@ public class WaitingRoom : Photon.MonoBehaviour
     void Started()
     {
         SceneManager.LoadScene("GameScene");
-
     }
 }

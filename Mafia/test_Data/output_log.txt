@@ -1,0 +1,91 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     912 MB
+    Driver:   10.18.10.4358
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.141 seconds
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.825652 ms
+Giram
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected To Master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.293664 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 569.
+Total: 0.668319 ms (FindLiveObjects: 0.073050 ms CreateObjectMapping: 0.049505 ms MarkObjects: 0.524633 ms  DeleteObjects: 0.019922 ms)
+
+Lobby Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Room Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.508699 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 519.
+Total: 0.653829 ms (FindLiveObjects: 0.057353 ms CreateObjectMapping: 0.042864 ms MarkObjects: 0.537915 ms  DeleteObjects: 0.015093 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.349920 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 535.
+Total: 0.605532 ms (FindLiveObjects: 0.066409 ms CreateObjectMapping: 0.058560 ms MarkObjects: 0.465468 ms  DeleteObjects: 0.013281 ms)
+
+Updated stats successfully
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Updated stats successfully
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.584402 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 569.
+Total: 0.723861 ms (FindLiveObjects: 0.091765 ms CreateObjectMapping: 0.038034 ms MarkObjects: 0.586213 ms  DeleteObjects: 0.006640 ms)
+
+Lobby Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lobby Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 54a8 -> priority: 1 

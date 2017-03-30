@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 1066597280}
   - component: {fileID: 1066597279}
   - component: {fileID: 1066597281}
+  - component: {fileID: 1066597282}
   m_Layer: 0
   m_Name: _RoomScripts
   m_TagString: Untagged
@@ -508,12 +509,24 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1066597279}
+  - {fileID: 1066597282}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 1
   instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &1066597282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1066597278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597576db37dd1174b83c4f44eccff685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 379060618}
 --- !u!1 &1072511374
 GameObject:
   m_ObjectHideFlags: 0

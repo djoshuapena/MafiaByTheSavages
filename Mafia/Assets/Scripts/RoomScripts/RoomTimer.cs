@@ -12,13 +12,14 @@ public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 
     private int minPlayers = 2;
 
-    float timeLeft = 30.0f;
+    private float timeLeft = 30.0f;
 
     public Text timer;
 
-
+    //function that synchronizes the timer for client and server
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+        //This is for the master. Only he can update the time.
         if (stream.isWriting == true)
         {
             stream.SendNext(timeLeft);
@@ -27,6 +28,7 @@ public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
                 SceneManager.LoadScene("GameScene");
             }
         }
+        //This is for everyone else to just read the time.
         else
         {
             timeLeft = (float)stream.ReceiveNext();
@@ -44,13 +46,43 @@ public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 
         if (PhotonNetwork.isMasterClient == true) // host starts the countdown
         {
-            //timeLeft = 30.0f;
             myPhotonView.RPC("Countdown", PhotonTargets.AllBuffered, PhotonNetwork.time);
         }
     }
 
+    //public function to start the time
+    public void InitializeTime(int time)
+    {
+        timeLeft = time;
+    }
+
+    public void test()
+    {
+        InitializeTime(45);
+    }
+
+    ////return function to 
+    //public Text countdown2()
+    //{
+    //    while (timeLeft >= 0)
+    //    {
+    //        if (timeLeft < 1)
+    //        {
+    //            print(timer);
+    //            return timer;
+    //        }
+    //    }
+    //    return timer;
+    //}
+
+    //public void countdown3()
+    //{
+    //    countdown2();
+    //}
+
+    //public synchronized function that starts the countdown based on the timeRemaining
     [PunRPC]
-    void Countdown(double timerStart)
+    public void Countdown(double timerStart)
     {
         timeLeft -= (float)(timerStart - PhotonNetwork.time);
         StartCoroutine("TimerCountdown");
@@ -70,6 +102,7 @@ public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 
     }
 
+    //shows the time remaining
     void ShowTime()
     {
         timer.text = "Time Left:" + Mathf.Round(timeLeft);

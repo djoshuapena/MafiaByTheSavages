@@ -5,42 +5,45 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class GlobalVoting : MonoBehaviour {
+public class VoteController : MonoBehaviour {
 
 	public Dictionary<string, int> players = new Dictionary<string, int>();
 	List<string> ret = new List<string> ();
 	List<string> emptyList = new List<string> ();
 
-	public AssignRoles gameController;
-
-
 	public void InitializeVotes(){
-		
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			string photonName = PhotonNetwork.playerList [i].NickName;
-			gameController.votedfor.Remove (photonName);
-			gameController.votedfor.Add (photonName, "");
+			ExitGames.Client.Photon.Hashtable clearVotes = new ExitGames.Client.Photon.Hashtable();
+			clearVotes.Add ("VotedFor", "");
+			PhotonNetwork.playerList [i].SetCustomProperties (clearVotes);
 		}
-		PhotonNetwork.player.SetCustomProperties (gameController.votedfor);
 	}
 
 	public void ChangeVote(string name){
-		gameController.votedfor.Remove (PhotonNetwork.player);
-		gameController.votedfor.Add (PhotonNetwork.player, name);
-		PhotonNetwork.player.SetCustomProperties (gameController.votedfor);
+		ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
+		replaceVote.Add ("VotedFor", name);
+		PhotonNetwork.player.SetCustomProperties (replaceVote);
+		if ((string)PhotonNetwork.player.CustomProperties ["VotedFor"] == name) {
+			Debug.Log ("We did it");
+		} 
+		else {
+			Debug.Log ("Gadddammit");
+		}
+
 	}
 		
 	public List<string> GetVote(int majority)
 	{
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++){
-			string photonName = PhotonNetwork.playerList [i].NickName;
-			object name;
-			gameController.votedfor.TryGetValue (photonName,out name);
-			if (name.ToString () != "") {
-				int value = players [name.ToString ()];
-				players [name.ToString ()] = value + 1;
-			} else {
-				players.Add (photonName, 1);
+			//string photonName = PhotonNetwork.playerList [i].NickName;
+			string name = (string)PhotonNetwork.player.CustomProperties["VotedFor"];
+			//gameController.votedfor.TryGetValue (photonName,out name);
+			if (name != "") {
+				if (players.ContainsKey (name))
+					players [name] ++;
+				else
+					players.Add (name, 0);
 			}
 		}
 		var sortedDict = from entry in players orderby entry.Value descending select entry;

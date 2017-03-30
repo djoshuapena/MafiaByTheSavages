@@ -10,59 +10,110 @@ public class AssignRoles : MonoBehaviour {
 
 	private static int MAXPLAYER = 16;
 
-	private string [] names = new string[MAXPLAYER];
-	//List <string> playerNames = new List<string> ();
+	//list of playernames that holds the preset name
+	List <string> playerNames = new List<string> ();
 
-	public ExitGames.Client.Photon.Hashtable votedfor = new ExitGames.Client.Photon.Hashtable ();
-	public ExitGames.Client.Photon.Hashtable playerNames = new ExitGames.Client.Photon.Hashtable();
+	//public ExitGames.Client.Photon.Hashtable votedfor = new ExitGames.Client.Photon.Hashtable ();
+	//public ExitGames.Client.Photon.Hashtable playerNames = new ExitGames.Client.Photon.Hashtable();
 
+
+	int villan;
+	int hero;
+	int healer = 1;
+
+	bool done = false;
 
 	// Dont worry about this
-	void Start () {
-		int unicode = 65;
-		for (int count = 0; count < MAXPLAYER; count++) {
-			char character = (char)unicode;
-			names [count] = character.ToString ();
-			unicode++;
+
+
+	public bool InitializeRoles()
+	{
+		//Adds the preset names
+		InitializePlayer();
+
+		//change the nickname for each of the player
+		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
+			PhotonNetwork.playerList [i].NickName = playerNames[i];
+			print (PhotonNetwork.playerList [i].NickName);
 		}
-	}
 
 
-	public bool InitializaRoles()
-	{
 		//calculate the roles (the math stuff how many mafia sheriffs etc)
+		villan = (int)Math.Floor(PhotonNetwork.playerList.Length/3.0);
+		hero = (int)Math.Ceiling (PhotonNetwork.playerList.Length / 6.0);
 
-		//set player nick name here to the preset one
+		//list of player names
+		List<string> id = new List<string>();
+
+		//initialize the VotedFor array and add nickname to the id list
+		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
+			id.Add (PhotonNetwork.playerList[i].NickName);
+			ExitGames.Client.Photon.Hashtable setVotes = new ExitGames.Client.Photon.Hashtable();
+			setVotes.Add ("VotedFor", "");
+			PhotonNetwork.playerList [i].SetCustomProperties (setVotes);
+		}
+
+		//shuffle the list of id
+		ListRandomizer.Shuffle(id);
 
 
-		//SetupPlayer ();
+		SetupPlayer (id);
 
-
-		return true;
+		return done;
 
 	}
-
+	
 	//shuffle the list player names and give them nicknames 
-	private void SetupPlayer()
+	private void SetupPlayer(List<string> list)
 	{
-		//add nicknames to playerName array
 
-		//shuffle the playerName array 
+		//Assign roles to each of the players
+		for (int i = 0; i < list.Count; i++) {
+			ExitGames.Client.Photon.Hashtable roles = new ExitGames.Client.Photon.Hashtable();
+			if (villan != 0) {
+				roles.Add ("roles", "Mafia");
+				villan--;
+			} else if (hero != 0) {
+				roles.Add ("roles", "Sheriff");
+				hero--;
+			} else if (healer != 0) {
+				roles.Add ("roles", "Healer");
+				healer--;
+			}
+			else {
+				roles.Add ("roles", "Civillian");
+			}
 
-		//GivePlayerNames()
+			//find a player name in the photon that corresponds to the random list of id
+			for(int k = 0; k < PhotonNetwork.playerList.Length; k++)
+			{
+				if (list [i].Equals (PhotonNetwork.playerList [k].NickName))
+					PhotonNetwork.playerList[k].SetCustomProperties(roles);
+			}
+		}
+	 
 
-	
+		done = true;
 	}
 
-
-	private void GivePlayerNames()
-	{
-		//add roles to the playerName array so first one in the list is mafias then sheriffs, then doctor and rest civ
+	//Adds the preset names
+	private void InitializePlayer(){
+		playerNames.Add ("Giram");
+		playerNames.Add ("Hayden");
+		playerNames.Add ("David");
+		playerNames.Add ("Dean");
+		playerNames.Add ("James");
+		playerNames.Add ("Andrew");
+		playerNames.Add ("Aaron");
+		playerNames.Add ("Ding");
+		playerNames.Add ("Faith");
+		playerNames.Add ("Umar");
+		playerNames.Add ("Chloe");
+		playerNames.Add ("Kelsy");
+		playerNames.Add ("Troy");
+		playerNames.Add ("Amanda");
+		playerNames.Add ("Kelsy");
+		playerNames.Add ("Insignia");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-		
+					
 }

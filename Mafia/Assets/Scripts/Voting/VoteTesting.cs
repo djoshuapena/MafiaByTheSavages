@@ -8,7 +8,7 @@ using System.Linq;
 
 public class VoteTesting : MonoBehaviour {
 
-	public GlobalVoting globalVoting;
+	public VoteController globalVoting;
 	List<string> returnedList;
 	public AssignRoles gameController;
 
@@ -26,7 +26,7 @@ public class VoteTesting : MonoBehaviour {
 	{
 		print ("test1");
 		//votedfor.Add("Dean", "null");
-		gameController.votedfor.Add ("David", "");
+		//gameController.votedfor.Add ("David", "");
 		//players.Add ("Dean", 0);
 		globalVoting.players.Add ("nkjasd", 9);
 		globalVoting.players.Add ("ss", 14);
@@ -39,7 +39,7 @@ public class VoteTesting : MonoBehaviour {
 	{
 		print ("test");
 		//votedfor.Add("Dean", "null");
-		gameController.votedfor.Add ("gasdgads", "null");
+		//gameController.votedfor.Add ("gasdgads", "null");
 		//players.Add ("Dean", 0);
 		globalVoting.players.Add ("nkjasd", 9);
 		globalVoting.players.Add ("Giram", 14);
@@ -47,7 +47,7 @@ public class VoteTesting : MonoBehaviour {
 		globalVoting.players.Add ("nksssjasd", 9);
 		globalVoting.players.Add ("nkjsasd", 9);
 
-		globalVoting.InitializeVotes ();
+//		globalVoting.InitializeVotes ();
 		globalVoting.ChangeVote ("Dean");
 		returnedList =globalVoting.GetVote(3);
 

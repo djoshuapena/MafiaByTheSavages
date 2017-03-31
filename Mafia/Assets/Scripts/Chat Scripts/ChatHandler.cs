@@ -1,52 +1,61 @@
 ﻿using System;
-//using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using ExitGames.Client.Photon.Chat;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.SceneManagement;
+using System.Text;
 
-public class ChatHandler : MonoBehaviour, IChatClientListener {
 
-    public string[]     GameChannels;
-    public string       UserName { get; set; }
+//DAVID DO NOT 
+//CHANGE
+//MY SHIT
+//IT DOES NOT NEED
+//TO BE CHANGED
+public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
+
+    public string[]     GameChannels; // Set in inspector temporarily.
     public ChatClient   chatClient { get; set; }
-    public Text         StateText;
-    public ChatDisplay  chatDisplay;
+    public Text         StateText; // Set in inspector
+    public ChatDisplay  chatDisplay; // Set in inspector
 
+    //These 2 vars can be removed when chat has access to the custom player traits etc.
+    //Can make seperate players traits (whatever they're called) for a ChatClient.
+    //And make calls to them.
+    public string       PlayerStatus; // Set in inspector
+    public int          CurrentChannel; // Set in inspector
 
-    public string       PlayerStatus;
-    public int          CurrentChannel;
 
     public void DebugReturn(DebugLevel level, string message)
     {
-        if (level == ExitGames.Client.Photon.DebugLevel.ERROR)
+        if (level == DebugLevel.ERROR)
         {
-            UnityEngine.Debug.LogError(message);
+            Debug.LogError(message);
         }
-        else if (level == ExitGames.Client.Photon.DebugLevel.WARNING)
+        else if (level == DebugLevel.WARNING)
         {
-            UnityEngine.Debug.LogWarning(message);
+            Debug.LogWarning(message);
         }
         else
         {
-            UnityEngine.Debug.Log(message);
+            Debug.Log(message);
         }
     }
+
 
     public void OnChatStateChange(ChatState state)
     {
         this.StateText.text = state.ToString();
     }
 
+
     public void Connect(string userName)
     {
         Debug.Log("ChatHandler Start() test!");
-        //UserName = "Aaron Jackson";
         chatClient = new ChatClient(this);
         chatClient.ChatRegion = "US";
         chatClient.Connect(PhotonNetwork.PhotonServerSettings.ChatAppID, "0.1", new ExitGames.Client.Photon.Chat.AuthenticationValues(userName));
     }
+
 
     public void OnConnected()
     {
@@ -54,11 +63,13 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
         chatClient.Subscribe(GameChannels);
     }
 
+
     public void OnDisconnected()
     {
         //throw new NotImplementedException();
         Debug.Log("Disconnected");
     }
+
 
     public void OnApplicationQuit()
     {
@@ -68,45 +79,60 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
         }
     }
 
+
     public void OnGetMessages(string channelName, string[] senders, object[] messages)
     {
         chatDisplay.ShowMessages(GameChannels[CurrentChannel]);
     }
 
-    public void OnPrivateMessage(string sender, object message, string channelName)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnStatusUpdate(string user, int status, bool gotMessage, object message)
-    {
-        throw new NotImplementedException();
-    }
-
+    
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        for(int i = 0;i<channels.Length;i++)
-        {
-            if (results[i] == true)
-            {
-                SendChatMessage(channels[i], "You may chat");
-            }
-        }
+        chatClient.PublishMessage(channels[0],"You may chat");
         Debug.Log("Subscribed to: " + channels[0]);
     }
+
 
     public void OnUnsubscribed(string[] channels)
     {
         Debug.Log("Unsubscribed to: " + GameChannels[0]);
     }
 
-    public void SendChatMessage(string channel, string msg)
+
+    private string formatMessage(string playerStatus, int Channel, string msg)
+    {
+        string msgFormat;
+        StringBuilder txt = new StringBuilder();
+
+        if (playerStatus == "Civilian" || Channel == Global.Civilian)
+        {
+            msgFormat = "[ {0} ] : {1}";
+        }
+        else if (playerStatus == "Mafia")
+        {
+            msgFormat = "<color=red>[ {0} ]</color> : {1}";
+        }
+        else // Dead Players
+        {
+            msgFormat = "<color=purple>[ {0} ] : {1}</color>";
+        }
+        txt.AppendLine(string.Format(msgFormat, chatClient.UserId, msg));
+        return txt.ToString().TrimEnd('\n');
+    }
+
+
+    public void SendChatMessage(/*string channel,*/ string msg)
     {
         if (string.IsNullOrEmpty(msg))
         {
             return;
         }
-        chatClient.PublishMessage(channel, msg);
+
+        for (int i = 0; i < GameChannels.Length; i++)
+        {
+            if (PlayerStatus != "Dead" || i == Global.Dead)
+                chatClient.PublishMessage(GameChannels[i], formatMessage(PlayerStatus, i, msg)); 
+        }
     }
 
     // Use this for initialization
@@ -122,5 +148,15 @@ public class ChatHandler : MonoBehaviour, IChatClientListener {
         {
             this.chatClient.Service(); // make sure to call this regularly! it limits effort internally, so calling often is ok!
         }
+    }
+
+    public void OnPrivateMessage(string sender, object message, string channelName)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnStatusUpdate(string user, int status, bool gotMessage, object message)
+    {
+        throw new NotImplementedException();
     }
 }

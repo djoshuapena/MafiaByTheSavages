@@ -3,16 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Connect : MonoBehaviour {
+//DAVID DO NOT 
+//CHANGE
+//MY SHIT
+//IT DOES NOT NEED
+//TO BE CHANGED
+public class Connect : Photon.MonoBehaviour {
 
-    public ChatHandler chatHandler;
+    public ChatHandler chatHandler; // Set in inspector
     public string UserName { get; set; }
 
 	// Use this for initialization
 	void Start ()
     {
         chatHandler.StateText.text = "";
-        UserName = "FakeName" + Environment.TickCount % 99;
+        UserName = "FakeName" + Environment.TickCount % 99; //Put real username here.
         ConnectToChat(UserName);
 	}
 	

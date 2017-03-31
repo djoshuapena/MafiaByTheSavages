@@ -8,28 +8,28 @@ public class EndGameTester : MonoBehaviour
 {
 
     public EndGameController Control;
-    public AssignRolesController ILoveKittens;
+    // public AssignRolesController ILoveKittens;
     public Text outputText;
 
 
     public void onMafiaButtonPress()
     {
-        //PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
+        bool test = false;
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        ExitGames.Client.Photon.Hashtable cash = new ExitGames.Client.Photon.Hashtable();
-        hash.Add("dead", true);
-        cash.Add("roles", "Mafia");
-        PhotonNetwork.playerList[0].SetCustomProperties(cash);
+        hash.Add("Dead", true);
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
             Debug.Log("Did I come here");
             Debug.Log(PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Mafia"));
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Mafia"))
+            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Mafia") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
             {
                 Debug.Log("I came here");
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
+                test = true;
             }
+            if (test)
+                break;
         }
         if (Control.MafiaAlive())
         {
@@ -45,16 +45,21 @@ public class EndGameTester : MonoBehaviour
 
     public void onSheriffButtonPress()
     {
+        bool test = false;
         PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        hash.Add("dead", true);
+        hash.Add("Dead", true);
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff"))
+            Debug.Log(PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff"));
+            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
+                test = true;
             }
+            if(test)
+                break;
         }
         if (Control.SheriffAlive())
         {
@@ -68,24 +73,30 @@ public class EndGameTester : MonoBehaviour
 
     public void onCivlianButtonPress()
     {
+        bool test = false;
         PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        hash.Add("dead", true);
+        hash.Add("Dead", true);
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Healer"))
+            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Healer") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
+                test = true;
             }
-            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Civilian"))
+            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Civilian") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
+                test = true;
             }
-            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff"))
+            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
+                test = true;
             }
+            if (test)
+                break;
         }
         if (Control.CivilianAlive())
         {
@@ -97,10 +108,10 @@ public class EndGameTester : MonoBehaviour
         }
     }
 
-        // Use this for initialization
-        void Start()
+    // Use this for initialization
+    void Start()
     {
-        ILoveKittens.InitializeRoles();
+        // ILoveKittens.InitializeRoles();
 
         /*PhotonPlayer sheriff = new PhotonPlayer(true, 1, "Bob");
         sheriff.SetCustomProperties("role", "sheriff");

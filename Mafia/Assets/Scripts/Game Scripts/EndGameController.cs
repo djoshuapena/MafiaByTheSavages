@@ -11,20 +11,20 @@ public class EndGameController : MonoBehaviour {
         PhotonPlayer [] playerList = PhotonNetwork.playerList;//list of players in game
         for(int x = 0; x < playerList.Length; x++)
         {
-            if(playerList[x].CustomProperties.ContainsValue("sheriff") && playerList[x].CustomProperties["dead"].Equals(false))
+            if(playerList[x].CustomProperties.ContainsValue("Civilian") && (bool)playerList[x].CustomProperties["Dead"] == false)
             {
-                return false;
+                return true;
             }
-            else if(playerList[x].CustomProperties.ContainsValue("nurse") && playerList[x].CustomProperties["dead"].Equals(false))
+            else if(playerList[x].CustomProperties.ContainsValue("Nurse") && (bool)playerList[x].CustomProperties["Dead"] == false)
             {
-                return false;
+                return true;
             }
-            else if(playerList[x].CustomProperties.ContainsValue("civilian") && playerList[x].CustomProperties["dead"].Equals(false))
+            else if(playerList[x].CustomProperties.ContainsValue("Sheriff") && (bool)playerList[x].CustomProperties["Dead"] == false)
             {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     //determines if the last mafia has been killed
@@ -33,13 +33,13 @@ public class EndGameController : MonoBehaviour {
         PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
         for(int x = 0; x < playerList.Length; x++)
         {
-            Debug.Log("Is there a mafia?" + playerList[x].CustomProperties.ContainsValue("mafia"));
-            if (playerList[x].CustomProperties.ContainsValue("mafia") && playerList[x].CustomProperties["dead"].Equals(false))
+            Debug.Log("Is there a mafia?" + playerList[x].CustomProperties.ContainsValue("Mafia"));
+            if (playerList[x].CustomProperties.ContainsValue("Mafia") && (bool)playerList[x].CustomProperties["Dead"] == false)
             {
-                return false;
+                return true;
             }
         }
-            return true;
+            return false;
     }
 
     //determines if the last sheriff has been killed
@@ -49,11 +49,11 @@ public class EndGameController : MonoBehaviour {
 
         for(int x = 0; x < playerList.Length; x++)
         {
-            if(playerList[x].CustomProperties.ContainsValue("sheriff") && playerList[x].CustomProperties["dead"].Equals(false))
+            if(playerList[x].CustomProperties.ContainsValue("Sheriff") && (bool)playerList[x].CustomProperties["Dead"] == false)
             {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

@@ -52,4 +52,5 @@ MonoBehaviour:
   - ChangeGameState
   - Countdown1
   - SaveFlavorText
+  - setCustomProperties
   DisableAutoOpenWizard: 1

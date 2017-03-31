@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : Photon.PunBehaviour//MonoBehaviour
+public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 {
-    private List<GameObject> playerNamePrefabs = new List<GameObject>();
+   // private List<GameObject> playerNamePrefabs = new List<GameObject>();
 
     private PhotonView myPhotonView;
 
-    private int minPlayers = 2;
+    //private int minPlayers = 2;
 
     float timeLeft = 30.0f;
 

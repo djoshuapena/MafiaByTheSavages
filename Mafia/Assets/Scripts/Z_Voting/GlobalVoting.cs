@@ -18,7 +18,7 @@ public class GlobalVoting : Photon.MonoBehaviour {
 	int arrayCount = 0;
 	//This array holds the players with the most votes
 	public string [] maxVote = new string[MAXPLAYERS];
-	int[] hello = new int[3];
+	//int[] hello = new int[3];
 
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

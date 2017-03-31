@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NetworkTest : Photon.MonoBehaviour{
     public GameObject msg;
-    private PhotonView myPhotonView;
+    //private PhotonView myPhotonView;
 
     // Use this for initialization
     void Start () {
-        myPhotonView = gameObject.GetComponent<PhotonView>();
+        //myPhotonView = gameObject.GetComponent<PhotonView>();
         msg.SetActive(false);
 	}
 

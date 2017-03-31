@@ -49,4 +49,7 @@ MonoBehaviour:
   - test123
   - DecVote
   - IncVote
+  - ChangeGameState
+  - Countdown1
+  - SaveFlavorText
   DisableAutoOpenWizard: 1

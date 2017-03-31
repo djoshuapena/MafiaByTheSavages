@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VoteTesting : MonoBehaviour {
+public class Old_VoteTesting : MonoBehaviour {
 
 	public GlobalVoting globalVoting;
 	public LocalVoting localVoting;

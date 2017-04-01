@@ -8,20 +8,12 @@ using System.Linq;
 
 public class AssignRoles : MonoBehaviour {
 
-	//list of playernames that holds the preset name
-	List <string> playerNames = new List<string> ();
+    //list of playernames that holds the preset name
+    List<string> playerNames = new List<string>();
 
-	//public ExitGames.Client.Photon.Hashtable votedfor = new ExitGames.Client.Photon.Hashtable ();
-	//public ExitGames.Client.Photon.Hashtable playerNames = new ExitGames.Client.Photon.Hashtable();
-
-
-	int villan;
-	int hero;
-	int healer = 1;
+	int villan, hero, healer = 1;
 
 	bool done = false;
-
-	// Dont worry about this
 
 
 	public bool InitializeRoles()
@@ -30,16 +22,16 @@ public class AssignRoles : MonoBehaviour {
 		InitializePlayer();
 		ListRandomizer.Shuffle (playerNames);
         ExitGames.Client.Photon.Hashtable setName = new ExitGames.Client.Photon.Hashtable();
+
         //change the nickname for each of the player
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
-            if (!setName.ContainsKey("Name"))
-                setName.Add("Name", playerNames[i]);
+            if (!setName.ContainsKey(Global.CustomProperties.Name))
+                setName.Add(Global.CustomProperties.Name, playerNames[i]);
             else
-                setName["Name"] = playerNames[i];
+                setName[Global.CustomProperties.Name] = playerNames[i];
             PhotonNetwork.playerList[i].SetCustomProperties(setName);
 			print (PhotonNetwork.playerList [i].NickName);
 		}
-
 
 		//calculate the roles (the math stuff how many mafia sheriffs etc)
 		villan = (int)Math.Floor(PhotonNetwork.playerList.Length/3.0);
@@ -49,18 +41,14 @@ public class AssignRoles : MonoBehaviour {
 		List<string> id = new List<string>();
         //ExitGames.Client.Photon.Hashtable status = new ExitGames.Client.Photon.Hashtable();
         ExitGames.Client.Photon.Hashtable setVotes = new ExitGames.Client.Photon.Hashtable();
-        setVotes.Add ("VotedFor", "");
-		setVotes.Add ("Dead", false);
+        setVotes.Add (Global.CustomProperties.VotedFor, "");
+		setVotes.Add (Global.CustomProperties.Dead, false);
 
 		//initialize the VotedFor array and add nickname to the id list
 		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			id.Add (PhotonNetwork.playerList[i].NickName);
 			PhotonNetwork.playerList [i].SetCustomProperties (setVotes);
 		}
-
-		if(!(bool)PhotonNetwork.player.CustomProperties["Dead"])
-			print("You are dead");
-
 		//shuffle the list of id
 		ListRandomizer.Shuffle(id);
 
@@ -74,23 +62,24 @@ public class AssignRoles : MonoBehaviour {
 	//shuffle the list player names and give them nicknames 
 	private void SetupPlayer(List<string> list)
 	{
+        ExitGames.Client.Photon.Hashtable roles = new ExitGames.Client.Photon.Hashtable();
+        roles.Add(Global.CustomProperties.Roles, "");
 
-		//Assign roles to each of the players
-		for (int i = 0; i < list.Count; i++) {
-			ExitGames.Client.Photon.Hashtable roles = new ExitGames.Client.Photon.Hashtable();
+        //Assign roles to each of the players
+        for (int i = 0; i < list.Count; i++) {
 			if (villan != 0) {
-				roles.Add ("roles", "Mafia");
+                roles[Global.CustomProperties.Roles] = Global.Role.Mafia;
 				villan--;
 			} else if (hero != 0) {
-				roles.Add ("roles", "Sheriff");
-				hero--;
+                roles[Global.CustomProperties.Roles] = Global.Role.Sheriff;
+                hero--;
 			} else if (healer != 0) {
-				roles.Add ("roles", "Healer");
-				healer--;
+                roles[Global.CustomProperties.Roles] = Global.Role.Nurse;
+                healer--;
 			}
 			else {
-				roles.Add ("roles", "Civilian");
-			}
+                roles[Global.CustomProperties.Roles] = Global.Role.Civilian;
+            }
 
 			//find a player name in the photon that corresponds to the random list of id
 			for(int k = 0; k < PhotonNetwork.playerList.Length; k++)

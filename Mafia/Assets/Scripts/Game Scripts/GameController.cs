@@ -2,32 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameController : Photon.MonoBehaviour
 {
 
     public EndedController end;
-    //public CanvasController canvas; //Dont need this
     public AssignRoles assign;
     public EndGameController endGame;
     //public ChatGraphicsController chat;
     public VoteController vote;
     public TimerGraphicsController timer;
-    //public GameResultsPhase gameResults;
+    //public GameResultsPhase gameResults; //Need to build this
     public OverlayGraphicsController overlay;
-    //public TrialGraphicsController trial;
+    public TrialGraphicsController trial;
     public FlavorText flavorText;
-    //public DayNightGraphicsController dayNight;
+    //public DayNightGraphicsController dayNight; //Waiting for this
 
     private Dictionary<string, string> text;
-    //private Dictionary<string, ExitGames.Client.Photon.Hashtable> playerSetup;
     private string state = "";
     public Text output;
 
     // Use this for initialization
     void Start()
     {
-        //myPhotonView = PhotonView.Get(this);
         InitializeGameStart();
     }
 
@@ -45,19 +43,16 @@ public class GameController : Photon.MonoBehaviour
     {
         if (PhotonNetwork.isMasterClient)
         {
-            assign.InitializeRoles();
+            if(!assign.InitializeRoles())
+            {
+                throw new Exception("Could not initialize roles");
+            }
             text = flavorText.InitializeFlavorTextDict();
             photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
             state = "dusk";
             photonView.RPC("ChangeGameState", PhotonTargets.All, state);
         }
     }
-
-    //[PunRPC]
-    //public void setCustomProperties(Dictionary<string, ExitGames.Client.Photon.Hashtable> playerSetup)
-    //{
-    //    assign.PlayerCustomProperties(playerSetup);
-    //}
 
     /// <summary>
     /// Change to the new game state.
@@ -71,19 +66,7 @@ public class GameController : Photon.MonoBehaviour
             Debug.Log("I didnt get anything");
             return;
         }
-        Debug.Log("I got here");
-        //if (PhotonNetwork.isMasterClient)
-        //{
-        //    for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
-        //    {
-        //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["Name"]);
-        //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["roles"]);
-        //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["VotedFor"]);
-        //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["Dead"]);
-        //        Debug.Log("");
-        //    }
-        //}
-        //output.text = "My name is " + PhotonNetwork.player.CustomProperties["Name"] + "\nMy role is " + PhotonNetwork.player.CustomProperties["roles"] + "\nI voted for " + PhotonNetwork.player.CustomProperties["VotedFor"] + "\nAnd I am dead?" + PhotonNetwork.player.CustomProperties["Dead"];
+
         PreStateInitialization(state);
     }
 
@@ -135,8 +118,6 @@ public class GameController : Photon.MonoBehaviour
         GUILayout.Label(PhotonNetwork.player.CustomProperties["roles"].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties["VotedFor"].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties["Dead"].ToString());
-
-
     }
 
     private void StartState(string state)
@@ -153,9 +134,24 @@ public class GameController : Photon.MonoBehaviour
     {
 
     }
-
+    #region code_graveyard
+    //public CanvasController canvas; //Dont need this
     //private void BroadcastMessageToAll(string message, object item)
     //{
     //    photonView.RPC(message, PhotonTargets.All, item);
     //}
+
+    //if (PhotonNetwork.isMasterClient)
+    //{
+    //    for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
+    //    {
+    //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["Name"]);
+    //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["roles"]);
+    //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["VotedFor"]);
+    //        Debug.Log(PhotonNetwork.playerList[i].CustomProperties["Dead"]);
+    //        Debug.Log("");
+    //    }
+    //}
+    //output.text = "My name is " + PhotonNetwork.player.CustomProperties["Name"] + "\nMy role is " + PhotonNetwork.player.CustomProperties["roles"] + "\nI voted for " + PhotonNetwork.player.CustomProperties["VotedFor"] + "\nAnd I am dead?" + PhotonNetwork.player.CustomProperties["Dead"];
+    #endregion
 }

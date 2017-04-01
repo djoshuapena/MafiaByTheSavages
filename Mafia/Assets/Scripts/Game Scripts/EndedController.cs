@@ -58,13 +58,13 @@ public class EndedController : MonoBehaviour {
     /// <summary>
     /// Loads the lobby after updating to the database
     /// </summary>
-    public void LoadLobby()
+    private void LoadLobby()
     {
         PhotonNetwork.LeaveRoom();
     }
 
     //join lobby scene, connection status: JoinedLobby
-    void OnConnectedToMaster()
+    private void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
         SceneManager.LoadScene("Lobby");

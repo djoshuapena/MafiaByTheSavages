@@ -8,18 +8,17 @@ public class EndGameController : MonoBehaviour {
     //determines if the last civilian has been killed
     public bool CivilianAlive()
     {
-        PhotonPlayer [] playerList = PhotonNetwork.playerList;//list of players in game
-        for(int x = 0; x < playerList.Length; x++)
+        for(int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            if(playerList[x].CustomProperties.ContainsValue("Civilian") && (bool)playerList[x].CustomProperties["Dead"] == false)
+            if(PhotonNetwork.playerList[x].CustomProperties.ContainsValue(Global.Role.Civilian) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 return true;
             }
-            else if(playerList[x].CustomProperties.ContainsValue("Nurse") && (bool)playerList[x].CustomProperties["Dead"] == false)
+            else if(PhotonNetwork.playerList[x].CustomProperties.ContainsValue(Global.Role.Nurse) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 return true;
             }
-            else if(playerList[x].CustomProperties.ContainsValue("Sheriff") && (bool)playerList[x].CustomProperties["Dead"] == false)
+            else if(PhotonNetwork.playerList[x].CustomProperties.ContainsValue(Global.Role.Sheriff) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 return true;
             }
@@ -30,11 +29,9 @@ public class EndGameController : MonoBehaviour {
     //determines if the last mafia has been killed
     public bool MafiaAlive()
     {
-        PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
-        for(int x = 0; x < playerList.Length; x++)
+        for(int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            Debug.Log("Is there a mafia?" + playerList[x].CustomProperties.ContainsValue("Mafia"));
-            if (playerList[x].CustomProperties.ContainsValue("Mafia") && (bool)playerList[x].CustomProperties["Dead"] == false)
+            if (PhotonNetwork.playerList[x].CustomProperties.ContainsValue(Global.Role.Mafia) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 return true;
             }
@@ -45,11 +42,9 @@ public class EndGameController : MonoBehaviour {
     //determines if the last sheriff has been killed
     public bool SheriffAlive()
     {
-        PhotonPlayer[] playerList = PhotonNetwork.playerList;//list of players in game
-
-        for(int x = 0; x < playerList.Length; x++)
+        for(int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            if(playerList[x].CustomProperties.ContainsValue("Sheriff") && (bool)playerList[x].CustomProperties["Dead"] == false)
+            if(PhotonNetwork.playerList[x].CustomProperties.ContainsValue(Global.Role.Sheriff) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 return true;
             }

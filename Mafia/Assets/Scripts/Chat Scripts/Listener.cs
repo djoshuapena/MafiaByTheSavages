@@ -1,39 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+//DAVID DO NOT 
+//CHANGE
+//MY SHIT
+//IT DOES NOT NEED
+//TO BE CHANGED
 public class Listener : MonoBehaviour {
-
-    public ChatHandler chatHandler;
+    public ChatHandler chatObject;
     public InputField InputFieldChat;
  
-    void Start () {
-		
-	}
+    void Start () {}
 
-    public void OnEnterSend()
+
+    // Sends the message currently in the input field
+    // Empties the field
+    public void SendMessage()
     {
-        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
-        {
-            chatHandler.SendChatMessage(InputFieldChat.text);
-            InputFieldChat.text = "";
-        }
+        chatObject.SendChatMessage(InputFieldChat.text); 
+        InputFieldChat.text = "";
+        InputFieldChat.ActivateInputField();
     }
 
-    /// <summary>
-    /// Send a message if the Send button is pressed.
-    /// </summary>
-    public void OnClickSend()
-    {
-        if (InputFieldChat != null)
-        {
-            chatHandler.SendChatMessage(InputFieldChat.text);
-            InputFieldChat.text = "";
-        }
-    }
 
     // Update is called once per frame
-    void Update () {
-	}
+    void Update ()
+    {
+        if (InputFieldChat.IsActive() && InputFieldChat.text != "" && Input.GetKey(KeyCode.Return))
+        {
+            SendMessage();
+        }
+    }
 }

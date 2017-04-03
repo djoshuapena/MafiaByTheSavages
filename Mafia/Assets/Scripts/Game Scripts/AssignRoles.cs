@@ -8,18 +8,11 @@ using System.Linq;
 
 public class AssignRoles : MonoBehaviour {
 
-    //list of playernames that holds the preset name
-    List<string> playerNames = new List<string>();
-
-	int villan, hero, healer = 1;
-
-	bool done = false;
-
-
 	public bool InitializeRoles()
 	{
-		//Adds the preset names
-		InitializePlayer();
+        bool done = false;
+        //Adds the preset names
+        List<string> playerNames = InitializePlayerNames();
 		ListRandomizer.Shuffle (playerNames);
         ExitGames.Client.Photon.Hashtable setName = new ExitGames.Client.Photon.Hashtable();
 
@@ -32,10 +25,6 @@ public class AssignRoles : MonoBehaviour {
             PhotonNetwork.playerList[i].SetCustomProperties(setName);
 			print (PhotonNetwork.playerList [i].NickName);
 		}
-
-		//calculate the roles (the math stuff how many mafia sheriffs etc)
-		villan = (int)Math.Floor(PhotonNetwork.playerList.Length/3.0);
-		hero = (int)Math.Ceiling (PhotonNetwork.playerList.Length / 6.0);
 
 		//list of player names
 		List<string> id = new List<string>();
@@ -53,15 +42,19 @@ public class AssignRoles : MonoBehaviour {
 		ListRandomizer.Shuffle(id);
 
 
-		SetupPlayer (id);
+		done = SetupPlayer(id);
 
 		return done;
 
 	}
 	
 	//shuffle the list player names and give them nicknames 
-	private void SetupPlayer(List<string> list)
+	private bool SetupPlayer(List<string> list)
 	{
+        //calculate the roles (the math stuff how many mafia sheriffs etc)
+        int villan = (int)Math.Floor(PhotonNetwork.playerList.Length / 3.0);
+        int hero = (int)Math.Ceiling(PhotonNetwork.playerList.Length / 6.0);
+        int healer = 1;
         ExitGames.Client.Photon.Hashtable roles = new ExitGames.Client.Photon.Hashtable();
         roles.Add(Global.CustomProperties.Roles, "");
 
@@ -88,13 +81,12 @@ public class AssignRoles : MonoBehaviour {
 					PhotonNetwork.playerList[k].SetCustomProperties(roles);
 			}
 		}
-	 
-
-		done = true;
+        return true;
 	}
 
 	//Adds the preset names
-	private void InitializePlayer(){
+	private List<string> InitializePlayerNames(){
+        List<string> playerNames = new List<string>();
 		playerNames.Add ("Giram");
 		playerNames.Add ("Hayden");
 		playerNames.Add ("David");
@@ -111,6 +103,9 @@ public class AssignRoles : MonoBehaviour {
 		playerNames.Add ("Amanda");
 		playerNames.Add ("Kelsy");
 		playerNames.Add ("Insignia");
+
+
+        return playerNames;
 	}
 					
 }

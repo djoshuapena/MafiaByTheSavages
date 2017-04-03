@@ -12,8 +12,8 @@ public class TestTrial : MonoBehaviour {
     {
         tgc = GetComponent<TrialGraphicsController>();
         bool success1 = tgc.InitializeTrial(paramlist);
-        bool success2 = tgc.StartTrial();
+        //bool success2 = tgc.StartTrial();
         Debug.Log("init trial success?  " + success1);
-        Debug.Log("start trial success? " + success2);
+        //Debug.Log("start trial success? " + success2);
     }
 }

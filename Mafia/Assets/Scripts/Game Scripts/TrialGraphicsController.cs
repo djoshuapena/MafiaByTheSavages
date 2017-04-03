@@ -35,13 +35,11 @@ public class TrialGraphicsController : MonoBehaviour {
     private string name1;
     private string name2;
 
-    //VOTING
-    //question: do we need to check initilization of this in InitializeTrial()
-    //public VoteController votec;
+    public VoteController votec;
 
     //TIMER STUFF
     //question: do we need to check initilization of this in InitializeTrial()
-    //public Timer trialTimer;
+    public TimerGraphicsController trialTimer;
 
     //returns false if one or more gameObjects fail to initialize.
     public bool InitializeTrial(List<string> paramlist) //List<string> playerList //return bool
@@ -138,26 +136,35 @@ public class TrialGraphicsController : MonoBehaviour {
     }
 
     
-    public bool StartTrial()
+    public void StartTrial()
     {
         //until timer fixed
         startTrialDone = true;
 
-        SelectTrialPanel();
+        //SelectTrialPanel();
 
-        //trialTimer.InitializeTime(30);
-        //trialTimer.Activate();
-        //trialTimer.Countdown();
+        trialTimer.InitializeTime(30);
+        trialTimer.Activate();
+        trialTimer.Countdown();
+
+        InvokeRepeating("checkTimer", 0.1f, 1.0f);
 
 
         //if (test if timer done somehow)
-       // {
-       //     trialTimer.Deactivate();
-       //     startTrialDone = true;
-       // }
-       // if (!startTrialDone)
-       //     Debug.Log("Problem with trial phase timer.");
-        return startTrialDone;
+        // {
+        //     trialTimer.Deactivate();
+        //     startTrialDone = true;
+        // }
+        // if (!startTrialDone)
+        //     Debug.Log("Problem with trial phase timer.");
+//return startTrialDone;
+    }
+
+    public void checkTimer()
+    {
+        Debug.Log("Checking");
+        if (trialTimer.TimeUP())
+            CancelInvoke();
     }
 
     private void ChangeGuiltyBoxImage ()
@@ -239,14 +246,14 @@ public class TrialGraphicsController : MonoBehaviour {
         if (onePersonTrial)
         {
             playerOneSelected = true;
-            //votec.ChangeVote(name1);
+            votec.ChangeVote(name1);
             ChangeGuiltyBoxImage();
         }
         else
         {
             playerOneSelected = true;
             playerTwoSelected = false;
-            //votec.ChangeVote(name1);
+            votec.ChangeVote(name1);
             ChangeGuiltyBoxImage();
         }
     }
@@ -254,7 +261,7 @@ public class TrialGraphicsController : MonoBehaviour {
     public void DeselectPlayerOne()
     {
         playerOneSelected = false;
-        //votec.ChangeVote("");
+        votec.ChangeVote("");
         ChangeGuiltyBoxImage();
     }
 
@@ -262,14 +269,14 @@ public class TrialGraphicsController : MonoBehaviour {
     {
         playerTwoSelected = true;
         playerOneSelected = false;
-        //votec.ChangeVote(name2);
+        votec.ChangeVote(name2);
         ChangeGuiltyBoxImage();
     }
 
     public void DeselectPlayerTwo()
     {
         playerTwoSelected = false;
-        //votec.ChangeVote("");
+        votec.ChangeVote("");
         ChangeGuiltyBoxImage();
     }
 

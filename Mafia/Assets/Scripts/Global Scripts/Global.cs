@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void FunctionDone(string status);
+//public delegate void TimerDone();
+public delegate bool TimerDone();
+
 public static class Global {
 
     public static class Role
     {
-        public static string Mafia = "Mafia";
-        public static string Civilian = "Civilian";
-        public static string Nurse = "Nurse";
-        public static string Sheriff = "Sheriff";
+        public const string Mafia = "Mafia";
+        public const string Civilian = "Civilian";
+        public const string Nurse = "Nurse";
+        public const string Sheriff = "Sheriff";
     }
 
     public static class CustomProperties
@@ -49,6 +53,46 @@ public static class Global {
         public static string NurseProtect = "nurseProtects";
         public static string NoProtect = "noProtect";
     }
+
+    public static class States
+    {
+        public const string Dusk = "Dusk";
+        public const string Night = "Night";
+        public const string Morning = "Morning";
+        public const string Day = "Day";
+        public const string PreTrial = "PreTrial";
+        public const string Trial = "Trial";
+        public const string PostTrial = "PostTrial";
+        public const string Endgame = "Endgame";
+    }
+
+    public static class NextStates
+    {
+        public static string Next(string state)
+        {
+            if (state == States.Dusk)
+                return States.Night;
+            else if (state == States.Night)
+                return States.Morning;
+            else if (state == States.Morning)
+                return States.Day;
+            else if (state == States.Day)
+                return States.PreTrial;
+            else if (state == States.PreTrial)
+                return States.Trial;
+            else if (state == States.Trial)
+                return States.PostTrial;
+            return States.Night;
+        }
+        //public static string Dusk = States.Night;
+        //public static string Night = States.Morning;
+        //public static string Morning = States.Day;
+        //public static string Day = States.PreTrial;
+        //public static string PreTrial = States.Trial;
+        //public static string Trial = States.PostTrial;
+        //public static string PostTrial = States.Night;
+    }
+
 
 }
 

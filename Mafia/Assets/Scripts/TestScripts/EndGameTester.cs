@@ -21,8 +21,8 @@ public class EndGameTester : MonoBehaviour
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
             Debug.Log("Did I come here");
-            Debug.Log(PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Mafia"));
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Mafia") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
+            Debug.Log(PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia));
+            if (PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 Debug.Log("I came here");
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
@@ -52,8 +52,8 @@ public class EndGameTester : MonoBehaviour
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            Debug.Log(PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff"));
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
+            Debug.Log(PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff));
+            if (PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
                 test = true;
@@ -80,17 +80,17 @@ public class EndGameTester : MonoBehaviour
 
         for (int x = 0; x < PhotonNetwork.playerList.Length; x++)
         {
-            if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Healer") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
+            if (PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Nurse) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
                 test = true;
             }
-            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Civilian") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
+            else if (PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Civilian) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
                 test = true;
             }
-            else if (PhotonNetwork.playerList[x].CustomProperties["roles"].Equals("Sheriff") && !(bool)PhotonNetwork.playerList[x].CustomProperties["Dead"])
+            else if (PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff) && !(bool)PhotonNetwork.playerList[x].CustomProperties[Global.CustomProperties.Dead])
             {
                 PhotonNetwork.playerList[x].SetCustomProperties(hash);
                 test = true;

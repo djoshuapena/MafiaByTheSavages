@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 {
-    //private List<GameObject> playerNamePrefabs = new List<GameObject>();
 
     private PhotonView myPhotonView;
-
-    //private int minPlayers = 2;
-
     private float timeLeft = -1.0f;
 
     public Text timer;
+    private bool active = false;
 
     //function that synchronizes the timer for client and server
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -25,7 +22,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
             stream.SendNext(timeLeft);
             if (timeLeft < 1)
             {
-                //Debug.Log("Time is up");
+                Debug.Log("Time is up");
             }
         }
         //This is for everyone else to just read the time.
@@ -44,8 +41,9 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
     {
         myPhotonView = gameObject.GetComponent<PhotonView>();
 
-        if (PhotonNetwork.isMasterClient == true) // host starts the countdown
+        if (PhotonNetwork.isMasterClient == true && !active) // host starts the countdown
         {
+            active = true;
             myPhotonView.RPC("Countdown1", PhotonTargets.AllBuffered, PhotonNetwork.time);
         }
     }
@@ -80,11 +78,21 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
             }
             ShowTime();
         }
+        TimeUP();
 
     }
 
+    public bool TimeUP()
+    {
+        if(timeLeft <= 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     //shows the time remaining
-    void ShowTime()
+    public void ShowTime()
     {
         timer.text = "Time Left:" + Mathf.Round(timeLeft);
     }

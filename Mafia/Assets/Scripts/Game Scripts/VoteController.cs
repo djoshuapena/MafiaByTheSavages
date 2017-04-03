@@ -7,22 +7,18 @@ using System.Linq;
 
 public class VoteController : MonoBehaviour {
 
-	public Dictionary<string, int> players = new Dictionary<string, int>();
-	List<string> ret = new List<string> ();
-	List<string> emptyList = new List<string> ();
-
 	public void InitializeVotes(){
 		ExitGames.Client.Photon.Hashtable clearVotes = new ExitGames.Client.Photon.Hashtable();
-		for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
-			string photonName = PhotonNetwork.playerList [i].NickName;
-			clearVotes.Add ("VotedFor", "");
+        clearVotes.Add(Global.CustomProperties.VotedFor, "");
+
+        for (int i = 0; i < PhotonNetwork.playerList.Length; i++) {
 			PhotonNetwork.playerList [i].SetCustomProperties (clearVotes);
 		}
 	}
 
 	public void ChangeVote(string name){
 		ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
-		replaceVote.Add ("VotedFor", name);
+		replaceVote.Add (Global.CustomProperties.VotedFor, name);
 		PhotonNetwork.player.SetCustomProperties (replaceVote);
 	//	if ((string)PhotonNetwork.player.CustomProperties ["VotedFor"] == name) {
 	//		Debug.Log ("We did it");
@@ -35,9 +31,13 @@ public class VoteController : MonoBehaviour {
 		
 	public List<string> GetVote(int majority)
 	{
-		for (int i = 0; i < PhotonNetwork.playerList.Length; i++){
+
+        Dictionary<string, int> players = new Dictionary<string, int>();
+        List<string> returnList = new List<string>();
+
+        for (int i = 0; i < PhotonNetwork.playerList.Length; i++){
 			//string photonName = PhotonNetwork.playerList [i].NickName;
-			string name = (string)PhotonNetwork.player.CustomProperties["VotedFor"];
+			string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
 			//gameController.votedfor.TryGetValue (photonName,out name);
 			if (name != "") {
 				if (players.ContainsKey (name))
@@ -46,24 +46,166 @@ public class VoteController : MonoBehaviour {
 					players.Add (name, 0);
 			}
 		}
-		var sortedDict = from entry in players orderby entry.Value descending select entry;
-		var first = sortedDict.First();
-		int values = first.Value;
 
-		foreach (KeyValuePair<string, int> pair in players)
-		{
-			if (pair.Value == values)
-			{
-				ret.Add (pair.Key);
-			}
-		}
-		if (ret.Count == 0 || ret.Count > majority) {
-			return emptyList;
+        if (players.Count < 0)
+        {
+            var sortedDict = from entry in players orderby entry.Value descending select entry;
+            var first = sortedDict.First();
+            int values = first.Value;
+
+            foreach (KeyValuePair<string, int> pair in players)
+            {
+                if (pair.Value == values)
+                {
+                    returnList.Add(pair.Key);
+                }
+            }
+        }
+
+		if (returnList.Count == 0 || returnList.Count > majority) {
+            returnList.Clear();
+            return returnList;
 		} else {
-			return ret;
+			return returnList;
 		}
 	}
 
+    public string GetMaifaKill()
+    {
+        Dictionary<string, int> killPlayer = new Dictionary<string, int>();
+        List<string> returnList = new List<string>();
+
+        for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
+        {
+            //string photonName = PhotonNetwork.playerList [i].NickName;
+            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            //gameController.votedfor.TryGetValue (photonName,out name);
+            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia))
+            {
+                if (killPlayer.ContainsKey(name))
+                    killPlayer[name]++;
+                else
+                    killPlayer.Add(name, 1);
+            }
+        }
+
+        if (killPlayer.Count < 0)
+        {
+            var sortedDict = from entry in killPlayer orderby entry.Value descending select entry;
+            var first = sortedDict.First();
+            int values = first.Value;
+
+            foreach (KeyValuePair<string, int> pair in killPlayer)
+            {
+                if (pair.Value == values)
+                {
+                    returnList.Add(pair.Key);
+                }
+            }
+        }
+        if (returnList.Count == 0 || returnList.Count > 1)
+        {
+            return "";
+        }
+        else
+        {
+            return returnList[0];
+        }
+    }
+
+    public List<string> GetSheriffArrest()
+    {
+        Dictionary<string, int> arrestPlayer = new Dictionary<string, int>();
+        List<string> returnList = new List<string>();
+
+        for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
+        {
+            //string photonName = PhotonNetwork.playerList [i].NickName;
+            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            //gameController.votedfor.TryGetValue (photonName,out name);
+            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff) && isPlayerMafia(name))
+            {
+                if (arrestPlayer.ContainsKey(name))
+                    arrestPlayer[name]++;
+                else
+                    arrestPlayer.Add(name, 1);
+            }
+        }
+
+        if (arrestPlayer.Count < 0)
+        {
+            var sortedDict = from entry in arrestPlayer orderby entry.Value descending select entry;
+            var first = sortedDict.First();
+            int values = first.Value;
+
+            foreach (KeyValuePair<string, int> pair in arrestPlayer)
+            {
+                if (pair.Value == values)
+                {
+                    returnList.Add(pair.Key);
+                }
+            }
+        }
+        if (returnList.Count == 0 || returnList.Count > 1)
+        {
+            returnList.Clear();
+        }
+
+        return returnList;
+    }
+
+    private bool isPlayerMafia(string name)
+    {
+        for(int i = 0; i < PhotonNetwork.playerList.Length; i++)
+        {
+            if (PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.Name].Equals(name) && PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia))
+                return true;
+        }
+        return false;
+    }
+
+    public string GetNurseSave()
+    {
+        Dictionary<string, int> savePlayer = new Dictionary<string, int>();
+        List<string> returnList = new List<string>();
+
+        for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
+        {
+            //string photonName = PhotonNetwork.playerList [i].NickName;
+            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            //gameController.votedfor.TryGetValue (photonName,out name);
+            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff))
+            {
+                if (savePlayer.ContainsKey(name))
+                    savePlayer[name]++;
+                else
+                    savePlayer.Add(name, 1);
+            }
+        }
+
+        if (savePlayer.Count < 0)
+        {
+            var sortedDict = from entry in savePlayer orderby entry.Value descending select entry;
+            var first = sortedDict.First();
+            int values = first.Value;
+
+            foreach (KeyValuePair<string, int> pair in savePlayer)
+            {
+                if (pair.Value == values)
+                {
+                    returnList.Add(pair.Key);
+                }
+            }
+        }
+        if (returnList.Count == 0 || returnList.Count > 1)
+        {
+            return "";
+        }
+        else
+        {
+            return returnList[0];
+        }
+    }
 }
 
 

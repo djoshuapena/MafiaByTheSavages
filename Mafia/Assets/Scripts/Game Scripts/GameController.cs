@@ -17,11 +17,13 @@ public class GameController : Photon.MonoBehaviour
     public OverlayGraphicsController overlay;
     public TrialGraphicsController trial;
     public FlavorText flavorText;
-    //public DayNightGraphicsController dayNight; //Waiting for this
+    public NightDayController dayNight; //Waiting for this
 
     private Dictionary<string, string> text;
+    private List<string> trialplayers;
     private string state = "";
     public Text output;
+    private string playerVotedFor;
 
     // Use this for initialization
     void Start()
@@ -47,9 +49,17 @@ public class GameController : Photon.MonoBehaviour
             {
                 throw new Exception("Could not initialize roles");
             }
+
             text = flavorText.InitializeFlavorTextDict();
-            photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
-            state = "dusk";
+            if (text != null)
+            {
+                photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
+            }
+            else
+            {
+                throw new Exception("Dictionary is empty, cannot initialize");
+            }
+            state = Global.States.Dusk;
             photonView.RPC("ChangeGameState", PhotonTargets.All, state);
         }
     }
@@ -63,76 +73,127 @@ public class GameController : Photon.MonoBehaviour
     {
         if (state == "")
         {
-            Debug.Log("I didnt get anything");
-            return;
+            throw new Exception("Change Game state didnt get anything.");
         }
-
+        Debug.Log("I am changing the state to" + state);
         PreStateInitialization(state);
     }
 
     [PunRPC]
     public void SaveFlavorText(Dictionary<string, string> text)
     {
-        Debug.Log("I got here too.");
+        if(text == null)
+        {
+            throw new Exception("Save flavor text did not get any dictionary");
+        }
         flavorText.flavorTextDict = text;
-        if (PhotonNetwork.isMasterClient)
-        {
-            output.text = "this is me";
-        }
-        else
-        {
-            output.text = "I am changing to this";
-        }
     }
 
     private void PreStateInitialization(string state)
     {
-        //if(state == "")
-        //{
-        //    Debug.Log("I dont have a state to initialize");
-        //    return;
-        //}
-        //else if(state == "DayState")
-        //{
-        //    dayNight.Initialize("Day");
-        //}
-        //else if(state == "NightState")
-        //{
-        //    dayNight.Initialize("Night");
-        //}
-        //else if(state == "TrialState")
-        //{
-        //    trial.InitializeTrial();
-        //}
-        //else
-        //{
-        //    overlay.InitializeOverlay(state);
-        //}
+        bool initialized = false;
+        if (state.Equals(""))
+            throw new Exception("I did not get a state to initialize");
 
-        //StartState(state);
+        else if (state == Global.States.Night)
+        {
+            timer.InitializeTime(45);
+            initialized = dayNight.InitializeView(Global.States.Night);
+        }
+        //else if (state == Global.States.Day)
+        //{
+        //    timer.InitializeTime(45);
+        //    initialized = dayNight.InitializeView(Global.States.Day);
+        //}
+        //else if (state == Global.States.Trial)
+        //{
+        //    timer.InitializeTime(30);
+        //    initialized = trial.InitializeTrial(trialplayers);
+        //}
+        else
+        {
+            initialized = overlay.InitializeOverlay(state);
+        }
+        if (!initialized)
+            throw new Exception("I did not initialize any prestates.");
+    }
+
+    public void NowStartState(string state)
+    {
+        StartState(state);
     }
 
     private void OnGUI()
     {
-        GUILayout.Label(PhotonNetwork.player.CustomProperties["Name"].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties["roles"].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties["VotedFor"].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties["Dead"].ToString());
+        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name].ToString());
+        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].ToString());
+        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor].ToString());
+        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
     }
 
     private void StartState(string state)
     {
+        bool started = false;
+        if (state.Equals(""))
+            throw new Exception("I did not get a state to initialize");
+
+        else if (state == Global.States.Night)
+        {
+            vote.InitializeVotes();
+            started = dayNight.StartView(Global.States.Night);
+        }
+        else if (state == Global.States.Day)
+        {
+            vote.InitializeVotes();
+            started = dayNight.StartView(Global.States.Day);
+        }
+        else if (state == Global.States.Trial)
+        {
+            vote.InitializeVotes();
+            trial.StartTrial();
+        }
+        else
+        {
+            started = overlay.ShowOverlay(state);
+            //if (PhotonNetwork.isMasterClient)
+            //    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+        }
+        if (!started)
+            throw new Exception("I did not initialize any prestates.");
 
     }
 
-    private void EndingState(string state)
+    public void EndingState(string state)
     {
+        if (state == "")
+            throw new Exception("I did not get a state to end");
 
+        else if(state == Global.States.Night)
+        {
+            return;
+        }
+        else if(state == Global.States.Trial)
+        {
+        }
+        else
+        {
+            if (PhotonNetwork.isMasterClient)
+            {
+                photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                EndedState(state);
+            }
+        }
     }
 
     private void EndedState(string state)
     {
+        state = Global.NextStates.Next(state);
+        StartState(state);
+    }
 
+    public void Endgame()
+    {
+        end.ActivateEnd();   
     }
     #region code_graveyard
     //public CanvasController canvas; //Dont need this

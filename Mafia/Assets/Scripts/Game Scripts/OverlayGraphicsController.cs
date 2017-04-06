@@ -5,29 +5,38 @@ using UnityEngine.UI;
 using System;
 using System.Text;
 
+
 public class OverlayGraphicsController : MonoBehaviour {
 
 	public Text textfield;
 	public FlavorText flavorText;
 	public TimerGraphicsController timer;
-	public VoteController voteResult;
+	public VoteController voteResult; //This needs to come from the game controller
     public GameController game;
 	public float time = 5;
 	public GameObject[] overlayPanels;
-	private int duskIntro  = 0;
-	private int duskRole   = 1;
-	private int morningMaf = 2;
-	private int morningShf = 3;
-	private int morningDr  = 4;
-	private int preTrial   = 5;
-	private int postTrial   = 6;
-	private int endGame    = 7;
-	//private int gameRes    = 9;
+    public int morningShfType; // initialize by game controller
+    public int preTrialType; // initialize by game controller
+
+	private int duskIntro        = 0;
+	private int duskRole         = 1;
+	private int morningMaf       = 2;
+	private int morningShfOne    = 3;
+    private int morningShfTwo    = 4;
+    private int morningShfThree  = 5;
+	private int morningDr        = 6;
+	private int preTrialOne      = 7;
+    private int preTrialTwo      = 8;
+	private int postTrial        = 9;
 
 	//public GameObject duskIntroPanel;
 	//Panel[] OverlayPanel;
 
-	// Use this for initialization
+	/// <summary>
+    /// Initialize the overlay that is requierd for the state.
+    /// </summary>
+    /// <param name="phase">State of the overlay to initilize</param>
+    /// <returns>Whether or not it worked.</returns>
 	public bool InitializeOverlay(string phase)
 	{
 
@@ -41,44 +50,31 @@ public class OverlayGraphicsController : MonoBehaviour {
 				InitRole();
                 FunctionDone change = new FunctionDone(game.NowStartState);
                 change(Global.States.Dusk);
-				return true;
-				//break;
-
-			//case "Night":
-			//	overlayPanels[night].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.Night);
-			//	//image should stay same
-			//	return true;
-			//	///break;
+                return true;
 
 			case Global.States.Morning:
 				InitMafiaResults();
 				InitSherrifResults();
 				InitDoctorResults();
 				return true;
-            //break;
 
             case Global.States.PreTrial:
+                InitPreTrial();
                 return true;
 
-			//case "Trial":
-			//	overlayPanels[trial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText("Trial");
-			//	//image should stay the same
-			//	return true;
-			//	//b/reak;
 
 			case Global.States.PostTrial:
 				InitTrialResults();
 				return true;
-				//break;
-
-			case Global.States.Endgame:
-				InitEndGame();
-				return true;
-				//break;
 		}
 		return false;
 	}
 
+    /// <summary>
+    /// Show the overlay that is required by the state.
+    /// </summary>
+    /// <param name="phase">state of the overlay to show</param>
+    /// <returns>Whether or not it worked</returns>
 	public bool ShowOverlay(string phase)
 	{
 		foreach (GameObject panel in overlayPanels) {
@@ -87,86 +83,39 @@ public class OverlayGraphicsController : MonoBehaviour {
 
 		switch (phase) {
 		    case Global.States.Dusk:
-				//GameObject panel = Instantiate (overlayPanels [0]);
 				overlayPanels [duskIntro].SetActive (true);
                 StartCoroutine(DuskHelper());
-                //timer.InitializeTime(5);
-                //timer.Deactivate();
-                //timer.Countdown();
-                //while (!timer.TimeUP()) ;
-                //overlayPanels[duskIntro].SetActive(true);
-                //overlayPanels[duskIntro].SetActive (false);
-                //overlayPanels [duskRole].SetActive (true);
-                //StartCoroutine(WaitForFewSeconds());
-                ////timer.InitializeTime (time);
-                ////timer.Deactivate ();
-                ////timer.Countdown ();
-                //overlayPanels [duskRole].SetActive (false);
 				return true;
-				///break;
 
 		    case Global.States.Morning:
 			    overlayPanels [morningMaf].SetActive (true);
                 StartCoroutine(MorningHelper(morningMaf));
-			//timer.InitializeTime (time);
-			//timer.Deactivate ();
-			//timer.Countdown ();
-			//overlayPanels [morningMaf].SetActive (false);
-			    //overlayPanels [morningShf].SetActive (true);
-			//timer.InitializeTime (time);
-			//timer.Deactivate ();
-			//timer.Countdown ();
-			//overlayPanels [morningShf].SetActive (false);
-			    //overlayPanels [morningDr].SetActive (true);
-                //StartCoroutine(WaitForFewSeconds(Global.States.Morning));
-			//timer.InitializeTime (time);
-			//timer.Deactivate ();
-			//timer.Countdown ();
-			//overlayPanels [morningDr].SetActive (false);
 			    return true;
-            //break;
 
             case Global.States.PreTrial:
-                overlayPanels[preTrial].SetActive(true);
-                StartCoroutine(WaitForFewSeconds(Global.States.PreTrial));
-                //timer.InitializeTime(time);
-                //timer.Deactivate();
-                //timer.Countdown();
-                
+                overlayPanels[PreTrialType(preTrialType)].SetActive(true);
+                StartCoroutine(WaitForFewSeconds(Global.States.PreTrial));              
                 return true;
-            ///break;
 
             case Global.States.PostTrial:
                 overlayPanels[postTrial].SetActive(true);
                 StartCoroutine(WaitForFewSeconds(Global.States.PostTrial));
-                //timer.InitializeTime(time);
-                //timer.Deactivate();
-                //timer.Countdown();
                 return true;
-            //break;
-
-            case Global.States.Endgame:
-                overlayPanels[endGame].SetActive(true);
-                StartCoroutine(WaitForFewSeconds(Global.States.Endgame));
-                //timer.InitializeTime(time);
-                //timer.Deactivate();
-                //timer.Countdown();
-                return true;
-                //break;
         }
         return false;
 	}
 
+    /// <summary>
+    /// Second half of dusk phase.
+    /// </summary>
     private void DuskPart2()
     {
         overlayPanels[duskIntro].SetActive(false);
         overlayPanels[duskRole].SetActive(true);
         StartCoroutine(WaitForFewSeconds(Global.States.Dusk));
-        //timer.InitializeTime (time);
-        //timer.Deactivate ();
-        //timer.Countdown ();
     }
 
+    #region IEnumerators
     IEnumerator DuskHelper()
     {
         yield return new WaitForSeconds(time);
@@ -179,8 +128,8 @@ public class OverlayGraphicsController : MonoBehaviour {
         if (panel == morningMaf)
         {
             overlayPanels[panel].SetActive(false);
-            overlayPanels[morningShf].SetActive(true);
-            MorningHelper(morningShf);
+            overlayPanels[MorningSherrifType(morningShfType)].SetActive(true);
+            StartCoroutine(MorningHelper(MorningSherrifType(morningShfType)));
         }
         else
         {
@@ -197,15 +146,10 @@ public class OverlayGraphicsController : MonoBehaviour {
             overlayPanels[pos].SetActive(false);
         game.EndingState(state);
     }
+    #endregion
 
-	/*
-	private bool ChangePanel()
-	{
-		return false;
-	}
-	*/
-
-	private void InitRole()
+    #region Panel_Initializers
+    private void InitRole()
 	{
 		switch ((string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles]) {
 			case Global.Role.Civilian:
@@ -237,143 +181,259 @@ public class OverlayGraphicsController : MonoBehaviour {
 
         switch (role)/*get voted player's role*/
         {
-		case Global.Role.Civilian:
-			overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
-			break;
+		    case Global.Role.Civilian:
+			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills); // Specific Kill based on person
+			    break;
 
-		case Global.Role.Sheriff:
-			overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
-			break;
+		    case Global.Role.Sheriff:
+			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
+			    break;
 		
-		case Global.Role.Nurse:
-			overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
-			break;
+		    case Global.Role.Nurse:
+			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
+			    break;
 
-		case "":
-			overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoKill);
-			break;
+            case Global.Role.Mafia:
+                overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.MafiaKills);
+                break;
+
+            case "":
+			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoKill);
+			    break;
 		}
 	}
 
 	private void InitSherrifResults()
 	{
-  //      string role;
-  //      List<string> arrest = voteResult.GetSheriffArrest();
-  //      //int player = findPlayer(arrest);
-  //      if (player > 0)
-  //          role = (string)PhotonNetwork.playerList[player].CustomProperties[Global.CustomProperties.Roles];
-  //      else
-  //          role = "";
+        List<string> sheriffArrest = voteResult.GetSheriffArrest();
 
-  //      switch (role){
-		//case Global.Role.:
-		//	overlayPanels[morningShf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningFindCivilian");
-		//	break;
+        switch (sheriffArrest.Count)
+        {
+            case 0:
+                overlayPanels[morningShfOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture); //need to add sheriffCapture conditions
+                break;
+            case 1:
+                overlayPanels[morningShfOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfOne].transform.FindChild("Name").GetComponent<Text>().text = sheriffArrest[0];
+                break;
+            case 2:
+                overlayPanels[morningShfTwo].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfTwo].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
+                overlayPanels[morningShfTwo].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
+                break;
+            case 3:
+                overlayPanels[morningShfThree].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfThree].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
+                overlayPanels[morningShfThree].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
+                overlayPanels[morningShfThree].transform.FindChild("Name3").GetComponent<Text>().text = sheriffArrest[2];
+                break;
+        }
 
-		//case 2/*sherrif*/:
-		//	overlayPanels[morningShf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningFindSherrif");
-		//	break;
-
-		//case 3/*doctor*/:
-		//	overlayPanels[morningShf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningFindDoctor");
-		//	break;
-
-		//case 4/*mafia*/:
-		//	overlayPanels[morningShf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningFindMafia");
-		//	break;
-		//}
 	}
 
+    /// <summary>
+    /// Find out if the doctor saved anyone. If they did, initilize the protect success panel.
+    /// If they failed, initilize the protect failed panel.
+    /// </summary>
+	private void InitDoctorResults()
+	{
+        //int tmprole = 1;
+        //if(voteResult.getVote(1) !null) get players role
+        string name, saved = voteResult.GetNurseSave();
+        int playerNum = findPlayer(saved);
+
+        if (playerNum > 0)
+        {
+            name = (string)PhotonNetwork.playerList[playerNum].CustomProperties[Global.CustomProperties.Name];
+            overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.NurseProtect);
+        }
+        else
+		    overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoProtect);
+	}
+
+    /// <summary>
+    /// Find out who was accused to be put on trial. If one or two were accused, show their names.
+    /// If no one was accused, show that no one will go to trial.
+    /// </summary>
+    private void InitPreTrial()
+    {
+        List<string> accuesed = voteResult.GetVote(2);
+
+        switch (accuesed.Count)
+        {
+            case 0:
+                overlayPanels[preTrialOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport); //need to add pre trial conditions
+                break;
+            case 1:
+                overlayPanels[preTrialOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
+                overlayPanels[preTrialOne].transform.FindChild("Name").GetComponent<Text>().text = accuesed[0];
+                break;
+            case 2:
+                overlayPanels[preTrialTwo].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
+                overlayPanels[preTrialTwo].transform.FindChild("Name1").GetComponent<Text>().text = accuesed[0];
+                overlayPanels[preTrialTwo].transform.FindChild("Name2").GetComponent<Text>().text = accuesed[1];
+                break;
+        }
+        
+    }
+
+    /// <summary>
+    /// Find out if the trial was a success. If it was, show who was killed and their role.
+    /// If it was a fail, then show that no one was killed.
+    /// </summary>
+	private void InitTrialResults()
+	{
+		//int tmprole = 1;
+        List<string> trialResult = voteResult.GetVote(1);
+        string role, name = trialResult[0];
+        int playerRole = findPlayer(name);
+        if (playerRole > 0)
+            role = (string)PhotonNetwork.playerList[playerRole].CustomProperties[Global.CustomProperties.Roles];
+        else
+            role = "";
+
+
+        switch (role){
+            case Global.Role.Civilian:
+			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport); // needs to add guilty by role.
+			    break;
+
+		    case Global.Role.Mafia:
+			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    break;
+
+		    case Global.Role.Sheriff:
+			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    break;
+
+		    case Global.Role.Nurse:
+			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    break;
+
+		    case "":
+			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    break;
+		}
+	}
+    #endregion
+
+    #region Helper Funcitons
+
+    /// <summary>
+    /// Find the PhotonNetwork index of a player with the name in string 'player'.
+    /// If that player does not exist in the index, then return -1.
+    /// </summary>
+    /// <param name="player">String to compare photonNetwork player name to.</param>
+    /// <returns>Position of player if found, -1 if not found.</returns>
     private int findPlayer(string player)
     {
         for (int playerNum = 0; playerNum < PhotonNetwork.playerList.Length; playerNum++)
         {
             if ((string)PhotonNetwork.playerList[playerNum].CustomProperties[Global.CustomProperties.Name] == player)
             {
-               return playerNum;
+                return playerNum;
             }
         }
+        // if no player is found, return -1.
         return -1;
     }
 
-	private void InitDoctorResults()
-	{
-		int tmprole = 1;
-		/* if(voteResult.getVote(1) !null) get players role
-		 * 
-		 */
-		switch(tmprole/*get voted player's role*/){
-		case 1/*protect successful*/:
-			overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningProtectSuccess");
-			break;
+    private int PreTrialType(int trialNUmber)
+    {
+        if (trialNUmber == 2)
+            return preTrialTwo;
+        else
+            return preTrialOne;
+    }
 
-		case 2/*protect unsuccesful*/:
-			overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("MorningProtectFail");
-			break;
-		}
-	}
+    private int MorningSherrifType(int morningShfType)
+    {
+        if (morningShfType == 3)
+            return morningShfThree;
+        else if (morningShfType == 2)
+            return morningShfTwo;
+        else
+            return morningShfOne;
+    }
 
-	private void InitTrialResults()
-	{
-		int tmprole = 1;
-		/* if(voteResult.getVote(1) !null) get players role
-		 * 
-		 */
-		switch(tmprole/*get voted player's role*/){
-		case 1/*guilty civilian*/:
-			overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("GuiltyCivilian");
-			break;
-
-		case 2/*guilty mafia*/:
-			overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("GuiltyMafia");
-			break;
-
-		case 3/*guilty sherrif*/:
-			overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("GuiltySherrif");
-			break;
-
-		case 4/*guilty doctor*/:
-			overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("GuiltyDoctor");
-			break;
-
-		case 5/*not guilty*/:
-			overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("NotGuilty");
-			break;
-		}
-	}
-
-	private void InitEndGame()
-	{
-		int tmprole = 1;
-
-		switch(tmprole/*get current player's role*/){
-		case 1/*you win*/:
-			overlayPanels[endGame].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("YouWin");
-			break;
-
-		case 2/*you lose*/:
-			overlayPanels[endGame].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("YouLose");
-			break;
-		}
-	}
+    #endregion
 
 
-/*
-	public delegate bool CallBack()
-	{
-		return false;
-	}
+    #region code_graveyard
+    //case "Trial":
+    //	overlayPanels[trial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText("Trial");
+    //	//image should stay the same
+    //	return true;
+    //	//b/reak;
+
+    //case Global.States.Endgame:
+    //	InitEndGame();
+    //	return true;
+    //	//break;
+    //timer.InitializeTime(5);
+    //timer.Deactivate();
+    //timer.Countdown();
+    //while (!timer.TimeUP()) ;
+    //overlayPanels[duskIntro].SetActive(true);
+    //overlayPanels[duskIntro].SetActive (false);
+    //overlayPanels [duskRole].SetActive (true);
+    //StartCoroutine(WaitForFewSeconds());
+    ////timer.InitializeTime (time);
+    ////timer.Deactivate ();
+    ////timer.Countdown ();
+    //overlayPanels [duskRole].SetActive (false);
+    //case Global.States.Endgame:
+    //    overlayPanels[endGame].SetActive(true);
+    //    StartCoroutine(WaitForFewSeconds(Global.States.Endgame));
+    //    //timer.InitializeTime(time);
+    //    //timer.Deactivate();
+    //    //timer.Countdown();
+    //    return true;
+    //    //break;
+
+    //case "Night":
+    //	overlayPanels[night].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.Night);
+    //	//image should stay same
+    //	return true;
+    //	///break;
+    /*
+private bool ChangePanel()
+{
+    return false;
+}
 */
 
-	public void testOne()
-	{
-		InitializeOverlay ("Dusk");
-		//ShowOverlay ("Dusk");
-	}
-	public void testTwo()
-	{
-		ShowOverlay ("Dusk");
-	}
+    //private void InitEndGame()
+    //{
+    //	int tmprole = 1;
 
+    //	switch(tmprole/*get current player's role*/){
+    //	case 1/*you win*/:
+    //		overlayPanels[endGame].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("YouWin");
+    //		break;
 
+    //	case 2/*you lose*/:
+    //		overlayPanels[endGame].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText ("YouLose");
+    //		break;
+    //	}
+    //}
+
+    ///*
+    //	public delegate bool CallBack()
+    //	{
+    //		return false;
+    //	}
+    //*/
+
+    //	public void testOne()
+    //	{
+    //		InitializeOverlay ("Dusk");
+    //		//ShowOverlay ("Dusk");
+    //	}
+    //	public void testTwo()
+    //	{
+    //		ShowOverlay ("Dusk");
+    //	}
+
+    #endregion
 }

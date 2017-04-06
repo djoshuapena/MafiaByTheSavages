@@ -37,7 +37,7 @@ public class VoteController : MonoBehaviour {
 
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++){
 			//string photonName = PhotonNetwork.playerList [i].NickName;
-			string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+			string name = (string)PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.VotedFor];
 			//gameController.votedfor.TryGetValue (photonName,out name);
 			if (name != "") {
 				if (players.ContainsKey (name))
@@ -78,9 +78,9 @@ public class VoteController : MonoBehaviour {
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
         {
             //string photonName = PhotonNetwork.playerList [i].NickName;
-            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            string name = (string)PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.VotedFor];
             //gameController.votedfor.TryGetValue (photonName,out name);
-            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia))
+            if ((name != "") && PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Mafia))
             {
                 if (killPlayer.ContainsKey(name))
                     killPlayer[name]++;
@@ -103,14 +103,10 @@ public class VoteController : MonoBehaviour {
                 }
             }
         }
-        if (returnList.Count == 0 || returnList.Count > 1)
-        {
-            return "";
-        }
-        else
-        {
+        if (returnList.Count == 1)
             return returnList[0];
-        }
+
+        return "";
     }
 
     public List<string> GetSheriffArrest()
@@ -121,9 +117,9 @@ public class VoteController : MonoBehaviour {
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
         {
             //string photonName = PhotonNetwork.playerList [i].NickName;
-            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            string name = (string)PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.VotedFor];
             //gameController.votedfor.TryGetValue (photonName,out name);
-            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff) && isPlayerMafia(name))
+            if ((name != "") && PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff) && isPlayerMafia(name))
             {
                 if (arrestPlayer.ContainsKey(name))
                     arrestPlayer[name]++;
@@ -132,7 +128,7 @@ public class VoteController : MonoBehaviour {
             }
         }
 
-        if (arrestPlayer.Count < 0)
+        if (arrestPlayer.Count > 0)
         {
             var sortedDict = from entry in arrestPlayer orderby entry.Value descending select entry;
             var first = sortedDict.First();
@@ -146,7 +142,7 @@ public class VoteController : MonoBehaviour {
                 }
             }
         }
-        if (returnList.Count == 0 || returnList.Count > 1)
+        if (returnList.Count == 0 || returnList.Count > 3)
         {
             returnList.Clear();
         }
@@ -172,9 +168,9 @@ public class VoteController : MonoBehaviour {
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
         {
             //string photonName = PhotonNetwork.playerList [i].NickName;
-            string name = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor];
+            string name = (string)PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.VotedFor];
             //gameController.votedfor.TryGetValue (photonName,out name);
-            if ((name != "") && PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Sheriff))
+            if ((name != "") && PhotonNetwork.playerList[i].CustomProperties[Global.CustomProperties.Roles].Equals(Global.Role.Nurse))
             {
                 if (savePlayer.ContainsKey(name))
                     savePlayer[name]++;
@@ -183,7 +179,7 @@ public class VoteController : MonoBehaviour {
             }
         }
 
-        if (savePlayer.Count < 0)
+        if (savePlayer.Count > 0)
         {
             var sortedDict = from entry in savePlayer orderby entry.Value descending select entry;
             var first = sortedDict.First();
@@ -197,14 +193,10 @@ public class VoteController : MonoBehaviour {
                 }
             }
         }
-        if (returnList.Count == 0 || returnList.Count > 1)
-        {
-            return "";
-        }
-        else
-        {
+        if (returnList.Count == 1)
             return returnList[0];
-        }
+
+        return "";
     }
 }
 

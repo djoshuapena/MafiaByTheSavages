@@ -18,14 +18,14 @@ public class ChatDisplay : Photon.MonoBehaviour {
     public GameObject ChatPanel; // Set in inspector
     public GameObject ChatInputPanel; // Set in inspector
     public ScrollRect ChatPanelPosition; // Set in inspector
-    public Button RoleButton; // Set in inspector, used only for testing
-    public Text RoleButtonText; // Set in inspector
+	public GameObject OpenChatButton; // Set in inspector, used only for testing
+   // public Text RoleButtonText; // Set in inspector
 
     void Start() {}
 
     //Testing function, not really needed.
     //Could be altered to be an event that happens when a player dies
-    public void TogglePlayerStatus()
+    /*public void TogglePlayerStatus()
     {
         if (chatHandler.PlayerStatus == "Civilian")
         {
@@ -47,10 +47,10 @@ public class ChatDisplay : Photon.MonoBehaviour {
         }
         RoleButtonText.text = chatHandler.PlayerStatus;
         ShowMessages(chatHandler.GameChannels[chatHandler.CurrentChannel]);
-    }
+    }*/
 
 
-    public void ToggleChatPanel(/*bool status*/)
+    /*public void ToggleChatPanel()
     {
         if (ChatPanel.activeInHierarchy)
         {
@@ -60,8 +60,19 @@ public class ChatDisplay : Photon.MonoBehaviour {
         {
             ChatPanel.SetActive(true);
         }
-    }
+    }*/
 
+	public void CloseChat()
+	{
+		ChatPanel.SetActive(false);
+		OpenChatButton.SetActive(true);
+	}
+
+	public void OpenChat()
+	{
+	 	ChatPanel.SetActive(true);
+		OpenChatButton.SetActive(false);
+	}
 
     public void ToggleChatInput(/*bool status*/)
     {
@@ -89,7 +100,7 @@ public class ChatDisplay : Photon.MonoBehaviour {
             Debug.Log("ShowChannel failed to find channel: " + channelName);
             return;
         }
-        CurrentChannelText.text = channel.ToStringMessages();
+        CurrentChannelText.text = channel.ToStringMessages().TrimEnd('\n');
         ChatPanelPosition.verticalNormalizedPosition = 0;
     }
 

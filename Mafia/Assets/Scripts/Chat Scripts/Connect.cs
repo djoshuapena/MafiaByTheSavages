@@ -16,8 +16,8 @@ public class Connect : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        chatHandler.StateText.text = "";
-        UserName = "FakeName" + Environment.TickCount % 99; //Put real username here.
+        //chatHandler.StateText.text = "";
+        UserName = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];// "FakeName" + Environment.TickCount % 99; //Put real username here.
         ConnectToChat(UserName);
 	}
 	

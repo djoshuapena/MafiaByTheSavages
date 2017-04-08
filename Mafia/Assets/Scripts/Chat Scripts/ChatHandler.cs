@@ -14,15 +14,15 @@ using System.Text;
 public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
 
     public string[]     GameChannels; // Set in inspector temporarily.
-    public ChatClient   chatClient { get; set; }
-    public Text         StateText; // Set in inspector
+    public ChatClient chatClient;// { get; set; }
+    //public Text         StateText; // Set in inspector
     public ChatDisplay  chatDisplay; // Set in inspector
 
     //These 2 vars can be removed when chat has access to the custom player traits etc.
     //Can make seperate players traits (whatever they're called) for a ChatClient.
     //And make calls to them.
     public string       PlayerStatus; // Set in inspector
-    public int          CurrentChannel; // Set in inspector
+    private int          CurrentChannel; // Set in inspector
 
 
     public void DebugReturn(DebugLevel level, string message)
@@ -44,7 +44,7 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
 
     public void OnChatStateChange(ChatState state)
     {
-        this.StateText.text = state.ToString();
+        //this.StateText.text = state.ToString();
     }
 
 
@@ -60,9 +60,27 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     public void OnConnected()
     {
         Debug.Log("Connected as: " + chatClient.UserId);
+        
+        GetCurrentChannel();
         chatClient.Subscribe(GameChannels);
+        
     }
 
+    public void GetCurrentChannel()
+    {
+        string role = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
+        if (role == Global.Role.Civilian || role == Global.Role.Nurse || role == Global.Role.Sheriff)
+            PlayerStatus = Global.Role.Civilian;
+
+        if (PlayerStatus == Global.Role.Mafia)
+        {
+            CurrentChannel = Global.Chats.Mafia;
+        }
+        else
+        {
+            CurrentChannel = Global.Chats.Civilian;
+        }
+    }
 
     public void OnDisconnected()
     {
@@ -106,15 +124,15 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
 
         if (playerStatus == "Civilian" || Channel == Global.Chats.Civilian)
         {
-            msgFormat = "[ {0} ] : {1}";
+            msgFormat = "[ {0} ] {1}";
         }
         else if (playerStatus == "Mafia")
         {
-            msgFormat = "<color=red>[ {0} ]</color> : {1}";
+            msgFormat = "<color=red>[{0}]</color> {1}";
         }
         else // Dead Players
         {
-            msgFormat = "<color=purple>[ {0} ] : {1}</color>";
+            msgFormat = "<color=cyan>[{0}] {1}</color>";
         }
         txt.AppendLine(string.Format(msgFormat, chatClient.UserId, msg));
         return txt.ToString().TrimEnd('\n');
@@ -138,7 +156,7 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     // Use this for initialization
     void Start ()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         Application.runInBackground = true;
 	}
 

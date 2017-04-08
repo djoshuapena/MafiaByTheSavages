@@ -1,159 +1,34 @@
-Initialize engine version: 5.5.2f1 (3829d7f588f3)
-GfxDevice: creating device client; threaded=1
-Initialize engine version: 5.5.2f1 (3829d7f588f3)
+Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
     Vendor:   NVIDIA
-    VRAM:     2019 MB
-    Driver:   21.21.13.7892
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
-    Vendor:   NVIDIA
-    VRAM:     2019 MB
-    Driver:   21.21.13.7892
+    VRAM:     3072 MB
+    Driver:   21.21.13.7654
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\UsBrs\gdn Mon\Daoauments\loadAyPrejemtsly
-afiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\latform assembly: C:UnieyEngijne.UIodlum entt U\nnityChrldj DomaMafiaB
-yTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_DatP\Malatform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnatgengAinemb.Networkpifng.dlls (dlhl into Unity Childage is 
-harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Platfonrm asssemelys\djosh\Dos\cumeh\Doc\uments\UneityProjectsTheMafiaByThefia\atest_DafiaaMtesta_Data\MeanaygCSd\Urip.dll into Unmity eCtshild Domlla(thi
-s message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\UserP\datform ajsembly: Co\UserDocdmeosh\Un\Documentss\\UfiiyProjeSavages\MafiaTheSatages\M\Mafna\tged\UnDtyEangine.Ud\Ihotdlo into itUnitdll Chhild Dsomain
-s harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.103 seconds
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.078 seconds
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.149 seconds
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
-<RI> Input initialized.
-Initialize engine version: 5.5.2f1 (3829d7f588f3)
-GfxDevice: creating device client; threaded=1
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
-    Vendor:   NVIDIA
-    VRAM:     2019 MB
-    Driver:   21.21.13.7892
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.047 seconds
-Initialize engine version: 5.5.2f1 (3829d7f588f3)
-GfxDevice: creating device client; threaded=1
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
-    Vendor:   NVIDIA
-    VRAM:     2019 MB
-    Driver:   21.21.13.7892
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-<RI> Input initialized.
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.075 seconds
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-Initialize engine version: 5.5.2f1 (3829d7f588f3)
-GfxDevice: creating device client; threaded=1
-<RI> Initializing input.
-<RI> Input initialized.
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
-    Vendor:   NVIDIA
-    VRAM:     2019 MB
-    Driver:   21.21.13.7892
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.045 seconds
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.660052 ms
-<RI> Initialized touch support.
-UnloadTime: 1.431310 ms
-<RI> Initialized touch support.
-UnloadTime: 2.269238 ms
-<RI> Initialized touch support.
-UnloadTime: 1.334915 ms
-<RI> Initialized touch support.
-UnloadTime: 1.526520 ms
-qwer
+UnloadTime: 2.328065 ms
+ads
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -162,12 +37,20 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.992105 ms
+UnloadTime: 5.628346 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 0.538865 ms (FindLiveObjects: 0.052543 ms CreateObjectMapping: 0.035160 ms MarkObjects: 0.423901 ms  DeleteObjects: 0.026469 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 584.
+Total: 0.754141 ms (FindLiveObjects: 0.049960 ms CreateObjectMapping: 0.047772 ms MarkObjects: 0.625047 ms  DeleteObjects: 0.030632 ms)
 
 Lobby Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lobby Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Room Created.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -176,525 +59,57 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.055023 ms
+UnloadTime: 1.884259 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 0.721383 ms (FindLiveObjects: 0.056888 ms CreateObjectMapping: 0.037135 ms MarkObjects: 0.592988 ms  DeleteObjects: 0.033185 ms)
-
-sdfg
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected To Master
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.760203 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 0.793680 ms (FindLiveObjects: 0.052148 ms CreateObjectMapping: 0.049382 ms MarkObjects: 0.654618 ms  DeleteObjects: 0.036345 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 533.
+Total: 0.763622 ms (FindLiveObjects: 0.057618 ms CreateObjectMapping: 0.054700 ms MarkObjects: 0.628329 ms  DeleteObjects: 0.022609 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.152001 ms
+UnloadTime: 1.596898 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 0.447210 ms (FindLiveObjects: 0.048592 ms CreateObjectMapping: 0.022518 ms MarkObjects: 0.353975 ms  DeleteObjects: 0.020938 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 533.
+Total: 0.665161 ms (FindLiveObjects: 0.049960 ms CreateObjectMapping: 0.050689 ms MarkObjects: 0.556489 ms  DeleteObjects: 0.006928 ms)
 
-xcvb
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected To Master
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.987461 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 0.502519 ms (FindLiveObjects: 0.046617 ms CreateObjectMapping: 0.027259 ms MarkObjects: 0.400198 ms  DeleteObjects: 0.027259 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.027952 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 0.631704 ms (FindLiveObjects: 0.048987 ms CreateObjectMapping: 0.029234 ms MarkObjects: 0.522667 ms  DeleteObjects: 0.030024 ms)
-
-sdfqa
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected To Master
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 37.200653 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 1.011359 ms (FindLiveObjects: 0.159605 ms CreateObjectMapping: 0.050963 ms MarkObjects: 0.762470 ms  DeleteObjects: 0.037530 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-wer
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected To Master
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.251363 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 0.471309 ms (FindLiveObjects: 0.037530 ms CreateObjectMapping: 0.025283 ms MarkObjects: 0.370963 ms  DeleteObjects: 0.036740 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.383611 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 0.975804 ms (FindLiveObjects: 0.079012 ms CreateObjectMapping: 0.047012 ms MarkObjects: 0.814618 ms  DeleteObjects: 0.033975 ms)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.224298 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 0.711112 ms (FindLiveObjects: 0.065975 ms CreateObjectMapping: 0.035950 ms MarkObjects: 0.580346 ms  DeleteObjects: 0.027654 ms)
-
-PhotonView with ID 1 has no method "SPvehotonViext" m with ID 1 has no method "Savealarked withmarktdheith the [PunRPC](C#) or @PunRPC(J [ prPpeRPrty! (rgC:#) ctiona @P`2u
-nR
-PCilenamprepe rty! Ards: Dictionars`2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generity//uiommon/runtime/Dedu/artifgctsndings.gen.cpp Lineenerated/common/runti 51)
-
-Phote/nView with ID 1 has no method "ChangeGameState" marked with the DPunRPC](C#u or @PunRPC(JS) property! ArgsgBinringin
-g
-(Filencap e: C:: b1)
-ildslave/unity/btouild/artth ctDs/geaer nte d/commo"n/runtiae/DeSutBind"ings.ganrked Lith the [PunRPC](
-
-C#) or @PunRPC(JS) property! Args: String
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PhotonhotonView with ID 1 has no method "SaveFlavorText" maVked with the [PewuwiRPC](C#) or @PunRPC(JS)tproperty! Args: Dictionary` 2 1 
-(Fiasena e:o meC:/buildslave/unity/build/artifacts/generated/common/hod "SaveFlavorText" marked with the [PunRPC](C#) or @PunRPC(JS) proprrtyntime/Debu Args: Dictionary`2
- 
-(Filename: C:/buildslaveinunity/bgild/artifacts/generated/common/runtime/DebugBindings.gen.cpp Lins: .ge
-n
-.chotonViep pithiID : has 
-
-o method "PhangonView wtte I" marked Dith the [PumRPthod "ChaC](C#) or @PunRPC(JSP pooperty! Args: String
- 
-(Filename: C:/buildslave/unity/build/artifactsegeneeatedit/common/run1 hearked wiad ihe [sPgennRPC] Line: 51)un
-RPC(JS) property! Args: String
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-s no method "SaveFlavorText" marked with the [PunRPC](C#) or @PunRPC(JS) property! Args: Dictionary`2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-PhotonView with ID 1 has no method "ChangeGameState" marked with the [PunRPC](C#) or @PunRPC(JS) property! Args: String
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 Unused Serialized Uinloa(SernldTizedmfe:es .ow loa8me:s:
- 0)
- 1.136989 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-
-Un
-ading 5 oading 5 unused Assets to reduce memory usage. Loaded Objects now: 515.
-Total: 7.016307 ms (FindLiveObjects: 0.135901 ms CreateObjectMapping: 0.094419 ms MarkObjects: 2.126225 ms  DeleteObjects: 4.657785 ms)
-
-unused Assets to reduce memory usage. Loaded Objects now: 515.
-TotalU n.2028dTi6e7 12 .116167veOb
-jects: 0.120098 ms CreateObjectMapping: 0.097975 ms MarkObjects: 1.895904 ms  DeleteObjects: 0.087308 ms)
-
-UnloadTime: 22.982357 ms
-UnloadTime: 3.245832 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 515.
-Total: 0.766420 ms (FindLiveObjects: 0.084938 ms CreateObjectMapping: 0.040691 ms MarkObjects: 0.608791 ms  DeleteObjects: 0.030419 ms)
-
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 515.
-Total: 2.651658 ms (FindLiveObjects: 0.056493 ms CreateObjectMapping: 0.
-U13l oadiarkngje5 uts:sed Ass.45728o7r dms  Dmemoery uOsaects :o de.099bj55 mss)o
-:
- 515.
-Total: 0.823309 ms (FindLiveObjects: 0.045432 ms CreateObjectMapping: 0.037135 ms MarkObjects: 0.711507 ms  DeleteObjects: 0.028839 ms)
-
-Did I come here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I came here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Did I come here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Did I come here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Did I come here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I came here
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Is there a mafia?False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.516375 ms
 
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-True
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-False
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 644.
+Total: 0.772375 ms (FindLiveObjects: 0.055430 ms CreateObjectMapping: 0.044125 ms MarkObjects: 0.652398 ms  DeleteObjects: 0.019692 ms)
 
-False
+ads
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-True
+Connected as: FakeName98
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+Subscribed to: Civ
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+Subscribed to: Mafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+Subscribed to: Dead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-False
+I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 4d88 -> priority: 1 
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3024 -> priority: 1 
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3644 -> priority: 1 
-Crash!!!
-SymInit: Symbol-SearchPath: '.;C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia;C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'djosh'
-OS-Version: 10.0.14393 () 0x100-0x1
-C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test.exe:test.exe (009E0000), size: 19083264 (result: 0), SymType: '-exported-', PDB: 'C:\Users\djosh\Documents\UnityProjects\MafiaByTheSavages\Mafia\test.exe', fileVersion: 5.5.2.10711
-C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (779C0000), size: 1585152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 10.0.14393.479
-C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (77660000), size: 917504 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNEL32.DLL', fileVersion: 10.0.14393.0
-C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (744A0000), size: 1708032 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNELBASE.dll', fileVersion: 10.0.14393.953
-C:\WINDOWS\System32\SYSFER.DLL:SYSFER.DLL (74400000), size: 450560 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SYSFER.DLL', fileVersion: 12.1.7004.6500
-C:\WINDOWS\System32\USER32.dll:USER32.dll (74A30000), size: 1437696 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\USER32.dll', fileVersion: 10.0.14393.576
-C:\WINDOWS\System32\win32u.dll:win32u.dll (77220000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\win32u.dll', fileVersion: 10.0.14393.51
-C:\WINDOWS\System32\GDI32.dll:GDI32.dll (74EE0000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\GDI32.dll', fileVersion: 10.0.14393.206
-C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (76760000), size: 1421312 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\gdi32full.dll', fileVersion: 10.0.14393.953
-C:\WINDOWS\System32\ole32.dll:ole32.dll (747F0000), size: 958464 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ole32.dll', fileVersion: 10.0.14393.576
-C:\WINDOWS\System32\combase.dll:combase.dll (74CC0000), size: 2166784 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\combase.dll', fileVersion: 10.0.14393.576
-C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (77050000), size: 917504 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ucrtbase.dll', fileVersion: 10.0.14393.0
-C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (76A10000), size: 790528 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\RPCRT4.dll', fileVersion: 10.0.14393.82
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 4d4c -> priority: 1 
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 51dc -> priority: 1 
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1f8c -> priority: 1 
+  Thread -> id: fd4 -> priority: 1 
+  Thread -> id: 9b4 -> priority: 1 
+  Thread -> id: 15cc -> priority: 1 

@@ -27,14 +27,14 @@ public class EndedController : MonoBehaviour {
     /// Updates the users stats in the stats database.
     /// </summary>
     /// <returns>Data from the php script, when connected.</returns>
-    IEnumerator UpdateStats()
+	IEnumerator UpdateStats()
     {
         //to be used if we decide to use an array for stats
         //string statsString = convertToString (stats);
         WWWForm Form = new WWWForm();
         //string statsString = "1 12 5 6 4 0 25 6 200 54 1 6 18";
         string statsString = "17 12 25 6 42 10 2 6 54 54 1 6 18";
-        Form.AddField("Username", PhotonNetwork.playerName);
+        Form.AddField("Username", name);
         Form.AddField("stats", statsString);
         WWW UpdateStatsWWW = new WWW(updateStatsUrl, Form);
         yield return UpdateStatsWWW; //wait for php

@@ -33,13 +33,13 @@ public class OverlayGraphicsController : MonoBehaviour {
 	//Panel[] OverlayPanel;
 
 	/// <summary>
-    /// Initialize the overlay that is requierd for the state.
+    /// Initialize the overlay that is required for the state.
     /// </summary>
     /// <param name="phase">State of the overlay to initilize</param>
     /// <returns>Whether or not it worked.</returns>
 	public bool InitializeOverlay(string phase)
 	{
-
+		
 		switch (phase){
 			case Global.States.Dusk:
 				overlayPanels [duskIntro].transform.FindChild ("flavor_text").GetComponent<Text> ().text = flavorText.GetFlavorText (Global.FlavorTextKeys.Dusk);
@@ -172,7 +172,7 @@ public class OverlayGraphicsController : MonoBehaviour {
 
 	private void InitMafiaResults()
 	{
-        string role, kill = voteResult.GetMaifaKill();
+        string role, kill = voteResult.GetMafiaKill();
         int player = findPlayer(kill);
         if (player > 0)
             role = (string)PhotonNetwork.playerList[player].CustomProperties[Global.CustomProperties.Roles];

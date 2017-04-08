@@ -7,6 +7,7 @@ using System.Linq;
 
 public class VoteController : MonoBehaviour {
 
+	//InitializeVotes() sets all votes to an empty string
 	public void InitializeVotes(){
 		ExitGames.Client.Photon.Hashtable clearVotes = new ExitGames.Client.Photon.Hashtable();
         clearVotes.Add(Global.CustomProperties.VotedFor, "");
@@ -16,6 +17,7 @@ public class VoteController : MonoBehaviour {
 		}
 	}
 
+	//ChangeVote(name) changes the vote to name given
 	public void ChangeVote(string name){
 		ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
 		replaceVote.Add (Global.CustomProperties.VotedFor, name);
@@ -29,6 +31,8 @@ public class VoteController : MonoBehaviour {
 
 	}
 		
+	//GetVote(majority) will take the votedFor custom properties for each player and find out which person got voted
+	//for the most (multiple people if any) and return the names of those person in a list.
 	public List<string> GetVote(int majority)
 	{
 
@@ -43,11 +47,11 @@ public class VoteController : MonoBehaviour {
 				if (players.ContainsKey (name))
 					players [name] ++;
 				else
-					players.Add (name, 0);
+					players.Add (name, 1);
 			}
 		}
 
-        if (players.Count < 0)
+        if (players.Count > 0)
         {
             var sortedDict = from entry in players orderby entry.Value descending select entry;
             var first = sortedDict.First();
@@ -64,13 +68,16 @@ public class VoteController : MonoBehaviour {
 
 		if (returnList.Count == 0 || returnList.Count > majority) {
             returnList.Clear();
+			print ("clear");
             return returnList;
 		} else {
 			return returnList;
 		}
 	}
 
-    public string GetMaifaKill()
+	//GetMafiaKill() will take votedFor custom properties and find out who the mafia voted for and return the name
+	//they voted for as a string
+    public string GetMafiaKill()
     {
         Dictionary<string, int> killPlayer = new Dictionary<string, int>();
         List<string> returnList = new List<string>();
@@ -89,7 +96,7 @@ public class VoteController : MonoBehaviour {
             }
         }
 
-        if (killPlayer.Count < 0)
+        if (killPlayer.Count > 0)
         {
             var sortedDict = from entry in killPlayer orderby entry.Value descending select entry;
             var first = sortedDict.First();
@@ -109,6 +116,8 @@ public class VoteController : MonoBehaviour {
         return "";
     }
 
+	//GetSheiffArrest() will take votedFor custom properties and find out who Sheriff arrested and return the list of 
+	//arrested players
     public List<string> GetSheriffArrest()
     {
         Dictionary<string, int> arrestPlayer = new Dictionary<string, int>();
@@ -150,6 +159,7 @@ public class VoteController : MonoBehaviour {
         return returnList;
     }
 
+	//checks to see if the player is a mafia
     private bool isPlayerMafia(string name)
     {
         for(int i = 0; i < PhotonNetwork.playerList.Length; i++)
@@ -160,6 +170,7 @@ public class VoteController : MonoBehaviour {
         return false;
     }
 
+	//GetNurseSave() will take votedFor custom properties and find out who the nurse chose to heal and return the name of that person
     public string GetNurseSave()
     {
         Dictionary<string, int> savePlayer = new Dictionary<string, int>();

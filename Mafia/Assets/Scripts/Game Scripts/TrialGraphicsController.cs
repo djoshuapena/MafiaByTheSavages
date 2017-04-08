@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+ 
 public class TrialGraphicsController : MonoBehaviour {
 
     public Image guiltyBoxOriginal; //Needed?
@@ -134,8 +135,7 @@ public class TrialGraphicsController : MonoBehaviour {
 
         return initTrialSuccess;
     }
-
-    
+		
     public void StartTrial()
     {
         //until timer fixed
@@ -243,30 +243,32 @@ public class TrialGraphicsController : MonoBehaviour {
 
     public void SelectPlayerOne()
     {
+		onePersonTrial = true;
         if (onePersonTrial)
         {
             playerOneSelected = true;
             votec.ChangeVote(name1);
-            ChangeGuiltyBoxImage();
+			//ChangeGuiltyBoxImage();
         }
         else
         {
             playerOneSelected = true;
             playerTwoSelected = false;
             votec.ChangeVote(name1);
-            ChangeGuiltyBoxImage();
+            //ChangeGuiltyBoxImage();
         }
     }
 
     public void DeselectPlayerOne()
-    {
+	{
         playerOneSelected = false;
         votec.ChangeVote("");
-        ChangeGuiltyBoxImage();
+        //+
+		ChangeGuiltyBoxImage();
     }
 
     public void SelectPlayerTwo()
-    {
+	{
         playerTwoSelected = true;
         playerOneSelected = false;
         votec.ChangeVote(name2);

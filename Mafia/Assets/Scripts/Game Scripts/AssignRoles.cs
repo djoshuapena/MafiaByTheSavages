@@ -8,12 +8,25 @@ using System.Linq;
 
 public class AssignRoles : MonoBehaviour {
 
+	//public AssignRolesTest test;
+
+	//Initialiaze Roles will get the list of players in the current game and shuffle each of them so it is random.
+	//The function will then give each player a preset name which is also shuffled
+	//The InitializeRoles function will call the SetupPlayer at the end
 	public bool InitializeRoles()
 	{
         bool done = false;
         //Adds the preset names
         List<string> playerNames = InitializePlayerNames();
+
+		/*//test
+		test.testing (playerNames);*/
+
 		ListRandomizer.Shuffle (playerNames);
+
+		/*//test
+		test.testing (playerNames);*/
+
         ExitGames.Client.Photon.Hashtable setName = new ExitGames.Client.Photon.Hashtable();
 
         //change the nickname for each of the player
@@ -23,8 +36,10 @@ public class AssignRoles : MonoBehaviour {
             else
                 setName[Global.CustomProperties.Name] = playerNames[i];
             PhotonNetwork.playerList[i].SetCustomProperties(setName);
-			print (PhotonNetwork.playerList [i].NickName);
 		}
+
+		/*//test
+		test.testingCustomProperties ();*/
 
 		//list of player names
 		List<string> id = new List<string>();
@@ -38,17 +53,28 @@ public class AssignRoles : MonoBehaviour {
 			id.Add (PhotonNetwork.playerList[i].NickName);
 			PhotonNetwork.playerList [i].SetCustomProperties (setVotes);
 		}
+
+		/*//test
+		test.testingVoteanDeath ();*/
+
+		//test.testing (id);
+
 		//shuffle the list of id
 		ListRandomizer.Shuffle(id);
 
+		/*print ("Shuffle?");
+		testing (id);*/
 
 		done = SetupPlayer(id);
+
+		//test
+		//test.testingSetRole ();
 
 		return done;
 
 	}
 	
-	//shuffle the list player names and give them nicknames 
+	//SetupPlayer will give each person a role and set their role as part of the players customProperties 
 	private bool SetupPlayer(List<string> list)
 	{
         //calculate the roles (the math stuff how many mafia sheriffs etc)
@@ -84,7 +110,7 @@ public class AssignRoles : MonoBehaviour {
         return true;
 	}
 
-	//Adds the preset names
+	//Adds the preset names to a list and return that list
 	private List<string> InitializePlayerNames(){
         List<string> playerNames = new List<string>();
 		playerNames.Add ("Giram");
@@ -101,11 +127,10 @@ public class AssignRoles : MonoBehaviour {
 		playerNames.Add ("Kelsy");
 		playerNames.Add ("Troy");
 		playerNames.Add ("Amanda");
-		playerNames.Add ("Kelsy");
+		playerNames.Add ("Aloy");
 		playerNames.Add ("Insignia");
 
 
         return playerNames;
 	}
-					
 }

@@ -53,14 +53,13 @@ public class GameController : Photon.MonoBehaviour
             text = flavorText.InitializeFlavorTextDict();
             if (text != null)
             {
-                photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
+                photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
             }
             else
             {
                 throw new Exception("Dictionary is empty, cannot initialize");
             }
-            state = Global.States.Dusk;
-            photonView.RPC("ChangeGameState", PhotonTargets.All, state);
+            photonView.RPC("InitializeNightDay", PhotonTargets.AllBuffered);
         }
     }
 
@@ -71,12 +70,12 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     public void ChangeGameState(string state)
     {
-        if (state == "")
-        {
-            throw new Exception("Change Game state didnt get anything.");
-        }
-        Debug.Log("I am changing the state to" + state);
-        PreStateInitialization(state);
+        //if (state == "")
+        //{
+        //    throw new Exception("Change Game state didnt get anything.");
+        //}
+        //Debug.Log("I am changing the state to" + state);
+        //PreStateInitialization(state);
     }
 
     [PunRPC]
@@ -98,7 +97,7 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Night)
         {
             timer.InitializeTime(45);
-            initialized = dayNight.InitializeView(Global.States.Night);
+            initialized = dayNight.InitializeView(Global.States.Night, trialplayers);
         }
         //else if (state == Global.States.Day)
         //{
@@ -140,12 +139,12 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Night)
         {
             vote.InitializeVotes();
-            started = dayNight.StartView(Global.States.Night);
+            started = dayNight.StartView();
         }
         else if (state == Global.States.Day)
         {
             vote.InitializeVotes();
-            started = dayNight.StartView(Global.States.Day);
+            started = dayNight.StartView();
         }
         else if (state == Global.States.Trial)
         {
@@ -182,6 +181,22 @@ public class GameController : Photon.MonoBehaviour
                 photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
                 EndedState(state);
             }
+        }
+    }
+
+    [PunRPC]
+    private void InitializeNightDay()
+    {
+        StartCoroutine(WaitForInitialization());
+    }
+
+    IEnumerator WaitForInitialization()
+    {
+        yield return !dayNight.StartGameInitialize();
+        if(PhotonNetwork.isMasterClient)
+        {
+            state = Global.States.Dusk;
+            photonView.RPC("ChangeGameState", PhotonTargets.AllBuffered, state);
         }
     }
 

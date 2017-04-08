@@ -53,4 +53,5 @@ MonoBehaviour:
   - Countdown1
   - SaveFlavorText
   - setCustomProperties
+  - InitializeNightDay
   DisableAutoOpenWizard: 1

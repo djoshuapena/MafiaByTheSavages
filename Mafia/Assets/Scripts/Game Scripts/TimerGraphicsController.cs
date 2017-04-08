@@ -8,7 +8,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 {
 
     private PhotonView myPhotonView;
-    private float timeLeft = -1.0f;
+    private float timeLeft = 5.0f;
 
     public Text timer;
     private bool active = false;
@@ -39,6 +39,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 
     public void Countdown()
     {
+		ShowTime ();
         myPhotonView = gameObject.GetComponent<PhotonView>();
 
         if (PhotonNetwork.isMasterClient == true && !active) // host starts the countdown

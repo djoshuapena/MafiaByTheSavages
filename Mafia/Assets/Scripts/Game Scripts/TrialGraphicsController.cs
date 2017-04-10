@@ -37,6 +37,7 @@ public class TrialGraphicsController : MonoBehaviour {
     private string name2;
 
     public VoteController votec;
+    public GameController game;
 
     //TIMER STUFF
     //question: do we need to check initilization of this in InitializeTrial()
@@ -133,6 +134,7 @@ public class TrialGraphicsController : MonoBehaviour {
             initTrialSuccess = false;
         }
 
+        game.StartState(Global.States.Trial);
         return initTrialSuccess;
     }
 		
@@ -143,7 +145,7 @@ public class TrialGraphicsController : MonoBehaviour {
 
         //SelectTrialPanel();
 
-        trialTimer.InitializeTime(30);
+        //trialTimer.InitializeTime(30);
         trialTimer.Activate();
         trialTimer.Countdown();
 
@@ -165,6 +167,7 @@ public class TrialGraphicsController : MonoBehaviour {
         Debug.Log("Checking");
         if (trialTimer.TimeUP())
             CancelInvoke();
+        game.EndingState(Global.States.Trial);
     }
 
     private void ChangeGuiltyBoxImage ()

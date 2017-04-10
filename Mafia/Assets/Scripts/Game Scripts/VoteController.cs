@@ -66,11 +66,14 @@ public class VoteController : MonoBehaviour {
             }
         }
 
-		if (returnList.Count == 0 || returnList.Count > majority) {
+		if (returnList.Count == 0 || returnList.Count > majority)
+        {
             returnList.Clear();
 			print ("clear");
             return returnList;
-		} else {
+		}
+        else 
+        {
 			return returnList;
 		}
 	}

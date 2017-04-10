@@ -9,20 +9,19 @@ public class GameController : Photon.MonoBehaviour
 
     public EndedController end;
     public AssignRoles assign;
-    public EndGameController endGame;
-    //public ChatGraphicsController chat;
+    public EndGameController isEndGame;
     public VoteController vote;
     public TimerGraphicsController timer;
-    //public GameResultsPhase gameResults; //Need to build this
     public OverlayGraphicsController overlay;
     public TrialGraphicsController trial;
     public FlavorText flavorText;
-    public NightDayController dayNight; //Waiting for this
+    public NightDayController dayNight;
+    //public ChatGraphicsController chat;
+    //public GameResultsPhase gameResults; //Need to build this
 
     private Dictionary<string, string> text;
     private List<string> trialplayers;
     private string state = "";
-    public Text output;
     private string playerVotedFor;
 
     // Use this for initialization
@@ -38,8 +37,10 @@ public class GameController : Photon.MonoBehaviour
     }
 
     /// <summary>
-    /// The master client will assign the players roles and names, and get the flavor text for the games theme.
-    /// It will then send a message out to all other players to start the game.
+    /// The master client will assign the players roles and names, 
+    /// get the flavor text for the game version and send it to
+    /// all players to initilize. It will then tell all players to
+    /// initilize their own NightDay game state.
     /// </summary>
     private void InitializeGameStart()
     {
@@ -70,14 +71,20 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     public void ChangeGameState(string state)
     {
-        //if (state == "")
-        //{
-        //    throw new Exception("Change Game state didnt get anything.");
-        //}
-        //Debug.Log("I am changing the state to" + state);
-        //PreStateInitialization(state);
+        if (state == "")
+        {
+            throw new Exception("Change Game state didnt get anything.");
+        }
+        Debug.Log("I am changing the state to" + state);
+        PreStateInitialization(state);
     }
 
+
+    /// <summary>
+    /// Save the flavor text pulled from the database in the
+    /// flavorTextDict dictionary.
+    /// </summary>
+    /// <param name="text"></param>
     [PunRPC]
     public void SaveFlavorText(Dictionary<string, string> text)
     {
@@ -88,6 +95,12 @@ public class GameController : Photon.MonoBehaviour
         flavorText.flavorTextDict = text;
     }
 
+    /// <summary>
+    /// Initialize the view of each state to prepare them before they
+    /// show on the GUI. Get the time that is needed for the state ready.
+    /// If the previous state had votes, get those vote results.
+    /// </summary>
+    /// <param name="state"></param>
     private void PreStateInitialization(string state)
     {
         bool initialized = false;
@@ -96,19 +109,27 @@ public class GameController : Photon.MonoBehaviour
 
         else if (state == Global.States.Night)
         {
+            trialplayers = vote.GetVote(1);
             timer.InitializeTime(45);
             initialized = dayNight.InitializeView(Global.States.Night, trialplayers);
         }
-        //else if (state == Global.States.Day)
-        //{
-        //    timer.InitializeTime(45);
-        //    initialized = dayNight.InitializeView(Global.States.Day);
-        //}
-        //else if (state == Global.States.Trial)
-        //{
-        //    timer.InitializeTime(30);
-        //    initialized = trial.InitializeTrial(trialplayers);
-        //}
+        else if (state == Global.States.Day)
+        {
+            trialplayers = vote.GetSheriffArrest();
+            if (vote.GetMafiaKill() != "")
+            {
+                if (vote.GetNurseSave() != vote.GetMafiaKill())
+                    trialplayers.Add(vote.GetMafiaKill());
+            }
+            timer.InitializeTime(45);
+            initialized = dayNight.InitializeView(Global.States.Day, trialplayers);
+        }
+        else if (state == Global.States.Trial)
+        {
+            trialplayers = vote.GetVote(2);
+            timer.InitializeTime(30);
+            initialized = trial.InitializeTrial(trialplayers);
+        }
         else
         {
             initialized = overlay.InitializeOverlay(state);
@@ -130,7 +151,7 @@ public class GameController : Photon.MonoBehaviour
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
     }
 
-    private void StartState(string state)
+    public void StartState(string state)
     {
         bool started = false;
         if (state.Equals(""))
@@ -139,12 +160,14 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Night)
         {
             vote.InitializeVotes();
-            started = dayNight.StartView();
+            trialplayers = null;
+            started = dayNight.StartView(state);
         }
         else if (state == Global.States.Day)
         {
             vote.InitializeVotes();
-            started = dayNight.StartView();
+            trialplayers = null;
+            started = dayNight.StartView(state);
         }
         else if (state == Global.States.Trial)
         {
@@ -154,8 +177,6 @@ public class GameController : Photon.MonoBehaviour
         else
         {
             started = overlay.ShowOverlay(state);
-            //if (PhotonNetwork.isMasterClient)
-            //    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
         }
         if (!started)
             throw new Exception("I did not initialize any prestates.");
@@ -167,13 +188,86 @@ public class GameController : Photon.MonoBehaviour
         if (state == "")
             throw new Exception("I did not get a state to end");
 
-        else if(state == Global.States.Night)
+        // if the state is morning and all civilians are dead, end the game.
+        else if (state == Global.States.Morning)
         {
-            return;
+            PhotonPlayer player;
+
+            //get the list of players killed by sheriff
+            List<string> playersKilled = vote.GetSheriffArrest();
+
+            //get the player that was killed by mafia unless
+            //that person was saved by the nurse.
+            if (vote.GetMafiaKill() != "")
+            {
+                if (vote.GetNurseSave() != vote.GetMafiaKill())
+                    playersKilled.Add(vote.GetMafiaKill());
+            }
+
+            //set all players in the playersKilled list to dead.
+            if (PhotonNetwork.isMasterClient)
+            {
+                for (int pos = 0; pos < playersKilled.Count; pos++)
+                {
+                    player = findPlayer(playersKilled[pos]);
+                    player.CustomProperties[Global.CustomProperties.Dead] = true;
+                }
+            }
+
+            //if all civilians or all mafia are dead, end the game
+            if (!isEndGame.CivilianAlive() || !isEndGame.MafiaAlive())
+                Endgame();
+
+            else
+            {
+                if (PhotonNetwork.isMasterClient)
+                {
+                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                    EndedState(state);
+                }
+            }
         }
-        else if(state == Global.States.Trial)
+
+        // if the state is post trial, check if someone was hanged in the trial.
+        // If that player is a sheriff, check if they are the last sheriff. If
+        // so, then end the game. If the player is the last mafia, or the last
+        // civilian end the game. Otherwise continue the next state.
+        else if (state == Global.States.PostTrial)
         {
+            //Find out who was killed
+            string playerKilled = vote.GetVote(1)[0];
+            
+            //Find the photon player that is connected to that name
+            PhotonPlayer player = findPlayer(playerKilled);
+
+            //Set the photon player to dead
+            if(PhotonNetwork.isMasterClient)
+                player.CustomProperties[Global.CustomProperties.Dead] = true;
+
+            //check if last sheriff.
+            if(((string)player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Sheriff) && !isEndGame.SheriffAlive())
+            {
+                Endgame();
+            }
+
+            //check if last Mafia, or Civilian
+            else if(!isEndGame.MafiaAlive() || !isEndGame.CivilianAlive())
+            {
+                Endgame();
+            }
+            
+            //Continue to next state.
+            else
+            {
+                if (PhotonNetwork.isMasterClient)
+                {
+                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                    EndedState(state);
+                }
+            }
         }
+
+        //Continue to the next state.
         else
         {
             if (PhotonNetwork.isMasterClient)
@@ -184,12 +278,35 @@ public class GameController : Photon.MonoBehaviour
         }
     }
 
+    private PhotonPlayer findPlayer(string player)
+    {
+        for (int playerNum = 0; playerNum < PhotonNetwork.playerList.Length; playerNum++)
+        {
+            if ((string)PhotonNetwork.playerList[playerNum].CustomProperties[Global.CustomProperties.Name] == player)
+            {
+                return PhotonNetwork.playerList[playerNum];
+            }
+        }
+        // if no player is found, return -1.
+        return null;
+    }
+
+
+    #region NightDay_Initialization
+    /// <summary>
+    /// Initialize the NightDay panel for each individual
+    /// players game states.
+    /// </summary>
     [PunRPC]
     private void InitializeNightDay()
     {
         StartCoroutine(WaitForInitialization());
     }
 
+    /// <summary>
+    /// Wait for the NightDay panel to finish initialization.
+    /// </summary>
+    /// <returns>False if initilization is not yet finished.</returns>
     IEnumerator WaitForInitialization()
     {
         yield return !dayNight.StartGameInitialize();
@@ -199,6 +316,7 @@ public class GameController : Photon.MonoBehaviour
             photonView.RPC("ChangeGameState", PhotonTargets.AllBuffered, state);
         }
     }
+    #endregion
 
     private void EndedState(string state)
     {
@@ -206,6 +324,9 @@ public class GameController : Photon.MonoBehaviour
         StartState(state);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void Endgame()
     {
         end.ActivateEnd();   

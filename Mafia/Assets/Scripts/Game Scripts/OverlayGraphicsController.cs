@@ -56,15 +56,18 @@ public class OverlayGraphicsController : MonoBehaviour {
 				InitMafiaResults();
 				InitSherrifResults();
 				InitDoctorResults();
+                game.StartState(phase);
 				return true;
 
             case Global.States.PreTrial:
                 InitPreTrial();
+                game.StartState(phase);
                 return true;
 
 
 			case Global.States.PostTrial:
 				InitTrialResults();
+                game.StartState(phase);
 				return true;
 		}
 		return false;

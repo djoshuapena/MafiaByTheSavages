@@ -145,7 +145,7 @@ public class NightDayController : MonoBehaviour {
         // David hates this stupid loop-de-loop. James seconds Davids hatred.
         // Once you (whoever you are) chages the vote controller to be lovely
         // Change this bulls**t.
-        if (deadPlayers != null)
+        if (deadPlayers.Count > 0)
         {
             for (int pos = 0; pos < characterIconPrefabs.Count; pos++)
             {
@@ -162,6 +162,7 @@ public class NightDayController : MonoBehaviour {
                 }
             }
         }
+        game.StartState(state);
         return true;
 	}
 
@@ -170,17 +171,19 @@ public class NightDayController : MonoBehaviour {
     /// already initialized.
     /// </summary>
     /// <returns></returns>
-    public bool StartView()
+    public bool StartView(string state)
     {
         NightDayPanel.SetActive(true);
-        StartCoroutine(checkTimer());
+        timer.Countdown();
+        StartCoroutine(checkTimer(state));
         return true;
     }
 
-    IEnumerator checkTimer()
+    IEnumerator checkTimer(string state)
     {
         yield return !timer.TimeUP();
         NightDayPanel.SetActive(false);
+        game.EndingState(state);
     }
 
 	public void VoteThisPlayerButton(){

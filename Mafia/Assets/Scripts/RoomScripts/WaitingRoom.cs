@@ -199,7 +199,7 @@ public class WaitingRoom : Photon.MonoBehaviour
     [PunRPC]
     void Started()
     {
-        SceneManager.LoadScene("Game");
+        PhotonNetwork.LoadLevel("Game");
 
     }
 }

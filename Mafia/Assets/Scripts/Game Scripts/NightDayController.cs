@@ -173,9 +173,10 @@ public class NightDayController : MonoBehaviour {
     /// <returns></returns>
     public bool StartView(string state)
     {
+        timer.InitializeTime(30);
         NightDayPanel.SetActive(true);
-        timer.Countdown();
-        StartCoroutine(checkTimer(state));
+        timer.Countdown(state);
+        //StartCoroutine(checkTimer(state));
         return true;
     }
 
@@ -186,8 +187,19 @@ public class NightDayController : MonoBehaviour {
         game.EndingState(state);
     }
 
+    private GameObject thisButton(GameObject findme)
+    {
+        for(int i = 0; i < characterIconPrefabs.Count; i++)
+        {
+            if (findme == characterIconPrefabs[i])
+                return characterIconPrefabs[i];
+        }
+        throw new System.Exception("That button doesn't exist");
+    }
+
 	public void VoteThisPlayerButton(){
         characterSelectedIcon.GetComponent<Image>().sprite = characterIconPrefab.GetComponent<Image>().sprite;
+        Debug.Log(characterIconPrefab.GetComponentInChildren<Text>().text);
         characterSelectedIcon.GetComponentInChildren<Text>().text = characterIconPrefab.GetComponentInChildren<Text>().text;
         PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = characterIconPrefab.GetComponentInChildren<Text>().text;
         characterSelectedIcon.SetActive(true);

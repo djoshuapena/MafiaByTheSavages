@@ -36,6 +36,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 794
     y: 0
     width: 324
@@ -47,6 +48,16 @@ MonoBehaviour:
   - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
+=======
+    x: 0
+    y: 30
+    width: 1920
+    height: 947
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
+  vertical: 1
+  controlID: 79
+>>>>>>> origin/BuildingTheGame_Test
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,6 +75,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 30
     width: 1118
     height: 715
@@ -71,6 +83,15 @@ MonoBehaviour:
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 9
+=======
+    y: 0
+    width: 1920
+    height: 947
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
+  vertical: 0
+  controlID: 80
+>>>>>>> origin/BuildingTheGame_Test
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -87,10 +108,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 237
     height: 429
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    width: 559
+    height: 947
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> origin/BuildingTheGame_Test
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -111,12 +139,21 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 429
     width: 794
     height: 286
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 13}
+=======
+    y: 0
+    width: 409
+    height: 589
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+>>>>>>> origin/BuildingTheGame_Test
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
@@ -130,6 +167,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 589
+    width: 1361
+    height: 358
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+>>>>>>> origin/BuildingTheGame_Test
   m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -204,6 +270,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 794
     height: 715
   m_MinSize: {x: 406, y: 492}
@@ -211,6 +278,15 @@ MonoBehaviour:
   vertical: 1
   controlID: 10
 --- !u!114 &10
+=======
+    width: 1361
+    height: 947
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
+  vertical: 1
+  controlID: 11
+--- !u!114 &11
+>>>>>>> origin/BuildingTheGame_Test
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -228,6 +304,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 794
     height: 429
   m_MinSize: {x: 406, y: 221}
@@ -235,6 +312,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 11
 --- !u!114 &11
+=======
+    width: 1361
+    height: 589
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
+  vertical: 0
+  controlID: 12
+--- !u!114 &12
+>>>>>>> origin/BuildingTheGame_Test
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -254,6 +340,7 @@ MonoBehaviour:
     height: 429
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 17}
@@ -262,6 +349,16 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &12
+=======
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &13
+>>>>>>> origin/BuildingTheGame_Test
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -333,10 +430,17 @@ MonoBehaviour:
   m_LastProjectPath: D:\GitHub\MafiaByTheSavages\Mafia
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 76}
     m_SelectedIDs: 622a0000
     m_LastClickedID: 10850
     m_ExpandedIDs: 0000000080260000a6260000fe27000028280000322b0000f02b0000fc2d00008e3000009030000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 216}
+    m_SelectedIDs: 9a420000
+    m_LastClickedID: 17050
+    m_ExpandedIDs: 00000000ae410000d04100004842000064420000d0420000d8420000ea42000034430000f84300000044000036440000d8440000da44000000ca9a3bffffff7f
+>>>>>>> origin/BuildingTheGame_Test
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +468,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000080260000a6260000fe27000028280000322b0000f02b0000fc2d00008e30000090300000
+=======
+    m_ExpandedIDs: 00000000ae410000d04100004842000064420000d0420000d8420000ea42000034430000f84300000044000036440000d8440000da440000
+>>>>>>> origin/BuildingTheGame_Test
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,10 +497,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e032000000000000
+=======
+    m_SelectedInstanceIDs: 0a430000
+    m_LastClickedInstanceID: 17162
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000e0320000000000000c350000
+>>>>>>> origin/BuildingTheGame_Test
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,7 +597,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e22d0000
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: baf9ffffe2fbffff00000000762f0000962f0000b42f00002e300000
+=======
+    m_ExpandedIDs: 18e0feff80e0feff86e2feff98e2feffbae2feffc2e2feffe806ffff2c08ffffe209ffff2413ffffb013ffffb615ffffc815ffffea15fffff215ffff961bffff721fffff9e32ffff4833ffffd43bffffb44bffff544cffff584effff684effff884effff8e4effff4c68ffff1a69ffff1c6bffff2a6bffff486bffff4c6bffffbc72ffff4673ffff4c75ffff5e75ffff8075ffff8875ffffd276ffff8077ffffa879ffff4c7affff8c7bffff8c80ffff000000004e870000d48700001488000020950000
+>>>>>>> origin/BuildingTheGame_Test
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,9 +685,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 398.9024
     speed: 2
     m_Value: 398.9024
+=======
+    m_Target: 795.208
+    speed: 2
+    m_Value: 795.208
+>>>>>>> origin/BuildingTheGame_Test
   m_Ortho:
     m_Target: 1
     speed: 2

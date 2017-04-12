@@ -15,11 +15,12 @@ using UnityEngine.UI;
 public class ChatDisplay : Photon.MonoBehaviour {
     public ChatHandler chatHandler; // Set in inspector
     public Text CurrentChannelText; // Set in inspector
+    public Text CurrentChannelText2; // Set in inspector
     public GameObject ChatPanel; // Set in inspector
     public GameObject ChatInputPanel; // Set in inspector
     public ScrollRect ChatPanelPosition; // Set in inspector
 	public GameObject OpenChatButton; // Set in inspector, used only for testing
-   // public Text RoleButtonText; // Set in inspector
+    public GameObject SmallerChatPanel; // Set in inspector
 
     void Start() {}
 
@@ -66,13 +67,15 @@ public class ChatDisplay : Photon.MonoBehaviour {
 	{
 		ChatPanel.SetActive(false);
 		OpenChatButton.SetActive(true);
+        SmallerChatPanel.SetActive(true);
 	}
 
 	public void OpenChat()
 	{
-	 	ChatPanel.SetActive(true);
-		OpenChatButton.SetActive(false);
-	}
+        OpenChatButton.SetActive(false);
+        SmallerChatPanel.SetActive(false);
+        ChatPanel.SetActive(true);
+    }
 
     public void ToggleChatInput(/*bool status*/)
     {
@@ -101,7 +104,8 @@ public class ChatDisplay : Photon.MonoBehaviour {
             return;
         }
         CurrentChannelText.text = channel.ToStringMessages().TrimEnd('\n');
-        ChatPanelPosition.verticalNormalizedPosition = 0;
+        CurrentChannelText2.text = channel.ToStringMessages().TrimEnd('\n');
+
     }
 
 

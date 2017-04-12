@@ -101,6 +101,7 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     public void OnGetMessages(string channelName, string[] senders, object[] messages)
     {
         chatDisplay.ShowMessages(GameChannels[CurrentChannel]);
+        chatDisplay.ChatPanelPosition.verticalNormalizedPosition = 0;
     }
 
     

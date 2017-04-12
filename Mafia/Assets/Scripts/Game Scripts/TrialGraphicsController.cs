@@ -147,7 +147,7 @@ public class TrialGraphicsController : MonoBehaviour {
 
         //trialTimer.InitializeTime(30);
         trialTimer.Activate();
-        trialTimer.Countdown();
+        trialTimer.Countdown(Global.States.Trial);
 
         InvokeRepeating("checkTimer", 0.1f, 1.0f);
 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 {
-
+    public GameController game;
     private PhotonView myPhotonView;
     private float timeLeft = 5.0f;
 
@@ -37,7 +37,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
         }
     }
 
-    public void Countdown()
+    public void Countdown(string state)
     {
 		ShowTime ();
         myPhotonView = gameObject.GetComponent<PhotonView>();
@@ -45,7 +45,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
         if (PhotonNetwork.isMasterClient == true && !active) // host starts the countdown
         {
             active = true;
-            myPhotonView.RPC("Countdown1", PhotonTargets.AllBuffered, PhotonNetwork.time);
+            myPhotonView.RPC("Countdown1", PhotonTargets.AllBuffered, PhotonNetwork.time, state);
         }
     }
 
@@ -62,13 +62,13 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 
     //public synchronized function that starts the countdown based on the timeRemaining
     [PunRPC]
-    public void Countdown1(double timerStart)
+    public void Countdown1(double timerStart, string state)
     {
         timeLeft -= (float)(timerStart - PhotonNetwork.time);
-        StartCoroutine("TimerCountdown");
+        StartCoroutine("TimerCountdown", state);
     }
 
-    IEnumerator TimerCountdown()
+    IEnumerator TimerCountdown(string state)
     {
         while (timeLeft > 0f)
         {
@@ -79,7 +79,11 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
             }
             ShowTime();
         }
-        TimeUP();
+        Debug.Log(state);
+        FunctionDone timeup = new FunctionDone(game.EndingState);
+        timeup(state);
+        //game.EndingState(state);
+        //TimeUP();
 
     }
 

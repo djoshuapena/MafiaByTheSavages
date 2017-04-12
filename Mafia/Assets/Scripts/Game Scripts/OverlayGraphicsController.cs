@@ -8,12 +8,12 @@ using System.Text;
 
 public class OverlayGraphicsController : MonoBehaviour {
 
-	public Text textfield;
+	//public Text textfield;
 	public FlavorText flavorText;
 	public TimerGraphicsController timer;
 	public VoteController voteResult; //This needs to come from the game controller
     public GameController game;
-	public float time = 5;
+	private float time = 5;
 	public GameObject[] overlayPanels;
     public int morningShfType; // initialize by game controller
     public int preTrialType; // initialize by game controller
@@ -42,7 +42,7 @@ public class OverlayGraphicsController : MonoBehaviour {
 		
 		switch (phase){
 			case Global.States.Dusk:
-				overlayPanels [duskIntro].transform.FindChild ("flavor_text").GetComponent<Text> ().text = flavorText.GetFlavorText (Global.FlavorTextKeys.Dusk);
+				overlayPanels [duskIntro].GetComponentInChildren<Text> ().text = flavorText.GetFlavorText (Global.FlavorTextKeys.Dusk);
 				//image should stay same
 
 				//check currentPlayer role
@@ -156,19 +156,19 @@ public class OverlayGraphicsController : MonoBehaviour {
 	{
 		switch ((string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles]) {
 			case Global.Role.Civilian:
-				overlayPanels[duskRole].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.CivilianWin); //Needs to be Civilian
+				overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.CivilianWin); //Needs to be Civilian
 				break;
 
 			case Global.Role.Mafia:
-				overlayPanels[duskRole].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaWin);
+				overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaWin);
 				break;
 
 			case Global.Role.Sheriff:
-				overlayPanels[duskRole].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.SheriffWin);
+				overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.SheriffWin);
 				break;
 
 			case Global.Role.Nurse:
-				overlayPanels[duskRole].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NurseWin);
+				overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NurseWin);
 				break;
 		}
 	}
@@ -185,23 +185,23 @@ public class OverlayGraphicsController : MonoBehaviour {
         switch (role)/*get voted player's role*/
         {
 		    case Global.Role.Civilian:
-			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills); // Specific Kill based on person
+			    overlayPanels[morningMaf].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills); // Specific Kill based on person
 			    break;
 
 		    case Global.Role.Sheriff:
-			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
+			    overlayPanels[morningMaf].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
 			    break;
 		
 		    case Global.Role.Nurse:
-			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
+			    overlayPanels[morningMaf].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.MafiaKills);
 			    break;
 
             case Global.Role.Mafia:
-                overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.MafiaKills);
+                overlayPanels[morningMaf].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.MafiaKills);
                 break;
 
             case "":
-			    overlayPanels[morningMaf].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoKill);
+			    overlayPanels[morningMaf].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoKill);
 			    break;
 		}
 	}
@@ -213,19 +213,19 @@ public class OverlayGraphicsController : MonoBehaviour {
         switch (sheriffArrest.Count)
         {
             case 0:
-                overlayPanels[morningShfOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture); //need to add sheriffCapture conditions
+                overlayPanels[morningShfOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture); //need to add sheriffCapture conditions
                 break;
             case 1:
-                overlayPanels[morningShfOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
                 overlayPanels[morningShfOne].transform.FindChild("Name").GetComponent<Text>().text = sheriffArrest[0];
                 break;
             case 2:
-                overlayPanels[morningShfTwo].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfTwo].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
                 overlayPanels[morningShfTwo].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
                 overlayPanels[morningShfTwo].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
                 break;
             case 3:
-                overlayPanels[morningShfThree].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
+                overlayPanels[morningShfThree].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
                 overlayPanels[morningShfThree].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
                 overlayPanels[morningShfThree].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
                 overlayPanels[morningShfThree].transform.FindChild("Name3").GetComponent<Text>().text = sheriffArrest[2];
@@ -248,10 +248,10 @@ public class OverlayGraphicsController : MonoBehaviour {
         if (playerNum > 0)
         {
             name = (string)PhotonNetwork.playerList[playerNum].CustomProperties[Global.CustomProperties.Name];
-            overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.NurseProtect);
+            overlayPanels[morningDr].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.NurseProtect);
         }
         else
-		    overlayPanels[morningDr].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoProtect);
+		    overlayPanels[morningDr].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.NoProtect);
 	}
 
     /// <summary>
@@ -265,14 +265,14 @@ public class OverlayGraphicsController : MonoBehaviour {
         switch (accuesed.Count)
         {
             case 0:
-                overlayPanels[preTrialOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport); //need to add pre trial conditions
+                overlayPanels[preTrialOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport); //need to add pre trial conditions
                 break;
             case 1:
-                overlayPanels[preTrialOne].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
+                overlayPanels[preTrialOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
                 overlayPanels[preTrialOne].transform.FindChild("Name").GetComponent<Text>().text = accuesed[0];
                 break;
             case 2:
-                overlayPanels[preTrialTwo].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
+                overlayPanels[preTrialTwo].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
                 overlayPanels[preTrialTwo].transform.FindChild("Name1").GetComponent<Text>().text = accuesed[0];
                 overlayPanels[preTrialTwo].transform.FindChild("Name2").GetComponent<Text>().text = accuesed[1];
                 break;
@@ -298,23 +298,23 @@ public class OverlayGraphicsController : MonoBehaviour {
 
         switch (role){
             case Global.Role.Civilian:
-			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport); // needs to add guilty by role.
+			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport); // needs to add guilty by role.
 			    break;
 
 		    case Global.Role.Mafia:
-			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
 			    break;
 
 		    case Global.Role.Sheriff:
-			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
 			    break;
 
 		    case Global.Role.Nurse:
-			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
 			    break;
 
 		    case "":
-			    overlayPanels[postTrial].transform.FindChild("flavor_text").GetComponent<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
+			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.TrialReport);
 			    break;
 		}
 	}

@@ -6,11 +6,11 @@ using UnityEngine.UI;
  
 public class TrialGraphicsController : MonoBehaviour {
 
-    public Image guiltyBoxOriginal; //Needed?
-    public Sprite[] characterImages;
+    //public Image guiltyBoxOriginal; //Needed?
+    //public Sprite[] characterImages;
 
     public Button loneBtn;
-    public Button loneBtnHidden;
+    public GameObject loneNotGulty;
     public GameObject oneTrialPanel;
 
     public Button pairBtnHidden1;
@@ -19,18 +19,18 @@ public class TrialGraphicsController : MonoBehaviour {
     public Button pairBtn2;
     public GameObject twoTrialPanel;
 
-    public Button GuiltyBoxLone;
-    public Button loneNotGuilty;
+    public GameObject GuiltyBoxLone;
+    public Button loneButtonHidden;
 
-    public Button GuiltyBoxPair;
-    public Button pairNotGuilty1;
-    public Button pairNotGuilty2;
+    public GameObject GuiltyBoxPair;
+    public GameObject pairNotGuilty1;
+    public GameObject pairNotGuilty2;
 
     private bool onePersonTrial = false;
     private bool loneSelected = false;
     private bool playerOneSelected = false;
     private bool playerTwoSelected = false;
-    private bool startTrialDone = false;
+//private bool startTrialDone = false;
 
     private List<string> playerlist = new List<string>();
     private string name1;
@@ -58,22 +58,22 @@ public class TrialGraphicsController : MonoBehaviour {
 
         bool initTrialSuccess = true;
 
-        if (guiltyBoxOriginal == null)
-        {
-            Debug.Log("Failed to initialize guiltyBoxOriginal.");
-            initTrialSuccess = false;
-        }
-        if (!CheckArrayInit())
-        {
-            Debug.Log("Failed to initialize one or more images in characterImages[]");
-            initTrialSuccess = false;
-        }
+        //if (guiltyBoxOriginal == null)
+        //{
+        //    Debug.Log("Failed to initialize guiltyBoxOriginal.");
+        //    initTrialSuccess = false;
+        //}
+        //if (!CheckArrayInit())
+        //{
+        //    Debug.Log("Failed to initialize one or more images in characterImages[]");
+        //    initTrialSuccess = false;
+        //}
         if (loneBtn == null)
         {
             Debug.Log("Failed to initialize loneBtn.");
             initTrialSuccess = false;
         }
-        if (loneBtnHidden == null)
+        if (loneNotGulty == null)
         {
             Debug.Log("Failed to initialize loneBtnHidden.");
             initTrialSuccess = false;
@@ -113,7 +113,7 @@ public class TrialGraphicsController : MonoBehaviour {
             Debug.Log("Failed to initialize GuiltyBoxLone.");
             initTrialSuccess = false;
         }
-        if (loneNotGuilty == null)
+        if (loneButtonHidden == null)
         {
             Debug.Log("Failed to initialize loneNotGuilty.");
             initTrialSuccess = false;
@@ -141,7 +141,7 @@ public class TrialGraphicsController : MonoBehaviour {
     public void StartTrial()
     {
         //until timer fixed
-        startTrialDone = true;
+        //startTrialDone = true;
 
         //SelectTrialPanel();
 
@@ -186,16 +186,16 @@ public class TrialGraphicsController : MonoBehaviour {
     {
         if (!loneSelected)
         {
-            loneBtnHidden.gameObject.SetActive(true);
-            loneNotGuilty.gameObject.SetActive(true);
+            loneNotGulty.gameObject.SetActive(true);
+            loneButtonHidden.gameObject.SetActive(true);
             GuiltyBoxLone.gameObject.SetActive(false);
             loneBtn.gameObject.SetActive(false);
             loneSelected = true;
         }
         else
         {
-            loneBtnHidden.gameObject.SetActive(false);
-            loneNotGuilty.gameObject.SetActive(false);
+            loneNotGulty.gameObject.SetActive(false);
+            loneButtonHidden.gameObject.SetActive(false);
             GuiltyBoxLone.gameObject.SetActive(true);
             loneBtn.gameObject.SetActive(true);
             loneSelected = false;
@@ -287,10 +287,10 @@ public class TrialGraphicsController : MonoBehaviour {
 
     private void SelectTrialPanel()
     {
-        loneBtnHidden.gameObject.SetActive(false);
+        loneNotGulty.gameObject.SetActive(false);
         pairBtnHidden1.gameObject.SetActive(false);
         pairBtnHidden2.gameObject.SetActive(false);
-        loneNotGuilty.gameObject.SetActive(false);
+        loneButtonHidden.gameObject.SetActive(false);
         pairNotGuilty1.gameObject.SetActive(false);
         pairNotGuilty2.gameObject.SetActive(false);
 
@@ -325,7 +325,7 @@ public class TrialGraphicsController : MonoBehaviour {
         if (onePersonTrial)
         {
             loneBtn.GetComponentInChildren<Text>().text = name1;
-            loneBtnHidden.GetComponentInChildren<Text>().text = name1;
+            loneNotGulty.GetComponentInChildren<Text>().text = name1;
         }
         else
         {
@@ -351,17 +351,17 @@ public class TrialGraphicsController : MonoBehaviour {
         }
     }
 
-    private bool CheckArrayInit()
-    {
-        bool arrayInitSuccess = true;
-        for (int i = 0; i < characterImages.Length; i++)
-        {
-            if (characterImages[i] == null)
-            {
-                Debug.Log("characterImages["+i+"] failed to initialize.");
-                arrayInitSuccess = false;
-            }
-        }
-        return arrayInitSuccess;
-    }
+    //private bool CheckArrayInit()
+    //{
+    //    bool arrayInitSuccess = true;
+    //    for (int i = 0; i < characterImages.Length; i++)
+    //    {
+    //        if (characterImages[i] == null)
+    //        {
+    //            Debug.Log("characterImages["+i+"] failed to initialize.");
+    //            arrayInitSuccess = false;
+    //        }
+    //    }
+    //    return arrayInitSuccess;
+    //}
 }

@@ -10,7 +10,7 @@ public class NightDayController : MonoBehaviour {
     public GameController game;
     public TimerGraphicsController timer;
     public GameObject NightDayPanel;
-    public GameObject ParentPanel;
+    public GameObject CharacterPanel;
     public GameObject BackgroundImage;
     public Sprite NightBackground;
     public Sprite DayBackground;
@@ -82,7 +82,7 @@ public class NightDayController : MonoBehaviour {
         for(int pos = 0; pos < PhotonNetwork.playerList.Length; pos++)
         {
             GameObject newPlayer = Instantiate(characterIconPrefab);
-            newPlayer.transform.SetParent(ParentPanel.transform);
+            newPlayer.transform.SetParent(CharacterPanel.transform);
             newPlayer.GetComponentInChildren<Text>().text = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Name];
             if (newPlayer.GetComponentInChildren<Text>().text == (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name])
                 newPlayer.GetComponent<Image>().sprite = PlayerRole(PhotonNetwork.player);

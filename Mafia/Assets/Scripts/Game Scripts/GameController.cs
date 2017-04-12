@@ -23,6 +23,7 @@ public class GameController : Photon.MonoBehaviour
     private List<string> trialplayers;
     private string state = "";
     private string playerVotedFor;
+    private float time = 2f;
 
     // Use this for initialization
     void Start()
@@ -30,10 +31,23 @@ public class GameController : Photon.MonoBehaviour
         InitializeGameStart();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+        if (stream.isWriting)
+        {
+            //stream.SendNext(text);
+        }
 
+        else
+        {
+        //{
+        //    text = (dicti)stream.ReceiveNext();
+        //    ShowTime();
+        //    if (timeLeft < 1)
+        //    {
+        //        //Debug.Log("Time is up");
+        //    }
+        }
     }
 
     /// <summary>
@@ -52,16 +66,16 @@ public class GameController : Photon.MonoBehaviour
             }
 
             text = flavorText.InitializeFlavorTextDict();
-            if (text != null)
-            {
-                photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
-            }
-            else
-            {
-                throw new Exception("Dictionary is empty, cannot initialize");
-            }
-            photonView.RPC("InitializeNightDay", PhotonTargets.AllBuffered);
+            //if (text != null)
+            //{
+            //    photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
+            //}
+            //else
+            //{
+            //    throw new Exception("Dictionary is empty, cannot initialize");
+            //}
         }
+        photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
     }
 
     /// <summary>
@@ -93,6 +107,14 @@ public class GameController : Photon.MonoBehaviour
             throw new Exception("Save flavor text did not get any dictionary");
         }
         flavorText.flavorTextDict = text;
+        StartCoroutine(justwaitamoment());
+    }
+
+    IEnumerator justwaitamoment()
+    {
+        yield return new WaitForSeconds(time);
+        if(PhotonNetwork.isMasterClient)
+            photonView.RPC("InitializeNightDay", PhotonTargets.AllBuffered);
     }
 
     /// <summary>
@@ -149,6 +171,7 @@ public class GameController : Photon.MonoBehaviour
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
+        GUILayout.Label((text == null).ToString());
     }
 
     public void StartState(string state)

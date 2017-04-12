@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <doc>
 	<assembly>
-		<name>UnityEditor.LinuxStandalone.Extensions</name>
+		<name>UnityEditor.WebGL.Extensions</name>
 	</assembly>
 	<members>
 	</members>

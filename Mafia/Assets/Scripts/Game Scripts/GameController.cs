@@ -149,7 +149,6 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Trial)
         {
             trialplayers = vote.GetVote(2);
-            timer.InitializeTime(30);
             initialized = trial.InitializeTrial(trialplayers);
         }
         else
@@ -343,6 +342,7 @@ public class GameController : Photon.MonoBehaviour
 
     private void EndedState(string state)
     {
+        Debug.Log(state + " is ended.");
         state = Global.NextStates.Next(state);
         StartState(state);
     }

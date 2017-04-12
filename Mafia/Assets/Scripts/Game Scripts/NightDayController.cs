@@ -173,6 +173,7 @@ public class NightDayController : MonoBehaviour {
     /// <returns></returns>
     public bool StartView(string state)
     {
+        timer.InitializeTime(30);
         NightDayPanel.SetActive(true);
         timer.Countdown(state);
         //StartCoroutine(checkTimer(state));

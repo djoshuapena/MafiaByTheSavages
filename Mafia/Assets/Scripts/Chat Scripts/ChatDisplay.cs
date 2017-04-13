@@ -24,31 +24,6 @@ public class ChatDisplay : Photon.MonoBehaviour {
 
     void Start() {}
 
-    //Testing function, not really needed.
-    //Could be altered to be an event that happens when a player dies
-    /*public void TogglePlayerStatus()
-    {
-        if (chatHandler.PlayerStatus == "Civilian")
-        {
-            chatHandler.PlayerStatus = "Mafia";
-            chatHandler.CurrentChannel = Global.Chats.Mafia;
-            RoleButton.GetComponent<Image>().color = Color.red;
-        }
-        else if (chatHandler.PlayerStatus == "Mafia")
-        {
-            chatHandler.PlayerStatus = "Dead";
-            chatHandler.CurrentChannel = Global.Chats.Dead;
-            RoleButton.GetComponent<Image>().color = Color.magenta;
-        }
-        else
-        {
-            chatHandler.PlayerStatus = "Civilian";
-            chatHandler.CurrentChannel = Global.Chats.Civilian;
-            RoleButton.GetComponent<Image>().color = Color.white;
-        }
-        RoleButtonText.text = chatHandler.PlayerStatus;
-        ShowMessages(chatHandler.GameChannels[chatHandler.CurrentChannel]);
-    }*/
 
 
     /*public void ToggleChatPanel()
@@ -77,19 +52,6 @@ public class ChatDisplay : Photon.MonoBehaviour {
         ChatPanel.SetActive(true);
     }
 
-    public void ToggleChatInput(/*bool status*/)
-    {
-        if (ChatInputPanel.activeInHierarchy)
-        {
-            ChatInputPanel.SetActive(false);
-        }
-        else
-        {
-            ChatInputPanel.SetActive(true);
-        }
-    }
-
-
     public void ShowMessages(string channelName)
     {
         if (string.IsNullOrEmpty(channelName))
@@ -108,8 +70,4 @@ public class ChatDisplay : Photon.MonoBehaviour {
 
     }
 
-
-    void Update () {
-		
-	}
 }

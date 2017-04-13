@@ -94,8 +94,7 @@ MonoBehaviour:
   DeadSheriff: {fileID: 0}
   characterIconPrefab: {fileID: 1615995196855044}
   characterIconPrefabs: []
-  characterSelectedIcon: {fileID: 1855796887554284, guid: a42fca950e3e17546a32551b5c9c4119,
-    type: 2}
+  characterSelectedIcon: {fileID: 0}
 --- !u!114 &114607011562735012
 MonoBehaviour:
   m_ObjectHideFlags: 1

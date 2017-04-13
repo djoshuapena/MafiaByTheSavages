@@ -29,6 +29,7 @@ public static class Global {
         public static int Civilian = 0;
         public static int Mafia = 1;
         public static int Dead = 2;
+        public static int All = 3;
     }
 
     public static class FlavorTextKeys

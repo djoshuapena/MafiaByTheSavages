@@ -3356,16 +3356,16 @@ MonoBehaviour:
   NightDayPanel: {fileID: 691254457}
   CharacterPanel: {fileID: 1628219020}
   BackgroundImage: {fileID: 691254457}
-  NightBackground: {fileID: 0}
-  DayBackground: {fileID: 0}
-  Civilian: {fileID: 0}
-  Mafia: {fileID: 0}
-  Nurse: {fileID: 0}
-  Sheriff: {fileID: 0}
-  DeadCivilian: {fileID: 0}
-  DeadMafia: {fileID: 0}
-  DeadNurse: {fileID: 0}
-  DeadSheriff: {fileID: 0}
+  NightBackground: {fileID: 21300000, guid: bea65ed60ba741a44a6a641140f0ce68, type: 3}
+  DayBackground: {fileID: 21300000, guid: c4f547a080326074d957e425a02d7786, type: 3}
+  Civilian: {fileID: 21300000, guid: e1d99131b57d7574093fda2dab10c62a, type: 3}
+  Mafia: {fileID: 21300000, guid: 50ad3adad92b3d0488317791255ca1f4, type: 3}
+  Nurse: {fileID: 21300000, guid: 6e36ef98fad7d16498629b9a9e9106e6, type: 3}
+  Sheriff: {fileID: 21300000, guid: 1a4eaee5c1dc75b46992556168306149, type: 3}
+  DeadCivilian: {fileID: 21300000, guid: d560c793e98e27f45b5d619542d0ad38, type: 3}
+  DeadMafia: {fileID: 21300000, guid: 71bdbb98a009c8444bcd8f97d007b8f4, type: 3}
+  DeadNurse: {fileID: 21300000, guid: e1c023ecf8abace43b98a8011921138c, type: 3}
+  DeadSheriff: {fileID: 21300000, guid: 4210bdb93f042ca46989890f36ff9ba0, type: 3}
   characterIconPrefab: {fileID: 1615995196855044, guid: 81f4037763b6f6847ba8096c5e6b536c,
     type: 2}
   characterIconPrefabs: []

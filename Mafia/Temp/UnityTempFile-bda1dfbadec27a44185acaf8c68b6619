@@ -4,18 +4,18 @@
 -langversion:4
 -out:Temp/Assembly-CSharp.dll
 -unsafe
--r:D:/Unity/Editor/Data/Managed/UnityEngine.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
 -r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
--r:D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll"
 -r:Assets/Plugins/Photon3Unity3D.dll
 -r:Assets/Plugins/WebSocket/websocket-sharp.dll
--r:D:/Unity/Editor/Data/Managed/UnityEditor.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_5_OR_NEWER
@@ -87,6 +87,7 @@
 -define:UNITY_EDITOR_WIN
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
 "Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/Demo2DJumpAndRun.cs"
 "Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/JumpAndRunMovement.cs"
 "Assets/Photon Unity Networking/Demos/DemoBoxes/ColorPerPlayer.cs"
@@ -294,9 +295,9 @@ Assets/Scripts/Z_Voting/GlobalVoting.cs
 Assets/Scripts/Z_Voting/LocalVoting.cs
 Assets/Scripts/Z_Voting/Old_VoteTesting.cs
 Assets/login/Scripts/LoginScripts/Login.cs
--r:D:\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll
--r:D:\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll
--r:D:\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll
--r:D:\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll
--r:D:\Unity\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll"
 -sdk:unity

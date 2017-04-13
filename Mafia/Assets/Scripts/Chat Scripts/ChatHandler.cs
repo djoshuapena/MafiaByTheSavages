@@ -13,7 +13,7 @@ using System.Text;
 //TO BE CHANGED
 public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
 
-    private string[]     GameChannels; // Set in inspector temporarily.
+    public string[]     GameChannels; // Set in inspector temporarily.
     public ChatClient chatClient;// { get; set; }
     //public Text         StateText; // Set in inspector
     public ChatDisplay  chatDisplay; // Set in inspector
@@ -21,9 +21,8 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     //These 2 vars can be removed when chat has access to the custom player traits etc.
     //Can make seperate players traits (whatever they're called) for a ChatClient.
     //And make calls to them.
-    private string      GameName;
-    private string      PlayerStatus; // Set in inspector
-    private int         CurrentChannel; // Set in inspector
+    public string       PlayerStatus; // Set in inspector
+    private int          CurrentChannel; // Set in inspector
 
 
     public void DebugReturn(DebugLevel level, string message)
@@ -43,6 +42,12 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     }
 
 
+    public void OnChatStateChange(ChatState state)
+    {
+        //this.StateText.text = state.ToString();
+    }
+
+
     public void Connect(string userName)
     {
         Debug.Log("ChatHandler Start() test!");
@@ -55,22 +60,18 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     public void OnConnected()
     {
         Debug.Log("Connected as: " + chatClient.UserId);
-        PlayerStatus = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
-        GameName = PhotonNetwork.room.Name;
-        if (string.IsNullOrEmpty(PlayerStatus))
-        {
-            GameChannels = new string[1] { GameName + "All" };
-        }
-        else
-        {
-            GameChannels = new string[3] {GameName + Global.Role.Civilian, GameName + Global.Role.Mafia, GameName + Global.CustomProperties.Dead};
-        }
+        
         GetCurrentChannel();
         chatClient.Subscribe(GameChannels);
+        
     }
-    
+
     public void GetCurrentChannel()
     {
+        string role = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
+        if (role == Global.Role.Civilian || role == Global.Role.Nurse || role == Global.Role.Sheriff)
+            PlayerStatus = Global.Role.Civilian;
+
         if (PlayerStatus == Global.Role.Mafia)
         {
             CurrentChannel = Global.Chats.Mafia;
@@ -79,14 +80,6 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
         {
             CurrentChannel = Global.Chats.Civilian;
         }
-    }
-
-    public void KillPlayer()
-    {
-        PlayerStatus = Global.CustomProperties.Dead;
-        CurrentChannel = Global.Chats.Dead;
-        chatDisplay.ShowMessages(GameChannels[CurrentChannel]);
-        chatDisplay.ChatPanelPosition.verticalNormalizedPosition = 0; 
     }
 
     public void OnDisconnected()
@@ -130,17 +123,17 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
         string msgFormat;
         StringBuilder txt = new StringBuilder();
 
-        if (playerStatus == Global.CustomProperties.Dead)
+        if (playerStatus == "Civilian" || Channel == Global.Chats.Civilian)
         {
-            msgFormat = "<color=cyan>[{0}] {1}</color>";
+            msgFormat = "[ {0} ] {1}";
         }
-        else if (playerStatus == "Mafia" && (Channel == Global.Chats.Mafia || Channel == Global.Chats.Dead))
+        else if (playerStatus == "Mafia")
         {
             msgFormat = "<color=red>[{0}]</color> {1}";
         }
-        else // Civilian
+        else // Dead Players
         {
-            msgFormat = "[{0}] {1}";
+            msgFormat = "<color=cyan>[{0}] {1}</color>";
         }
         txt.AppendLine(string.Format(msgFormat, chatClient.UserId, msg));
         return txt.ToString().TrimEnd('\n');
@@ -156,7 +149,7 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
 
         for (int i = 0; i < GameChannels.Length; i++)
         {
-            if (PlayerStatus != Global.CustomProperties.Dead || i == Global.Chats.Dead)
+            if (PlayerStatus != "Dead" || i == Global.Chats.Dead)
                 chatClient.PublishMessage(GameChannels[i], formatMessage(PlayerStatus, i, msg)); 
         }
     }
@@ -166,8 +159,6 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     {
         //DontDestroyOnLoad(gameObject);
         Application.runInBackground = true;
-
-        
 	}
 
     // Update is called once per frame
@@ -186,10 +177,5 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     public void OnStatusUpdate(string user, int status, bool gotMessage, object message)
     {
         throw new NotImplementedException();
-    }
-
-    public void OnChatStateChange(ChatState state)
-    {
-        //throw new NotImplementedException();
     }
 }

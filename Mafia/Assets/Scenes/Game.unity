@@ -790,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &293711961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,7 +1716,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 58.329117}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &610743718
 MonoBehaviour:
@@ -5726,7 +5726,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328076d331087814c902fd3e823a2edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameChannels:
+  - Civ
+  - Mafia
+  - Dead
   chatDisplay: {fileID: 1431014997}
+  PlayerStatus: Civilian
 --- !u!114 &1431014999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5752,7 +5757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatHandler: {fileID: 1431014998}
-  UserName: 
 --- !u!4 &1431015001
 Transform:
   m_ObjectHideFlags: 0

@@ -147,7 +147,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chloe
+  m_Text: Troy
 --- !u!114 &114395939211213842
 MonoBehaviour:
   m_ObjectHideFlags: 1

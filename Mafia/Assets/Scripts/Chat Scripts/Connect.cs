@@ -11,17 +11,13 @@ using UnityEngine;
 public class Connect : Photon.MonoBehaviour {
 
     public ChatHandler chatHandler; // Set in inspector
-    public string UserName;
-   
+    public string UserName { get; set; }
+
 	// Use this for initialization
 	void Start ()
     {
-        UserName = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
-        if (string.IsNullOrEmpty(UserName))
-        {
-            UserName = PhotonNetwork.player.UserId; 
-        }
-       // "FakeName" + Environment.TickCount % 99; //Put real username here.
+        //chatHandler.StateText.text = "";
+        UserName = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];// "FakeName" + Environment.TickCount % 99; //Put real username here.
         ConnectToChat(UserName);
 	}
 	

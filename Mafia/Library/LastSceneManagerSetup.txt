@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Game.unity
+=======
+- path: Assets/Scenes/LoginTemp.unity
+>>>>>>> origin/BuildingTheGame_Test
   isLoaded: 1
   isActive: 1

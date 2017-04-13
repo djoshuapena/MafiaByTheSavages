@@ -91,6 +91,7 @@ public class NightDayController : MonoBehaviour {
             else
                 newPlayer.GetComponent<Image>().sprite = Civilian;
             newPlayer.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            newPlayer.GetComponent<NightDayController>().characterSelectedIcon = characterSelectedIcon;
             characterIconPrefabs.Add(newPlayer);
         }
         if (characterIconPrefabs == null)

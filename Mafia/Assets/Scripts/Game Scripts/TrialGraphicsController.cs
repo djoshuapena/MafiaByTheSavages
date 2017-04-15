@@ -147,7 +147,7 @@ public class TrialGraphicsController : MonoBehaviour {
 
         //trialTimer.InitializeTime(30);
         trialTimer.Activate();
-        trialTimer.Countdown(Global.States.Trial);
+        trialTimer.Countdown(Global.States.Trial, 45f);
 
         InvokeRepeating("checkTimer", 0.1f, 1.0f);
 
@@ -162,13 +162,13 @@ public class TrialGraphicsController : MonoBehaviour {
 //return startTrialDone;
     }
 
-    public void checkTimer()
-    {
-        Debug.Log("Checking");
-        if (trialTimer.TimeUP())
-            CancelInvoke();
-        game.EndingState(Global.States.Trial);
-    }
+    ////public void checkTimer()
+    ////{
+    ////    Debug.Log("Checking");
+    ////    if (trialTimer.TimeUP())
+    ////        CancelInvoke();
+    ////    game.EndingState(Global.States.Trial);
+    ////}
 
     private void ChangeGuiltyBoxImage ()
     {

@@ -174,19 +174,19 @@ public class NightDayController : MonoBehaviour {
     /// <returns></returns>
     public bool StartView(string state)
     {
-        timer.InitializeTime(30);
+        //timer.InitializeTime(30);
         NightDayPanel.SetActive(true);
-        timer.Countdown(state);
+        timer.Countdown(state, 30f);
         //StartCoroutine(checkTimer(state));
         return true;
     }
 
-    IEnumerator checkTimer(string state)
-    {
-        yield return !timer.TimeUP();
-        NightDayPanel.SetActive(false);
-        game.EndingState(state);
-    }
+    //IEnumerator checkTimer(string state)
+    //{
+    //    yield return !timer.TimeUP();
+    //    NightDayPanel.SetActive(false);
+    //    game.EndingState(state);
+    //}
 
     private GameObject thisButton(GameObject findme)
     {

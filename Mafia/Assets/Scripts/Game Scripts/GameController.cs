@@ -132,7 +132,7 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Night)
         {
             trialplayers = vote.GetVote(1);
-            timer.InitializeTime(45);
+            //timer.InitializeTime(45);
             initialized = dayNight.InitializeView(Global.States.Night, trialplayers);
         }
         else if (state == Global.States.Day)
@@ -143,7 +143,7 @@ public class GameController : Photon.MonoBehaviour
                 if (vote.GetNurseSave() != vote.GetMafiaKill())
                     trialplayers.Add(vote.GetMafiaKill());
             }
-            timer.InitializeTime(45);
+            //timer.InitializeTime(45);
             initialized = dayNight.InitializeView(Global.States.Day, trialplayers);
         }
         else if (state == Global.States.Trial)
@@ -249,35 +249,61 @@ public class GameController : Photon.MonoBehaviour
                 }
             }
         }
-
+        else if (state == Global.States.PreTrial)
+        {
+            if(vote.GetVote(1).Count == 0)
+            {
+                if (PhotonNetwork.isMasterClient)
+                {
+                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(Global.States.Trial));
+                    EndedState(Global.States.Trial);
+                }
+            }
+            else
+            {
+                if (PhotonNetwork.isMasterClient)
+                {
+                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                    EndedState(state);
+                }
+            }
+        }
         // if the state is post trial, check if someone was hanged in the trial.
         // If that player is a sheriff, check if they are the last sheriff. If
         // so, then end the game. If the player is the last mafia, or the last
         // civilian end the game. Otherwise continue the next state.
         else if (state == Global.States.PostTrial)
         {
+            string playerKilled;
+            PhotonPlayer player = null;
             //Find out who was killed
-            string playerKilled = vote.GetVote(1)[0];
-            
+            if (vote.GetVote(1).Count != 0)
+            {
+                playerKilled = vote.GetVote(1)[0];
+                player = findPlayer(playerKilled);
+                if (PhotonNetwork.isMasterClient)
+                    player.CustomProperties[Global.CustomProperties.Dead] = true;
+            }
+
             //Find the photon player that is connected to that name
-            PhotonPlayer player = findPlayer(playerKilled);
+            //PhotonPlayer player = findPlayer(playerKilled);
 
             //Set the photon player to dead
-            if(PhotonNetwork.isMasterClient)
-                player.CustomProperties[Global.CustomProperties.Dead] = true;
+            //if(PhotonNetwork.isMasterClient)
+            //    player.CustomProperties[Global.CustomProperties.Dead] = true;
 
             //check if last sheriff.
-            if(((string)player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Sheriff) && !isEndGame.SheriffAlive())
+            if ((player != null) && ((string)player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Sheriff) && !isEndGame.SheriffAlive())
             {
                 Endgame();
             }
 
             //check if last Mafia, or Civilian
-            else if(!isEndGame.MafiaAlive() || !isEndGame.CivilianAlive())
+            else if (!isEndGame.MafiaAlive() || !isEndGame.CivilianAlive())
             {
                 Endgame();
             }
-            
+
             //Continue to next state.
             else
             {

@@ -286,9 +286,13 @@ public class OverlayGraphicsController : MonoBehaviour {
     /// </summary>
 	private void InitTrialResults()
 	{
-		//int tmprole = 1;
+        //int tmprole = 1;
         List<string> trialResult = voteResult.GetVote(1);
-        string role, name = trialResult[0];
+        string role, name = "";
+        if (trialResult.Count != 0)
+        {
+            name = trialResult[0];
+        }
         int playerRole = findPlayer(name);
         if (playerRole > 0)
             role = (string)PhotonNetwork.playerList[playerRole].CustomProperties[Global.CustomProperties.Roles];

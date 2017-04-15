@@ -74,8 +74,11 @@ public class GameController : Photon.MonoBehaviour
             //{
             //    throw new Exception("Dictionary is empty, cannot initialize");
             //}
+            photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
+            photonView.RPC("InitializeNightDay", PhotonTargets.All);
+            photonView.RPC("InitializeGameState", PhotonTargets.All, Global.States.Dusk);
         }
-        photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
+        //
     }
 
     /// <summary>
@@ -83,7 +86,7 @@ public class GameController : Photon.MonoBehaviour
     /// </summary>
     /// <param name="state">Game state to change to.</param>
     [PunRPC]
-    public void ChangeGameState(string state)
+    public void InitializeGameState(string state)
     {
         if (state == "")
         {
@@ -102,20 +105,20 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     public void SaveFlavorText(Dictionary<string, string> text)
     {
-        if(text == null)
-        {
-            throw new Exception("Save flavor text did not get any dictionary");
-        }
+        //if(text == null)
+        //{
+        //    throw new Exception("Save flavor text did not get any dictionary");
+        //}
         flavorText.flavorTextDict = text;
-        StartCoroutine(justwaitamoment());
+        //StartCoroutine(justwaitamoment());
     }
 
-    IEnumerator justwaitamoment()
-    {
-        yield return new WaitForSeconds(time);
-        if(PhotonNetwork.isMasterClient)
-            photonView.RPC("InitializeNightDay", PhotonTargets.AllBuffered);
-    }
+    //IEnumerator justwaitamoment()
+    //{
+    //    yield return new WaitForSeconds(time);
+    //    if(PhotonNetwork.isMasterClient)
+    //        photonView.RPC("InitializeNightDay", PhotonTargets.All);
+    //}
 
     /// <summary>
     /// Initialize the view of each state to prepare them before they
@@ -173,6 +176,7 @@ public class GameController : Photon.MonoBehaviour
         GUILayout.Label((text == null).ToString());
     }
 
+    [PunRPC]
     public void StartState(string state)
     {
         bool started = false;
@@ -244,18 +248,19 @@ public class GameController : Photon.MonoBehaviour
             {
                 if (PhotonNetwork.isMasterClient)
                 {
-                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                    //photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
                     EndedState(state);
                 }
             }
         }
+
         else if (state == Global.States.PreTrial)
         {
             if(vote.GetVote(1).Count == 0)
             {
                 if (PhotonNetwork.isMasterClient)
                 {
-                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(Global.States.Trial));
+                    //photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(Global.States.Trial));
                     EndedState(Global.States.Trial);
                 }
             }
@@ -263,7 +268,7 @@ public class GameController : Photon.MonoBehaviour
             {
                 if (PhotonNetwork.isMasterClient)
                 {
-                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                   // photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
                     EndedState(state);
                 }
             }
@@ -309,7 +314,7 @@ public class GameController : Photon.MonoBehaviour
             {
                 if (PhotonNetwork.isMasterClient)
                 {
-                    photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                    //photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
                     EndedState(state);
                 }
             }
@@ -320,7 +325,7 @@ public class GameController : Photon.MonoBehaviour
         {
             if (PhotonNetwork.isMasterClient)
             {
-                photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+                //photonView.RPC("ChangeGameState", PhotonTargets.All, Global.NextStates.Next(state));
                 EndedState(state);
             }
         }
@@ -340,6 +345,8 @@ public class GameController : Photon.MonoBehaviour
     }
 
 
+    //private void 
+
     #region NightDay_Initialization
     /// <summary>
     /// Initialize the NightDay panel for each individual
@@ -348,29 +355,45 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     private void InitializeNightDay()
     {
-        StartCoroutine(WaitForInitialization());
+        dayNight.StartGameInitialize();
     }
 
-    /// <summary>
-    /// Wait for the NightDay panel to finish initialization.
-    /// </summary>
-    /// <returns>False if initilization is not yet finished.</returns>
-    IEnumerator WaitForInitialization()
-    {
-        yield return !dayNight.StartGameInitialize();
-        if(PhotonNetwork.isMasterClient)
-        {
-            state = Global.States.Dusk;
-            photonView.RPC("ChangeGameState", PhotonTargets.AllBuffered, state);
-        }
-    }
+    ///// <summary>
+    ///// Wait for the NightDay panel to finish initialization.
+    ///// </summary>
+    ///// <returns>False if initilization is not yet finished.</returns>
+    //IEnumerator WaitForInitialization()
+    //{
+    //    yield return !dayNight.StartGameInitialize();
+    //    if(PhotonNetwork.isMasterClient)
+    //    {
+    //        state = Global.States.Dusk;
+    //        photonView.RPC("ChangeGameState", PhotonTargets.AllBuffered, state);
+    //    }
+    //}
     #endregion
 
+    /// <summary>
+    /// Only the master client will run this function. It will tell
+    /// other players to initilize their next states, and then change
+    /// their states for them.
+    /// </summary>
+    /// <param name="state"></param>
     private void EndedState(string state)
     {
+        Debug.Log("The Photon Client " + PhotonNetwork.player.NickName + " is here");
+        //InitializeGameState(Global.NextStates.Next(state));
+        //Tells all players to intialize the next state
+        photonView.RPC("InitializeGameState", PhotonTargets.All, Global.NextStates.Next(state));
+
+
         Debug.Log(state + " is ended.");
+
+
         state = Global.NextStates.Next(state);
-        StartState(state);
+
+        //StartState(state);
+        photonView.RPC("StartState", PhotonTargets.All, state);
     }
 
     /// <summary>

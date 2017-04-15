@@ -134,6 +134,13 @@ public class NightDayController : MonoBehaviour {
                 characterIconPrefabs[pos].GetComponent<Button>().enabled = false;
             }
         }
+        else
+        {
+            for (int pos = 0; pos < characterIconPrefabs.Count; pos++)
+            {
+                characterIconPrefabs[pos].GetComponent<Button>().enabled = true;
+            }
+        }
 
         if((bool)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead])
         {
@@ -163,7 +170,8 @@ public class NightDayController : MonoBehaviour {
                 }
             }
         }
-        game.StartState(state);
+        //This causes mutiple threads to run for no reason. Clogging the message Pipe.
+        //game.StartState(state);
         return true;
 	}
 
@@ -176,7 +184,8 @@ public class NightDayController : MonoBehaviour {
     {
         //timer.InitializeTime(30);
         NightDayPanel.SetActive(true);
-        timer.Countdown(state, 30f);
+        if(PhotonNetwork.isMasterClient)
+            timer.Countdown(state, 10f);
         //StartCoroutine(checkTimer(state));
         return true;
     }

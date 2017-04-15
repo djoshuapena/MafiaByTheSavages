@@ -16,30 +16,30 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
     //function that synchronizes the timer for client and server
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        //This is for the master. Only he can update the time.
-        if (stream.isWriting == true)
-        {
-            if (outtime > 0)
-            {
-                stream.SendNext(outtime);
-                ShowTime(outtime);
-            }
-            ////ShowTime();
-            //if (timeLeft < 1)
-            //{
-            //    //Debug.Log("Time is up");
-            //}
-        }
-        //This is for everyone else to just read the time.
-        else
-        {
-            outtime = (float)stream.ReceiveNext();
-            ShowTime(outtime);
-            //if (timeLeft < 1)
-            //{
-            //    //Debug.Log("Time is up");
-            //}
-        }
+    //    //This is for the master. Only he can update the time.
+    //    if (stream.isWriting == true)
+    //    {
+    //        if (outtime > 0)
+    //        {
+    //            stream.SendNext(outtime);
+    //            ShowTime(outtime);
+    //        }
+    //        ////ShowTime();
+    //        //if (timeLeft < 1)
+    //        //{
+    //        //    //Debug.Log("Time is up");
+    //        //}
+    //    }
+    //    //This is for everyone else to just read the time.
+    //    else
+    //    {
+    //        outtime = (float)stream.ReceiveNext();
+    //        ShowTime(outtime);
+    //        //if (timeLeft < 1)
+    //        //{
+    //        //    //Debug.Log("Time is up");
+    //        //}
+    //    }
     }
 
     public void Countdown(string state, float time)
@@ -47,10 +47,11 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 		//ShowTime ();
         //myPhotonView = gameObject.GetComponent<PhotonView>();
         Debug.Log("the timer is started");
+        Countdown1(state, time);
         if (PhotonNetwork.isMasterClient) // host starts the countdown
         {
             //active = true;
-            photonView.RPC("Countdown1", PhotonTargets.AllBuffered, PhotonNetwork.time, state, time);
+            //photonView.RPC("Countdown1", PhotonTargets.AllBuffered, PhotonNetwork.time, state, time);
         }
     }
 
@@ -67,33 +68,34 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
 
     //public synchronized function that starts the countdown based on the timeRemaining
     [PunRPC]
-    public void Countdown1(double timerStart, string state, float time)
+    public void Countdown1(string state, float timeLeft)
     {
         Debug.Log("I Came here afterwards");
-        float timeLeft = time - (float)(timerStart - PhotonNetwork.time);
+        //float timeLeft = time - (float)(timerStart - PhotonNetwork.time);
         object[] param = new object[2] { state, timeLeft };
         StartCoroutine("TimerCountdown", param);
     }
 
     IEnumerator TimerCountdown(object[] param)
     {
+        Debug.Log("The Photon player in Timer Countdown is " + PhotonNetwork.player.NickName);
         float timeLeft = (float)param[1];
         string state = (string)param[0];
         //Debug.Log(timeLeft);
         while (timeLeft > 0f)
         {
-            //Debug.Log(timeLeft);
-            yield return new WaitForEndOfFrame();
-            if (PhotonNetwork.isMasterClient == true)
-            {
-                timeLeft = timeLeft - Time.deltaTime;
-            }
             outtime = timeLeft;
-            //ShowTime(outtime);
+            ShowTime(outtime);
+            //Debug.Log(timeLeft);
+            yield return new WaitForSeconds(1);
+            timeLeft = timeLeft - 1;
         }
-        Debug.Log(state);
-        FunctionDone timeup = new FunctionDone(game.EndingState);
-        timeup(state);
+        if (PhotonNetwork.isMasterClient)
+        {
+            Debug.Log(state);
+            FunctionDone timeup = new FunctionDone(game.EndingState);
+            timeup(state);
+        }
         //game.EndingState(state);
         //TimeUP();
 

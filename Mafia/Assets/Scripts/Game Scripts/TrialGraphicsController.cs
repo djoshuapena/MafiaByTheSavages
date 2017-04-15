@@ -134,7 +134,7 @@ public class TrialGraphicsController : MonoBehaviour {
             initTrialSuccess = false;
         }
 
-        game.StartState(Global.States.Trial);
+        //game.StartState(Global.States.Trial);
         return initTrialSuccess;
     }
 		
@@ -146,10 +146,13 @@ public class TrialGraphicsController : MonoBehaviour {
         //SelectTrialPanel();
 
         //trialTimer.InitializeTime(30);
-        trialTimer.Activate();
-        trialTimer.Countdown(Global.States.Trial, 45f);
+        if (PhotonNetwork.isMasterClient)
+        {
+            trialTimer.Activate();
+            trialTimer.Countdown(Global.States.Trial, 45f);
+        }
 
-        InvokeRepeating("checkTimer", 0.1f, 1.0f);
+        //InvokeRepeating("checkTimer", 0.1f, 1.0f);
 
 
         //if (test if timer done somehow)

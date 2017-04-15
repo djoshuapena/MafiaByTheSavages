@@ -54,4 +54,6 @@ MonoBehaviour:
   - SaveFlavorText
   - setCustomProperties
   - InitializeNightDay
+  - InitializeGameState
+  - StartState
   DisableAutoOpenWizard: 1

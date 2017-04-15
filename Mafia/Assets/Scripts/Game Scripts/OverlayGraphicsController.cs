@@ -10,7 +10,7 @@ public class OverlayGraphicsController : MonoBehaviour {
 
 	//public Text textfield;
 	public FlavorText flavorText;
-	public TimerGraphicsController timer;
+	//public TimerGraphicsController timer;
 	public VoteController voteResult; //This needs to come from the game controller
     public GameController game;
 	private float time = 5;
@@ -56,18 +56,18 @@ public class OverlayGraphicsController : MonoBehaviour {
 				InitMafiaResults();
 				InitSherrifResults();
 				InitDoctorResults();
-                game.StartState(phase);
+                //game.StartState(phase);
 				return true;
 
             case Global.States.PreTrial:
                 InitPreTrial();
-                game.StartState(phase);
+                //game.StartState(phase);
                 return true;
 
 
 			case Global.States.PostTrial:
 				InitTrialResults();
-                game.StartState(phase);
+                //game.StartState(phase);
 				return true;
 		}
 		return false;

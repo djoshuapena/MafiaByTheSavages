@@ -156,30 +156,7 @@ public class GameController : Photon.MonoBehaviour
         }
         else
         {
-            if (state == Global.States.Dusk)
-                initialized = overlay.InitializeOverlay(state);
-            else
-            {
-                Dictionary<string, int> names = new Dictionary<string, int>();
-                for (int pos = 0; pos < PhotonNetwork.playerList.Length; pos++)
-                {
-                    string person = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.VotedFor];
-                    if (names.ContainsKey(person))
-                    {
-                        names[person]++;
-                    }
-                    else
-                    {
-                        names.Add(person, 1);
-                    }
-                }
-                foreach (string key in names.Keys)
-                {
-                    Debug.Log(key + " total votes: " + names[key]);
-                }
-
-                initialized = overlay.InitializeOverlay(state);
-            }
+            initialized = overlay.InitializeOverlay(state);
 
         }
         if (!initialized)
@@ -255,14 +232,15 @@ public class GameController : Photon.MonoBehaviour
             }
 
             //set all players in the playersKilled list to dead.
-            if (PhotonNetwork.isMasterClient)
-            {
+            //if (PhotonNetwork.isMasterClient)
+            //{
                 for (int pos = 0; pos < playersKilled.Count; pos++)
                 {
                     player = findPlayer(playersKilled[pos]);
                     player.CustomProperties[Global.CustomProperties.Dead] = true;
+                    //photonView.RPC("PlayerIsDead", PhotonTargets.All, playersKilled[pos]);
                 }
-            }
+            //}
 
             //if all civilians or all mafia are dead, end the game
             if (!isEndGame.CivilianAlive() || !isEndGame.MafiaAlive())
@@ -324,13 +302,13 @@ public class GameController : Photon.MonoBehaviour
             //check if last sheriff.
             if ((player != null) && ((string)player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Sheriff) && !isEndGame.SheriffAlive())
             {
-                Endgame();
+                photonView.RPC("Endgame", PhotonTargets.All);
             }
 
             //check if last Mafia, or Civilian
             else if (!isEndGame.MafiaAlive() || !isEndGame.CivilianAlive())
             {
-                Endgame();
+                photonView.RPC("Endgame", PhotonTargets.All);
             }
 
             //Continue to next state.
@@ -353,6 +331,13 @@ public class GameController : Photon.MonoBehaviour
                 EndedState(state);
             }
         }
+    }
+    
+    [PunRPC]
+    void PlayerIsDead(string deadplayer)
+    {
+        PhotonPlayer player = findPlayer(deadplayer);
+        player.CustomProperties[Global.CustomProperties.Dead] = true;
     }
 
     private PhotonPlayer findPlayer(string player)

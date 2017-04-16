@@ -20,7 +20,7 @@ public class EndedController : MonoBehaviour {
     {
         //stats = whatever is sent to this function;
         StartCoroutine(UpdateStats());
-        LoadLobby();
+        //LoadLobby();
     }
 
     /// <summary>
@@ -53,6 +53,7 @@ public class EndedController : MonoBehaviour {
                 Debug.Log("Success: Stats Updated");
             }
         }
+        LoadLobby();
     }
 
     /// <summary>
@@ -67,6 +68,6 @@ public class EndedController : MonoBehaviour {
     private void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
-        SceneManager.LoadScene("Lobby");
+        PhotonNetwork.LoadLevel("Lobby");
     }
 }

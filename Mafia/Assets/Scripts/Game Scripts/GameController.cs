@@ -253,11 +253,15 @@ public class GameController : Photon.MonoBehaviour
                 if (vote.GetNurseSave() != vote.GetMafiaKill())
                     playersKilled.Add(vote.GetMafiaKill());
             }
+
             //set all players in the playersKilled list to dead.
-            for (int pos = 0; pos < playersKilled.Count; pos++)
+            if (PhotonNetwork.isMasterClient)
             {
-                player = findPlayer(playersKilled[pos]);
-                player.CustomProperties[Global.CustomProperties.Dead] = true;
+                for (int pos = 0; pos < playersKilled.Count; pos++)
+                {
+                    player = findPlayer(playersKilled[pos]);
+                    player.CustomProperties[Global.CustomProperties.Dead] = true;
+                }
             }
 
             //if all civilians or all mafia are dead, end the game

@@ -217,18 +217,18 @@ public class OverlayGraphicsController : MonoBehaviour {
                 break;
             case 1:
                 overlayPanels[morningShfOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
-                overlayPanels[morningShfOne].transform.FindChild("Name").GetComponent<Text>().text = sheriffArrest[0];
+                //overlayPanels[morningShfOne].transform.FindChild("Name").GetComponent<Text>().text = sheriffArrest[0];
                 break;
             case 2:
                 overlayPanels[morningShfTwo].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
-                overlayPanels[morningShfTwo].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
-                overlayPanels[morningShfTwo].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
+                //overlayPanels[morningShfTwo].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
+                //overlayPanels[morningShfTwo].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
                 break;
             case 3:
                 overlayPanels[morningShfThree].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.SheriffCapture);
-                overlayPanels[morningShfThree].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
-                overlayPanels[morningShfThree].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
-                overlayPanels[morningShfThree].transform.FindChild("Name3").GetComponent<Text>().text = sheriffArrest[2];
+                //overlayPanels[morningShfThree].transform.FindChild("Name1").GetComponent<Text>().text = sheriffArrest[0];
+                //overlayPanels[morningShfThree].transform.FindChild("Name2").GetComponent<Text>().text = sheriffArrest[1];
+                //overlayPanels[morningShfThree].transform.FindChild("Name3").GetComponent<Text>().text = sheriffArrest[2];
                 break;
         }
 
@@ -269,12 +269,12 @@ public class OverlayGraphicsController : MonoBehaviour {
                 break;
             case 1:
                 overlayPanels[preTrialOne].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
-                overlayPanels[preTrialOne].transform.FindChild("Name").GetComponent<Text>().text = accuesed[0];
+                //overlayPanels[preTrialOne].transform.FindChild("Name").GetComponent<Text>().text = accuesed[0];
                 break;
             case 2:
                 overlayPanels[preTrialTwo].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.TrialReport);
-                overlayPanels[preTrialTwo].transform.FindChild("Name1").GetComponent<Text>().text = accuesed[0];
-                overlayPanels[preTrialTwo].transform.FindChild("Name2").GetComponent<Text>().text = accuesed[1];
+                //overlayPanels[preTrialTwo].transform.FindChild("Name1").GetComponent<Text>().text = accuesed[0];
+                //overlayPanels[preTrialTwo].transform.FindChild("Name2").GetComponent<Text>().text = accuesed[1];
                 break;
         }
         

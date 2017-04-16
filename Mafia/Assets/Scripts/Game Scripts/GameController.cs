@@ -21,9 +21,9 @@ public class GameController : Photon.MonoBehaviour
 
     private Dictionary<string, string> text;
     private List<string> trialplayers;
-    private string state = "";
+    //private string state = "";
     private string playerVotedFor;
-    private float time = 2f;
+    //private float time = 2f;
 
     // Use this for initialization
     void Start()
@@ -156,7 +156,31 @@ public class GameController : Photon.MonoBehaviour
         }
         else
         {
-            initialized = overlay.InitializeOverlay(state);
+            if (state == Global.States.Dusk)
+                initialized = overlay.InitializeOverlay(state);
+            else
+            {
+                Dictionary<string, int> names = new Dictionary<string, int>();
+                for (int pos = 0; pos < PhotonNetwork.playerList.Length; pos++)
+                {
+                    string person = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.VotedFor];
+                    if (names.ContainsKey(person))
+                    {
+                        names[person]++;
+                    }
+                    else
+                    {
+                        names.Add(person, 1);
+                    }
+                }
+                foreach (string key in names.Keys)
+                {
+                    Debug.Log(key + " total votes: " + names[key]);
+                }
+
+                initialized = overlay.InitializeOverlay(state);
+            }
+
         }
         if (!initialized)
             throw new Exception("I did not initialize any prestates.");

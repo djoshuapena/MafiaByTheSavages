@@ -16,30 +16,30 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
     //function that synchronizes the timer for client and server
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-    //    //This is for the master. Only he can update the time.
-    //    if (stream.isWriting == true)
-    //    {
-    //        if (outtime > 0)
-    //        {
-    //            stream.SendNext(outtime);
-    //            ShowTime(outtime);
-    //        }
-    //        ////ShowTime();
-    //        //if (timeLeft < 1)
-    //        //{
-    //        //    //Debug.Log("Time is up");
-    //        //}
-    //    }
-    //    //This is for everyone else to just read the time.
-    //    else
-    //    {
-    //        outtime = (float)stream.ReceiveNext();
-    //        ShowTime(outtime);
-    //        //if (timeLeft < 1)
-    //        //{
-    //        //    //Debug.Log("Time is up");
-    //        //}
-    //    }
+        //This is for the master. Only he can update the time.
+        if (stream.isWriting == true)
+        {
+            if (outtime > 0)
+            {
+                stream.SendNext(outtime);
+                ShowTime(outtime);
+            }
+            ////ShowTime();
+            //if (timeLeft < 1)
+            //{
+            //    //Debug.Log("Time is up");
+            //}
+        }
+        //This is for everyone else to just read the time.
+        else
+        {
+            outtime = (float)stream.ReceiveNext();
+            ShowTime(outtime);
+            //if (timeLeft < 1)
+            //{
+            //    //Debug.Log("Time is up");
+            //}
+        }
     }
 
     public void Countdown(string state, float time)
@@ -85,7 +85,7 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
         while (timeLeft > 0f)
         {
             outtime = timeLeft;
-            ShowTime(outtime);
+            //ShowTime(outtime);
             //Debug.Log(timeLeft);
             yield return new WaitForSeconds(1);
             timeLeft = timeLeft - 1;

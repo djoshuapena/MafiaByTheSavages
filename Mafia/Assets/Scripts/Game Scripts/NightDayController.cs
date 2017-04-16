@@ -185,7 +185,7 @@ public class NightDayController : MonoBehaviour {
         //timer.InitializeTime(30);
         NightDayPanel.SetActive(true);
         if(PhotonNetwork.isMasterClient)
-            timer.Countdown(state, 10f);
+            timer.Countdown(state, 45f);
         //StartCoroutine(checkTimer(state));
         return true;
     }

@@ -19,9 +19,10 @@ public class VoteController : MonoBehaviour {
 
 	//ChangeVote(name) changes the vote to name given
 	public void ChangeVote(string name){
-		ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
-		replaceVote.Add (Global.CustomProperties.VotedFor, name);
-		PhotonNetwork.player.SetCustomProperties (replaceVote);
+        PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = name;
+		//ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
+		//replaceVote.Add (Global.CustomProperties.VotedFor, name);
+		//PhotonNetwork.player.SetCustomProperties (replaceVote);
 	//	if ((string)PhotonNetwork.player.CustomProperties ["VotedFor"] == name) {
 	//		Debug.Log ("We did it");
 	//	} 

@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 222787722709743664}
   - component: {fileID: 114613674170262332}
   - component: {fileID: 114906187695579382}
-  - component: {fileID: 114089252291050080}
   m_Layer: 0
   m_Name: CharacterIcon
   m_TagString: Untagged
@@ -64,37 +63,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114089252291050080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615995196855044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9550203770437af4c86099766f68acb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voteController: {fileID: 0}
-  flavorText: {fileID: 0}
-  game: {fileID: 0}
-  timer: {fileID: 0}
-  NightDayPanel: {fileID: 0}
-  CharacterPanel: {fileID: 0}
-  BackgroundImage: {fileID: 0}
-  NightBackground: {fileID: 0}
-  DayBackground: {fileID: 0}
-  Civilian: {fileID: 0}
-  Mafia: {fileID: 0}
-  Nurse: {fileID: 0}
-  Sheriff: {fileID: 0}
-  DeadCivilian: {fileID: 0}
-  DeadMafia: {fileID: 0}
-  DeadNurse: {fileID: 0}
-  DeadSheriff: {fileID: 0}
-  characterIconPrefab: {fileID: 1615995196855044}
-  characterIconPrefabs: []
-  characterSelectedIcon: {fileID: 0}
 --- !u!114 &114607011562735012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114089252291050080}
+      - m_Target: {fileID: 0}
         m_MethodName: VoteThisPlayerButton
         m_Mode: 1
         m_Arguments:

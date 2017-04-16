@@ -81,21 +81,38 @@ public class NightDayController : MonoBehaviour {
     {
         for(int pos = 0; pos < PhotonNetwork.playerList.Length; pos++)
         {
-            GameObject newPlayer = Instantiate(characterIconPrefab);
-            newPlayer.transform.SetParent(CharacterPanel.transform);
-            newPlayer.GetComponentInChildren<Text>().text = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Name];
-            if (newPlayer.GetComponentInChildren<Text>().text == (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name])
-                newPlayer.GetComponent<Image>().sprite = PlayerRole(PhotonNetwork.player);
+            GameObject newButton = Instantiate(characterIconPrefab);
+            newButton.transform.SetParent(CharacterPanel.transform);
+            newButton.GetComponentInChildren<Text>().text = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Name];
+            if (newButton.GetComponentInChildren<Text>().text == (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name])
+               newButton.GetComponent<Image>().sprite = PlayerRole(PhotonNetwork.player);
             else if (((string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Mafia) && ((string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Roles] == Global.Role.Mafia))
-                newPlayer.GetComponent<Image>().sprite = Mafia;
+                newButton.GetComponent<Image>().sprite = Mafia;
             else
-                newPlayer.GetComponent<Image>().sprite = Civilian;
-            newPlayer.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            newPlayer.GetComponent<NightDayController>().characterSelectedIcon = characterSelectedIcon;
-            characterIconPrefabs.Add(newPlayer);
+                newButton.GetComponent<Image>().sprite = Civilian;
+            newButton.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            int tempPos = pos;
+            newButton.GetComponent<Button>().onClick.AddListener(() => VoteThisPlayerButton(tempPos));
+            characterIconPrefabs.Add(newButton);
+            //newPlayer.GetComponent<NightDayController>().characterSelectedIcon = characterSelectedIcon;
+            //characterIconPrefabs.Add(newPlayer);
+            //GameObject newPlayer = Instantiate(characterIconPrefab);
+            //characterIconPrefabs[pos].transform.SetParent(CharacterPanel.transform);
+            //characterIconPrefabs[pos].GetComponentInChildren<Text>().text = (string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Name];
+            //if (characterIconPrefabs[pos].GetComponentInChildren<Text>().text == (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name])
+            //    characterIconPrefabs[pos].GetComponent<Image>().sprite = PlayerRole(PhotonNetwork.player);
+            //else if (((string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles] == Global.Role.Mafia) && ((string)PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.Roles] == Global.Role.Mafia))
+            //    characterIconPrefabs[pos].GetComponent<Image>().sprite = Mafia;
+            //else
+            //    characterIconPrefabs[pos].GetComponent<Image>().sprite = Civilian;
+            //characterIconPrefabs[pos].GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            //int tempPos = pos;
+            //characterIconPrefabs[pos].GetComponent<Button>().onClick.AddListener(() => VoteThisPlayerButton(tempPos));
+            //newPlayer.GetComponent<NightDayController>().characterSelectedIcon = characterSelectedIcon;
+            //characterIconPrefabs.Add(newPlayer);
         }
-        if (characterIconPrefabs == null)
-            return false;
+        //if (characterIconPrefabs == null)
+        //    return false;
         return true;
     }
 
@@ -207,17 +224,20 @@ public class NightDayController : MonoBehaviour {
         throw new System.Exception("That button doesn't exist");
     }
 
-	public void VoteThisPlayerButton(){
-        characterSelectedIcon.GetComponent<Image>().sprite = characterIconPrefab.GetComponent<Image>().sprite;
-        Debug.Log(characterIconPrefab.GetComponentInChildren<Text>().text);
-        characterSelectedIcon.GetComponentInChildren<Text>().text = characterIconPrefab.GetComponentInChildren<Text>().text;
-        PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = characterIconPrefab.GetComponentInChildren<Text>().text;
+	public void VoteThisPlayerButton(int button){
+        characterSelectedIcon.GetComponent<Image>().sprite = characterIconPrefabs[button].GetComponent<Image>().sprite;
+        Debug.Log(characterIconPrefabs[button].GetComponentInChildren<Text>().text);
+        characterSelectedIcon.GetComponentInChildren<Text>().text = characterIconPrefabs[button].GetComponentInChildren<Text>().text;
         characterSelectedIcon.SetActive(true);
+        UpdateVote(characterIconPrefabs[button].GetComponentInChildren<Text>().text);
+        //PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = characterIconPrefab.GetComponentInChildren<Text>().text;
+        //characterSelectedIcon.SetActive(true);
     }
 
     public void CancelVote()
     {
         PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = "";
+        UpdateVote("");
         characterSelectedIcon.SetActive(false);
     }
 

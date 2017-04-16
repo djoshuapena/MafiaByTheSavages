@@ -56,4 +56,5 @@ MonoBehaviour:
   - InitializeNightDay
   - InitializeGameState
   - StartState
+  - ChangeVoteHelper
   DisableAutoOpenWizard: 1

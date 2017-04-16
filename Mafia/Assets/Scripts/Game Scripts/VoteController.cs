@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class VoteController : MonoBehaviour {
+public class VoteController : Photon.MonoBehaviour {
 
 	//InitializeVotes() sets all votes to an empty string
 	public void InitializeVotes(){
@@ -20,6 +20,7 @@ public class VoteController : MonoBehaviour {
 	//ChangeVote(name) changes the vote to name given
 	public void ChangeVote(string name){
         PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor] = name;
+        photonView.RPC("ChangeVoteHelper", PhotonTargets.Others, PhotonNetwork.player, name);
 		//ExitGames.Client.Photon.Hashtable replaceVote = new ExitGames.Client.Photon.Hashtable ();
 		//replaceVote.Add (Global.CustomProperties.VotedFor, name);
 		//PhotonNetwork.player.SetCustomProperties (replaceVote);
@@ -31,6 +32,18 @@ public class VoteController : MonoBehaviour {
 	//	}
 
 	}
+
+    [PunRPC]
+    public void ChangeVoteHelper(PhotonPlayer player, string name)
+    {
+        for(int pos = 0; pos < PhotonNetwork.playerList.Length; pos++)
+        {
+            if(PhotonNetwork.playerList[pos] == player)
+            {
+                PhotonNetwork.playerList[pos].CustomProperties[Global.CustomProperties.VotedFor] = name;
+            }
+        }
+    }
 		
 	//GetVote(majority) will take the votedFor custom properties for each player and find out which person got voted
 	//for the most (multiple people if any) and return the names of those person in a list.

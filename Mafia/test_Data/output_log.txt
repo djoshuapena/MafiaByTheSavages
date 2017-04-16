@@ -26,8 +26,8 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.880493 ms
-afn
+UnloadTime: 4.043061 ms
+;ojgv
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -36,10 +36,10 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.184987 ms
+UnloadTime: 5.761580 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.569679 ms (FindLiveObjects: 0.054123 ms CreateObjectMapping: 0.045432 ms MarkObjects: 0.461432 ms  DeleteObjects: 0.007901 ms)
+Total: 0.817382 ms (FindLiveObjects: 0.083358 ms CreateObjectMapping: 0.054913 ms MarkObjects: 0.670419 ms  DeleteObjects: 0.007901 ms)
 
 Lobby Joined.
  
@@ -50,28 +50,28 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.499259 ms
+UnloadTime: 1.789234 ms
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 771.
-Total: 0.934320 ms (FindLiveObjects: 0.089679 ms CreateObjectMapping: 0.067950 ms MarkObjects: 0.766024 ms  DeleteObjects: 0.009481 ms)
+Total: 0.747851 ms (FindLiveObjects: 0.068345 ms CreateObjectMapping: 0.036740 ms MarkObjects: 0.633283 ms  DeleteObjects: 0.008296 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: afn
+Connected as: ;ojgv
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: ashAll
+Subscribed to: lkgAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.572444 ms
+UnloadTime: 3.699753 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 911.
-Total: 4.981728 ms (FindLiveObjects: 0.195950 ms CreateObjectMapping: 0.152098 ms MarkObjects: 4.550716 ms  DeleteObjects: 0.079802 ms)
+Total: 1.460938 ms (FindLiveObjects: 0.178962 ms CreateObjectMapping: 0.079012 ms MarkObjects: 1.159506 ms  DeleteObjects: 0.040691 ms)
 
 ChatHandler Start() test!
  
@@ -81,23 +81,23 @@ I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: afn
+Connected as: ;ojgv
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: ashDead
+Subscribed to: lkgCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: ashMafia
+Subscribed to: lkgMafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: ashCivilian
+Subscribed to: lkgDead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: ashAll
+Subscribed to: lkgAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -110,5 +110,5 @@ clear
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: ecdc -> priority: 1 
-  Thread -> id: 10c64 -> priority: 1 
+  Thread -> id: 6cec -> priority: 1 
+  Thread -> id: cd70 -> priority: 1 

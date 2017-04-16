@@ -57,5 +57,4 @@ MonoBehaviour:
   - InitializeGameState
   - StartState
   - ChangeVoteHelper
-  - PlayerIsDead
   DisableAutoOpenWizard: 1

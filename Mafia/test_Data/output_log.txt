@@ -19,7 +19,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.031 seconds
+- Completed reload, in  0.054 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -46,7 +46,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
+- Completed reload, in  0.063 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -73,7 +73,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.036 seconds
+- Completed reload, in  0.055 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -100,21 +100,21 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.030 seconds
+- Completed reload, in  0.027 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.784494 ms
+UnloadTime: 1.978469 ms
 <RI> Initialized touch support.
+UnloadTime: 1.295407 ms
 <RI> Initialized touch support.
-UnloadTime: 1.185580 ms
+UnloadTime: 1.310814 ms
 <RI> Initialized touch support.
-UnloadTime: 2.507852 ms
-UnloadTime: 3.608890 ms
-q
+UnloadTime: 3.803259 ms
+a
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -123,16 +123,16 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.260052 ms
+UnloadTime: 5.062716 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.833580 ms (FindLiveObjects: 0.273382 ms CreateObjectMapping: 0.062024 ms MarkObjects: 0.484345 ms  DeleteObjects: 0.007901 ms)
+Total: 0.798814 ms (FindLiveObjects: 0.047407 ms CreateObjectMapping: 0.032790 ms MarkObjects: 0.700839 ms  DeleteObjects: 0.016592 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-w
+s
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -141,16 +141,16 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.890272 ms
+UnloadTime: 14.511407 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.627753 ms (FindLiveObjects: 0.053728 ms CreateObjectMapping: 0.047012 ms MarkObjects: 0.517926 ms  DeleteObjects: 0.008296 ms)
+Total: 0.688197 ms (FindLiveObjects: 0.062024 ms CreateObjectMapping: 0.077827 ms MarkObjects: 0.540049 ms  DeleteObjects: 0.007111 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-e
+d
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -159,16 +159,16 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.079409 ms
+UnloadTime: 3.232790 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.470913 ms (FindLiveObjects: 0.035160 ms CreateObjectMapping: 0.027259 ms MarkObjects: 0.400197 ms  DeleteObjects: 0.007506 ms)
+Total: 1.900641 ms (FindLiveObjects: 0.133925 ms CreateObjectMapping: 0.724148 ms MarkObjects: 1.032296 ms  DeleteObjects: 0.007506 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-r
+f
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -177,10 +177,10 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.440198 ms
+UnloadTime: 3.420839 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.591012 ms (FindLiveObjects: 0.059259 ms CreateObjectMapping: 0.040296 ms MarkObjects: 0.483160 ms  DeleteObjects: 0.007506 ms)
+Total: 0.615901 ms (FindLiveObjects: 0.049777 ms CreateObjectMapping: 0.056098 ms MarkObjects: 0.501333 ms  DeleteObjects: 0.007111 ms)
 
 Lobby Joined.
  
@@ -191,16 +191,12 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.465679 ms
+UnloadTime: 3.901629 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.990025 ms (FindLiveObjects: 0.058074 ms CreateObjectMapping: 0.039506 ms MarkObjects: 0.862815 ms  DeleteObjects: 0.028444 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 771.
+Total: 1.764740 ms (FindLiveObjects: 0.088493 ms CreateObjectMapping: 0.064395 ms MarkObjects: 1.590913 ms  DeleteObjects: 0.020148 ms)
 
 ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected as: w
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -208,15 +204,15 @@ Room Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Connected as: s
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.374025 ms
+UnloadTime: 2.326518 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.921284 ms (FindLiveObjects: 0.086123 ms CreateObjectMapping: 0.047802 ms MarkObjects: 0.777086 ms  DeleteObjects: 0.008691 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 771.
+Total: 1.140938 ms (FindLiveObjects: 0.099555 ms CreateObjectMapping: 0.065580 ms MarkObjects: 0.965530 ms  DeleteObjects: 0.008691 ms)
 
 ChatHandler Start() test!
  
@@ -227,20 +223,24 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.474370 ms
+Subscribed to: zAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.751012 ms (FindLiveObjects: 0.058864 ms CreateObjectMapping: 0.045432 ms MarkObjects: 0.638420 ms  DeleteObjects: 0.007506 ms)
+UnloadTime: 1.098666 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 771.
+Total: 0.617481 ms (FindLiveObjects: 0.062419 ms CreateObjectMapping: 0.041876 ms MarkObjects: 0.506469 ms  DeleteObjects: 0.005925 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: e
+Connected as: f
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Connected as: d
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -248,29 +248,29 @@ Room Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: q
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.160691 ms
+UnloadTime: 5.033876 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.598913 ms (FindLiveObjects: 0.058469 ms CreateObjectMapping: 0.044641 ms MarkObjects: 0.489086 ms  DeleteObjects: 0.005925 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 770.
+Total: 1.021629 ms (FindLiveObjects: 0.075851 ms CreateObjectMapping: 0.055308 ms MarkObjects: 0.877432 ms  DeleteObjects: 0.011851 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: r
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Connected as: a
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -278,41 +278,33 @@ Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.748938 ms
-UnloadTime: 2.108050 ms
-UnloadTime: 2.360494 ms
-UnloadTime: 2.744889 ms
+UnloadTime: 1.983209 ms
+UnloadTime: 2.176000 ms
+UnloadTime: 1.947259 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.937876 ms (FindLiveObjects: 0.059259 ms CreateObjectMapping: 0.039901 ms MarkObjects: 0.821728 ms  DeleteObjects: 0.016197 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 910.
+Total: 0.896790 ms (FindLiveObjects: 0.199111 ms CreateObjectMapping: 0.043456 ms MarkObjects: 0.637234 ms  DeleteObjects: 0.016592 ms)
 
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 1.206123 ms (FindLiveObjects: 0.071506 ms CreateObjectMapping: 0.051753 ms MarkObjects: 1.048099 ms  DeleteObjects: 0.032790 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 910.
+UnloadTime: 1.820049 ms
+iveObjects: 0.079802 ms CreateObjectMapping: 0.030419 ms MarkObjects: 0.649876 ms  DeleteObjects: 0.017382 ms)
+
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 910.
+Total: 0.692938 ms (FindLiveObjects: 0.051753 ms CreateObjectMapping: 0.030419 ms MarkObjects: 0.594962 ms  DeleteObjects: 0.015407 ms)
+
+ChatHandler Start() test!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.954864 ms (FindLiveObjects: 0.067950 ms CreateObjectMapping: 0.048592 ms MarkObjects: 0.820938 ms  DeleteObjects: 0.016197 ms)
-
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.896395 ms (FindLiveObjects: 0.072296 ms CreateObjectMapping: 0.044246 ms MarkObjects: 0.764444 ms  DeleteObjects: 0.015012 ms)
-
-ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDusk
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 910.
+Total: 1.106172 ms (FindLiveObjects: 0.071901 ms CreateObjectMapping: 0.049382 ms MarkObjects: 0.961975 ms  DeleteObjects: 0.022123 ms)
 
 ChatHandler Start() test!
  
@@ -326,87 +318,95 @@ I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+ChatHandler Start() test!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: e
+I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: w
+Connected as: f
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: q
+Connected as: s
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: r
+Connected as: a
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aCivilian
+Connected as: d
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aDead
+Subscribed to: zCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aMafia
+Subscribed to: zMafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aDead
+Subscribed to: zDead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aCivilian
+Subscribed to: zCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aMafia
+Subscribed to: zDead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aDead
+Subscribed to: zMafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aCivilian
+Subscribed to: zCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aMafia
+Subscribed to: zMafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aCivilian
+Subscribed to: zDead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aDead
+Subscribed to: zCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aMafia
+Subscribed to: zMafia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Subscribed to: zDead
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: aAll
+Subscribed to: zAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: zAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -418,7 +418,7 @@ I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-clear
+I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -427,6 +427,14 @@ clear
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 clear
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+clear
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -438,11 +446,31 @@ Umar
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-James
+Chloe
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Aloy
+Andrew
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toMorning
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Umar total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Chloe total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ total votes: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Andrew total votes: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -454,11 +482,55 @@ I am changing the state toMorning
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toMorning
+ total votes: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Chloe total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Andrew total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Umar total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Chloe total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ total votes: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Andrew total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Umar total votes: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 I am changing the state toMorning
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Andrew total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Chloe total votes: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ total votes: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Umar total votes: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -474,35 +546,23 @@ I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toDay
+Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Aloy
+Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Aaron
+Chloe
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-James
+Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Aaron
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Hayden
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Aaron
+Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -510,7 +570,7 @@ I am changing the state toPreTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toPreTrial
+Ding total votes: 5
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -518,7 +578,19 @@ I am changing the state toPreTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+Ding total votes: 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 I am changing the state toPreTrial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Ding total votes: 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -530,11 +602,19 @@ I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toTrial
+1 person trial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 1: James
+Player 1: Ding
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 2:  (if blank, 1 person trial)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1: Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -546,6 +626,18 @@ I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+1 person trial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1: Ding
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 2:  (if blank, 1 person trial)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -554,23 +646,7 @@ I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 2:  (if blank, 1 person trial)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: James
+Player 1: Ding
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -642,19 +718,17 @@ Rethrow as TargetInvocationException: Exception has been thrown by the target of
  
 (Filename:  Line: -1)
 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 908 -> priority: 1 
+  Thread -> id: a9c0 -> priority: 1 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: b458 -> priority: 1 
+  Thread -> id: b3f4 -> priority: 1 
 I am changing the state toPostTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
+ total votes: 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -666,35 +740,7 @@ I am changing the state toPostTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
+ total votes: 3
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -707,50 +753,6 @@ clear
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Aaron
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Updated stats successfully
-
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Updated stats successfully
-
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Updated stats successfully
-
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Updated stats successfully
-
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -775,44 +777,16 @@ Updated stats successfully
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.720592 ms
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.884148 ms (FindLiveObjects: 0.080197 ms CreateObjectMapping: 0.076246 ms MarkObjects: 0.666074 ms  DeleteObjects: 0.060839 ms)
-
+UnloadTime: 0.777481 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.757333 ms
 
 Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.820148 ms (FindLiveObjects: 0.050962 ms CreateObjectMapping: 0.060444 ms MarkObjects: 0.646716 ms  DeleteObjects: 0.061629 ms)
+Total: 1.498864 ms (FindLiveObjects: 0.054518 ms CreateObjectMapping: 0.030814 ms MarkObjects: 0.816197 ms  DeleteObjects: 0.596543 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.028346 ms
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.918913 ms (FindLiveObjects: 0.053728 ms CreateObjectMapping: 0.043851 ms MarkObjects: 0.760494 ms  DeleteObjects: 0.060049 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnloadTime: 1.054815 ms
+UnloadTime: 3.215407 ms
 
 Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.752987 ms (FindLiveObjects: 0.049382 ms CreateObjectMapping: 0.045432 ms MarkObjects: 0.591012 ms  DeleteObjects: 0.065975 ms)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Lobby Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Total: 0.843851 ms (FindLiveObjects: 0.079407 ms CreateObjectMapping: 0.051753 ms MarkObjects: 0.646320 ms  DeleteObjects: 0.065975 ms)
 
 Lobby Joined.
  
@@ -831,14 +805,8 @@ Lobby Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: bb8 -> priority: 1 
-  Thread -> id: 13e4 -> priority: 1 
+  Thread -> id: b574 -> priority: 1 
+  Thread -> id: d858 -> priority: 1 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 352c -> priority: 1 
-  Thread -> id: 33a8 -> priority: 1 
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 44d8 -> priority: 1 
-  Thread -> id: a34 -> priority: 1 
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 4bf4 -> priority: 1 
-  Thread -> id: 4bc4 -> priority: 1 
+  Thread -> id: 4f2c -> priority: 1 
+  Thread -> id: f024 -> priority: 1 

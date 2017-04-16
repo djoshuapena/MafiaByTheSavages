@@ -408,6 +408,7 @@ public class GameController : Photon.MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    [PunRPC]
     public void Endgame()
     {
         end.ActivateEnd();   

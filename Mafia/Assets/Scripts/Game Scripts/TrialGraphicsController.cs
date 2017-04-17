@@ -309,6 +309,7 @@ public class TrialGraphicsController : MonoBehaviour {
         {
             loneBtn.gameObject.SetActive(true);
             GuiltyBoxLone.gameObject.SetActive(true);
+            DisableForDead();
             twoTrialPanel.SetActive(false);
             oneTrialPanel.SetActive(true);
         }
@@ -317,11 +318,21 @@ public class TrialGraphicsController : MonoBehaviour {
             pairBtn1.gameObject.SetActive(true);
             pairBtn2.gameObject.SetActive(true);
             GuiltyBoxPair.gameObject.SetActive(true);
+            DisableForDead();
             oneTrialPanel.SetActive(false);
             twoTrialPanel.SetActive(true);
         }
     }
 
+    private void DisableForDead()
+    {
+        if((bool)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead] == true)
+        {
+            loneBtn.GetComponent<Button>().interactable = false;
+            pairBtn1.GetComponent<Button>().interactable = false;
+            pairBtn2.GetComponent<Button>().interactable = false;
+        }
+    }
     private void GetNames(List<string> playerlist)
     {
         if(onePersonTrial)

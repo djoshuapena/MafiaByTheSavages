@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndedController : MonoBehaviour
-{
+public class EndedController : MonoBehaviour {
 
 
     // php script in web domain.
@@ -21,7 +20,7 @@ public class EndedController : MonoBehaviour
     {
         //stats = whatever is sent to this function;
         StartCoroutine(UpdateStats());
-       // LoadLobby();
+        //LoadLobby();
     }
 
     /// <summary>
@@ -66,13 +65,7 @@ public class EndedController : MonoBehaviour
     }
 
     //join lobby scene, connection status: JoinedLobby
-    //private void OnConnectedToMaster()
-    // {
-    //   PhotonNetwork.JoinLobby();
-    //PhotonNetwork.LoadLevel("Lobby");
-    // }
-
-    void OnLeftRoom()
+    private void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
         PhotonNetwork.LoadLevel("Lobby");

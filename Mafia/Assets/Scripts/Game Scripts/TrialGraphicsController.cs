@@ -13,7 +13,6 @@ public class TrialGraphicsController : MonoBehaviour {
     public GameObject loneNotGulty;
     public GameObject oneTrialPanel;
 
-    public GameObject trialPanel;
     public Button pairBtnHidden1;
     public Button pairBtnHidden2;
     public Button pairBtn1;
@@ -33,7 +32,7 @@ public class TrialGraphicsController : MonoBehaviour {
     private bool playerTwoSelected = false;
 //private bool startTrialDone = false;
 
-    //private List<string> playerlist = new List<string>();
+    private List<string> playerlist = new List<string>();
     private string name1;
     private string name2;
 
@@ -50,10 +49,10 @@ public class TrialGraphicsController : MonoBehaviour {
         //Set the local playerlist equal to the
         //list passed to InitializeTrial() as a 
         //parameter from the GameController
-        //playerlist.AddRange(paramlist);
+        playerlist.AddRange(paramlist);
 
-        GetNumDefendants(paramlist);
-        SetBtnNames(paramlist);
+        GetNumDefendants();
+        SetBtnNames();
         Debug.Log("Player 1: " + name1);
         Debug.Log("Player 2: " + name2 + " (if blank, 1 person trial)");
 
@@ -141,11 +140,10 @@ public class TrialGraphicsController : MonoBehaviour {
 		
     public void StartTrial()
     {
-        trialPanel.SetActive(true);
         //until timer fixed
         //startTrialDone = true;
 
-        SelectTrialPanel();
+        //SelectTrialPanel();
 
         //trialTimer.InitializeTime(30);
         if (PhotonNetwork.isMasterClient)
@@ -251,28 +249,24 @@ public class TrialGraphicsController : MonoBehaviour {
 
     public void SelectPlayerOne()
     {
-        Debug.Log("You selected this player.");
-		//onePersonTrial = true;
+		onePersonTrial = true;
         if (onePersonTrial)
         {
-            Debug.Log("This is a one person trial.");
             playerOneSelected = true;
             votec.ChangeVote(name1);
-			ChangeGuiltyBoxImage();
+			//ChangeGuiltyBoxImage();
         }
         else
         {
-            Debug.Log("This is a two person trial.");
             playerOneSelected = true;
             playerTwoSelected = false;
             votec.ChangeVote(name1);
-            ChangeGuiltyBoxImage();
+            //ChangeGuiltyBoxImage();
         }
     }
 
     public void DeselectPlayerOne()
 	{
-        Debug.Log("you deslected player one");
         playerOneSelected = false;
         votec.ChangeVote("");
         //+
@@ -281,7 +275,6 @@ public class TrialGraphicsController : MonoBehaviour {
 
     public void SelectPlayerTwo()
 	{
-        Debug.Log("You selected this player.");
         playerTwoSelected = true;
         playerOneSelected = false;
         votec.ChangeVote(name2);
@@ -290,7 +283,6 @@ public class TrialGraphicsController : MonoBehaviour {
 
     public void DeselectPlayerTwo()
     {
-        Debug.Log("You deselected player two.");
         playerTwoSelected = false;
         votec.ChangeVote("");
         ChangeGuiltyBoxImage();
@@ -307,22 +299,17 @@ public class TrialGraphicsController : MonoBehaviour {
 
         if (onePersonTrial)
         {
-            loneBtn.gameObject.SetActive(true);
-            GuiltyBoxLone.gameObject.SetActive(true);
             twoTrialPanel.SetActive(false);
             oneTrialPanel.SetActive(true);
         }
         else
         {
-            pairBtn1.gameObject.SetActive(true);
-            pairBtn2.gameObject.SetActive(true);
-            GuiltyBoxPair.gameObject.SetActive(true);
             oneTrialPanel.SetActive(false);
             twoTrialPanel.SetActive(true);
         }
     }
 
-    private void GetNames(List<string> playerlist)
+    private void GetNames()
     {
         if(onePersonTrial)
         {
@@ -334,9 +321,9 @@ public class TrialGraphicsController : MonoBehaviour {
             name2 = playerlist[1];
         }
     }
-    private void SetBtnNames(List<string> playerlist)
+    private void SetBtnNames()
     {
-        GetNames(playerlist);
+        GetNames();
 
         if (onePersonTrial)
         {
@@ -353,12 +340,7 @@ public class TrialGraphicsController : MonoBehaviour {
         }
     }
 
-    public void SetTrialtoInactive()
-    {
-        trialPanel.SetActive(false);
-    }
-
-    private void GetNumDefendants(List<string> playerlist)
+    private void GetNumDefendants()
     {
         if(playerlist.Count == 1)
         {

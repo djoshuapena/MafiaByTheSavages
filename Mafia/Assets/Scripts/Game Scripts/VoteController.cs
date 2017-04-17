@@ -154,20 +154,20 @@ public class VoteController : Photon.MonoBehaviour {
             }
         }
 
-        //if (arrestPlayer.Count > 0)
-        //{
-        //    var sortedDict = from entry in arrestPlayer orderby entry.Value descending select entry;
-        //    //var first = sortedDict.First();
-        //    //int values = first.Value;
-
-        foreach (KeyValuePair<string, int> pair in arrestPlayer)
+        if (arrestPlayer.Count > 0)
         {
-            //if (pair.Value == values)
-            //{
-            returnList.Add(pair.Key);
-            //}
+            var sortedDict = from entry in arrestPlayer orderby entry.Value descending select entry;
+            var first = sortedDict.First();
+            int values = first.Value;
+
+            foreach (KeyValuePair<string, int> pair in arrestPlayer)
+            {
+                if (pair.Value == values)
+                {
+                    returnList.Add(pair.Key);
+                }
+            }
         }
-        //}
         if (returnList.Count == 0 || returnList.Count > 3)
         {
             returnList.Clear();

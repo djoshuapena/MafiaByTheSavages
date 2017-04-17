@@ -12,6 +12,10 @@ public class WaitingRoom : Photon.MonoBehaviour
     //public Text playerIdText;
     public GameObject playerNamePrefab;
 
+	float timeLeft = 30.0f;
+
+	public Text timer;
+
     //the minimum amount of players that can be in the game
     //private int minPlayers;
 
@@ -44,17 +48,20 @@ public class WaitingRoom : Photon.MonoBehaviour
 		//while (gameStart);
 		if(stream.isWriting == true)
 		{
-			stream.SendNext (gameStart);
-		    /*if (gameStart == true) {
-				SceneManager.LoadScene ("GameScene");
-			}*/
+			stream.SendNext (timeLeft);
+			if (timeLeft < 1)
+			{
+				PhotonNetwork.LoadLevel("Game");
+			}
 	    }
 		else
 		{
-//			gameStart = (bool)stream.ReceiveNext();
-			/*if (gameStart == true) {
-				SceneManager.LoadScene ("GameScene");
-		    }*/
+			timeLeft = (float)stream.ReceiveNext();
+			ShowTime();
+			if (timeLeft < 1)
+			{
+				PhotonNetwork.LoadLevel("Game");
+			}
 		}
 	}
 
@@ -87,13 +94,47 @@ public class WaitingRoom : Photon.MonoBehaviour
 
     public void OnGameStartButton()
     {
-        if (PhotonNetwork.isMasterClient)
-        {
-            myPhotonView.RPC("Started", PhotonTargets.All);
-        }
+		myPhotonView = gameObject.GetComponent<PhotonView>();
+
+		if (PhotonNetwork.isMasterClient == true) // host starts the countdown
+		{
+			//timeLeft = 30.0f;
+			myPhotonView.RPC("Countdown", PhotonTargets.AllBuffered, PhotonNetwork.time);
+		}
+        //if (PhotonNetwork.isMasterClient)
+       // {
+           // myPhotonView.RPC("Started", PhotonTargets.All);
+      //  }
 
         //gameStart = true;
     }
+
+	[PunRPC]
+	void Countdown(double timerStart)
+	{
+		timeLeft -= (float)(timerStart - PhotonNetwork.time);
+		StartCoroutine("TimerCountdown");
+	}
+
+	IEnumerator TimerCountdown()
+	{
+		while (timeLeft > 0f)
+		{
+			yield return new WaitForEndOfFrame();
+			if (PhotonNetwork.isMasterClient == true)
+			{
+				//yield return new WaitForEndOfFrame();
+				timeLeft -= Time.deltaTime;
+			}
+			ShowTime();
+		}
+
+	}
+
+	void ShowTime()
+	{
+		timer.text = Mathf.Round(timeLeft).ToString();
+	}
 
    
 	

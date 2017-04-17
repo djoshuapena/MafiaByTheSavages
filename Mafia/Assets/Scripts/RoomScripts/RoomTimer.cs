@@ -72,6 +72,6 @@ public class RoomTimer : Photon.PunBehaviour//MonoBehaviour
 
     void ShowTime()
     {
-        timer.text = "Time Left:" + Mathf.Round(timeLeft);
+        timer.text = "" + Mathf.Round(timeLeft);
     }
 }

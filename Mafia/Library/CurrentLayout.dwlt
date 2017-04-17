@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 40
-    y: 52
+    x: 21
+    y: 50
     width: 1244
     height: 669
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1244
     height: 619
-  m_MinSize: {x: 538, y: 271}
-  m_MaxSize: {x: 18008, y: 10021}
+  m_MinSize: {x: 634, y: 271}
+  m_MaxSize: {x: 18004, y: 10021}
   vertical: 0
-  controlID: 69
+  controlID: 77
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -90,14 +90,14 @@ MonoBehaviour:
     y: 0
     width: 265
     height: 619
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 16}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -182,10 +182,10 @@ MonoBehaviour:
     y: 0
     width: 887
     height: 619
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 10
+  controlID: 78
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,8 +204,8 @@ MonoBehaviour:
     y: 0
     width: 622
     height: 619
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 14}
@@ -261,8 +261,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 929
-    y: 101
+    x: 2
+    y: 19
     width: 355
     height: 598
   m_SearchFilter:
@@ -282,29 +282,29 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/Game Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\$Programming Classes\CSCI 4230(software2)\MafiaByTheSavages\Mafia
+  m_LastProjectPath: /Users/Phoenix/Desktop/MafiaByTheSavages/Mafia
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e6330000
-    m_LastClickedID: 13286
-    m_ExpandedIDs: 00000000202d0000782e00009c2e00009c310000c03100005632000010340000b6340000b834000000ca9a3bffffff7f
+    m_SelectedIDs: a4460000
+    m_LastClickedID: 18084
+    m_ExpandedIDs: 0000000042440000dc440000f84400006045000078450000c4450000c0460000584700005a47000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Scripts
+      m_OriginalName: Scripts
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17784
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 3}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -316,7 +316,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000202d0000442d0000782e00009c2e00009c310000c03100005632000010340000b6340000b8340000
+    m_ExpandedIDs: 0000000042440000dc440000f84400006045000078450000c4450000c0460000584700005a470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 691
-    y: 100
-    width: 275
+    x: 910
+    y: 99
+    width: 355
     height: 598
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -426,15 +426,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 17
-    width: 200
+    x: 21
+    y: 99
+    width: 263
     height: 598
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: b2edffffa0eeffff8ef0ffffb6f0ffffdaf0ffffe2f0ffffeefaffff00000000
+    m_ExpandedIDs: b63fffff5c40ffff7440ffff7a40ffff7e40ffff8240ffff7441ffff1a42ffff0644ffff2844ffff4844ffff4c44ffff024dffffa64dffff924fffffb44fffffd44fffffd84fffff5e51ffff7c53ffffcc5cffff6c5dffff585fffff7a5fffff9a5fffff9e5fffff686cffff4a6dffff3a6fffff606fffff846fffff8c6fffff8671ffffea79ffff467bffff00000000bc4800007c49000088650000026e0000c26e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,8 +553,8 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 307
-    y: 101
+    x: 2
+    y: 19
     width: 618
     height: 598
   m_MaximizeOnPlay: 0
@@ -565,10 +565,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -270
-    m_HBaseRangeMax: 270
-    m_VBaseRangeMin: -480
-    m_VBaseRangeMax: 480
+    m_HBaseRangeMin: -135
+    m_HBaseRangeMax: 135
+    m_VBaseRangeMin: -240
+    m_VBaseRangeMax: 240
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -587,7 +587,7 @@ MonoBehaviour:
       y: 17
       width: 618
       height: 581
-    m_Scale: {x: 0.60520834, y: 0.60520834}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 309, y: 290.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -595,15 +595,15 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -510.568
-      y: -480
-      width: 1021.136
-      height: 960
+      x: -309
+      y: -290.5
+      width: 618
+      height: 581
     m_MinimalGUI: 1
-  m_defaultScale: 0.60520834
+  m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 618, y: 598}
+  m_LastWindowPixelSize: {x: 1236, y: 1196}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 40
-    y: 101
+    x: 21
+    y: 99
     width: 263
     height: 598

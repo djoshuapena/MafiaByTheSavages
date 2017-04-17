@@ -828,7 +828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Timer
+  m_Text: 
 --- !u!222 &379060619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2881,7 +2881,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1066597280}
   - component: {fileID: 1066597279}
-  - component: {fileID: 1066597282}
   - component: {fileID: 1066597281}
   m_Layer: 0
   m_Name: _RoomScripts
@@ -2902,6 +2901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNamePrefab: {fileID: 2101126179}
+  timer: {fileID: 379060618}
   startGame: {fileID: 1117569874}
 --- !u!4 &1066597280
 Transform:
@@ -2942,19 +2942,6 @@ MonoBehaviour:
   instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &1066597282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1066597278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a6c982652bbf34b9ab4673923299d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game: {fileID: 0}
-  timer: {fileID: 379060618}
 --- !u!1 &1072511374
 GameObject:
   m_ObjectHideFlags: 0

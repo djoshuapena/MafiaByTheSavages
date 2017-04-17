@@ -20,9 +20,9 @@ public class GameController : Photon.MonoBehaviour
     //public GameResultsPhase gameResults; //Need to build this
 
     private Dictionary<string, string> text;
-    private List<string> trialplayers;
+    //private List<string> trialplayers;
     //private string state = "";
-    private string playerVotedFor;
+    //private string playerVotedFor;
     //private float time = 2f;
 
     // Use this for initialization
@@ -88,6 +88,10 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     public void InitializeGameState(string state)
     {
+        if(trial.trialPanel.GetActive())
+        {
+            trial.SetTrialtoInactive();
+        }
         if (state == "")
         {
             throw new Exception("Change Game state didnt get anything.");
@@ -134,24 +138,30 @@ public class GameController : Photon.MonoBehaviour
 
         else if (state == Global.States.Night)
         {
-            trialplayers = vote.GetVote(1);
+            //Get the player who was killed in the trial. Will return an
+            //empty list if there was none.
+            List<string> playerKilledInTrial = vote.GetVote(1);
             //timer.InitializeTime(45);
-            initialized = dayNight.InitializeView(Global.States.Night, trialplayers);
+            initialized = dayNight.InitializeView(Global.States.Night, playerKilledInTrial);
         }
         else if (state == Global.States.Day)
         {
-            trialplayers = vote.GetSheriffArrest();
+            //Get the list of players who were arrested by the sheriff, and
+            //killed by the mafia.
+            List<string> selectedPlayers = vote.GetSheriffArrest();
             if (vote.GetMafiaKill() != "")
             {
                 if (vote.GetNurseSave() != vote.GetMafiaKill())
-                    trialplayers.Add(vote.GetMafiaKill());
+                    selectedPlayers.Add(vote.GetMafiaKill());
             }
             //timer.InitializeTime(45);
-            initialized = dayNight.InitializeView(Global.States.Day, trialplayers);
+            initialized = dayNight.InitializeView(Global.States.Day, selectedPlayers);
         }
         else if (state == Global.States.Trial)
         {
-            trialplayers = vote.GetVote(2);
+            //Get the list of players who will go to trial.
+            List<string> trialplayers = vote.GetVote(2);
+            Debug.Log("This is the list of players going to trial " + string.Join(",", trialplayers.ToArray()));
             initialized = trial.InitializeTrial(trialplayers);
         }
         else
@@ -159,8 +169,8 @@ public class GameController : Photon.MonoBehaviour
             initialized = overlay.InitializeOverlay(state);
 
         }
-        if (!initialized)
-            throw new Exception("I did not initialize any prestates.");
+        //if (!initialized)
+          //  throw new Exception("I did not initialize any prestates.");
     }
 
     public void NowStartState(string state)
@@ -187,13 +197,13 @@ public class GameController : Photon.MonoBehaviour
         else if (state == Global.States.Night)
         {
             vote.InitializeVotes();
-            trialplayers = null;
+            //trialplayers = null;
             started = dayNight.StartView(state);
         }
         else if (state == Global.States.Day)
         {
             vote.InitializeVotes();
-            trialplayers = null;
+            //trialplayers = null;
             started = dayNight.StartView(state);
         }
         else if (state == Global.States.Trial)
@@ -256,9 +266,11 @@ public class GameController : Photon.MonoBehaviour
             }
         }
 
+        // check if we need to skip the tiral state.
         else if (state == Global.States.PreTrial)
         {
-            if(vote.GetVote(1).Count == 0)
+            // if there is not at most two people with equal majority, skip the trial state.
+            if(vote.GetVote(2).Count == 0)
             {
                 if (PhotonNetwork.isMasterClient)
                 {
@@ -266,6 +278,7 @@ public class GameController : Photon.MonoBehaviour
                     EndedState(Global.States.Trial);
                 }
             }
+            // else go to trial.
             else
             {
                 if (PhotonNetwork.isMasterClient)
@@ -288,7 +301,7 @@ public class GameController : Photon.MonoBehaviour
             {
                 playerKilled = vote.GetVote(1)[0];
                 player = findPlayer(playerKilled);
-                if (PhotonNetwork.isMasterClient)
+                //if (PhotonNetwork.isMasterClient)
                     player.CustomProperties[Global.CustomProperties.Dead] = true;
             }
 
@@ -408,6 +421,7 @@ public class GameController : Photon.MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    [PunRPC]
     public void Endgame()
     {
         end.ActivateEnd();   

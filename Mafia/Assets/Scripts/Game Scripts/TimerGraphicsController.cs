@@ -90,12 +90,9 @@ public class TimerGraphicsController : Photon.PunBehaviour//MonoBehaviour
             yield return new WaitForSeconds(1);
             timeLeft = timeLeft - 1;
         }
-        if (PhotonNetwork.isMasterClient)
-        {
-            Debug.Log(state);
-            FunctionDone timeup = new FunctionDone(game.EndingState);
-            timeup(state);
-        }
+        Debug.Log(state);
+        FunctionDone timeup = new FunctionDone(game.EndingState);
+        timeup(state);
         //game.EndingState(state);
         //TimeUP();
 

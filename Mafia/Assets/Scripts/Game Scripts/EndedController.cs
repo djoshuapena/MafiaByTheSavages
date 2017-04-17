@@ -74,7 +74,7 @@ public class EndedController : MonoBehaviour
 
     void OnLeftRoom()
     {
-        PhotonNetwork.JoinLobby();
         PhotonNetwork.LoadLevel("Lobby");
+        PhotonNetwork.JoinLobby();
     }
 }

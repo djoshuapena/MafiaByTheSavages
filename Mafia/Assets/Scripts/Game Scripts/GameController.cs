@@ -20,6 +20,7 @@ public class GameController : Photon.MonoBehaviour
     //public GameResultsPhase gameResults; //Need to build this
 
     private Dictionary<string, string> text;
+    private List<string> playersKilled = new List<string>();
     //private List<string> trialplayers;
     //private string state = "";
     //private string playerVotedFor;
@@ -140,22 +141,29 @@ public class GameController : Photon.MonoBehaviour
         {
             //Get the player who was killed in the trial. Will return an
             //empty list if there was none.
-            List<string> playerKilledInTrial = vote.GetVote(1);
+            //List<string> playerKilledInTrial = vote.GetVote(1);
+            ////timer.InitializeTime(45);
+            //initialized = dayNight.InitializeView(Global.States.Night, playerKilledInTrial);
+            //Get the player who was killed in the trial. Will return an
+            //empty list if there was none.
+            //playersKilled.AddRange(vote.GetVote(1));
             //timer.InitializeTime(45);
-            initialized = dayNight.InitializeView(Global.States.Night, playerKilledInTrial);
+            initialized = dayNight.InitializeView(Global.States.Night, playersKilled);
         }
         else if (state == Global.States.Day)
         {
             //Get the list of players who were arrested by the sheriff, and
             //killed by the mafia.
-            List<string> selectedPlayers = vote.GetSheriffArrest();
-            if (vote.GetMafiaKill() != "")
-            {
-                if (vote.GetNurseSave() != vote.GetMafiaKill())
-                    selectedPlayers.Add(vote.GetMafiaKill());
-            }
+            //List<string> selectedPlayers = vote.GetSheriffArrest();
+            //playersKilled.AddRange(vote.GetSheriffArrest());
+            //if (vote.GetMafiaKill() != "")
+            //{
+            //    if (vote.GetNurseSave() != vote.GetMafiaKill())
+            //        playersKilled.Add(vote.GetMafiaKill());
+            //        //selectedPlayers.Add(vote.GetMafiaKill());
+            //}
             //timer.InitializeTime(45);
-            initialized = dayNight.InitializeView(Global.States.Day, selectedPlayers);
+            initialized = dayNight.InitializeView(Global.States.Day, playersKilled);
         }
         else if (state == Global.States.Trial)
         {
@@ -169,8 +177,8 @@ public class GameController : Photon.MonoBehaviour
             initialized = overlay.InitializeOverlay(state);
 
         }
-        //if (!initialized)
-          //  throw new Exception("I did not initialize any prestates.");
+        if (!initialized)
+          throw new Exception("I did not initialize any prestates.");
     }
 
     public void NowStartState(string state)
@@ -184,7 +192,7 @@ public class GameController : Photon.MonoBehaviour
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor].ToString());
         GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
-        GUILayout.Label((text == null).ToString());
+        //GUILayout.Label((text == null).ToString());
     }
 
     [PunRPC]
@@ -228,28 +236,34 @@ public class GameController : Photon.MonoBehaviour
         // if the state is morning and all civilians are dead, end the game.
         else if (state == Global.States.Morning)
         {
-            PhotonPlayer player;
+            //PhotonPlayer player;
 
             //get the list of players killed by sheriff
-            List<string> playersKilled = vote.GetSheriffArrest();
+            List<string> playersKilledbysher = vote.GetSheriffArrest(); //this is temporary
+            playersKilled.AddRange(vote.GetSheriffArrest());
+            Debug.Log("This is the list of players arrested by sheriff " + string.Join(",", playersKilledbysher.ToArray()));
 
             //get the player that was killed by mafia unless
             //that person was saved by the nurse.
             if (vote.GetMafiaKill() != "")
             {
                 if (vote.GetNurseSave() != vote.GetMafiaKill())
+                {
                     playersKilled.Add(vote.GetMafiaKill());
+                    playersKilledbysher.Add(vote.GetMafiaKill()); //this is temporary
+                }
             }
 
             //set all players in the playersKilled list to dead.
             //if (PhotonNetwork.isMasterClient)
             //{
-                for (int pos = 0; pos < playersKilled.Count; pos++)
-                {
-                    player = findPlayer(playersKilled[pos]);
-                    player.CustomProperties[Global.CustomProperties.Dead] = true;
-                    //photonView.RPC("PlayerIsDead", PhotonTargets.All, playersKilled[pos]);
-                }
+            Debug.Log("This is the list of players getting killed " + string.Join(",", playersKilledbysher.ToArray()));
+            for (int pos = 0; pos < playersKilled.Count; pos++)
+            {
+                //player = findPlayer(playersKilled[pos]);
+                //player.CustomProperties[Global.CustomProperties.Dead] = true;
+                photonView.RPC("PlayerIsDead", PhotonTargets.All, playersKilled[pos]);
+            }
             //}
 
             //if all civilians or all mafia are dead, end the game
@@ -294,15 +308,17 @@ public class GameController : Photon.MonoBehaviour
         // civilian end the game. Otherwise continue the next state.
         else if (state == Global.States.PostTrial)
         {
-            string playerKilled;
+            string playerKilled = "";
             PhotonPlayer player = null;
             //Find out who was killed
             if (vote.GetVote(1).Count != 0)
             {
                 playerKilled = vote.GetVote(1)[0];
+                playersKilled.Add(playerKilled);
+                photonView.RPC("PlayerIsDead", PhotonTargets.All, playerKilled);
                 player = findPlayer(playerKilled);
                 //if (PhotonNetwork.isMasterClient)
-                    player.CustomProperties[Global.CustomProperties.Dead] = true;
+                //player.CustomProperties[Global.CustomProperties.Dead] = true;
             }
 
             //Find the photon player that is connected to that name
@@ -347,10 +363,17 @@ public class GameController : Photon.MonoBehaviour
     }
     
     [PunRPC]
-    void PlayerIsDead(string deadplayer)
+    void PlayerIsDead(string player)
     {
-        PhotonPlayer player = findPlayer(deadplayer);
-        player.CustomProperties[Global.CustomProperties.Dead] = true;
+        //for (int pos = 0; pos < playersKilled.Count; pos++)
+        //{
+        if(!playersKilled.Contains(player))
+        {
+            playersKilled.Add(player);
+        }
+        PhotonPlayer photonPlayer = findPlayer(player);
+        photonPlayer.CustomProperties[Global.CustomProperties.Dead] = true;
+        //}
     }
 
     private PhotonPlayer findPlayer(string player)

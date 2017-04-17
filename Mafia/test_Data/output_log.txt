@@ -19,7 +19,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.070 seconds
+- Completed reload, in  0.031 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -46,7 +46,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.056 seconds
+- Completed reload, in  0.035 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -73,7 +73,7 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.033 seconds
+- Completed reload, in  0.041 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -100,21 +100,21 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
+- Completed reload, in  0.038 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.597433 ms
+UnloadTime: 2.971260 ms
 <RI> Initialized touch support.
-UnloadTime: 3.871211 ms
+UnloadTime: 2.257778 ms
 <RI> Initialized touch support.
-UnloadTime: 2.630717 ms
+UnloadTime: 2.025087 ms
 <RI> Initialized touch support.
-UnloadTime: 1.687309 ms
-s
+UnloadTime: 1.364148 ms
+w
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -123,16 +123,16 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.056593 ms
+UnloadTime: 10.183906 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.642370 ms (FindLiveObjects: 0.044246 ms CreateObjectMapping: 0.044246 ms MarkObjects: 0.542815 ms  DeleteObjects: 0.010666 ms)
+Total: 0.749432 ms (FindLiveObjects: 0.124049 ms CreateObjectMapping: 0.050962 ms MarkObjects: 0.567308 ms  DeleteObjects: 0.006716 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-d
+e
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -141,16 +141,24 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.428643 ms
+UnloadTime: 6.913582 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.464197 ms (FindLiveObjects: 0.035555 ms CreateObjectMapping: 0.026864 ms MarkObjects: 0.393876 ms  DeleteObjects: 0.007111 ms)
+Total: 0.589037 ms (FindLiveObjects: 0.103506 ms CreateObjectMapping: 0.037135 ms MarkObjects: 0.440098 ms  DeleteObjects: 0.007506 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-f
+r
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+t
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected To Master
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -159,28 +167,20 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.256890 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.948841 ms
+UnloadTime: 3.286124 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 1.037432 ms (FindLiveObjects: 0.135901 ms CreateObjectMapping: 0.051358 ms MarkObjects: 0.833975 ms  DeleteObjects: 0.013827 ms)
+Total: 0.545580 ms (FindLiveObjects: 0.054913 ms CreateObjectMapping: 0.028444 ms MarkObjects: 0.454321 ms  DeleteObjects: 0.006716 ms)
+
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
+Total: 0.461037 ms (FindLiveObjects: 0.043456 ms CreateObjectMapping: 0.028839 ms MarkObjects: 0.382419 ms  DeleteObjects: 0.005925 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-g
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected To Master
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.630223 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.727308 ms (FindLiveObjects: 0.046617 ms CreateObjectMapping: 0.049777 ms MarkObjects: 0.622222 ms  DeleteObjects: 0.007506 ms)
 
 Lobby Joined.
  
@@ -191,42 +191,12 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.462124 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 774.
-Total: 0.922864 ms (FindLiveObjects: 0.109827 ms CreateObjectMapping: 0.048197 ms MarkObjects: 0.756543 ms  DeleteObjects: 0.007111 ms)
-
-ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.078914 ms
+UnloadTime: 5.299360 ms
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.803950 ms (FindLiveObjects: 0.057283 ms CreateObjectMapping: 0.038321 ms MarkObjects: 0.701234 ms  DeleteObjects: 0.006320 ms)
+Total: 0.849778 ms (FindLiveObjects: 0.063209 ms CreateObjectMapping: 0.044246 ms MarkObjects: 0.732049 ms  DeleteObjects: 0.009086 ms)
 
 ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected as: s
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Subscribed to: qwertAll
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected as: d
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Subscribed to: qwertAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -235,38 +205,68 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.770964 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 774.
-Total: 0.775901 ms (FindLiveObjects: 0.059259 ms CreateObjectMapping: 0.037925 ms MarkObjects: 0.670420 ms  DeleteObjects: 0.007506 ms)
-
-ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected as: f
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Subscribed to: qwertAll
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Room Joined.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.193481 ms
+UnloadTime: 1.395753 ms
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
-Total: 0.761284 ms (FindLiveObjects: 0.056098 ms CreateObjectMapping: 0.039901 ms MarkObjects: 0.656987 ms  DeleteObjects: 0.007506 ms)
+Total: 0.773531 ms (FindLiveObjects: 0.064000 ms CreateObjectMapping: 0.043851 ms MarkObjects: 0.657382 ms  DeleteObjects: 0.007901 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: g
+Connected as: e
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: qwertAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected as: t
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: qwertAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Room Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.375408 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
+Total: 0.862025 ms (FindLiveObjects: 0.063209 ms CreateObjectMapping: 0.048592 ms MarkObjects: 0.737580 ms  DeleteObjects: 0.011456 ms)
+
+ChatHandler Start() test!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected as: w
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: qwertAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Room Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.349136 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 775.
+Total: 0.711506 ms (FindLiveObjects: 0.060049 ms CreateObjectMapping: 0.041481 ms MarkObjects: 0.602864 ms  DeleteObjects: 0.006320 ms)
+
+ChatHandler Start() test!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected as: r
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -278,39 +278,31 @@ Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.955556 ms
-UnloadTime: 2.561581 ms
-UnloadTime: 2.244346 ms
+UnloadTime: 2.789136 ms
+UnloadTime: 1.878124 ms
+UnloadTime: 1.830716 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.750222 ms (FindLiveObjects: 0.064395 ms CreateObjectMapping: 0.029629 ms MarkObjects: 0.638420 ms  DeleteObjects: 0.017382 ms)
-
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.668839 ms (FindLiveObjects: 0.072691 ms CreateObjectMapping: 0.027259 ms MarkObjects: 0.556642 ms  DeleteObjects: 0.011456 ms)
+Total: 0.825284 ms (FindLiveObjects: 0.049777 ms CreateObjectMapping: 0.028839 ms MarkObjects: 0.727308 ms  DeleteObjects: 0.018567 ms)
 
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.676741 ms (FindLiveObjects: 0.073876 ms CreateObjectMapping: 0.039901 ms MarkObjects: 0.549926 ms  DeleteObjects: 0.012641 ms)
+Total: 1.014913 ms (FindLiveObjects: 0.063209 ms CreateObjectMapping: 0.050567 ms MarkObjects: 0.884148 ms  DeleteObjects: 0.016592 ms)
+
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
+Total: 0.716247 ms (FindLiveObjects: 0.065580 ms CreateObjectMapping: 0.030024 ms MarkObjects: 0.606024 ms  DeleteObjects: 0.014222 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+UnloadTime: 1.599210 ms
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 ChatHandler Start() test!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnloadTime: 10.127016 ms
-I am changing the state toDusk
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -320,7 +312,15 @@ I am changing the state toDusk
 
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 913.
-Total: 0.948938 ms (FindLiveObjects: 0.067950 ms CreateObjectMapping: 0.048197 ms MarkObjects: 0.806716 ms  DeleteObjects: 0.025283 ms)
+Total: 0.927210 ms (FindLiveObjects: 0.064395 ms CreateObjectMapping: 0.045037 ms MarkObjects: 0.801975 ms  DeleteObjects: 0.015012 ms)
+
+I am changing the state toDusk
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toDusk
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 ChatHandler Start() test!
  
@@ -330,19 +330,19 @@ I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: d
+Connected as: w
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: f
+Connected as: t
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: g
+Connected as: r
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: s
+Connected as: e
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -414,14 +414,6 @@ I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -438,15 +430,23 @@ I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+I am changing the state toNight
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Umar
+clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Umar
+Faith
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -478,19 +478,19 @@ I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Umar
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Giram
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Giram
+Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Kelsy
+Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -514,7 +514,7 @@ I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-This is the list of players going to trial Giram,Umar
+This is the list of players going to trial Dean,Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -522,13 +522,29 @@ This is the list of players going to trial Giram,Umar
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 1: Giram
+Player 1: Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 2: Umar (if blank, 1 person trial)
+Player 2: Aaron (if blank, 1 person trial)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Exception: I did not initialize any prestates.
+  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 I am changing the state toTrial
  
@@ -538,19 +554,9 @@ I am changing the state toTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+.gen.cpp Line: 51)
 
-This is the list of players going to trial Umar,Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is the list of players going to trial Giram,Umar
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is the list of players going to trial Umar,Giram
+clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -558,7 +564,15 @@ This is the list of players going to trial Umar,Giram
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-2 person trial
+Player 1: Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 2: Dean (if blank, 1 person trial)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is the list of players going to trial Aaron,Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -566,27 +580,27 @@ This is the list of players going to trial Umar,Giram
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 1: Umar
+This is the list of players going to trial Aaron,Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 2: Giram (if blank, 1 person trial)
+Player 1: Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 1: Giram
+Player 2: Dean (if blank, 1 person trial)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 2: Umar (if blank, 1 person trial)
+2 person trial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 1: Umar
+Player 1: Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player 2: Giram (if blank, 1 person trial)
+Player 2: Dean (if blank, 1 person trial)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -622,21 +636,9 @@ Rethrow as TargetInvocationException: Exception has been thrown by the target of
  
 (Filename:  Line: -1)
 
-Exception: I did not initialize any prestates.
-  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+clear
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Exception: I did not initialize any prestates.
   at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
@@ -654,7 +656,11 @@ Rethrow as TargetInvocationException: Exception has been thrown by the target of
  
 (Filename:  Line: -1)
 
-You selected this player.
+clear
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -678,483 +684,47 @@ You selected this player.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-This is a two person trial.
+You selected this player.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Aloy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Kelsy
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPostTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toNight
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-clear
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toMorning
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toDay
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-James
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toPreTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is the list of players going to trial Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 2: Giram (if blank, 1 person trial)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Exception: I did not initialize any prestates.
-  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-I am changing the state toTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is the list of players going to trial Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 2: Umar (if blank, 1 person trial)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I am changing the state toTrial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is the list of players going to trial Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-1 person trial
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 1: Giram
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 2: Umar (if blank, 1 person trial)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player 2: Giram (if blank, 1 person trial)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Exception: I did not initialize any prestates.
-  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: I did not initialize any prestates.
-  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: I did not initialize any prestates.
-  at GameController.StartState (System.String state) [0x00000] in <filename unknown>:0 
-  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
-  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
-  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
 
 You selected this player.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-This is a one person trial.
+This is a two person trial.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is a two person trial.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You deselected player two.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is a two person trial.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -1162,22 +732,6 @@ you deslected player one
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-You selected this player.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is a one person trial.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-You selected this player.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-This is a one person trial.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 I am changing the state toPostTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -1190,7 +744,11 @@ I am changing the state toPostTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toPostTrial
+I am changing the state toNight
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -1210,7 +768,31 @@ clear
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-I am changing the state toNight
+clear
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+clear
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Umar
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Insignia
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Dean
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Insignia
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Insignia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -1230,111 +812,83 @@ I am changing the state toMorning
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+Faith
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+Insignia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.450173 ms
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.889284 ms (FindLiveObjects: 0.107061 ms CreateObjectMapping: 0.054913 ms MarkObjects: 0.662123 ms  DeleteObjects: 0.064000 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.975802 ms
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 1.029531 ms (FindLiveObjects: 0.077432 ms CreateObjectMapping: 0.054913 ms MarkObjects: 0.716642 ms  DeleteObjects: 0.179358 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.954864 ms
-UnloadTime: 0.895605 ms
-Lobby Joined.
+Umar
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 0.958025 ms (FindLiveObjects: 0.071111 ms CreateObjectMapping: 0.041876 ms MarkObjects: 0.782222 ms  DeleteObjects: 0.061629 ms)
-
-
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 591.
-Total: 1.209679 ms (FindLiveObjects: 0.388345 ms CreateObjectMapping: 0.059259 ms MarkObjects: 0.704395 ms  DeleteObjects: 0.057283 ms)
-
-Lobby Joined.
+Insignia
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Faith
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Dean
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Faith
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Faith
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3784 -> priority: 1 
-  Thread -> id: 1b68 -> priority: 1 
+  Thread -> id: 414c -> priority: 1 
+  Thread -> id: 4148 -> priority: 1 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: dc -> priority: 1 
-  Thread -> id: 42bc -> priority: 1 
+  Thread -> id: 41f8 -> priority: 1 
+  Thread -> id: 41fc -> priority: 1 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3dc -> priority: 1 
-  Thread -> id: 1ac0 -> priority: 1 
+  Thread -> id: 425c -> priority: 1 
+  Thread -> id: 4260 -> priority: 1 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 4140 -> priority: 1 
-  Thread -> id: 4a60 -> priority: 1 
+  Thread -> id: 4308 -> priority: 1 
+  Thread -> id: 430c -> priority: 1 

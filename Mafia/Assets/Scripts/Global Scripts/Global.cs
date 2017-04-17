@@ -33,25 +33,29 @@ public static class Global {
 
     public static class FlavorTextKeys
     {
-        public static string Dusk = "dusk";
-        public static string Morning = "morning";
-        public static string Night = "night";
-        public static string Day = "day";
-        public static string TrialReport = "trialReport";
-        public static string MafiaWin = "mafiaWin";
-        public static string MafiaLoses = "mafiaLoses";
-        public static string SheriffWin = "sheriffWin";
-        public static string SheriffLoses = "sheriffLoses";
-        public static string NurseWin = "nurseWin";
-        public static string NurseLoses = "nurseLoses";
+        public static string MorningStart = "morningStart";
+        public static string MorningMafiaKill = "morningMafiaKill";
+        public static string MorningMafiaFail = "morningMafiaFail";
+        public static string MorningSheriffArrest1 = "morningSheriffArrest1";
+        public static string MorningSheriffArrest2 = "morningSheriffArrest2";
+        public static string MorningSheriffArrest3 = "morningSheriffArrest3";
+        public static string MorningSheriffFail = "morningSheriffFail";
+        public static string MorningNurseSave = "morningNurseSave";
+        public static string MorningNurseFail = "morningNurseFail";
+        public static string GameStart = "gameStart";
+        public static string AssignRoleCiv = "assignRoleCiv";
+        public static string AssignRoleSheriff = "assignRoleSheriff";
+        public static string AssignRoleMafia = "assignRoleMafia";
+        public static string AssignRoleNurse = "assignRoleNurse";
+        public static string PreTrial1 = "preTrial1";
+        public static string PreTrial2 = "preTrial2";
+        public static string PreTrialNone = "preTrialNone";
+        public static string PostTrialSuccess = "postTrialSuccess";
+        public static string PostTrialFail = "postTrialFail";
         public static string CivilianWin = "civilianWin";
-        public static string CivilianLoses = "civilianLoses";
-        public static string MafiaKills = "mafiaKills";
-        public static string NoKill = "noKill";
-        public static string SheriffCapture = "sheriffCapture";
-        public static string NoCapture = "noCapture";
-        public static string NurseProtect = "nurseProtects";
-        public static string NoProtect = "noProtect";
+        public static string MafiaWin = "mafiaWin";
+        public static string SheriffWin = "sheriffWin";
+        public static string NurseWin = "nurseWin";
     }
 
     public static class States

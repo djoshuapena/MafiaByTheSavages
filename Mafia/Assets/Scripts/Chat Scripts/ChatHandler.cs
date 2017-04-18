@@ -95,6 +95,11 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
         Debug.Log("Disconnected");
     }
 
+    public void LeaveGame()
+    {
+        chatClient.Disconnect();
+    }
+
     void OnLeftRoom()
     {
         this.chatClient.Disconnect();

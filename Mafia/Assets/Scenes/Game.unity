@@ -3684,6 +3684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d865caa9e9df16418d6a4a5b6b0b823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chatHandler: {fileID: 869115324}
 --- !u!114 &869115319
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndedController : MonoBehaviour
 {
 
-
+    public ChatHandler chatHandler;
     // php script in web domain.
     private string updateStatsUrl = "mafiasav.com/updateStats.php";
 
@@ -62,6 +62,8 @@ public class EndedController : MonoBehaviour
     /// </summary>
     private void LoadLobby()
     {
+        PhotonNetwork.player.CustomProperties.Clear();
+        chatHandler.LeaveGame();
         PhotonNetwork.LeaveRoom();
     }
 
@@ -74,6 +76,8 @@ public class EndedController : MonoBehaviour
 
     void OnLeftRoom()
     {
+        //PhotonNetwork.player.CustomProperties.Clear();
+        //chatHandler.LeaveGame();
         PhotonNetwork.LoadLevel("Lobby");
         PhotonNetwork.JoinLobby();
     }

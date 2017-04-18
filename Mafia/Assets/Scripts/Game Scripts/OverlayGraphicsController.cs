@@ -32,6 +32,19 @@ public class OverlayGraphicsController : MonoBehaviour
     private int preTrialTwo = 8;
     private int postTrial = 9;
 
+    public Sprite Civ;
+    public Sprite Nurse;
+    public Sprite Mafia;
+    public Sprite Sheriff;
+
+    public Sprite deadCiv;
+    public Sprite deadNurse;
+    public Sprite deadMafia;
+    public Sprite deadSheriff;
+    public Sprite noDead;
+
+    public Image roleSprite;
+
     //public GameObject duskIntroPanel;
     //Panel[] OverlayPanel;
 
@@ -165,18 +178,22 @@ public class OverlayGraphicsController : MonoBehaviour
         {
             case Global.Role.Civilian:
                 overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.AssignRoleCiv); //Needs to be Civilian
+                roleSprite.sprite = Civ;
                 break;
 
             case Global.Role.Mafia:
                 overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.AssignRoleMafia);
+                roleSprite.sprite = Mafia;
                 break;
 
             case Global.Role.Sheriff:
                 overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.AssignRoleSheriff);
+                roleSprite.sprite = Sheriff;
                 break;
 
             case Global.Role.Nurse:
                 overlayPanels[duskRole].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.AssignRoleNurse);
+                roleSprite.sprite = Nurse;
                 break;
         }
     }
@@ -314,22 +331,27 @@ public class OverlayGraphicsController : MonoBehaviour
         {
             case Global.Role.Civilian:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess); // needs to add guilty by role.
+                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadCiv;
                 break;
 
             case Global.Role.Mafia:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
+                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadMafia;
                 break;
 
             case Global.Role.Sheriff:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
+                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadSheriff;
                 break;
 
             case Global.Role.Nurse:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
+                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadNurse;
                 break;
 
             case "":
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialFail);
+                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = noDead;
                 break;
         }
     }

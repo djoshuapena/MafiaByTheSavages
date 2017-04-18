@@ -85,8 +85,8 @@ public class GameController : Photon.MonoBehaviour
             photonView.RPC("InitializeNightDay", PhotonTargets.All);
             photonView.RPC("InitializeGameState", PhotonTargets.All, Global.States.Dusk);
         }
-        myname.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
-        myrole.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
+       // myname.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
+       // myrole.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
     }
 
     /// <summary>
@@ -408,6 +408,8 @@ public class GameController : Photon.MonoBehaviour
     private void InitializeNightDay()
     {
         dayNight.StartGameInitialize();
+        myname.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
+        myrole.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
     }
 
     ///// <summary>

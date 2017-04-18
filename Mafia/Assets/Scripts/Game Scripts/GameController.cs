@@ -141,10 +141,10 @@ public class GameController : Photon.MonoBehaviour
     private void PreStateInitialization(string state)
     {
         bool initialized = false;
-        if (state.Equals(""))
+        //if (state.Equals(""))
             //throw new Exception("I did not get a state to initialize");
 
-        else if (state == Global.States.Night)
+        if (state == Global.States.Night)
         {
             //Get the player who was killed in the trial. Will return an
             //empty list if there was none.
@@ -206,10 +206,10 @@ public class GameController : Photon.MonoBehaviour
     public void StartState(string state)
     {
         bool started = false;
-        if (state.Equals(""))
+        //if (state.Equals(""))
             //throw new Exception("I did not get a state to initialize");
 
-        else if (state == Global.States.Night)
+        if (state == Global.States.Night)
         {
             vote.InitializeVotes();
             //trialplayers = null;
@@ -230,18 +230,18 @@ public class GameController : Photon.MonoBehaviour
         {
             started = overlay.ShowOverlay(state);
         }
-        if (!started)
+        //if (!started)
             //throw new Exception("I did not initialize any prestates.");
 
     }
 
     public void EndingState(string state)
     {
-        if (state == "")
+        //if (state == "")
             //throw new Exception("I did not get a state to end");
 
         // if the state is morning and all civilians are dead, end the game.
-        else if (state == Global.States.Morning)
+        if (state == Global.States.Morning)
         {
             //PhotonPlayer player;
 

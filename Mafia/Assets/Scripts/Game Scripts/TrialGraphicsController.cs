@@ -226,6 +226,7 @@ public class TrialGraphicsController : MonoBehaviour {
 
             pairBtn1.gameObject.SetActive(false);
             pairBtnHidden1.gameObject.SetActive(true);
+            
             pairNotGuilty1.gameObject.SetActive(true);
 
             pairBtn2.gameObject.SetActive(true);
@@ -352,7 +353,7 @@ public class TrialGraphicsController : MonoBehaviour {
         if (onePersonTrial)
         {
             loneBtn.GetComponentInChildren<Text>().text = name1;
-            loneNotGulty.GetComponentInChildren<Text>().text = name1;
+            //loneNotGulty.GetComponentInChildren<Text>().text = name1;
         }
         else
         {

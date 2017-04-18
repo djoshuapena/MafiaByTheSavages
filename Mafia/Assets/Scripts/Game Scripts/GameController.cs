@@ -30,6 +30,14 @@ public class GameController : Photon.MonoBehaviour
     //private string playerVotedFor;
     //private float time = 2f;
 
+
+    private void Awake()
+    {
+        if (!assign.InitializeRoles())
+        {
+            //throw new Exception("Could not initialize roles");
+        }
+    }
     // Use this for initialization
     void Start()
     {
@@ -66,10 +74,10 @@ public class GameController : Photon.MonoBehaviour
     {
         if (PhotonNetwork.isMasterClient)
         {
-            if(!assign.InitializeRoles())
-            {
-                //throw new Exception("Could not initialize roles");
-            }
+            //if(!assign.InitializeRoles())
+            //{
+            //    //throw new Exception("Could not initialize roles");
+            //}
 
             text = flavorText.InitializeFlavorTextDict();
             

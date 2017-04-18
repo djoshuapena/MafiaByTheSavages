@@ -44,6 +44,7 @@ public class OverlayGraphicsController : MonoBehaviour
     public Sprite noDead;
 
     public Image roleSprite;
+    public Image trialSprite;
 
     //public GameObject duskIntroPanel;
     //Panel[] OverlayPanel;
@@ -331,27 +332,27 @@ public class OverlayGraphicsController : MonoBehaviour
         {
             case Global.Role.Civilian:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess); // needs to add guilty by role.
-                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadCiv;
+                trialSprite.sprite = deadCiv;
                 break;
 
             case Global.Role.Mafia:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
-                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadMafia;
+                trialSprite.sprite = deadMafia;
                 break;
 
             case Global.Role.Sheriff:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
-                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadSheriff;
+                trialSprite.sprite = deadSheriff;
                 break;
 
             case Global.Role.Nurse:
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialSuccess);
-                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = deadNurse;
+                trialSprite.sprite = deadNurse;
                 break;
 
             case "":
                 overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText(Global.FlavorTextKeys.PostTrialFail);
-                overlayPanels[postTrial].GetComponentInChildren<Image>().sprite = noDead;
+                trialSprite.sprite = noDead;
                 break;
         }
     }

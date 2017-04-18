@@ -1285,7 +1285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Is this hooman innocent?
+  m_Text: Click above if you think this player is not guilty.
 --- !u!222 &321424456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.64705884}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3615,6 +3615,7 @@ MonoBehaviour:
   deadSheriff: {fileID: 21300000, guid: da5e99415b5ee144bb14dd69d9c892be, type: 3}
   noDead: {fileID: 21300000, guid: 2656578a097891644971b78265127626, type: 3}
   roleSprite: {fileID: 900988887}
+  trialSprite: {fileID: 2049730928}
 --- !u!114 &869115315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3917,7 +3918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &889932498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4328,7 +4329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.64705884}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5905,7 +5906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Is this hooman innocent?
+  m_Text: Click above if you think this player is not guilty.
 --- !u!222 &1350702355
 CanvasRenderer:
   m_ObjectHideFlags: 0

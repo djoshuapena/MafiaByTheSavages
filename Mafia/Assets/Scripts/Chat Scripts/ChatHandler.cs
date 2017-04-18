@@ -123,7 +123,9 @@ public class ChatHandler : Photon.MonoBehaviour, IChatClientListener {
     
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        chatClient.PublishMessage(channels[0],"You may chat");
+        //chatClient.PublishMessage(channels[0],"You may chat");
+        chatDisplay.CurrentChannelText.text = "Connected";
+        chatDisplay.CurrentChannelText2.text = "Connected";
         Debug.Log("Subscribed to: " + channels[0]);
     }
 

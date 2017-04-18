@@ -353,7 +353,7 @@ public class TrialGraphicsController : MonoBehaviour {
         if (onePersonTrial)
         {
             loneBtn.GetComponentInChildren<Text>().text = name1;
-            loneNotGulty.GetComponentInChildren<Text>().text = name1;
+            loneButtonHidden.GetComponentInChildren<Text>().text = name1;
         }
         else
         {

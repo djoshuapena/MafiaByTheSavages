@@ -19,15 +19,44 @@ Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.087 seconds
+- Completed reload, in  0.034 seconds
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
+    Vendor:   NVIDIA
+    VRAM:     2019 MB
+    Driver:   22.21.13.8165
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.026 seconds
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\djosh\Documents\GitHub\MafiaByTheSavages\Mafia\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.458569 ms
-qwer
+UnloadTime: 1.413531 ms
+<RI> Initialized touch support.
+UnloadTime: 1.705087 ms
+asdf
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -36,20 +65,30 @@ Connected To Master
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.829731 ms
+UnloadTime: 2.857483 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 592.
-Total: 0.528593 ms (FindLiveObjects: 0.034370 ms CreateObjectMapping: 0.026074 ms MarkObjects: 0.458667 ms  DeleteObjects: 0.009086 ms)
+Total: 0.522667 ms (FindLiveObjects: 0.045432 ms CreateObjectMapping: 0.045037 ms MarkObjects: 0.424691 ms  DeleteObjects: 0.006716 ms)
 
 Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Lobby Joined.
+zxcv
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Room Created.
+Connected To Master
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.751212 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 592.
+Total: 0.530173 ms (FindLiveObjects: 0.069135 ms CreateObjectMapping: 0.039506 ms MarkObjects: 0.412839 ms  DeleteObjects: 0.008296 ms)
+
+Lobby Joined.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -58,34 +97,51 @@ Room Joined.
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.182025 ms
+UnloadTime: 1.065087 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 661.
-Total: 0.717037 ms (FindLiveObjects: 0.051753 ms CreateObjectMapping: 0.048197 ms MarkObjects: 0.608790 ms  DeleteObjects: 0.007506 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.951113 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 661.
-Total: 0.484741 ms (FindLiveObjects: 0.035160 ms CreateObjectMapping: 0.024888 ms MarkObjects: 0.415605 ms  DeleteObjects: 0.008691 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 662.
+Total: 0.522272 ms (FindLiveObjects: 0.054123 ms CreateObjectMapping: 0.029629 ms MarkObjects: 0.432592 ms  DeleteObjects: 0.005135 ms)
 
 ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: qwer
+Connected as: asdf
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: zxcvAll
+Subscribed to: wertAll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Room Joined.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.943013 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 662.
+Total: 0.519506 ms (FindLiveObjects: 0.038321 ms CreateObjectMapping: 0.025679 ms MarkObjects: 0.449975 ms  DeleteObjects: 0.005135 ms)
+
+ChatHandler Start() test!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected as: zxcv
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertAll
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.313186 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.779656 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1057.
-Total: 1.848495 ms (FindLiveObjects: 0.143802 ms CreateObjectMapping: 0.118518 ms MarkObjects: 1.556544 ms  DeleteObjects: 0.028049 ms)
+Total: 0.948148 ms (FindLiveObjects: 0.093629 ms CreateObjectMapping: 0.048197 ms MarkObjects: 0.788148 ms  DeleteObjects: 0.017382 ms)
 
 ChatHandler Start() test!
  
@@ -95,23 +151,48 @@ I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: Umar
+UnloadTime: 2.755557 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1057.
+Total: 0.960000 ms (FindLiveObjects: 0.080197 ms CreateObjectMapping: 0.047407 ms MarkObjects: 0.814222 ms  DeleteObjects: 0.017777 ms)
+
+ChatHandler Start() test!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: zxcvCivilian
+I am changing the state toDusk
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: zxcvMafia
+Connected as: Kelsy
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: zxcvDead
+Connected as: Amanda
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-The Photon Client qwer is here
+Subscribed to: wertCivilian
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertDead
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertMafia
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertDead
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertMafia
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Subscribed to: wertCivilian
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -119,27 +200,7 @@ I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Dusk is ended.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-the timer is started
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-I Came here afterwards
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-The Photon player in Timer Countdown is qwer
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Night
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-The Photon Client qwer is here
+I am changing the state toNight
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -147,7 +208,7 @@ I am changing the state toMorning
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Night is ended.
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -159,75 +220,89 @@ This is the list of players getting killed
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+I am changing the state toDay
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Updated stats successfully
-
+This is the list of players arrested by sheriff 
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.569385 ms
-
-Unloading 81 unused Assets to reduce memory usage. Loaded Objects now: 592.
-Total: 2.955459 ms (FindLiveObjects: 0.147753 ms CreateObjectMapping: 0.145382 ms MarkObjects: 2.311112 ms  DeleteObjects: 0.349234 ms)
-
-FormatException: Input string was not in the correct format
-  at System.UInt32.Parse (System.String s, NumberStyles style, IFormatProvider provider) [0x00000] in <filename unknown>:0 
-  at System.Byte.Parse (System.String s, NumberStyles style, IFormatProvider provider) [0x00000] in <filename unknown>:0 
-  at System.Byte.Parse (System.String s) [0x00000] in <filename unknown>:0 
-  at LobbyRoomManager.ButtonEvents (System.String EVENT) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Events.InvokableCall`1[System.String].Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Events.CachedInvokableCall`1[System.String].Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in <filename unknown>:0 
-  at UnityEngine.UI.Button.Press () [0x00000] in <filename unknown>:0 
-  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x00000] in <filename unknown>:0 
-  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in <filename unknown>:0 
-  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x00000] in <filename unknown>:0 
-UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
-UnityEngine.DebugLogHandler:LogException(Exception, Object)
-UnityEngine.Logger:LogException(Exception, Object)
-UnityEngine.Debug:LogException(Exception)
-UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32)
-UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent()
-UnityEngine.EventSystems.StandaloneInputModule:Process()
-UnityEngine.EventSystems.EventSystem:Update()
- 
-(Filename:  Line: -1)
-
-Lobby Joined.
+This is the list of players getting killed 
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Room Joined.
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.907754 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 662.
-Total: 1.596840 ms (FindLiveObjects: 0.125234 ms CreateObjectMapping: 0.102716 ms MarkObjects: 1.347556 ms  DeleteObjects: 0.020543 ms)
-
-ChatHandler Start() test!
+Aaron
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Connected as: qwer
+I am changing the state toPreTrial
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Subscribed to: wertAll
+I am changing the state toPreTrial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toTrial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is the list of players going to trial Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+1 person trial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1: Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 2:  (if blank, 1 person trial)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I am changing the state toTrial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is the list of players going to trial Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+1 person trial
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1: Aaron
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 2:  (if blank, 1 person trial)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You selected this player.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+This is a one person trial.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+you deslected player one
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1e54 -> priority: 1 
-  Thread -> id: 3dbc -> priority: 1 
+  Thread -> id: 3508 -> priority: 1 
+  Thread -> id: 3520 -> priority: 1 
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2654 -> priority: 1 
+  Thread -> id: 3bc -> priority: 1 

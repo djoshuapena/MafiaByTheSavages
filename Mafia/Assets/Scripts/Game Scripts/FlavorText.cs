@@ -31,8 +31,8 @@ public class FlavorText : MonoBehaviour {
         flavorDict.Add(Global.FlavorTextKeys.PreTrial1, "One player accused");
         flavorDict.Add(Global.FlavorTextKeys.PreTrial2, "Two players accused");
         flavorDict.Add(Global.FlavorTextKeys.PreTrialNone, "No players accused");
-        flavorDict.Add(Global.FlavorTextKeys.PostTrialSuccess, "Player hung");
-        flavorDict.Add(Global.FlavorTextKeys.PostTrialFail, "No player hung");
+        flavorDict.Add(Global.FlavorTextKeys.PostTrialSuccess, "Player hanged");
+        flavorDict.Add(Global.FlavorTextKeys.PostTrialFail, "No player hanged");
         flavorDict.Add(Global.FlavorTextKeys.CivilianWin, "Woot!! You should throw a party you helped catch all those nasty mafia guys!!");
         flavorDict.Add(Global.FlavorTextKeys.MafiaWin, "Congrats! You murdered everyone the town is yours!");
         flavorDict.Add(Global.FlavorTextKeys.SheriffWin, "You caught all the mafia. Have you thought about being a cop?");

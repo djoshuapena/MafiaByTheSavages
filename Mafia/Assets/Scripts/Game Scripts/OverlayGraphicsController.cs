@@ -18,7 +18,13 @@ public class OverlayGraphicsController : MonoBehaviour {
     public int morningShfType; // initialize by game controller
     public int preTrialType; // initialize by game controller
 
-	private int duskIntro        = 0;
+    public Sprite deadCivilian;
+    public Sprite deadSheriff;
+    public Sprite deadMafia;
+    public Sprite deadNurse;
+    public Sprite noDead;
+
+    private int duskIntro        = 0;
 	private int duskRole         = 1;
 	private int morningMaf       = 2;
 	private int morningShfOne    = 3;
@@ -303,23 +309,28 @@ public class OverlayGraphicsController : MonoBehaviour {
         switch (role){
             case Global.Role.Civilian:
 			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.PostTrialSuccess); // needs to add guilty by role.
-			    break;
+                overlayPanels[postTrial].GetComponent<Image>().sprite = deadCivilian;
+                break;
 
 		    case Global.Role.Mafia:
 			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.PostTrialSuccess);
-			    break;
+                overlayPanels[postTrial].GetComponent<Image>().sprite = deadMafia;
+                break;
 
 		    case Global.Role.Sheriff:
 			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.PostTrialSuccess);
-			    break;
+                overlayPanels[postTrial].GetComponent<Image>().sprite = deadSheriff;
+                break;
 
 		    case Global.Role.Nurse:
 			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.PostTrialSuccess);
-			    break;
+                overlayPanels[postTrial].GetComponent<Image>().sprite = deadNurse;
+                break;
 
 		    case "":
 			    overlayPanels[postTrial].GetComponentInChildren<Text>().text = flavorText.GetFlavorText (Global.FlavorTextKeys.PostTrialFail);
-			    break;
+                overlayPanels[postTrial].GetComponent<Image>().sprite = noDead;
+                break;
 		}
 	}
     #endregion

@@ -25,7 +25,7 @@ public class Connect : Photon.MonoBehaviour {
         ConnectToChat(UserName);
 	}
 	
-    void ConnectToChat (string userName)
+    public void ConnectToChat (string userName)
     {
         chatHandler.Connect(UserName);
     } 

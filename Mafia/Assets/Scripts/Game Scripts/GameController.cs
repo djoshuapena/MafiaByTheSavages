@@ -16,6 +16,10 @@ public class GameController : Photon.MonoBehaviour
     public TrialGraphicsController trial;
     public FlavorText flavorText;
     public NightDayController dayNight;
+    public GameObject myname;
+    public GameObject myrole;
+
+    //public Connect chat;
     //public ChatGraphicsController chat;
     //public GameResultsPhase gameResults; //Need to build this
 
@@ -30,6 +34,7 @@ public class GameController : Photon.MonoBehaviour
     void Start()
     {
         InitializeGameStart();
+        //chat.Co
     }
 
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -67,6 +72,7 @@ public class GameController : Photon.MonoBehaviour
             }
 
             text = flavorText.InitializeFlavorTextDict();
+            
             //if (text != null)
             //{
             //    photonView.RPC("SaveFlavorText", PhotonTargets.AllBuffered, text);
@@ -79,7 +85,8 @@ public class GameController : Photon.MonoBehaviour
             photonView.RPC("InitializeNightDay", PhotonTargets.All);
             photonView.RPC("InitializeGameState", PhotonTargets.All, Global.States.Dusk);
         }
-        //
+        myname.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
+        myrole.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
     }
 
     /// <summary>
@@ -177,8 +184,8 @@ public class GameController : Photon.MonoBehaviour
             initialized = overlay.InitializeOverlay(state);
 
         }
-        if (!initialized)
-          throw new Exception("I did not initialize any prestates.");
+        //if (!initialized)
+        //  throw new Exception("I did not initialize any prestates.");
     }
 
     public void NowStartState(string state)
@@ -186,14 +193,14 @@ public class GameController : Photon.MonoBehaviour
         StartState(state);
     }
 
-    private void OnGUI()
-    {
-        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor].ToString());
-        GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
-        //GUILayout.Label((text == null).ToString());
-    }
+    //private void OnGUI()
+    //{
+    //    GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name].ToString());
+    //    GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles].ToString());
+    //    GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.VotedFor].ToString());
+    //    GUILayout.Label(PhotonNetwork.player.CustomProperties[Global.CustomProperties.Dead].ToString());
+    //    //GUILayout.Label((text == null).ToString());
+    //}
 
     [PunRPC]
     public void StartState(string state)

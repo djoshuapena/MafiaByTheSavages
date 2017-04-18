@@ -14,7 +14,7 @@ public class Connect : Photon.MonoBehaviour {
     public string UserName;
    
 	// Use this for initialization
-	void Start ()
+	public void StartConnect ()
     {
         UserName = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
         if (string.IsNullOrEmpty(UserName))

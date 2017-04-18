@@ -59,4 +59,5 @@ MonoBehaviour:
   - ChangeVoteHelper
   - PlayerIsDead
   - Endgame
+  - ConnectToChat
   DisableAutoOpenWizard: 1

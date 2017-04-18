@@ -16,6 +16,7 @@ public class GameController : Photon.MonoBehaviour
     public TrialGraphicsController trial;
     public FlavorText flavorText;
     public NightDayController dayNight;
+    public Connect startChat;
     public GameObject myname;
     public GameObject myrole;
 
@@ -33,9 +34,12 @@ public class GameController : Photon.MonoBehaviour
 
     private void Awake()
     {
-        if (!assign.InitializeRoles())
+        if (PhotonNetwork.isMasterClient)
         {
-            //throw new Exception("Could not initialize roles");
+            if (!assign.InitializeRoles())
+            {
+                //throw new Exception("Could not initialize roles");
+            }
         }
     }
     // Use this for initialization
@@ -90,12 +94,19 @@ public class GameController : Photon.MonoBehaviour
             //    throw new Exception("Dictionary is empty, cannot initialize");
             //}
             photonView.RPC("SaveFlavorText", PhotonTargets.All, text);
+            photonView.RPC("ConnectToChat", PhotonTargets.All);
             photonView.RPC("InitializeNightDay", PhotonTargets.All);
             photonView.RPC("InitializeGameState", PhotonTargets.All, Global.States.Dusk);
         }
        // myname.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name];
        // myrole.GetComponent<Text>().text = (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Roles];
     }
+
+    [PunRPC]
+    public void ConnectToChat()
+    {
+        startChat.StartConnect();
+    } 
 
     /// <summary>
     /// Change to the new game state.

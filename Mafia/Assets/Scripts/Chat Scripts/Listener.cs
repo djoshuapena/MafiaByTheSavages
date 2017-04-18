@@ -19,16 +19,16 @@ public class Listener : MonoBehaviour {
     {
         chatObject.SendChatMessage(InputFieldChat.text);
         InputFieldChat.text = "";
-        InputFieldChat.ActivateInputField();
+        //InputFieldChat.ActivateInputField();
     }
 
-    void OnGUI()
-    {
-        if (Input.GetKey(KeyCode.Return) /*&& InputFieldChat.IsActive()*/)
-        {
-            SendMessage();
-        }
-    }
+    //void OnGUI()
+    //{
+    //    if (Input.GetKey(KeyCode.Return) /*&& InputFieldChat.IsActive()*/)
+    //    {
+    //        SendMessage();
+    //    }
+    //}
 
     // Update is called once per frame
     void Update ()

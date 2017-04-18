@@ -11,8 +11,10 @@ public class WaitingRoom : Photon.MonoBehaviour
     //public Text playerNameText;
     //public Text playerIdText;
     public GameObject playerNamePrefab;
+    public Connect startChat;
+    //public GameObject gameStartButton;
 
-	float timeLeft = 30.0f;
+	float timeLeft = 15.0f;
 
 	public Text timer;
 
@@ -76,7 +78,7 @@ public class WaitingRoom : Photon.MonoBehaviour
     void Start()
     {
 		myPhotonView = gameObject.GetComponent<PhotonView>();
-
+        startChat.StartConnect();
         //minPlayers = PhotonNetwork.room.MaxPlayers / 2;
         //wait 3 seconds and refresh the playerlist
         InvokeRepeating("RefreshPlayerList", 0.1f, 3.0f);
@@ -98,8 +100,10 @@ public class WaitingRoom : Photon.MonoBehaviour
 
 		if (PhotonNetwork.isMasterClient == true) // host starts the countdown
 		{
+            startGame.gameObject.SetActive(false);
 			//timeLeft = 30.0f;
 			myPhotonView.RPC("Countdown", PhotonTargets.AllBuffered, PhotonNetwork.time);
+
 		}
         //if (PhotonNetwork.isMasterClient)
        // {

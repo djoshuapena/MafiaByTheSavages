@@ -68,7 +68,7 @@ public class GameController : Photon.MonoBehaviour
         {
             if(!assign.InitializeRoles())
             {
-                throw new Exception("Could not initialize roles");
+                //throw new Exception("Could not initialize roles");
             }
 
             text = flavorText.InitializeFlavorTextDict();
@@ -102,7 +102,7 @@ public class GameController : Photon.MonoBehaviour
         }
         if (state == "")
         {
-            throw new Exception("Change Game state didnt get anything.");
+            //throw new Exception("Change Game state didnt get anything.");
         }
         Debug.Log("I am changing the state to" + state);
         PreStateInitialization(state);
@@ -142,7 +142,7 @@ public class GameController : Photon.MonoBehaviour
     {
         bool initialized = false;
         if (state.Equals(""))
-            throw new Exception("I did not get a state to initialize");
+            //throw new Exception("I did not get a state to initialize");
 
         else if (state == Global.States.Night)
         {
@@ -207,7 +207,7 @@ public class GameController : Photon.MonoBehaviour
     {
         bool started = false;
         if (state.Equals(""))
-            throw new Exception("I did not get a state to initialize");
+            //throw new Exception("I did not get a state to initialize");
 
         else if (state == Global.States.Night)
         {
@@ -231,14 +231,14 @@ public class GameController : Photon.MonoBehaviour
             started = overlay.ShowOverlay(state);
         }
         if (!started)
-            throw new Exception("I did not initialize any prestates.");
+            //throw new Exception("I did not initialize any prestates.");
 
     }
 
     public void EndingState(string state)
     {
         if (state == "")
-            throw new Exception("I did not get a state to end");
+            //throw new Exception("I did not get a state to end");
 
         // if the state is morning and all civilians are dead, end the game.
         else if (state == Global.States.Morning)

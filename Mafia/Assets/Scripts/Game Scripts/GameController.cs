@@ -17,6 +17,7 @@ public class GameController : Photon.MonoBehaviour
     public FlavorText flavorText;
     public NightDayController dayNight;
     public Connect startChat;
+    public ChatHandler chatClient;
     public GameObject myname;
     public GameObject myrole;
 
@@ -288,6 +289,7 @@ public class GameController : Photon.MonoBehaviour
             {
                 //player = findPlayer(playersKilled[pos]);
                 //player.CustomProperties[Global.CustomProperties.Dead] = true;
+                //chatClient.KillPlayer();
                 photonView.RPC("PlayerIsDead", PhotonTargets.All, playersKilled[pos]);
             }
             //}
@@ -396,6 +398,10 @@ public class GameController : Photon.MonoBehaviour
         if(!playersKilled.Contains(player))
         {
             playersKilled.Add(player);
+            if (player == (string)PhotonNetwork.player.CustomProperties[Global.CustomProperties.Name])
+            {
+                chatClient.KillPlayer();
+            }
         }
         PhotonPlayer photonPlayer = findPlayer(player);
         photonPlayer.CustomProperties[Global.CustomProperties.Dead] = true;

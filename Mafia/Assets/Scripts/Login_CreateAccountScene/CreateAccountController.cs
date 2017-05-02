@@ -54,7 +54,7 @@ public class CreateAccountController : MonoBehaviour {
             if (CreateAccountReturn == "Success")
             {
                 Debug.Log("Success: Account created");
-                menu.SetLoginMenu();
+				menu.SetLoginMenu();
             }
         }
     }

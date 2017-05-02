@@ -14,11 +14,11 @@ public class PhotonCustomAuthentication : MonoBehaviour {
     /// </summary>
     public void AttemptConnection()
     {
-        //PhotonNetwork.AuthValues = new AuthenticationValues();
-        //PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
-        //PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.Password);
-        //PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.Username);
-        PhotonNetwork.ConnectUsingSettings("Version 0.1");
+        PhotonNetwork.AuthValues = new AuthenticationValues();
+        PhotonNetwork.AuthValues.AuthType = CustomAuthenticationType.Custom;
+        PhotonNetwork.AuthValues.AddAuthParameter("Password", accountInfo.Password);
+        PhotonNetwork.AuthValues.AddAuthParameter("Username", accountInfo.Username);
+        PhotonNetwork.ConnectUsingSettings("Version 1.3");
         PhotonNetwork.playerName = accountInfo.Username;
     }
 
@@ -29,7 +29,7 @@ public class PhotonCustomAuthentication : MonoBehaviour {
     private void OnConnectedToMaster()
     {
         Debug.Log("Connected To Master");
-        SceneManager.LoadScene("Lobby"); //Changed from MainMenu to Lobby for Temp
+		SceneManager.LoadScene("MainMenu"); //Changed from MainMenu to Lobby for Temp
         //changeMenu.MainOn();
     }
 

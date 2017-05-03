@@ -41,12 +41,4 @@ public class PhotonCustomAuthentication : MonoBehaviour {
     {
         Debug.Log(DebugMessage);
     }
-
-    /// <summary>
-    /// Display the current connection state in Photon.
-    /// </summary>
-    private void OnGUI()
-    {
-        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    }
 }

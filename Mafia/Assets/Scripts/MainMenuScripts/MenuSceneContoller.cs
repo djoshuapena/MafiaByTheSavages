@@ -19,9 +19,4 @@ public class MenuSceneContoller : MonoBehaviour {
     {
         SceneManager.LoadScene("Options");
     }
-
-    private void OnGUI()
-    {
-        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    }
 }

@@ -40,7 +40,7 @@ public class WaitingRoom : Photon.MonoBehaviour
    // public Text timer;
 
     // Use this for initialization
-	bool gameStart = false;
+	//bool gameStart = false;
 
 	public Button startGame;
 	private PhotonView myPhotonView;

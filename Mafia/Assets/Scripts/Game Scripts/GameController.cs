@@ -225,7 +225,7 @@ public class GameController : Photon.MonoBehaviour
     [PunRPC]
     public void StartState(string state)
     {
-        bool started = false;
+        //bool started = false;
         //if (state.Equals(""))
             //throw new Exception("I did not get a state to initialize");
 
@@ -233,13 +233,13 @@ public class GameController : Photon.MonoBehaviour
         {
             vote.InitializeVotes();
             //trialplayers = null;
-            started = dayNight.StartView(state);
+            //started = dayNight.StartView(state);
         }
         else if (state == Global.States.Day)
         {
             vote.InitializeVotes();
             //trialplayers = null;
-            started = dayNight.StartView(state);
+            //started = dayNight.StartView(state);
         }
         else if (state == Global.States.Trial)
         {
@@ -248,7 +248,7 @@ public class GameController : Photon.MonoBehaviour
         }
         else
         {
-            started = overlay.ShowOverlay(state);
+            //started = overlay.ShowOverlay(state);
         }
         //if (!started)
             //throw new Exception("I did not initialize any prestates.");
